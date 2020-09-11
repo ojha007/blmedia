@@ -27,6 +27,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             $module = Request::route()->getAction('module');
             $view->with([
                 'routePrefix' => $edition . '.' . $prefix,
+                'urlPrefix' => $edition . '/' . $prefix,
                 'module' => $module]);
         });
     }

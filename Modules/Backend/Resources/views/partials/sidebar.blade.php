@@ -30,7 +30,7 @@
             </a>
 
         </li>
-        <li class="treeview ">
+        <li class="treeview {{request()->is([$urlPrefix.'/news', $urlPrefix.'/news/*'] ? 'active':'' )}} ">
             <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>News Management</span>
@@ -38,9 +38,9 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
             </a>
-            <ul class="treeview-menu">
+            <ul class="treeview-menu ">
                 <li class=""><a href="{{route($routePrefix.'.news.index')}}">All News</a></li>
-                {{--                <li><a href="chartjs.html">Add News</a></li>--}}
+                <li><a href="{{route($routePrefix.'.news.create')}}">Add News</a></li>
                 {{--                <li><a href="flot.html">Breaking News</a></li>--}}
                 {{--                <li><a href="inline.html">Special News</a></li>--}}
             </ul>
@@ -54,8 +54,13 @@
             </span>
             </a>
             <ul class="treeview-menu">
-                <li class="active"><a href="morris.html">All Category</a></li>
-                <li><a href="chartjs.html">Add Category</a></li>
+                <li class="active">
+                    <a href="{{route($routePrefix.'.news-category.index')}}">
+                        All Category
+                    </a></li>
+                <li><a href="{{route($routePrefix.'.news-category.create')}}">
+                        Add Category
+                    </a></li>
             </ul>
         </li>
         <li class="treeview ">

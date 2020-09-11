@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +144,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../erp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Repositories" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -154,11 +157,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Repositories" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Responses" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Providers" />
-      <recent name="C:\laragon\www\blmedia\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -178,7 +181,7 @@
       <workItem from="1599657278511" duration="14000" />
       <workItem from="1599661242900" duration="3572000" />
       <workItem from="1599749613774" duration="15733000" />
-      <workItem from="1599798751045" duration="7962000" />
+      <workItem from="1599798751045" duration="19524000" />
     </task>
     <servers />
   </component>
@@ -198,22 +201,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599800793625" />
-    <state width="1025" height="302" key="GridCell.Tab.0.bottom" timestamp="1599756949167">
+    <state width="1025" height="23" key="GridCell.Tab.0.bottom" timestamp="1599819831802">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="302" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599756949167" />
-    <state width="1025" height="302" key="GridCell.Tab.0.center" timestamp="1599756949167">
+    <state width="1025" height="23" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
+    <state width="1025" height="23" key="GridCell.Tab.0.center" timestamp="1599819831802">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="302" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599756949167" />
-    <state width="1025" height="302" key="GridCell.Tab.0.left" timestamp="1599756949167">
+    <state width="1025" height="23" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
+    <state width="1025" height="23" key="GridCell.Tab.0.left" timestamp="1599819831802">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="302" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599756949167" />
-    <state width="1025" height="302" key="GridCell.Tab.0.right" timestamp="1599756949167">
+    <state width="1025" height="23" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
+    <state width="1025" height="23" key="GridCell.Tab.0.right" timestamp="1599819831802">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="302" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599756949167" />
+    <state width="1025" height="23" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
     <state x="522" y="128" key="NewPhpClassDialog" timestamp="1599764369976">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -222,9 +225,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1599762876327" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599803731992">
+    <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599819003005">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599803731992" />
+    <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1599819003005" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599818963075">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599818963075" />
   </component>
 </project>

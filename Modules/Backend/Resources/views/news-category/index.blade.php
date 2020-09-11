@@ -14,9 +14,9 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.news.create')}}">
+                   href="{{route($routePrefix.'.news-category.create')}}">
                     <i class="fa fa-plus"></i>
-                    Add News
+                    Add News Category
                 </a>
             </div>
             <div class="box">
@@ -30,8 +30,7 @@
                         <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>News</th>
-                            <th>Publish Date</th>
+                            <th>Category</th>
                             <th class="no-sort">Action</th>
                         </tr>
                         </thead>

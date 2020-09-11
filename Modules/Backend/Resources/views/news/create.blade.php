@@ -10,7 +10,11 @@
 @stop
 @section('content')
     @include('backend::partials.errors')
-    {!! Form::model([$news,'route'=>$routePrefix.'.news.store','method'=>'POST','class'=>'form-horizontal','file'=>true] ) !!}
-     @include($module.'::news.partials.form')
-    {!! Form::close() !!}
+    <div class="row">
+        <div class="col-md-12">
+            {!! Form::open(['route'=> $routePrefix.'.news.store','method'=>'POST','class'=>'form-horizontal','file'=>true] ) !!}
+            @include($module.'::news.partials.form')
+            {!! Form::close() !!}
+        </div>
+    </div>
 @endsection

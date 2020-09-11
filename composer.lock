@@ -620,20 +620,20 @@
         },
         {
             "name": "garygreen/pretty-routes",
-            "version": "1.0.9",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/garygreen/pretty-routes.git",
-                "reference": "5ccc9da7b61dec15ad733007956b0ea5af6dd8bd"
+                "reference": "ebd9e2328bc213f3c413d4ec7e3aef53801d1646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/garygreen/pretty-routes/zipball/5ccc9da7b61dec15ad733007956b0ea5af6dd8bd",
-                "reference": "5ccc9da7b61dec15ad733007956b0ea5af6dd8bd",
+                "url": "https://api.github.com/repos/garygreen/pretty-routes/zipball/ebd9e2328bc213f3c413d4ec7e3aef53801d1646",
+                "reference": "ebd9e2328bc213f3c413d4ec7e3aef53801d1646",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "5.*|6.*|7.*"
+                "laravel/framework": "5.*|6.*|7.*|8.*"
             },
             "type": "library",
             "extra": {
@@ -658,8 +658,8 @@
                     "email": "holegary@gmail.com"
                 }
             ],
-            "description": "Pretty routes for Laravel 5.",
-            "time": "2020-06-12T22:50:40+00:00"
+            "description": "Pretty routes for Laravel 5+",
+            "time": "2020-09-11T03:13:41+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

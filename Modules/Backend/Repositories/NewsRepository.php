@@ -13,4 +13,26 @@ class NewsRepository extends Repository
     {
         $this->model = $news;
     }
+
+    public function getViewData()
+    {
+        $selectPublishStatuses = $this->selectNewsStatus();
+        $selectGuests = [];
+        $selectReporters = [];
+        return [
+            'selectPublishStatuses' => $selectPublishStatuses,
+            'selectReporter' => $selectReporters,
+            'selectGuests' => $selectGuests,
+        ];
+    }
+
+    public function selectNewsStatus()
+    {
+
+        $publishStatuses = [];
+        foreach (News::publishStatus() as $status) {
+            $publishStatuses[$status] = $status;
+        }
+        return $publishStatuses;
+    }
 }

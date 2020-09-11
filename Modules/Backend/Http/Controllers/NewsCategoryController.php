@@ -3,8 +3,9 @@
 namespace Modules\Backend\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Modules\Backend\Entities\News;
+use Modules\Backend\Entities\NewsCategory;
 use Modules\Backend\Http\Responses\Response;
+use Modules\Backend\Repositories\NewsCategoryRepository;
 
 class NewsCategoryController extends Controller
 {
@@ -12,10 +13,15 @@ class NewsCategoryController extends Controller
     protected $routePrefix = 'news-category';
     protected $viewPath = 'backend::news-category.';
     private $model;
+    /**
+     * @var NewsCategoryRepository
+     */
+    private $repository;
 
-    public function __construct(News $news)
+    public function __construct(NewsCategory $newsCategory)
     {
-        $this->model = $news;
+        $this->model = $newsCategory;
+        $this->repository = new NewsCategoryRepository($newsCategory);
 //        $this->middleware('auth:account');
 //        $this->middleware('permission:account-permission');
     }

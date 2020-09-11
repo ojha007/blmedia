@@ -1,25 +1,16 @@
 @extends($module.'::layouts.master')
 @section('header')
-    News
+    News Category
 @stop
 @section('subHeader')
-    Create  News
+    Create  News category
 @stop
 @section('breadcrumb')
     {{--    {{ Breadcrumbs::render('news.create',$routePrefix) }}--}}
 @stop
 @section('content')
     @include('backend::partials.errors')
-    {!! Form::model(
-                    [
-                    'route'=>$routePrefix.'.news.store',
-                    'method'=>'POST',
-                    'class'=>'form-horizontal',
-                    'enctype'=>'multipart/form-data'
-                    ]
-                    )
-                 !!}
-
-    @include($module.'::news.partials.form')
-    {!! Form::close() !!}
+    @include($module.'::news-category.partials.form')
 @endsection
+
+
