@@ -15,7 +15,9 @@ class CreateNewsCategoryMetatags extends Migration
     {
         Schema::create('news_category_meta_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('news_category_id')->references('id')->on('news_categories');
+            $table->unsignedBigInteger('news_category_id');
+            $table->foreign('news_category_id')->references('id')
+                ->on('news_categories');
             $table->string('meta-title');
             $table->string('meta-keywords');
             $table->string('meta-description');
@@ -30,6 +32,6 @@ class CreateNewsCategoryMetatags extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('');
+        Schema::dropIfExists('news_category_meta_tags');
     }
 }

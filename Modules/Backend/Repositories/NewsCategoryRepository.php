@@ -14,5 +14,13 @@ class NewsCategoryRepository extends Repository
         $this->model = $newsCategory;
     }
 
+    public function getViewData()
+    {
+        $selectCategoryCodes = NewsCategory::selectCategoryCode();
+        return [
+            'selectCategoriesCodes' => $selectCategoryCodes
+        ];
+    }
+
 
 }

@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-md-1">
                     <label></label>
-                    <a class="btn btn-primary btn-flat text-center align-center"
+                    <a class="btn btn-primary btn-flat text-center bootstrap-modal-form-open align-center"
                        data-target="#add_guest"
                        data-toggle="modal"
                        title="Add New Guest">
@@ -114,6 +114,13 @@
             </div>
 
         </div>
+        <div class="box-footer">
+            <a href="{{route($routePrefix.'.news.index')}}" type="button" class="btn btn-flat btn-default">
+                <i class="fa fa-arrow-left">
+                </i>
+                Close
+            </a>
+        </div>
 
     </div>
 </div>
@@ -123,7 +130,8 @@
     <!-- general form elements -->
     <div class="box box-default">
         <div class="box-body">
-            <div class="form-group col-md-12 " style="padding-right: 0">
+            <div class="form-group col-md-12 {{$errors->has('publish_time') ? 'has-error':''}}"
+                 style="padding-right: 0">
                 <label for="publish_time"> <i class="fa fa-calendar"></i>
                     <b> Publish on</b>
                 </label>
@@ -239,53 +247,7 @@
 </div>
 
 
-{{--<div id="add_guest" class="modal fade" role="dialog">--}}
-{{--    <div class="modal-dialog">--}}
-{{--        <form method="post" id="user_form" enctype="multipart/form-data">--}}
-{{--            <!-- Modal content-->--}}
-{{--            <div class="modal-content">--}}
-{{--                <div class="modal-header">--}}
-{{--                    <button type="button" class="close" data-dismiss="modal">&times;</button>--}}
-{{--                    <h4 class="modal-title">Form Adding New Guest</h4>--}}
-{{--                </div>--}}
-{{--                <div class="modal-body">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-md-6 col-sm-12">--}}
-{{--                            <label>Name<span class="asterisk">*</span></label>--}}
-{{--                            <input type="text" id="guest_title" class="form-control" name="guest_title"--}}
-{{--                                   data-validation-allowing="float" size="50" data-validation="required"--}}
-{{--                                   --}}{{--                                   value="<?php echo (isset($detail['guest_title']) && $detail['guest_title'] != "") ? $detail['guest_title'] : ""; ?>"--}}
-{{--                                   autocomplete="off" class="regular-text required valid"--}}
-{{--                                   kl_virtual_keyboard_secure_input="on">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-md-6 col-sm-12">--}}
-{{--                            <label>Organization<span class="asterisk">*</span></label>--}}
-{{--                            <input type="text" id="organization" class="form-control" name="organization"--}}
-{{--                                   data-validation-allowing="float" size="50" data-validation="required"--}}
-{{--                                   --}}{{--                                   value="<?php echo (isset($detail['organization']) && $detail['organization'] != "") ? $detail['organization'] : ""; ?>"--}}
-{{--                                   autocomplete="off" class="regular-text required valid"--}}
-{{--                                   kl_virtual_keyboard_secure_input="on">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-md-12 col-sm-12">--}}
-{{--                            <label>Profile Picture<span class="asterisk">*</span></label>--}}
-{{--                            <input type="file" class="form-control" name="guest_image" id="guest_image">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="modal-footer">--}}
-{{--                    <button type="button" id="guest_submit_btn" name="action"--}}
-{{--                            class="btn btn-success btn-flat"--}}
-{{--                            value="Add">Add--}}
-{{--                    </button>--}}
-{{--                    <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close--}}
-{{--                    </button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-{{--</div>--}}
+
 
 @push('scripts')
 
@@ -306,7 +268,7 @@
     {{--                    $.ajax({--}}
     {{--                        url: "<?php echo site_url('news/ajax_guest'); ?>",--}}
     {{--                        method: 'POST',--}}
-    {{--                        data: new FormData($('#user_form')[0]),--}}
+    {{--                            data: new FormData($('#user_form')[0]),--}}
     {{--                        contentType: false,--}}
     {{--                        processData: false,--}}
     {{--                        success: function (data) {--}}

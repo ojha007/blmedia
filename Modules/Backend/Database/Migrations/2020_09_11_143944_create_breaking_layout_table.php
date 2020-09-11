@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactTypesTable extends Migration
+class CreateBreakingLayoutTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateContactTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_types', function (Blueprint $table) {
+        Schema::create('breaking_layouts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->unique();
-            $table->string('description');
-            $table->string('slug');
+            $table->string('layout_name');
+            $table->boolean('is_active')->default(1);
+            $table->integer('number')->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateContactTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_types');
+        Schema::dropIfExists('breaking_layouts');
     }
 }

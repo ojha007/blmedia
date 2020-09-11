@@ -17,11 +17,17 @@ class CreateNewsCategoryTable extends Migration
             $table->bigIncrements('id');
             $table->text('title');
             $table->string('slug');
+            $table->boolean('in_front')->default(1);
+            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->foreign('parent_id')
+                ->references('id')
+                ->on('news_categories');
+            $table->integer('position');
+            $table->string('category_url');
+            $table->enum('category_code',['HM','LS','OT']);
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();
-
-            $table->timestamps();
         });
     }
 
@@ -32,6 +38,6 @@ class CreateNewsCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_category');
+        Schema::dropIfExists('news_categories');
     }
 }

@@ -4,6 +4,7 @@ namespace Modules\Backend\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Modules\Backend\Entities\NewsCategory;
+use Modules\Backend\Http\Requests\NewsCategoryRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\NewsCategoryRepository;
 
@@ -35,7 +36,11 @@ class NewsCategoryController extends Controller
     public function create()
     {
         $viewPath = $this->viewPath . 'create';
-        return new Response($viewPath, ['news' => $this->model]);
+        $attributes = [
+            'news' => $this->model,
+            'selectCategories' => $this->repository->getViewData()
+        ];
+        return new Response($viewPath, $attributes);
     }
 
     public function edit()
@@ -48,8 +53,9 @@ class NewsCategoryController extends Controller
 
     }
 
-    public function store()
+    public function store(NewsCategoryRequest $request)
     {
-
+        $attributes = $request->validated();
+        dd($attributes);
     }
 }

@@ -21,10 +21,10 @@ class CreateNewsTable extends Migration
             $table->unsignedBigInteger('guest_id')->nullable();
             $table->foreign('guest_id')
                 ->references('id')
-                ->on('contacts');
+                ->on('guests');
             $table->unsignedBigInteger('reporter_id')->nullable();
             $table->foreign('reporter_id')->references('id')
-                ->on('contacts');
+                ->on('reporters');
             $table->string('tag_line')->nullable();
             $table->longText('description');
             $table->text('short_description');

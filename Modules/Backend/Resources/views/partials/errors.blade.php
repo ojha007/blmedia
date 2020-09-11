@@ -7,7 +7,7 @@
         ]
 @endphp
 @if ($message = session()->has($errors_config))
-    <div class="box-body" style="padding-left: 15px; padding-right: 15px;">
+    <div class="box-body" style="padding-left: 0; padding-right: 0;">
         <div class="alert alert-{{$errors_config['success']}} alert-dismissible no-margin">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h4><i class="icon fa fa-check"></i>{{ucwords($errors_config[0])}}!</h4>
@@ -16,7 +16,7 @@
     </div>
 @endif
 @if ($errors->any())
-    <div class="box-body"style="padding-left: 15px; padding-right: 15px;">
+    <div class="box-body"style="padding-left: 0; padding-right: 0;">
         <div class="alert alert-danger alert-dismissible no-margin">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h4><i class="icon fa fa-ban"></i> Error!</h4>

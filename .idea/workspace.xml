@@ -3,8 +3,54 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Advertisement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/AdvertisementController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/AdvertisementRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsCategoryRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/AdvertisementRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/assets/js/boostrap-modal-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/add-new-guest-modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/meta-info/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165956_create_news_category_metatags.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165956_create_news_category_metatags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_170004_create_news_metatags.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_170004_create_news_metatags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_11_074934_create_contact_types_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_11_074942_create_contacts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_11_080018_create_contacts_type_pivot_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/NewsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/NewsCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/errors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/errors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +64,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -136,6 +186,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1hH9iPbitgqVNbGsFRi8j5w2CwB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -144,7 +195,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Repositories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Http/Requests" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -157,11 +208,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Requests" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Repositories" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Responses" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Providers" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Entities" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -181,42 +232,61 @@
       <workItem from="1599657278511" duration="14000" />
       <workItem from="1599661242900" duration="3572000" />
       <workItem from="1599749613774" duration="15733000" />
-      <workItem from="1599798751045" duration="19524000" />
+      <workItem from="1599798751045" duration="19682000" />
+      <workItem from="1599820033284" duration="86000" />
+      <workItem from="1599827304678" duration="1684000" />
+      <workItem from="1599829085927" duration="9684000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599756759719">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1599756759719" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599762644324">
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599839095699">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599762644324" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599800793625">
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1599839095699" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599838944169">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599800793625" />
-    <state width="1025" height="23" key="GridCell.Tab.0.bottom" timestamp="1599819831802">
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599838944169" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599835945536">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="23" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
-    <state width="1025" height="23" key="GridCell.Tab.0.center" timestamp="1599819831802">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599835945536" />
+    <state width="1403" height="236" key="GridCell.Tab.0.bottom" timestamp="1599835332731">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="23" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
-    <state width="1025" height="23" key="GridCell.Tab.0.left" timestamp="1599819831802">
+    <state width="1403" height="236" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599835332731" />
+    <state width="1403" height="236" key="GridCell.Tab.0.center" timestamp="1599835332731">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="23" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
-    <state width="1025" height="23" key="GridCell.Tab.0.right" timestamp="1599819831802">
+    <state width="1403" height="236" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599835332731" />
+    <state width="1403" height="236" key="GridCell.Tab.0.left" timestamp="1599835332731">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1025" height="23" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599819831802" />
+    <state width="1403" height="236" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599835332731" />
+    <state width="1403" height="236" key="GridCell.Tab.0.right" timestamp="1599835332731">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1403" height="236" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599835332731" />
     <state x="522" y="128" key="NewPhpClassDialog" timestamp="1599764369976">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -229,9 +299,25 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1599819003005" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599818963075">
+    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599832642699">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599818963075" />
+    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.834@0.0.1536.834" timestamp="1599832642699" />
+    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1599831171491">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.834@0.0.1536.834" timestamp="1599831171491" />
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1599830863510">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1599830863510" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1599838567495">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1599838567495" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599838003694">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599838003694" />
   </component>
 </project>

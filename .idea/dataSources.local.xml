@@ -15,6 +15,7 @@
             <name qname="@" />
             <name qname="bl_nepali" />
             <name qname="db_bl_nepali" />
+            <name qname="bl_hindi" />
           </node>
         </introspection-scope>
       </schema-mapping>

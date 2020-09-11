@@ -10,7 +10,13 @@
 @stop
 @section('content')
     @include('backend::partials.errors')
-    @include($module.'::news-category.partials.form')
+    <div class="row">
+        <div class="col-md-12">
+            @include($module.'::news-category.partials.form')
+        </div>
+    </div>
+
+
 @endsection
 
 
