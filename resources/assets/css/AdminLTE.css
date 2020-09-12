@@ -792,7 +792,7 @@ a:focus {
 }
 
 /*
- * Component: Control sidebar. By default, this is the right sidebar.
+ * Component: Control sidebar. By default, this is the right-content sidebar.
  */
 .control-sidebar-bg {
     position: fixed;

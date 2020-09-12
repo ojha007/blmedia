@@ -1,19 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Module Frontend</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bl Media</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @include('frontend::partials.style')
+    @stack('styles')
+</head>
 
-       {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/frontend.css') }}"> --}}
+<body>
+<!-- Main Header -->
+@include('frontend::partials.header')
+{{--    Header Close--}}
+<!-- Main content -->
+@yield('content')
+<!-- /.content -->
+{{--Main Footer--}}
+@include('frontend::partials.footer')
+{{--    Close Footer--}}
+</body>
 
-    </head>
-    <body>
-        @yield('content')
-
-        {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/frontend.js') }}"></script> --}}
-    </body>
+@include('frontend::partials.script')
+@stack('scripts')
 </html>
+

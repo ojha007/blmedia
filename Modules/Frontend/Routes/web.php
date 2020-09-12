@@ -1,16 +1,21 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::prefix('frontend')->group(function() {
-    Route::get('/', 'FrontendController@index');
+//Route::prefix('frontend')->group(function() {
+//    Route::get('/', 'FrontendController@index');
+//});
+$edition = '';
+Route::group(
+    [
+        'middleware' => 'web',
+        'prefix' => $edition,
+        'as' => $edition,
+        'edition' => $edition,
+        'module' => 'frontend'], function ($router) {
+    $router->get('/', 'FrontendController@index');
+//    include __DIR__ . '/subRoutes/newsCategory.php';
+//    include __DIR__ . '/subRoutes/news.php';
+//    include __DIR__ . '/subRoutes/contact.php';
+//    include __DIR__ . '/subRoutes/advertisement.php';
 });
+

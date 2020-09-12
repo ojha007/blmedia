@@ -10,7 +10,7 @@ class FrontendServiceProvider extends ServiceProvider
     /**
      * @var string $moduleName
      */
-    protected $moduleName = 'Frontend';
+    protected $moduleName = 'frontend';
 
     /**
      * @var string $moduleNameLower

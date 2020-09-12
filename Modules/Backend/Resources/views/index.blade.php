@@ -59,7 +59,7 @@
                                 <div class="box-body">
                                     <!-- Conversations are loaded here -->
                                     <div class="direct-chat-messages">
-                                        <!-- Message. Default to the left -->
+                                        <!-- Message. Default to the left-content -->
                                         <div class="direct-chat-msg">
                                             <div class="direct-chat-info clearfix">
                                                 <span class="direct-chat-name pull-left">Alexander Pierce</span>
@@ -76,7 +76,7 @@
                                         </div>
                                         <!-- /.direct-chat-msg -->
 
-                                        <!-- Message to the right -->
+                                        <!-- Message to the right-content -->
                                         <div class="direct-chat-msg right">
                                             <div class="direct-chat-info clearfix">
                                                 <span class="direct-chat-name pull-right">Sarah Bullock</span>
@@ -93,7 +93,7 @@
                                         </div>
                                         <!-- /.direct-chat-msg -->
 
-                                        <!-- Message. Default to the left -->
+                                        <!-- Message. Default to the left-content -->
                                         <div class="direct-chat-msg">
                                             <div class="direct-chat-info clearfix">
                                                 <span class="direct-chat-name pull-left">Alexander Pierce</span>
@@ -110,7 +110,7 @@
                                         </div>
                                         <!-- /.direct-chat-msg -->
 
-                                        <!-- Message to the right -->
+                                        <!-- Message to the right-content -->
                                         <div class="direct-chat-msg right">
                                             <div class="direct-chat-info clearfix">
                                                 <span class="direct-chat-name pull-right">Sarah Bullock</span>
