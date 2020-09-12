@@ -14,25 +14,21 @@ class AdvertisementRepository extends Repository
         $this->model = $advertisement;
     }
 
-//    public function getViewData()
-//    {
-//        $selectPublishStatuses = $this->selectNewsStatus();
-//        $selectGuests = [];
-//        $selectReporters = [];
-//        return [
-//            'selectPublishStatuses' => $selectPublishStatuses,
-//            'selectReporter' => $selectReporters,
-//            'selectGuests' => $selectGuests,
-//        ];
-//    }
-//
-//    public function selectNewsStatus()
-//    {
-//
-//        $publishStatuses = [];
-//        foreach (News::publishStatus() as $status) {
-//            $publishStatuses[$status] = $status;
-//        }
-//        return $publishStatuses;
-//    }
+    public function getViewData()
+    {
+        $selectPublishStatuses = [];
+        $selectGuests = [];
+        $selectReporters = [];
+        $selectAdsFor = config('ads');
+        $selectAdsSubFor = config('backend::advertisement.sub_for');
+        dd($selectAdsFor);
+        return [
+            'selectPublishStatuses' => $selectPublishStatuses,
+            'selectReporter' => $selectReporters,
+            'selectGuests' => $selectGuests,
+            'selectAdsFor' => $selectAdsFor,
+            'selectAdsSubFor' => $selectAdsSubFor,
+        ];
+    }
+
 }

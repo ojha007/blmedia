@@ -3,6 +3,7 @@
 namespace Modules\Backend\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Modules\Backend\Entities\News;
 
 class NewsRequest extends FormRequest
 {
@@ -17,14 +18,19 @@ class NewsRequest extends FormRequest
             'title' => 'required',
             'sub_title' => 'nullable|string|max:255',
             'tag_line' => 'nullable',
-            'reporter_id' => ['nullable'],
-            'guest_id' => ['nullable'],
+            'reporter_id' => 'nullable|exists:reporters,id',
+            'guest_id' => 'nullable|exists:guests,id',
             'description' => 'required',
+            'image_caption' => 'nullable|string|max:255',
             'short_description' => 'nullable',
             'external_url' => 'nullable',
             'publish_time' => 'required|date',
             'expiry_date' => 'nullable|date',
-            'is_fixed' => 'required|boolean'
+            'image' => 'nullable',
+            'video_url' => 'nullable',
+            'is_flash' => 'required|boolean',
+            'is_fixed' => 'required|boolean',
+            'publish_status' => 'required|in:' . implode(',', News::publishStatus()),
         ];
     }
 

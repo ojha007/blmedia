@@ -1,12 +1,14 @@
 @extends($module.'::layouts.master')
+
 @section('header')
-    News
+    {{$type}}
 @stop
 @section('subHeader')
-    List of News
+    List of  {{$type}}
 @stop
+
 @section('breadcrumb')
-    {{--    {{ Breadcrumbs::render('news.index',$routePrefix) }}--}}
+    {{ Breadcrumbs::render(strtolower($type).'.index',$routePrefix) }}
 @stop
 @section('content')
     @include('backend::partials.errors')
@@ -14,9 +16,9 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.news-category.create')}}">
+                   href="{{route($routePrefix.'.'. strtolower($type) .'.create')}}">
                     <i class="fa fa-plus"></i>
-                    Add News Category
+                    Add {{$type}}
                 </a>
             </div>
             <div class="box">
@@ -30,19 +32,21 @@
                         <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>Category</th>
-                            <th>status</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Status</th>
                             <th class="no-sort">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($categories as $category)
+                        @foreach($contacts as $contact)
                             <tr>
-                                <td>{{$category->id}}</td>
-                                <td>{{$category->title}}</td>
-                                <td></td>
+                                <td>{{$contact->id}}</td>
+                                <td>{{$contact->name}}</td>
+                                <td>{{$contact->image}}</td>
+                                <td>{!! spanByStatus($contact->is_active) !!}</td>
                                 <td>
-                                    <a href="{{route($routePrefix.'.news-category.edit',$category->id)}}"
+                                    <a href="{{route($routePrefix.'.'.strtolower($type).'.edit',$contact->id)}}"
                                        class="btn btn-primary btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
@@ -54,6 +58,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    {{$contacts->links()}}
                 </div>
                 <!-- /.box-body -->
             </div>

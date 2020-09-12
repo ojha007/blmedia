@@ -26,9 +26,9 @@
             </div>
             <div class="col-md-12 form-group {{$errors->has('sub_title') ?'has-error':''}}">
                 {{Form::label('sub_title','Sub Title:')}}
-                {{Form::text('secondary_title',null,
+                {{Form::text('sub_title',null,
                             [
-                            'class'=>'col-md-6 form-control required valid',
+                            'class'=>'col-md-6 form-control',
                             'autocomplete'=>'off',
                             'title'=>'Title',
                             'placeholder'=>'Enter Secondary Title',
@@ -162,7 +162,6 @@
                             </div>
                             <div class="modal-body">
                                 <iframe width="100%" height="400"
-                                        frameborder="0"
                                         style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
                             </div>
                             <div class="modal-footer">
@@ -232,7 +231,7 @@
 
                 </div>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 {{$errors->has('publish_status') ? 'has-error':''}}">
                 {!! Form::label('publish_status','Publish Status') !!}
                 {!! Form::select('publish_status',$selectPublishStatuses,null,['class'=>'form-control select2','placeholder'=>'Select Publish ']) !!}
             </div>
@@ -250,7 +249,10 @@
 
 
 @push('scripts')
+    <script>
 
+        CKEDITOR.replace( 'description');
+    </script>
     {{--    <script type="text/javascript" language="javascript">--}}
     {{--        $(document).on('ready', function () {--}}
     {{--            $(document).on('click', '#guest_submit_btn', function (event) {--}}

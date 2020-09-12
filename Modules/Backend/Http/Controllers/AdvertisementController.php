@@ -8,7 +8,7 @@ use Modules\Backend\Entities\News;
 use Modules\Backend\Http\Requests\NewsRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\AdvertisementRepository;
-use Modules\Backend\Repositories\NewsRepository;
+
 
 class AdvertisementController extends Controller
 {
@@ -19,17 +19,14 @@ class AdvertisementController extends Controller
      * @var News
      */
     private $model;
-    /**
-     * @var NewsRepository
-     */
+
     private $repository;
 
     public function __construct(Advertisement $advertisement)
     {
         $this->model = $advertisement;
         $this->repository = new AdvertisementRepository($advertisement);
-//        $this->middleware('auth:account');
-//        $this->middleware('permission:account-permission');
+
     }
 
 

@@ -10,6 +10,8 @@
         "Modules\\Backend\\Providers\\ResourceBreadCrumbsServiceProvider"
     ],
     "aliases": {},
-    "files": [],
+    "files": [
+        "Http\\helpers.php"
+    ],
     "requires": []
 }

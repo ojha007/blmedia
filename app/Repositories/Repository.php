@@ -59,9 +59,14 @@ abstract class Repository implements RepositoryInterface
         return $this->model;
     }
 
-    protected function find($id)
+    public function find($id)
     {
         return $this->model->find($id);
+    }
+
+    public function paginate(int $page)
+    {
+        return $this->model->paginate($page);
     }
 
 }

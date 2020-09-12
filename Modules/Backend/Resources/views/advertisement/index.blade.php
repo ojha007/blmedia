@@ -1,12 +1,12 @@
 @extends($module.'::layouts.master')
 @section('header')
-    News
+    Advertisements
 @stop
 @section('subHeader')
-    List of News
+    List of Advertisements
 @stop
 @section('breadcrumb')
-    {{ Breadcrumbs::render('news.index',$routePrefix) }}
+    {{--    {{ Breadcrumbs::render('news.index',$routePrefix) }}--}}
 @stop
 @section('content')
     @include('backend::partials.errors')
@@ -14,9 +14,9 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.news.create')}}">
+                   href="{{route($routePrefix.'.advertisements.create')}}">
                     <i class="fa fa-plus"></i>
-                    Add News
+                    Add Advertisements
                 </a>
             </div>
             <div class="box">

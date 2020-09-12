@@ -25,10 +25,15 @@ class ViewComposerServiceProvider extends ServiceProvider
             $prefix = Request::route()->getAction('routePrefix');
             $edition = Request::route()->getAction('edition');
             $module = Request::route()->getAction('module');
+            $contactTypes = [
+                'users', 'reporters', 'guests'
+            ];
             $view->with([
                 'routePrefix' => $edition . '.' . $prefix,
                 'urlPrefix' => $edition . '/' . $prefix,
-                'module' => $module]);
+                'module' => $module,
+                'contactTypes' => $contactTypes
+            ]);
         });
     }
 

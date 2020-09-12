@@ -15,7 +15,7 @@ class CreateNewsCategoryTable extends Migration
     {
         Schema::create('news_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('title');
+            $table->text('name');
             $table->string('slug');
             $table->boolean('in_front')->default(1);
             $table->unsignedBigInteger('parent_id')->nullable();
@@ -24,7 +24,8 @@ class CreateNewsCategoryTable extends Migration
                 ->on('news_categories');
             $table->integer('position');
             $table->string('category_url');
-            $table->enum('category_code',['HM','LS','OT']);
+            $table->enum('category_code', ['HM', 'LS', 'OT']);
+            $table->boolean('is_active')->default(1);
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();

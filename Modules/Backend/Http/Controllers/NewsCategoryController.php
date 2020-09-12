@@ -23,29 +23,32 @@ class NewsCategoryController extends Controller
     {
         $this->model = $newsCategory;
         $this->repository = new NewsCategoryRepository($newsCategory);
-//        $this->middleware('auth:account');
-//        $this->middleware('permission:account-permission');
     }
 
 
     public function index()
     {
-        return new Response($this->viewPath . 'index');
+        $categories = $this->repository->getAll();
+        return new Response($this->viewPath . 'index', ['categories' => $categories]);
     }
 
     public function create()
     {
         $viewPath = $this->viewPath . 'create';
         $attributes = [
-            'news' => $this->model,
-            'selectCategories' => $this->repository->getViewData()
+            'category' => $this->model,
         ];
+        $attributes = array_merge($attributes, $this->repository->getViewData());
         return new Response($viewPath, $attributes);
     }
 
-    public function edit()
+    public function edit(NewsCategory $newsCategory)
     {
-        return new Response($this->viewPath . 'create');
+        $attributes = [
+            'category' => $newsCategory,
+        ];
+        $attributes = array_merge($attributes, $this->repository->getViewData());
+        return new Response($this->viewPath . 'edit', $attributes);
     }
 
     public function update()

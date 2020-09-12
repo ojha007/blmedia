@@ -24,6 +24,7 @@ class NewsController extends Controller
 
     public function __construct(News $news)
     {
+
         $this->model = $news;
         $this->repository = new NewsRepository($news);
 //        $this->middleware('auth:account');

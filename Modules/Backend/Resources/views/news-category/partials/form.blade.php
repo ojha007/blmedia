@@ -22,7 +22,8 @@
                     </div>
                     <div class="form-group col-md-6 {{$errors->has('parent_id')?'has-error':''}}">
                         {{ Form::label('parent_id', 'Parent Category:', ['class'=>'control-label required'])}}
-                        {!! Form::select('parent_id',[], null, array('placeholder' => 'Select Parent Category','class' => 'form-control select2')) !!}
+                        {!! Form::select('parent_id',$selectParentCategories,
+                                null, array('placeholder' => 'Select Parent Category','class' => 'form-control select2')) !!}
 
                     </div>
                     <div class="form-group col-md-6 {{$errors->has('slug')?'has-error':''}}">
@@ -32,7 +33,8 @@
                     </div>
                     <div class="form-group col-md-6 {{$errors->has('category_code')?'has-error':''}}">
                         {{ Form::label('category_code', 'Code:', ['class'=>'control-label required'])}}
-                        {!! Form::select('category_code', ['HM'=>'HM','LS'=>'LS','OT'=>'OT'], null, array('placeholder' => 'Select Category Code','class' => 'form-control')) !!}
+                        {!! Form::select('category_code', $selectCategoriesCodes, null,
+                    array('placeholder' => 'Select Category Code','class' => 'form-control')) !!}
 
                     </div>
                     <div class="form-group col-md-6 ">
