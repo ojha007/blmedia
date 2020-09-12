@@ -17,7 +17,7 @@ class CreateNewsTable extends Migration
             $table->bigIncrements('id');
             $table->text('title');
             $table->text('sub_title')->nullable();
-            $table->string('slug');
+//            $table->string('slug');
             $table->unsignedBigInteger('guest_id')->nullable();
             $table->foreign('guest_id')
                 ->references('id')
@@ -27,12 +27,14 @@ class CreateNewsTable extends Migration
                 ->on('reporters');
             $table->string('tag_line')->nullable();
             $table->longText('description');
-            $table->text('short_description');
+            $table->text('short_description')->nullable();
             $table->bigInteger('view_count')->default(0);
-            $table->string('external_url');
-            $table->date('publish_date');
+            $table->string('external_url')->nullable();
+            $table->dateTime('publish_date');
             $table->date('expiry_date');
             $table->boolean('is_fixed');
+            $table->boolean('is_special');
+            $table->boolean('is_anchor');
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();

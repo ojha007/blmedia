@@ -13,15 +13,20 @@ class NewsCategoryRequest extends FormRequest
      */
     public function rules()
     {
+
+        $id = $this->route()->parameter('news_category');
         return [
-            'title' => 'required|unique:news_categories,slug',
-            'slug' => 'required|unique:news_categories,slug',
-            'tag_line' => 'nullable',
+            'name' => 'required|unique:news_categories,name,' . $id,
+            'slug' => 'required|unique:news_categories,slug,' . $id,
             'parent_id' => 'nullable|exists:news_categories,id',
             'position' => 'required|numeric',
             'in_front' => 'required|boolean',
             'in_mobile' => 'required|boolean',
             'category_code' => 'required|in:HM,LS,OT',
+            'meta_title' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
+            'meta_description' => 'nullable|string'
+
         ];
     }
 

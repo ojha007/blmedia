@@ -18,9 +18,9 @@ class CreateNewsCategoryMetatags extends Migration
             $table->unsignedBigInteger('news_category_id');
             $table->foreign('news_category_id')->references('id')
                 ->on('news_categories');
-            $table->string('meta-title');
-            $table->string('meta-keywords');
-            $table->string('meta-description');
+            $table->string('meta_title')->nullable();
+            $table->string('meta_keywords')->nullable();
+            $table->string('meta_description')->nullable();
             $table->timestamps();
         });
     }

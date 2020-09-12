@@ -51,9 +51,10 @@ class NewsCategoryController extends Controller
         return new Response($this->viewPath . 'edit', $attributes);
     }
 
-    public function update()
+    public function update(NewsCategoryRequest $request)
     {
-
+        $attributes = $request->validated();
+        dd($attributes);
     }
 
     public function store(NewsCategoryRequest $request)

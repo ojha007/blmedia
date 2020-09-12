@@ -27,3 +27,12 @@ function camelCaseToUcWord($string)
     $string = ucwords(str_replace('_', ' ', $string));
     return $string;
 }
+
+function getBaseRouteByUrl($request): string
+{
+    $routeSting = $request->route()->getAction('as');
+    $toArray = explode('.', $routeSting);
+    $a = array_slice($toArray, 0, -1);
+    return implode('.', $a);
+
+}

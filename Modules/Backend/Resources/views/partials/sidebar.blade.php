@@ -99,7 +99,27 @@
                 <i class="fa  fa-sliders"></i> <span>Advertisement</span>
             </a>
         </li>
-
+        <li class="header">SETTINGS</li>
+        <li class="treeview {{request()->is($urlPrefix.'/news-category',
+                    $urlPrefix.'/news-category/create') ? 'active':''}}">
+            <a href="#">
+                <i class="fa fa-cogs"></i>
+                <span>Settings</span>
+                <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+            </a>
+            @php($settings =['site-settings','email-setting','images-setting'])
+            <ul class="treeview-menu">
+                @foreach($settings as $setting)
+                    <li class="{{request()->is($urlPrefix.'/settings/*') ? 'active': ''}}">
+                        <a href="{{route($routePrefix.'.settings.index',$setting)}}">
+                            {{ucwords(str_replace('-', ' ' ,$setting))}}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </li>
     </ul>
 </section>
 <!-- /.sidebar -->

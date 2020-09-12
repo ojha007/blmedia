@@ -10,7 +10,6 @@
                     {{ucwords($b)}} {{$type}}
                 </strong>
             </h3>
-
         </div>
         <div class="box-body">
             <div class="form-group col-md-6 {{$errors->has('name') ?'has-error':''}}">
@@ -136,7 +135,6 @@
                 Submit
             </button>
         </div>
-
     </div>
 </div>
 

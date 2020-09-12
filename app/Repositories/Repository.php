@@ -66,7 +66,9 @@ abstract class Repository implements RepositoryInterface
 
     public function paginate(int $page)
     {
-        return $this->model->paginate($page);
+        return $this->model
+            ->orderBy('created_at', 'DESC')
+            ->paginate($page);
     }
 
 }

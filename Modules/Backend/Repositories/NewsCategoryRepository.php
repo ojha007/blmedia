@@ -17,7 +17,8 @@ class NewsCategoryRepository extends Repository
     public function getViewData()
     {
         $selectCategoryCodes = NewsCategory::selectCategoryCode();
-        $selectParentCategories = $this->model->whereNull('parent_id')->pluck('title', 'id');
+        $selectParentCategories = $this->model->whereNull('parent_id')
+            ->pluck('name', 'id');
         return [
             'selectCategoriesCodes' => $selectCategoryCodes,
             'selectParentCategories' => $selectParentCategories
