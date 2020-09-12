@@ -177,7 +177,7 @@ return [
 
 
         //change database connection on runtime
-        \App\Providers\SwitchDatabaseConnectionServiceProvider::class
+//        \App\Providers\SwitchDatabaseConnectionServiceProvider::class
 
     ],
 
