@@ -39,25 +39,16 @@
                 <label>
                     <b>Categories</b>
                 </label>
-                {{Form::select('category_id[]',[],null,
-                    ['class'=>'select2 form-control','data-placeholder'=>'Select Category','style'=>'width:100%'])}}
+                {{Form::select('category_id[]',$selectNewsCategories,null,
+                    ['class'=>'select2 form-control select2','multiple'=>'true',
+                        'data-placeholder'=>'Select Category','style'=>'width:100%'])}}
             </div>
 
-            <div class="col-md-12 form-group {{$errors->has('tag_line') ?'has-error':''}}">
-                {{Form::label('tag_line','Tag Line:')}}
-                {{Form::text('tag_line',null,
-                            [
-                            'class'=>'col-md-6 form-control ',
-                            'autocomplete'=>'off',
-                            'title'=>'Title',
-                            'placeholder'=>'Enter Tag Line',
-                            ])}}
-            </div>
 
             <div class="form-group col-md-12 {{$errors->has('reporter_id') ? 'has-error':''}}">
                 <div class="col-md-9" style="padding-left: 0">
                     {{Form::label('reporter_id','ByLine:')}}
-                    {{Form::select('reporter_id',[],null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
+                    {{Form::select('reporter_id',$selectReporters,null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
                 </div>
                 <div class="col-md-3">
                     {{Form::label('is_fixed','Is Fixed :')}}
@@ -78,7 +69,8 @@
             <div class="form-group col-md-12 {{$errors->has('guest_id') ? 'has-error':''}}">
                 <div class="col-md-11" style="padding-left: 0">
                     {{Form::label('guest_id','Guest By Line:')}}
-                    {{Form::select('guest_id',[],null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
+                    {{Form::select('guest_id',$selectGuests,
+                    null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
                 </div>
                 <div class="col-md-1">
                     <label></label>
@@ -92,6 +84,16 @@
                 </div>
             </div>
 
+            <div class="col-md-12 form-group {{$errors->has('tag_line') ?'has-error':''}}">
+                {{Form::label('tag_line','Tag Line:')}}
+                {{Form::text('tag_line',null,
+                            [
+                            'class'=>'col-md-6 form-control ',
+                            'autocomplete'=>'off',
+                            'title'=>'Title',
+                            'placeholder'=>'Enter Tag Line',
+                            ])}}
+            </div>
 
             <div class="form-group col-md-12 {{$errors->has('video_url') ?'has-error':''}}">
                 <label for="title"> <i class="fa fa-youtube-play"></i> <b>Embed Code Only</b></label>

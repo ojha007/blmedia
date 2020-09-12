@@ -79,7 +79,6 @@ class NewsController extends Controller
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News Created SuccessFully');
         } catch (\Exception $exception) {
-            dd($exception);
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
             return redirect()->back()->withInput()

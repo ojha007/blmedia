@@ -41,10 +41,15 @@
             </a>
             <ul class="treeview-menu">
                 <li class="{{request()->is($urlPrefix.'/news') ? 'active':''}}">
-                    <a href="{{route($routePrefix.'.news.index')}}">All News</a>
+                    <a href="{{route($routePrefix.'.news.index')}}">
+                        <i class="fa fa-circle-o"></i>
+                        All News
+                    </a>
                 </li>
                 <li class="{{request()->is($urlPrefix.'/news/create') ? 'active':''}}">
-                    <a href="{{route($routePrefix.'.news.create')}}">Add News</a>
+                    <a href="{{route($routePrefix.'.news.create')}}">
+                        <i class="fa fa-circle-o"></i>
+                        Add News</a>
                 </li>
                 {{--                <li><a href="flot.html">Breaking News</a></li>--}}
                 {{--                <li><a href="inline.html">Special News</a></li>--}}
@@ -62,10 +67,12 @@
             <ul class="treeview-menu">
                 <li class="{{request()->is($urlPrefix.'/news-category') ? 'active': ''}}">
                     <a href="{{route($routePrefix.'.news-category.index')}}">
+                        <i class="fa fa-circle-o"></i>
                         All Category
                     </a></li>
                 <li class="{{request()->is($urlPrefix.'/news-category/create') ?'active':'' }}">
                     <a href="{{route($routePrefix.'.news-category.create')}}">
+                        <i class="fa fa-circle-o"></i>
                         Add Category
                     </a></li>
             </ul>
@@ -86,6 +93,7 @@
                         <li class="{{request()->is($urlPrefix.'/'.$type,
                                 $urlPrefix.'/'.$type .'/*') ? 'active': ''}}">
                             <a href="{{route($routePrefix.'.'.$type.'.index')}}">
+                                <i class="fa fa-circle-o"></i>
                                 {{ucwords($type)}}
                             </a>
                         </li>
@@ -114,6 +122,7 @@
                 @foreach($settings as $setting)
                     <li class="{{request()->is($urlPrefix.'/settings/*') ? 'active': ''}}">
                         <a href="{{route($routePrefix.'.settings.index',$setting)}}">
+                            <i class="fa fa-circle-o"></i>
                             {{ucwords(str_replace('-', ' ' ,$setting))}}
                         </a>
                     </li>
@@ -122,4 +131,5 @@
         </li>
     </ul>
 </section>
+
 <!-- /.sidebar -->

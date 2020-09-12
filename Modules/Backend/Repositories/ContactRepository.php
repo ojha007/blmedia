@@ -14,5 +14,11 @@ class ContactRepository extends Repository
         $this->model = $contact;
     }
 
+    public function selectContacts()
+    {
+        return $this->getModel()
+            ->where('is_active', true)
+            ->pluck('name', 'id');
+    }
 
 }
