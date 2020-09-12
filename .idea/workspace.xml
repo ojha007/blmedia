@@ -22,7 +22,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="site settings">
+      <change beforePath="$PROJECT_DIR$/.idea/blmedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blmedia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/ContactRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/ContactRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bl-backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend/adminLTE.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,61 +45,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-    </expand>
-    <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-content.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-              <folding>
-                <element signature="n#section#0;n#div#0;n#!!top" />
-                <element signature="n#section#1;n#div#0;n#!!top" />
-                <element signature="n#section#1;n#div#0;n#!!top" />
-                <element signature="n#section#2;n#div#0;n#!!top" />
-                <element signature="n#section#3;n#div#0;n#!!top" />
-                <element signature="n#section#4;n#div#0;n#!!top" />
-                <element signature="n#section#6;n#div#0;n#!!top" />
-                <element signature="n#section#5;n#div#0;n#!!top" />
-                <element signature="n#section#6;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Modules/Frontend/Resources/views/partials/script.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -210,90 +171,11 @@
       <path value="$PROJECT_DIR$/vendor/garygreen/pretty-routes" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
       <path value="$PROJECT_DIR$/vendor/anlutro/l4-settings" />
+      <path value="$PROJECT_DIR$/vendor/cloudinary/cloudinary_php" />
     </include_path>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="32" />
-    <option name="y" value="59" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1hH9iPbitgqVNbGsFRi8j5w2CwB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blmedia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -323,18 +205,6 @@
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -356,10 +226,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="" />
@@ -375,7 +242,7 @@
       <workItem from="1599827304678" duration="1684000" />
       <workItem from="1599829085927" duration="19743000" />
       <workItem from="1599886067452" duration="7013000" />
-      <workItem from="1599897500603" duration="26954000" />
+      <workItem from="1599897500603" duration="31516000" />
     </task>
     <task id="LOCAL-00001" summary="completed news and news category curd">
       <created>1599839426410</created>
@@ -391,37 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1599899508049</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="site settings">
+      <created>1599931087443</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599931087443</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="775000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
-    <editor active="true" />
-    <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32977587" />
-      <window_info anchor="bottom" id="Terminal" weight="0.34471717" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32977587" />
-      <window_info anchor="right" id="Database" weight="0.26652452" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -431,76 +276,95 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="completed news and news category curd" />
     <MESSAGE value="guest and repoerter" />
-    <option name="LAST_COMMIT_MESSAGE" value="guest and repoerter" />
+    <MESSAGE value="site settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="site settings" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" />
-    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="549" y="172" key="FileChooserDialogImpl" />
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" />
-    <state width="1145" height="244" key="GridCell.Tab.0.bottom" />
-    <state width="1145" height="244" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" />
-    <state width="1145" height="244" key="GridCell.Tab.0.center" />
-    <state width="1145" height="244" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" />
-    <state width="1145" height="244" key="GridCell.Tab.0.left" />
-    <state width="1145" height="244" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" />
-    <state width="1145" height="244" key="GridCell.Tab.0.right" />
-    <state width="1145" height="244" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" />
-    <state x="522" y="128" key="NewPhpClassDialog" />
-    <state x="522" y="128" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="603" y="337" key="NewPhpFileDialog" />
-    <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="277" y="63" key="SettingsEditor" />
-    <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" />
-    <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" />
-    <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" />
-    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" />
-    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.834@0.0.1536.834" />
-    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" />
-    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" />
-    <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" />
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" />
-    <state x="425" y="189" key="run.anything.popup" />
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" />
+    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599756759719">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1599756759719" />
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599915365491">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1599915365491" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599916233079">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599916233079" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599914389198">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599914389198" />
+    <state width="1145" height="244" key="GridCell.Tab.0.bottom" timestamp="1599921608719">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="244" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state width="1145" height="244" key="GridCell.Tab.0.center" timestamp="1599921608719">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="244" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state width="1145" height="244" key="GridCell.Tab.0.left" timestamp="1599921608719">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="244" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state width="1145" height="244" key="GridCell.Tab.0.right" timestamp="1599921608719">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="244" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state x="522" y="128" key="NewPhpClassDialog" timestamp="1599915772243">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="522" y="128" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1599915772243" />
+    <state x="603" y="337" key="NewPhpFileDialog" timestamp="1599915752468">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1599915752468" />
+    <state x="277" y="63" key="SettingsEditor" timestamp="1599846872524">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1599846872524" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1599931092706">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1599931092706" />
+    <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599819003005">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1599819003005" />
+    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599911910733">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.834@0.0.1536.834" timestamp="1599911910733" />
+    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1599831171491">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.834@0.0.1536.834" timestamp="1599831171491" />
+    <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1599911621868">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1599911621868" />
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1599830863510">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1599830863510" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1599908237699">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1599908237699" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599933791676">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599933791676" />
   </component>
 </project>

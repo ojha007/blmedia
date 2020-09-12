@@ -33,6 +33,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     @stack('styles')
+    <style>
+        .skin-yellow .main-header .navbar {
+            background-color: #FF5E14;
+        }
+
+        .skin-yellow .main-header .logo {
+            background-color: #FF5E12;
+            color: #fff;
+            border-bottom: 0 solid transparent;
+        }
+    </style>
+
 </head>
 
 <!--

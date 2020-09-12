@@ -113,6 +113,7 @@
       <path value="$PROJECT_DIR$/vendor/garygreen/pretty-routes" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
       <path value="$PROJECT_DIR$/vendor/anlutro/l4-settings" />
+      <path value="$PROJECT_DIR$/vendor/cloudinary/cloudinary_php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

@@ -25,5 +25,20 @@ class NewsCategoryRepository extends Repository
         ];
     }
 
+    public function selectAllCategories()
+    {
+        return $this->getModel()
+            ->where('is_active', true)
+            ->pluck('name', 'id');
+    }
+
+    public function selectParentCategories()
+    {
+        return $this->getModel()
+            ->where('is_active', true)
+            ->whereNull('parent_id')
+            ->pluck('name', 'id');
+    }
+
 
 }
