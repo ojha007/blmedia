@@ -22,59 +22,49 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="k">
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Config/ads.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Guest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Reporter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/GuestController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ReporterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/ContactRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/partials/form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/advertisement.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/editions.php" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="guest and repoerter">
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Entities/MetaInformation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Entities/NewsCategoryMetaTags.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Exceptions/InvalidMetaTags.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/SettingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/setting/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Traits/MetaInformation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blmedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blmedia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165956_create_news_category_metatags.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165956_create_news_category_metatags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_170004_create_news_metatags.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_170004_create_news_metatags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/NewsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/NewsCategory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/AdvertisementController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsCategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsCategoryRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Providers/BackendServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Providers/BackendServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Providers/ResourceBreadCrumbsServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Providers/ResourceBreadCrumbsServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Providers/ViewComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Providers/ViewComposerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/AdvertisementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/AdvertisementRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/meta-info/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/meta-info/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/errors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/errors.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/module.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Repository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +198,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/garygreen/pretty-routes" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/anlutro/l4-settings" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hH9iPbitgqVNbGsFRi8j5w2CwB" />
@@ -220,7 +211,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Http/Controllers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -234,11 +225,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Entities" />
       <recent name="C:\laragon\www\blmedia\config" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Repositories" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -278,7 +269,7 @@
       <workItem from="1599827304678" duration="1684000" />
       <workItem from="1599829085927" duration="19743000" />
       <workItem from="1599886067452" duration="7013000" />
-      <workItem from="1599897500603" duration="1946000" />
+      <workItem from="1599897500603" duration="26954000" />
     </task>
     <task id="LOCAL-00001" summary="completed news and news category curd">
       <created>1599839426410</created>
@@ -287,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599839426410</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="guest and repoerter">
+      <created>1599899508049</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599899508049</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,80 +305,85 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="completed news and news category curd" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed news and news category curd" />
+    <MESSAGE value="guest and repoerter" />
+    <option name="LAST_COMMIT_MESSAGE" value="guest and repoerter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599756759719">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1599756759719" />
-    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599839095699">
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599915365491">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1599839095699" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599838944169">
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1599915365491" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599916233079">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599838944169" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599835945536">
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599916233079" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599914389198">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599835945536" />
-    <state width="1403" height="2" key="GridCell.Tab.0.bottom" timestamp="1599892190628">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599914389198" />
+    <state width="1145" height="244" key="GridCell.Tab.0.bottom" timestamp="1599921608719">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1403" height="2" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599892190628" />
-    <state width="1403" height="2" key="GridCell.Tab.0.center" timestamp="1599892190628">
+    <state width="1145" height="244" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state width="1145" height="244" key="GridCell.Tab.0.center" timestamp="1599921608719">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1403" height="2" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599892190628" />
-    <state width="1403" height="2" key="GridCell.Tab.0.left" timestamp="1599892190628">
+    <state width="1145" height="244" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state width="1145" height="244" key="GridCell.Tab.0.left" timestamp="1599921608719">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1403" height="2" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599892190628" />
-    <state width="1403" height="2" key="GridCell.Tab.0.right" timestamp="1599892190628">
+    <state width="1145" height="244" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state width="1145" height="244" key="GridCell.Tab.0.right" timestamp="1599921608719">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1403" height="2" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599892190628" />
-    <state x="522" y="128" key="NewPhpClassDialog" timestamp="1599764369976">
+    <state width="1145" height="244" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599921608719" />
+    <state x="522" y="128" key="NewPhpClassDialog" timestamp="1599915772243">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="522" y="128" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1599764369976" />
-    <state x="603" y="337" key="NewPhpFileDialog" timestamp="1599890068970">
+    <state x="522" y="128" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1599915772243" />
+    <state x="603" y="337" key="NewPhpFileDialog" timestamp="1599915752468">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1599890068970" />
+    <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1599915752468" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1599846872524">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1599846872524" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1599839437037">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1599899514144">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1599839437037" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1599899514144" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599819003005">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1599819003005" />
-    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599832642699">
+    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599911910733">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.834@0.0.1536.834" timestamp="1599832642699" />
+    <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.834@0.0.1536.834" timestamp="1599911910733" />
     <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1599831171491">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.834@0.0.1536.834" timestamp="1599831171491" />
+    <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1599911621868">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1599911621868" />
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1599830863510">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1599830863510" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1599898536950">
+    <state x="425" y="189" key="run.anything.popup" timestamp="1599908237699">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1599898536950" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599898951173">
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1599908237699" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599923320028">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599898951173" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599923320028" />
   </component>
 </project>

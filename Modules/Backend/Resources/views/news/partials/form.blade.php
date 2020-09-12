@@ -251,7 +251,7 @@
 @push('scripts')
     <script>
 
-        CKEDITOR.replace( 'description');
+        CKEDITOR.replace('description');
     </script>
     {{--    <script type="text/javascript" language="javascript">--}}
     {{--        $(document).on('ready', function () {--}}

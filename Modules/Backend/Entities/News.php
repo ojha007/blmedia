@@ -7,10 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
 
+    use \Modules\Backend\Traits\MetaInformation;
+
     const PUBLISHED = 'Published';
     const UNPUBLISHED = 'Unpublished';
     const DRAFT = 'Draft';
-    protected $fillable = [];
+    protected $metaTagsTable = 'news_meta_tags';
+    protected $fillable = [
+        'title', 'sub_title', 'slug', 'guest_id', 'reporter_id',
+        'tag_line', 'description', 'short_description', 'view_count',
+        'external_url', 'publish_date', 'expiry_date', 'is_fixed',
+    ];
 
     public static function status()
     {

@@ -5,14 +5,13 @@
             <li class=""><a href="#meta" data-toggle="tab" aria-expanded="false">Meta</a></li>
 
         </ul>
-        {!! Form::open(array('route' => $routePrefix.'.news-category.store',
-                                        'method'=>'POST','class'=>' tab_form')) !!}
+
         <div class="tab-content">
             <div class="tab-pane active" id="general">
                 <div class="box-body">
                     <div class="form-group col-md-6 {{$errors->has('title')?'has-error':''}}">
-                        {{ Form::label('title', 'Category Title:', ['class'=>'control-label required'])}}
-                        {!! Form::text('title', null, array('placeholder' => 'Enter Title','class' => 'form-control')) !!}
+                        {{ Form::label('name', 'Category Name:', ['class'=>'control-label required'])}}
+                        {!! Form::text('name', null, array('placeholder' => 'Enter Category Name','class' => 'form-control')) !!}
 
                     </div>
                     <div class="form-group col-md-6 {{$errors->has('slug')?'has-error':''}}">
@@ -37,16 +36,20 @@
                     array('placeholder' => 'Select Category Code','class' => 'form-control')) !!}
 
                     </div>
-                    <div class="form-group col-md-6 ">
-                        {{ Form::label('in_front', 'Show In Front:', ['class'=>'control-label'])}}
-                        {!! Form::hidden('in_front', 0) !!}
-                        <input name="in_front" value="1" type="checkbox" data-toggle="toggle" data-on="Yes"
-                               data-off="No" checked>
-                        &nbsp;
-                        {{ Form::label('in_mobile', 'Show In Front:', ['class'=>'control-label'])}}
+                    <div class="form-group col-md-6" style="margin-top: 15px;margin-bottom: 15px;">
                         {!! Form::hidden('in_mobile', 0) !!}
-                        <input name="in_mobile" value="1" type="checkbox" data-toggle="toggle" data-on="Yes"
-                               data-off="No" checked>
+                        {!! Form::hidden('in_front', 0) !!}
+                        <div class="checkbox" style="margin-block-end: 3px;">
+                            <label for="in_front" class="control-label">
+                                <input type="checkbox" checked data-toggle="toggle" value="1" name="in_front">
+                                Show In Front:
+                            </label>
+                            <label for="in_mobile">
+
+                                <input type="checkbox" checked data-toggle="toggle" value="1" name="in_mobile">
+                                Show In Mobile:
+                            </label>
+                        </div>
 
                     </div>
                     <div class="form-group col-md-6 {{$errors->has('description') ? 'has-error':''}}">
@@ -57,7 +60,7 @@
                 </div>
             </div>
             <div class="tab-pane " id="meta">
-                @include($module.'::meta-info.form')
+                @include($module.'::meta-info.form',['meta'=>$category->metaTags])
             </div>
             <div class="box-footer">
                 <a href="{{route($routePrefix.'.news-category.index')}}" type="button"
@@ -72,7 +75,7 @@
             </div>
 
         </div>
-        {!! Form::close() !!}
+
     </div>
 </div>
 

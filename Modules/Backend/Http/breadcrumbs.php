@@ -13,7 +13,11 @@ if (is_null($edition)) {
 Breadcrumbs::for('dashboard', function ($trail) use ($edition) {
     $trail->push('Dashboard', route($edition . '.bl-secure.'));
 });
-
+Breadcrumbs::for('settings.index', function ($trail, $setting, $routePrefix) use ($edition) {
+    $trail->parent('dashboard', route($edition . '.bl-secure.'));
+    $trail->push('Setting', route("$routePrefix.settings.index", $setting));
+});
 Breadcrumbs::resource('news', 'News');
 Breadcrumbs::resource('reporters', 'Reporters');
 Breadcrumbs::resource('guests', 'Guests');
+

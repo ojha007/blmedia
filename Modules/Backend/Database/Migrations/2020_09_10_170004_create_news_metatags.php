@@ -17,9 +17,9 @@ class CreateNewsMetatags extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('news_id');
             $table->foreign('news_id')->references('id')->on('news');
-            $table->string('meta-title');
-            $table->string('meta-keywords');
-            $table->string('meta-description');
+            $table->string('meta_title')->nullable();
+            $table->string('meta_keywords')->nullable();
+            $table->string('meta_description')->nullable();
             $table->timestamps();
         });
     }

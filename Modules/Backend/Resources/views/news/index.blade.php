@@ -35,8 +35,35 @@
                             <th class="no-sort">Action</th>
                         </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        @foreach($allNews as $news)
+                            <tr>
+                                <td>
+                                    {{$news->id}}
+                                </td>
+                                <td>
+                                    {{--                                    <a href="{{route($edition.'.news.show',$news->slug)}}">--}}
+                                    <a href="#">
+                                        {{$news->title}}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{$news->publish_date}}
+                                </td>
+                                <td>
+                                    <a href="{{route($routePrefix.'.news.edit',$news->id)}}"
+                                       class="btn btn-primary btn-flat">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <button class="btn btn-danger btn-flat">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
                     </table>
+                    {{$allNews->links()}}
                 </div>
                 <!-- /.box-body -->
             </div>

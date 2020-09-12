@@ -31,6 +31,7 @@
                         <tr>
                             <th>S.No</th>
                             <th>Category</th>
+                            <th>Position</th>
                             <th>status</th>
                             <th class="no-sort">Action</th>
                         </tr>
@@ -39,8 +40,9 @@
                         @foreach($categories as $category)
                             <tr>
                                 <td>{{$category->id}}</td>
-                                <td>{{$category->title}}</td>
-                                <td></td>
+                                <td>{{$category->name}}</td>
+                                <td>{{$category->position}}</td>
+                                <td>{!! spanByStatus($category->is_active) !!}</td>
                                 <td>
                                     <a href="{{route($routePrefix.'.news-category.edit',$category->id)}}"
                                        class="btn btn-primary btn-flat">

@@ -32,7 +32,9 @@ class AdvertisementController extends Controller
 
     public function index()
     {
-        return new Response($this->viewPath . 'index');
+        $advertisements = $this->repository
+            ->paginate(20);
+        return new Response($this->viewPath . 'index', ['advertisements' => $advertisements]);
     }
 
     public function create()
