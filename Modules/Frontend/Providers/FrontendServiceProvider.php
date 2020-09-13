@@ -2,8 +2,8 @@
 
 namespace Modules\Frontend\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\ServiceProvider;
 
 class FrontendServiceProvider extends ServiceProvider
 {
@@ -97,7 +97,7 @@ class FrontendServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production') && $this->app->runningInConsole()) {
+        if (!app()->environment('production') && $this->app->runningInConsole()) {
             app(Factory::class)->load(module_path($this->moduleName, 'Database/factories'));
         }
     }
@@ -121,5 +121,10 @@ class FrontendServiceProvider extends ServiceProvider
             }
         }
         return $paths;
+    }
+
+    public function registerSystemConfiguration()
+    {
+
     }
 }

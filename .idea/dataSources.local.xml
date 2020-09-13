@@ -14,8 +14,10 @@
           <node kind="schema">
             <name qname="@" />
             <name qname="bl_nepali" />
-            <name qname="db_bl_nepali" />
             <name qname="bl_hindi" />
+            <name qname="blnepali_db" />
+            <name qname="bl_db_nepali" />
+            <name qname="db_bl_nepali" />
           </node>
         </introspection-scope>
       </schema-mapping>

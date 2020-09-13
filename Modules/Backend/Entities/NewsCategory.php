@@ -29,4 +29,9 @@ class NewsCategory extends Model
             self::LS => self::OTHER
         ];
     }
+
+    public function news()
+    {
+        return $this->belongsToMany(News::class,'news_categories_pivot');
+    }
 }

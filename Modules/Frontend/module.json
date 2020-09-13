@@ -5,7 +5,8 @@
     "keywords": [],
     "order": 0,
     "providers": [
-        "Modules\\Frontend\\Providers\\FrontendServiceProvider"
+        "Modules\\Frontend\\Providers\\FrontendServiceProvider",
+        "Modules\\Frontend\\Providers\\ViewComposerServiceProvider"
     ],
     "aliases": {},
     "files": [],

@@ -11,6 +11,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/backend/js/app.js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .styles([
+        'resources/assets/css/AdminLTE.css',
+        'resources/assets/css/all-skins.css',
+    ], 'public/backend/css/app.css')
+;
 

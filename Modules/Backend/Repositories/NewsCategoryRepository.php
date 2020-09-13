@@ -40,5 +40,26 @@ class NewsCategoryRepository extends Repository
             ->pluck('name', 'id');
     }
 
+    public function getHeaderCategories()
+    {
+        return $this->getModel()
+            ->without('metaTags')
+            ->where('is_active', true)
+            ->whereParentId(null)
+            ->whereInHeader(true)
+            ->orderBy('header_position', 'ASC')
+            ->select('name', 'slug')
+            ->limit(10)
+            ->get();
+    }
+
+    public function getBodyCategoryByPosition(int $position)
+    {
+        return $this->getModel()
+            ->whereBodyPosition($position)
+            ->whereIsActive(true)
+            ->select('name', 'slug')
+            ->first();
+    }
 
 }

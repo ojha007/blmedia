@@ -1,4 +1,26 @@
 <?php return array (
+  'anlutro/l4-settings' => 
+  array (
+    'aliases' => 
+    array (
+      'Setting' => 'anlutro\\LaravelSettings\\Facade',
+    ),
+    'providers' => 
+    array (
+      0 => 'anlutro\\LaravelSettings\\ServiceProvider',
+    ),
+  ),
+  'barryvdh/laravel-debugbar' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\Debugbar\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
+    ),
+  ),
   'davejamesmiller/laravel-breadcrumbs' => 
   array (
     'providers' => 

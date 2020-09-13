@@ -26,7 +26,12 @@
     },
     "dependencies": {
         "admin-lte": "^3.0.5",
+        "bootstrap-toggle": "^2.2.2",
         "ckeditor": "^4.12.1",
-        "font-awesome": "^4.7.0"
+        "datatables": "^1.10.18",
+        "font-awesome": "^4.7.0",
+        "icheck": "^1.0.2",
+        "morris": "^0.1.4",
+        "select2": "^4.0.13"
     }
 }
