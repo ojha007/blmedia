@@ -27,6 +27,10 @@ class CreateNewsCategoryTable extends Migration
             $table->enum('category_code', ['HM', 'LS', 'OT']);
             $table->boolean('is_active')->default(1);
             $table->boolean('in_mobile')->default(1);
+            $table->boolean('in_header')->default(1);
+            $table->boolean('in_body')->default(1);
+            $table->integer('header_position')->nullable();
+            $table->integer('body_position')->nullable();
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();

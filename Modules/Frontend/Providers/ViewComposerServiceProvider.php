@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Backend\Providers;
+namespace Modules\Frontend\Providers;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\View;
@@ -21,19 +21,14 @@ class ViewComposerServiceProvider extends ServiceProvider
 
     public function registerSystemConfiguration()
     {
-
-        View::composer('frontend::*', function ($view) {
+        View::composer('backend::*', function ($view) {
             $prefix = Request::route()->getAction('routePrefix');
             $edition = Request::route()->getAction('edition');
             $module = Request::route()->getAction('module');
-            $contactTypes = [
-                'users', 'reporters', 'guests'
-            ];
             $view->with([
                 'routePrefix' => $edition . '.' . $prefix,
                 'urlPrefix' => $edition . '/' . $prefix,
                 'module' => $module,
-                'contactTypes' => $contactTypes
             ]);
         });
     }

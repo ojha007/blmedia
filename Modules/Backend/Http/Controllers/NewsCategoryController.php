@@ -13,14 +13,15 @@ class NewsCategoryController extends Controller
 
     protected $routePrefix = 'news-category';
     protected $viewPath = 'backend::news-category.';
-    private $model;
+    protected $model;
     /**
      * @var NewsCategoryRepository
      */
-    private $repository;
+    protected $repository;
 
     public function __construct(NewsCategory $newsCategory)
     {
+
         $this->model = $newsCategory;
         $this->repository = new NewsCategoryRepository($newsCategory);
     }
@@ -61,5 +62,10 @@ class NewsCategoryController extends Controller
     {
         $attributes = $request->validated();
         dd($attributes);
+    }
+
+    public function show($id)
+    {
+        dd($id);
     }
 }

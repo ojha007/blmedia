@@ -13,6 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        dd('gg');
         $this->middleware('auth');
     }
 
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        dd('gg');
         return view('home');
     }
 }

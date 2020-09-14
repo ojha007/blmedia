@@ -9,6 +9,18 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="@" />
+            <name qname="bl_nepali" />
+            <name qname="bl_hindi" />
+            <name qname="blnepali_db" />
+            <name qname="bl_db_nepali" />
+            <name qname="db_bl_nepali" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
     </data-source>
   </component>
 </project>

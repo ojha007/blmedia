@@ -1,2 +1,2 @@
 <?php
-Route::resource('news', 'NewsController');
+Route::get('news/{news}', 'NewsController@show')->name('news.show');
