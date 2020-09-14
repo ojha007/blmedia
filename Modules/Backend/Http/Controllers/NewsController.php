@@ -63,7 +63,7 @@ class NewsController extends Controller
         return new Response($viewPath, $attributes);
     }
 
-    public function update()
+    public function update(NewsRequest $request, News $news)
     {
 
     }
@@ -85,4 +85,6 @@ class NewsController extends Controller
                 ->with('failed', 'Failed to create News');
         }
     }
+//    public function update(){
+
 }

@@ -1073,8 +1073,9 @@ section.amnavnd {
     color: #13203D; }
 .btn-viewAll:after {
     background-color: #D9D9F4;
-    font-family: "Font Awesome 5 Solid";
-    content: '\F054';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f105';
     height: 100%;
     position: absolute;
     top: 0px;

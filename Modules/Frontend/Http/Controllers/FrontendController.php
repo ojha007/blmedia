@@ -8,14 +8,18 @@ use Illuminate\Routing\Controller;
 
 class FrontendController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
+
     public function index()
     {
-//        dd('pp');
         return view('frontend::index');
+    }
+    public function singlePage()
+    {
+        return view('frontend::components.single-page');
+    }
+    public function detailPage()
+    {
+        return view('frontend::components.detail-page');
     }
 
 }

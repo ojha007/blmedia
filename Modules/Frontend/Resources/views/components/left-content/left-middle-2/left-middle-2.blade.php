@@ -4,7 +4,6 @@
     </div>
     <div class="block-body">
         <div class="row d-block">
-
             <div class="news-item highlight-news">
                 <figure class="news-image">
                     <a href="https://www.breaknlinks.com/hindi/news/1971">
@@ -159,3 +158,4 @@
         </div>
     </div>
 </div>
+

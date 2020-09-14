@@ -216,10 +216,8 @@
 
         <!--ended repeatbale block-->
 
-
         <a href="https://www.breaknlinks.com/hindi/category/link-27"
            class=" btn btn-viewAll float-right" role="button">सब</a>
-
 
     </div>
 </div>

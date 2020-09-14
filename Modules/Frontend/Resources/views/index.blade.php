@@ -12,3 +12,10 @@
         </div>
     </section>
 @endsection
+@push('scripts')
+    <script>
+        window.FontAwesomeConfig = {
+            searchPseudoElements: true
+        };
+    </script>
+@endpush
