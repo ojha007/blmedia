@@ -23,10 +23,8 @@ class FrontendController extends Controller
 
     public function __construct()
     {
-//     dd(NewsCategory::all());
         $this->newCategoryRepository = new NewsCategoryRepository(new NewsCategory());
         $this->newsRepository = new NewsRepository(new News());
-//        $this->
     }
 
     /**
@@ -35,7 +33,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-//        dd('gg');
+
         $headerCategories = $this->newCategoryRepository->getHeaderCategories();
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 8);
         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
@@ -49,12 +47,14 @@ class FrontendController extends Controller
 
     public function getCategoryByPosition(int $position)
     {
-//        $this->getModel()
+
     }
+
     public function singlePage()
     {
         return view('frontend::components.single-page');
     }
+
     public function detailPage()
     {
         return view('frontend::components.detail-page');

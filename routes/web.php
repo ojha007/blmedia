@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    dd('gg');
-    return view('frontend::index');
-});
+Route::get('/', 'FrontendController@index')->name('index');
 
+Route::get('category/{category}', 'NewsCategoryController@show')->name('news-category.show');;
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

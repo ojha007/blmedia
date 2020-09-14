@@ -1,10 +1,12 @@
 <div class="newsBlock type-2 " id="BL_link">
     <div class="block-header gn-heading">
-        <h2>
-            <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}">
-                {{$secondPositionNews->first()->categories}}
-            </a>
-        </h2>
+        @if(count($secondPositionNews))
+            <h2>
+                <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}">
+                    {{$secondPositionNews->first()->categories}}
+                </a>
+            </h2>
+        @endif
     </div>
     <div class="block-body">
         @foreach($secondPositionNews as $key=>$news)

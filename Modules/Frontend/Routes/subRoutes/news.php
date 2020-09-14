@@ -1,2 +1,3 @@
 <?php
-Route::get('news/{news}', 'NewsController@show')->name('news.show');
+Route::get('news/author/{author_type}/{author}', 'NewsController@showNewsByAuthor')->name('news.showNewsByAuthor');
+Route::get('news/{news}', 'NewsController@showNews')->name('news.show');
