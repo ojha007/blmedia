@@ -3,9 +3,11 @@
         <div class="row">
             <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2 float-left">
                 <figure class="brand-logo">
-                    <a href="https://www.breaknlinks.com/hindi/">
+                    <a href="{{route($routePrefix.'index')}}">
+                        <img class="responsive-img" id="logo_image_nav"
+                             src="https://www.breaknlinks.com/nepali/uploads/pictures/9b985eb1206505396c15126062c31befblnepali.png"
+                             alt="BL Media">
                     </a>
-
                 </figure>
             </div>
             <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 float-right d-sm-none d-md-block">

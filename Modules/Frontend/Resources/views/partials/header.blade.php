@@ -1,10 +1,10 @@
 <header class="page-header ">
     <!--header top start-->
 @include('frontend::components.headers.header-top')
-
 <!--ended header top-->
 
     <!--header mid start-->
+
     <section class="header-mid">
         <div class="container-fluid">
             <div class="row">
@@ -31,17 +31,11 @@
                         </script>
                         <!--- Google Ads End --->
 
-                    </div>
-                </div>
-
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </section>
     <!--ended header mid section-->
 @include('frontend::components.headers.header-mid')
 <!--ended header mid section-->
     <!--main Navigation bar-->
+
     <section class="amnavnd">
         <div class="container-fluid">
 
@@ -204,11 +198,7 @@
                         </li>
                     </ul>
 
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--ended main navigation bar-->
+
 @include('frontend::components.headers.header-end')
 <!--ended main navigation bar-->
 </header>

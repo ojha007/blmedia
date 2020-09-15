@@ -1,4 +1,4 @@
-<section class="amnavnd">
+<section class="amnavnd header-end">
     <div class="container-fluid">
         <div class="row" style="border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;">
             <div class="col-md-2 col-lg-2 hiderfixed_navbar12">
@@ -12,7 +12,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="search" name="newsSearch" class="form-control"
-                                           placeholder="Search..." required="">
+                                           placeholder="Search...">
 
                                     <div class="input-group-append">
                                         <button type="submit" name="search" class="btn btn-trans"><i
@@ -38,12 +38,12 @@
                                         class="fa fa-home"></i> <span class="sr-only">Home</span>
                                 </a>
                             </li>
-                            <li class="nav-item active home-site-logo">
-                                <a class="nav-link navbar-brand-img-logo  " href="#">
+                            <li class="nav-item  home-site-logo">
+                                <a class="nav-link navbar-brand-img-logo" href="#">
                                 </a>
                             </li>
                             @foreach($headerCategories as $category)
-                                <li class="nav-item">
+                                <li class="nav-item {{request()->is($urlPrefix.'category/*') ? 'active':''}}">
                                     <a href="{{route($routePrefix.'news-category.show',$category->slug)}}"
                                        class="nav-link">
                                         {{$category->name}}
@@ -65,7 +65,10 @@
                     </li>
                     <li>
                         <a href="{{setting('facebook_url')}}" target="_blank"><i
-                                class="fa fa-facebook-square"></i></a>
+                                class="fa fa-facebook-square">
+
+                            </i>
+                        </a>
                     </li>
                     <li>
                         <a href="{{setting('twitter_url')}}" target="_blank"><i
