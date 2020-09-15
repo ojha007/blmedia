@@ -13,24 +13,17 @@ class CreateNewsCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_categories', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
             $table->string('slug');
-            $table->boolean('in_front')->default(1);
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')
                 ->references('id')
-                ->on('news_categories');
-            $table->integer('position');
-            $table->string('category_url');
-            $table->enum('category_code', ['HM', 'LS', 'OT']);
+                ->on('categories');
+            $table->enum('code', ['HM', 'LS', 'OT']);
             $table->boolean('is_active')->default(1);
             $table->boolean('in_mobile')->default(1);
-            $table->boolean('in_header')->default(1);
-            $table->boolean('in_body')->default(1);
-            $table->integer('header_position')->nullable();
-            $table->integer('body_position')->nullable();
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();
@@ -44,6 +37,6 @@ class CreateNewsCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_categories');
+        Schema::dropIfExists('categories');
     }
 }

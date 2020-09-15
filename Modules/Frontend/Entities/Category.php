@@ -4,7 +4,7 @@
 namespace Modules\Frontend\Entities;
 
 
-class NewsCategory extends \Modules\Backend\Entities\NewsCategory
+class Category extends \Modules\Backend\Entities\Category
 {
 
     public function getRouteKeyName()

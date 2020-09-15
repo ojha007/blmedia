@@ -1,2 +1,2 @@
 <?php
-Route::get('category/{category}', 'NewsCategoryController@showNewsByCategory')->name('news-category.show');
+Route::get('category/{category}', 'CategoryController@showNewsByCategory')->name('news-category.show');

@@ -22,7 +22,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function registerSystemConfiguration()
     {
 
-        View::composer('frontend::*', function ($view) {
+        View::composer('backend::*', function ($view) {
             $prefix = Request::route()->getAction('routePrefix');
             $edition = Request::route()->getAction('edition');
             $module = Request::route()->getAction('module');

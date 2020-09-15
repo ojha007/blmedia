@@ -48,6 +48,9 @@
             "App\\": "app/",
             "Modules\\": "Modules/"
         },
+        "files": [
+            "app/Http/helpers.php"
+        ],
         "classmap": [
             "database/seeds",
             "database/factories"

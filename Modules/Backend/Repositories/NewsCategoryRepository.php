@@ -5,18 +5,18 @@ namespace Modules\Backend\Repositories;
 
 
 use App\Repositories\Repository;
-use Modules\Backend\Entities\NewsCategory;
+use Modules\Backend\Entities\Category;
 
 class NewsCategoryRepository extends Repository
 {
-    public function __construct(NewsCategory $newsCategory)
+    public function __construct(Category $category)
     {
-        $this->model = $newsCategory;
+        $this->model = $category;
     }
 
     public function getViewData()
     {
-        $selectCategoryCodes = NewsCategory::selectCategoryCode();
+        $selectCategoryCodes = Category::selectCategoryCode();
         $selectParentCategories = $this->model->whereNull('parent_id')
             ->pluck('name', 'id');
         return [
