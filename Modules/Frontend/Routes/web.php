@@ -12,7 +12,7 @@ Route::group(
         'as' => $edition . '.',
         'edition' => $edition,
         'module' => 'frontend'], function ($router) {
-    $router->get('/', 'FrontendController@index');
+//    $router->get('/', 'FrontendController@index');
     include __DIR__ . '/subRoutes/newsCategory.php';
     include __DIR__ . '/subRoutes/news.php';
     $router->get('/', 'FrontendController@index')->name('index');

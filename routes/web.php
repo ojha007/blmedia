@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    dd('gg');
-    return view('frontend::index');
-});
+//Route::get('/', function () {
+//    dd('gg');
+//    return redirect();
+//});
 
 Auth::routes();
 

@@ -46,7 +46,7 @@
                                     </a>
                                 </div>
                                 <div class="news-content">
-                                    <h4 class="news-title"><a href="{{route('detailPage')}}">खाली
+                                    <h4 class="news-title"><a href="{{route($routePrefix.'detailPage')}}">खाली
                                             पेट चबाएं तुलसी और पुदीना !</a></h4>
 
                                     <ul class="hr-list wide stamp">

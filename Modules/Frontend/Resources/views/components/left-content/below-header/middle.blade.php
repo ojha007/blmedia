@@ -1,9 +1,11 @@
 <div class="newsBlock type-2 " id="BL_link">
     <div class="block-header gn-heading">
         <h2>
-            <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}">
-                {{$secondPositionNews->first()->categories}}
-            </a>
+            @if(count($secondPositionNews))
+                <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}">
+                    {{$secondPositionNews->first()->categories}}
+                </a>
+            @endif
         </h2>
     </div>
     <div class="block-body">
@@ -20,7 +22,7 @@
 
                     <div class="news-content">
                         <h4 class="news-title"><a
-                                href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                    href="{{route($routePrefix.'news.show',$news->slug)}}">
                                 {{$news->title}}
                             </a></h4>
                         <ul class="hr-list wide stamp">
@@ -42,7 +44,7 @@
                     </figure>
                     <div class="news-content">
                         <h4 class="news-title"><a
-                                href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                    href="{{route($routePrefix.'news.show',$news->slug)}}">
                                 {{$news->title}}
                             </a></h4>
 
@@ -52,7 +54,9 @@
                 </div>
             @endif
         @endforeach
-        <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
-           class=" btn btn-viewAll float-right" role="button">सब</a>
+        @if(count($secondPositionNews))
+            <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
+               class=" btn btn-viewAll float-right" role="button">सब</a>
+        @endif
     </div>
 </div>

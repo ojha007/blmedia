@@ -1,9 +1,11 @@
 <div class="newsBlock type-1">
     <div class="block-header gn-heading">
         <h2>
-            <a href="{{route($routePrefix.'news-category.show',$firstPositionNews->first()->category_slug)}}">
-                {{$firstPositionNews->first()->categories}}
-            </a>
+            @if(count($firstPositionNews))
+                <a href="{{route($routePrefix.'news-category.show',$firstPositionNews->first()->category_slug)}}">
+                    {{$firstPositionNews->first()->categories}}
+                </a>
+            @endif
         </h2>
     </div>
     <div class="block-body">
@@ -17,7 +19,7 @@
                 </figure>
                 <div class="news-content new-type-1">
                     <h5 class="news-title"><a
-                            href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                href="{{route($routePrefix.'news.show',$news->slug)}}">
                             {{$news->title}}
                         </a></h5>
                     <ul class="hr-list wide stamp">

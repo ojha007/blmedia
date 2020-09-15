@@ -51,10 +51,12 @@ class FrontendController extends Controller
     {
 //        $this->getModel()
     }
+
     public function singlePage()
     {
         return view('frontend::components.single-page');
     }
+
     public function detailPage()
     {
         return view('frontend::components.detail-page');

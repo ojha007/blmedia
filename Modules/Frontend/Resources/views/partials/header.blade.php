@@ -10,8 +10,10 @@
             <div class="row">
                 <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2 float-left">
                     <figure class="brand-logo">
-                        <a href="{{route('index')}}">
-                            <img class="responsive-img" id="logo_image_nav" src="https://www.breaknlinks.com/nepali/uploads/pictures/9b985eb1206505396c15126062c31befblnepali.png" alt="BL Media">
+                        <a href="{{route($routePrefix.'index')}}">
+                            <img class="responsive-img" id="logo_image_nav"
+                                 src="https://www.breaknlinks.com/nepali/uploads/pictures/9b985eb1206505396c15126062c31befblnepali.png"
+                                 alt="BL Media">
                         </a>
                     </figure>
                 </div>
@@ -77,18 +79,20 @@
                         <div class="collapse navbar-collapse" id="primaryNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item active home-site-logo-home">
-                                    <a href="{{route('index')}}" class="nav-link"><i
+                                    <a href="{{route($routePrefix.'index')}}" class="nav-link"><i
                                                 class="fa fa-home"></i> <span class="sr-only">Home</span>
                                     </a>
                                 </li>
                                 <li class="nav-item active home-site-logo">
                                     <a class="nav-link navbar-brand-img-logo  " href="#">
-                                        <img class="responsive-img" id="logo_image_nav" src="https://www.breaknlinks.com/nepali/uploads/pictures/9b985eb1206505396c15126062c31befblnepali.png" alt="BL Media">
+                                        <img class="responsive-img" id="logo_image_nav"
+                                             src="https://www.breaknlinks.com/nepali/uploads/pictures/9b985eb1206505396c15126062c31befblnepali.png"
+                                             alt="BL Media">
                                     </a>
                                 </li>
                                 <li cclass="nav-item">
 
-                                    <a href="{{route('singlePage')}}" class="nav-link">बिएल
+                                    <a href="{{route($routePrefix.'singlePage')}}" class="nav-link">बिएल
                                         स्पेशल</a>
 
 
