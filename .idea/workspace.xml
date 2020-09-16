@@ -8,7 +8,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="dynamic content in frontend" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="dynamic content in frontend">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/left.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/middle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/middle.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,6 +241,7 @@
       <workItem from="1600146003901" duration="25000" />
       <workItem from="1600176224842" duration="18163000" />
       <workItem from="1600231750677" duration="101000" />
+      <workItem from="1600258694263" duration="1627000" />
     </task>
     <task id="LOCAL-00001" summary="completed news and news category curd">
       <created>1599839426410</created>
@@ -286,6 +291,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -331,6 +346,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107625033" />
+    <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1600260326264">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1600260326264" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600231848859">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -351,6 +370,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1145" height="2" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600192849058" />
+    <state x="396" y="172" key="MultipleFileMergeDialog" timestamp="1600258907427">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600258907427" />
     <state x="522" y="128" key="NewPhpClassDialog" timestamp="1600180128616">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -361,10 +384,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600231807302">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600259254287">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600231807302" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600259254287" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600185734894">
@@ -375,8 +398,10 @@
     <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1600094332547" />
     <state x="591" y="184" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600094332547" />
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600260326264">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1600260326264" />
     <state x="444" y="32" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600106746241">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -385,11 +410,15 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="633" y="69" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1536.834@0.0.1536.834" timestamp="1600231780763" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1600094332547" />
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600194572971">
+    <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600258896819">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600194572971" />
+    <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1600258896819" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1600094332547" />
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600260129164">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600260129164" />
   </component>
 </project>
