@@ -5,9 +5,9 @@ namespace Modules\Backend\Repositories;
 
 
 use App\Repositories\Repository;
+use Modules\Backend\Entities\Category;
 use Modules\Backend\Entities\Guest;
 use Modules\Backend\Entities\News;
-use Modules\Backend\Entities\NewsCategory;
 use Modules\Backend\Entities\Reporter;
 
 class NewsRepository extends Repository
@@ -22,7 +22,7 @@ class NewsRepository extends Repository
         $selectPublishStatuses = $this->selectNewsStatus();
         $selectGuests = (new ContactRepository(new Guest()))->selectContacts();
         $selectReporters = (new ContactRepository(new Reporter()))->selectContacts();
-        $selectNewsCategories = (new NewsCategoryRepository(new NewsCategory()))->selectAllCategories();
+        $selectNewsCategories = (new NewsCategoryRepository(new Category()))->selectAllCategories();
         return [
             'selectPublishStatuses' => $selectPublishStatuses,
             'selectReporters' => $selectReporters,

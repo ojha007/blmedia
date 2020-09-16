@@ -1,2 +1,2 @@
 <?php
-Route::resource('news-category', 'CategoryController');
+Route::resource('category', 'CategoryController');

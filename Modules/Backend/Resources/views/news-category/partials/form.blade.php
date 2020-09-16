@@ -2,6 +2,7 @@
     <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
             <li class="active"><a href="#general" data-toggle="tab" aria-expanded="true">General </a></li>
+            <li class=""><a href="#position" data-toggle="tab" aria-expanded="true">Position</a></li>
             <li class=""><a href="#meta" data-toggle="tab" aria-expanded="false">Meta</a></li>
 
         </ul>
@@ -59,11 +60,14 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-pane" id="position">
+                @include($module.'::news-category.partials.position')
+            </div>
             <div class="tab-pane " id="meta">
                 @include($module.'::meta-info.form',['meta'=>$category->metaTags])
             </div>
             <div class="box-footer">
-                <a href="{{route($routePrefix.'.news-category.index')}}" type="button"
+                <a href="{{route($routePrefix.'.category.index')}}" type="button"
                    class="btn btn-default btn-flat pull-left">
                     <i class="fa fa-arrow-left"></i>
                     Close

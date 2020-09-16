@@ -56,7 +56,7 @@
             </ul>
         </li>
         <li class="treeview {{request()->is($urlPrefix.'/news-category',
-                    $urlPrefix.'/news-category/create') ? 'active':''}}">
+                    $urlPrefix.'/category/create') ? 'active':''}}">
             <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>News Category</span>
@@ -65,20 +65,20 @@
                     </span>
             </a>
             <ul class="treeview-menu">
-                <li class="{{request()->is($urlPrefix.'/news-category') ? 'active': ''}}">
-                    <a href="{{route($routePrefix.'.news-category.index')}}">
+                <li class="{{request()->is($urlPrefix.'/category') ? 'active': ''}}">
+                    <a href="{{route($routePrefix.'.category.index')}}">
                         <i class="fa fa-circle-o"></i>
                         All Category
                     </a></li>
-                <li class="{{request()->is($urlPrefix.'/news-category/create') ?'active':'' }}">
-                    <a href="{{route($routePrefix.'.news-category.create')}}">
+                <li class="{{request()->is($urlPrefix.'/category/create') ?'active':'' }}">
+                    <a href="{{route($routePrefix.'.category.create')}}">
                         <i class="fa fa-circle-o"></i>
                         Add Category
                     </a></li>
             </ul>
         </li>
         <li class="treeview {{request()->is($urlPrefix.'/news-category',
-                    $urlPrefix.'/news-category/create') ? 'active':''}}">
+                    $urlPrefix.'/contacts/create') ? 'active':''}}">
             <a href="#">
                 <i class="fa fa-users"></i>
                 <span>Contacts</span>
