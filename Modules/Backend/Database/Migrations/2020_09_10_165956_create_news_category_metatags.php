@@ -13,15 +13,14 @@ class CreateNewsCategoryMetatags extends Migration
      */
     public function up()
     {
-        Schema::create('news_category_meta_tags', function (Blueprint $table) {
+        Schema::create('category_meta_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('news_category_id');
-            $table->foreign('news_category_id')->references('id')
-                ->on('news_categories');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')
+                ->on('categories');
             $table->string('meta_title')->nullable();
             $table->string('meta_keywords')->nullable();
             $table->string('meta_description')->nullable();
-            $table->timestamps();
         });
     }
 
@@ -32,6 +31,6 @@ class CreateNewsCategoryMetatags extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_category_meta_tags');
+        Schema::dropIfExists('category_meta_tags');
     }
 }

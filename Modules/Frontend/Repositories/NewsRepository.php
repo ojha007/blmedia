@@ -29,16 +29,16 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     public function getNewsByPosition(int $position, int $limit)
     {
 
-        return $this->getModel()
+        return DB::table('news')
             ->select('news.title', 'news.slug', 'news.sub_title', 'reporters.name as reporter_name',
-                'guests.name as guest_name', 'news_categories.name as categories',
-                'news_categories.slug as category_slug', 'news.id as image')
-            ->join('news_categories_pivot', 'news_categories_pivot.news_id', '=', 'news.id')
-            ->join('news_categories', 'news_categories.id', '=', 'news_categories_pivot.news_category_id')
+                'guests.name as guest_name', 'categories.name as categories',
+                'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
+            ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
+            ->join('categories', 'categories.id', '=', 'news_categories.category_id')
+            ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
-            ->where('news_categories.in_body', true)
-            ->where('news_categories.body_position', $position)
+            ->where('category_positions.front_body_position', $position)
             ->limit($limit)
             ->get();
     }

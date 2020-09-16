@@ -35,8 +35,8 @@
                         </div>
                         <div class="news-list-view">
                             <!--repeatable block-->
+                            {{--                            @dd($newsByCategory)--}}
                             @foreach($newsByCategory as $news)
-                                @dd($news)
                                 <div class="news-item">
                                     <div class="news-image">
                                         <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
@@ -74,26 +74,26 @@
                                 </div>
                             @endforeach
                         </div>
-                        <!--ended repeatable block-->
                         <div class="pagination-wrapper">
-                            <nav class="base-pagination" aria-label="news-list-view">
-                                <ul class="pagination">
-                                    <li class="disabled"></li>
-                                    <li class="active page-item"><a>1<span class="sr-only"></span></a></li>
-                                    <li class="page-item"><a
-                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/9">2</a>
-                                    </li>
-                                    <li class="page-item"><a
-                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/18">3</a>
-                                    </li>
-                                    <li class="page-item"><a
-                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/9">अर्को</a>
-                                    </li>
-                                    <li class="page-item"><a
-                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/90">अन्तिम</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            {{$newsByCategory->links()}}
+{{--                            <nav class="base-pagination" aria-label="news-list-view">--}}
+{{--                                <ul class="pagination">--}}
+{{--                                    <li class="disabled"></li>--}}
+{{--                                    <li class="active page-item"><a>1<span class="sr-only"></span></a></li>--}}
+{{--                                    <li class="page-item"><a--}}
+{{--                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/9">2</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="page-item"><a--}}
+{{--                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/18">3</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="page-item"><a--}}
+{{--                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/9">अर्को</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="page-item"><a--}}
+{{--                                            href="https://www.breaknlinks.com/hindi/category/blspecial-23/90">अन्तिम</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </nav>--}}
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 float-right">

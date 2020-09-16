@@ -13,17 +13,16 @@ class CreateNewsCategoriesPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_categories_pivot', function (Blueprint $table) {
+        Schema::create('news_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('news_id');
-            $table->unsignedBigInteger('news_category_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('news_id')
                 ->references('id')
                 ->on('news');
-            $table->foreign('news_category_id')
+            $table->foreign('category_id')
                 ->references('id')
-                ->on('news_categories');
-            $table->timestamps();
+                ->on('categories');
         });
     }
 
@@ -34,6 +33,6 @@ class CreateNewsCategoriesPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_categories_pivot');
+        Schema::dropIfExists('news_categories');
     }
 }

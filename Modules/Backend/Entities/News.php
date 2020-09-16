@@ -33,4 +33,9 @@ class News extends Model
         return ['Yes', 'No', 'Draft'];
 
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }

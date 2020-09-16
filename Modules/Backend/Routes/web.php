@@ -18,11 +18,11 @@ Route::group(
         'systemName' => ucwords($edition) . '-' . 'Backend',
         'systemAbbr' => 'Bl',
         'module' => 'backend'], function ($router) {
-//    $router->get('/', 'BackendController@index');
-//    include __DIR__ . '/subRoutes/newsCategory.php';
-//    include __DIR__ . '/subRoutes/news.php';
-//    include __DIR__ . '/subRoutes/contact.php';
-//    include __DIR__ . '/subRoutes/advertisement.php';
-//    include __DIR__ . '/subRoutes/settings.php';
+    $router->get('/', 'BackendController@index');
+    include __DIR__ . '/subRoutes/newsCategory.php';
+    include __DIR__ . '/subRoutes/news.php';
+    include __DIR__ . '/subRoutes/contact.php';
+    include __DIR__ . '/subRoutes/advertisement.php';
+    include __DIR__ . '/subRoutes/settings.php';
 });
 

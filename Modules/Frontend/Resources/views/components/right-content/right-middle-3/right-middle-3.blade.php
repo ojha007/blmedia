@@ -1,84 +1,56 @@
 <div class="newsBlock type-8">
-    <div class="block-header gn-heading">
-        <h2><a href="#">ट्रेडिंग</a></h2>
-    </div>
-    <div class="block-body trendingNew">
-        <div class="news-item">
-            <figure class="news-image">
-                <img src="https://www.breaknlinks.com/hindi/uploads/Nepal%20Nepal/Deepak%20lohani.jpg"
-                     alt="‘जिंदगीका सफर है, ये मौत कि डगर’&nbsp;">
-
-
-            </figure>
-            <div class="news-content">
-                <h4 class="news-title"><a href="https://www.breaknlinks.com/hindi/news/1942">‘जिंदगीका
-                        सफर है, ये मौत कि डगर’&nbsp;</a></h4>
-
-            </div>
-
+    @if(count($ninthPositionNews))
+        <div class="block-header gn-heading">
+            <h2>
+                <a href="{{route($routePrefix.'news-category.show',$ninthPositionNews->first()->category_slug)}}">
+                    {{$ninthPositionNews->first()->categories}}
+                </a>
+            </h2>
         </div>
 
-        <div class="news-item">
-            <figure class="news-image">
-                <img src="https://www.breaknlinks.com/hindi/uploads/Bollyhood%20Mumbai/riya.jpg"
-                     alt="ड्रग्स केस में NCB ने बॉलीवुड अभिनेत्री रिया चक्रवर्ती को किया गिरफ्तार">
+        <div class="block-body trendingNew">
+            @foreach($ninthPositionNews as $key=>$news)
+                @if($key == 0)
+                    <div class="news-item highlight-news">
+                        <div class="ggl_adBlk _300x600 vr-block ">
+                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                <img src="{{$news->image}}" alt="{{$news->image}}"
+                                     class="responsive-img" title="">
+                            </a>
+                            <div class="news-content-am">
+                                <h5 class="news-title-am"><a
+                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                        {{$news->title}}
+                                    </a>
+                                </h5>
+                                <ul class="hr-list wide stamp">
+                                    <li><i class="fa fa-circle blus"></i>{{$news->reporter_name}}</li>
 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="news-item">
+                        <figure class="news-image">
+                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                <img src="{{$news->image}}" alt="{{$news->image}}"
+                                     class="responsive-img" title="">
+                            </a>
+                        </figure>
+                        <div class="news-content">
+                            <h5 class="news-title-am"><a
+                                    href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                    {{$news->title}}
+                                </a>
+                            </h5>
+                        </div>
 
-            </figure>
-            <div class="news-content">
-                <h4 class="news-title"><a href="https://www.breaknlinks.com/hindi/news/1954">ड्रग्स
-                        केस में NCB ने बॉलीवुड अभिनेत्री रिया चक्रवर्ती को किया गिरफ्तार</a></h4>
+                    </div>
+                @endif
 
-            </div>
-
-        </div>
-
-        <div class="news-item">
-            <figure class="news-image">
-                <img src="https://www.breaknlinks.com/hindi/uploads/Army%20photo/army.jpg"
-                     alt="LAC पर 45 साल बाद फायरिंग, चीन ने कहा भारत दोषी">
-
-
-            </figure>
-            <div class="news-content">
-                <h4 class="news-title"><a href="https://www.breaknlinks.com/hindi/news/1949">LAC पर
-                        45 साल बाद फायरिंग, चीन ने कहा भारत दोषी</a></h4>
-
-            </div>
-
-        </div>
-
-        <div class="news-item">
-            <figure class="news-image">
-                <img src="https://www.breaknlinks.com/hindi/uploads/Indian%20leader/yogi%20adatya%20nath.jpg"
-                     alt="यूपी में बढ़ा अपराध, कुशीनगर में हत्यारे की मॉब लिंचिंग, कई जिलों में हत्याएं">
-
-
-            </figure>
-            <div class="news-content">
-                <h4 class="news-title"><a href="https://www.breaknlinks.com/hindi/news/1943">यूपी
-                        में बढ़ा अपराध, कुशीनगर में हत्यारे की मॉब लिंचिंग, कई जिलों में हत्याएं</a>
-                </h4>
-
-            </div>
-
-        </div>
-
-        <div class="news-item">
-            <figure class="news-image">
-                <img src="https://www.breaknlinks.com/hindi/uploads/Mumbai%20Local%20Photo/kangna-and-uddhav-thackeray-764x430.jpg"
-                     alt="ठाकरे ने कंगना के मुंबई पर दिए बयान को लेकर कसा तंज">
-
-
-            </figure>
-            <div class="news-content">
-                <h4 class="news-title"><a href="https://www.breaknlinks.com/hindi/news/1946">ठाकरे
-                        ने कंगना के मुंबई पर दिए बयान को लेकर कसा तंज</a></h4>
-
-            </div>
+            @endforeach
 
         </div>
-
-
-    </div>
+    @endif
 </div>

@@ -5,7 +5,7 @@ namespace Modules\Backend\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Backend\Traits\MetaInformation;
 
-class NewsCategory extends Model
+class Category extends Model
 {
 
     use MetaInformation;
@@ -16,8 +16,8 @@ class NewsCategory extends Model
     const PRIMARY_MENU = 'Primary Menu';
     const SUB_CATEGORY = 'Sub Category';
     const OTHER = 'Other';
-    protected $metaTagsTable = 'news_category_meta_tags';
-    protected $metaTagsClass = NewsCategoryMetaTags::class;
+    protected $metaTagsTable = 'category_meta_tags';
+    protected $metaTagsClass = CategoryMetaTags::class;
     protected $fillable = ['title', 'slug', ''];
     protected $with = ['metaTags'];
 
@@ -32,6 +32,6 @@ class NewsCategory extends Model
 
     public function news()
     {
-        return $this->belongsToMany(News::class,'news_categories_pivot');
+        return $this->belongsToMany(News::class);
     }
 }

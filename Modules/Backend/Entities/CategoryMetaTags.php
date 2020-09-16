@@ -4,8 +4,8 @@ namespace Modules\Backend\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewsCategoryMetaTags extends Model
+class CategoryMetaTags extends Model
 {
-   protected $table ='news_category_meta_tags';
+    protected $table = 'category_meta_tags';
 
 }

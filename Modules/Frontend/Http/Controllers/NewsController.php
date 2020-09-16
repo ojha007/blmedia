@@ -5,19 +5,25 @@ namespace Modules\Frontend\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Modules\Backend\Http\Responses\Response;
-use Modules\Backend\Repositories\NewsCategoryRepository;
-use Modules\Frontend\Entities\NewsCategory;
+use Modules\Frontend\Entities\Category;
+use Modules\Frontend\Repositories\CategoryRepository;
 
 class NewsController extends Controller
 {
     protected $module = 'fronted';
 
     protected $viewPath = 'frontend::components.';
+    private $categoryRepository;
+
+    public function __construct()
+    {
+        $this->categoryRepository = new  CategoryRepository(new Category());
+    }
 
     public function showNews($slug)
     {
         $news = $this->getNews($slug);
-        $headerCategories = (new NewsCategoryRepository(new NewsCategory()))->getHeaderCategories();
+        $headerCategories = $this->categoryRepository->getHeaderCategories();
         return new Response($this->viewPath . '.newsDetail',
             [
                 'news' => $news,

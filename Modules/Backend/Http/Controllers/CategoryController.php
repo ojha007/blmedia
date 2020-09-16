@@ -3,12 +3,12 @@
 namespace Modules\Backend\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Modules\Backend\Entities\NewsCategory;
+use Modules\Backend\Entities\Category;
 use Modules\Backend\Http\Requests\NewsCategoryRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\NewsCategoryRepository;
 
-class NewsCategoryController extends Controller
+class CategoryController extends Controller
 {
 
     protected $routePrefix = 'news-category';
@@ -19,11 +19,11 @@ class NewsCategoryController extends Controller
      */
     protected $repository;
 
-    public function __construct(NewsCategory $newsCategory)
+    public function __construct(Category $category)
     {
 
-        $this->model = $newsCategory;
-        $this->repository = new NewsCategoryRepository($newsCategory);
+        $this->model = $category;
+        $this->repository = new NewsCategoryRepository($category);
     }
 
 
@@ -43,10 +43,10 @@ class NewsCategoryController extends Controller
         return new Response($viewPath, $attributes);
     }
 
-    public function edit(NewsCategory $newsCategory)
+    public function edit(Category $category)
     {
         $attributes = [
-            'category' => $newsCategory,
+            'category' => $category,
         ];
         $attributes = array_merge($attributes, $this->repository->getViewData());
         return new Response($this->viewPath . 'edit', $attributes);
