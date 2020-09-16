@@ -8,47 +8,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="fixes frontend content">
-      <change afterPath="$PROJECT_DIR$/Modules/Frontend/Repositories/CategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="dynamic content in frontend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165956_create_news_category_metatags.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165956_create_news_category_metatags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_170004_create_news_metatags.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_170004_create_news_metatags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_11_142245_create_news_categories_pivot_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_11_142245_create_news_categories_pivot_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/NewsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/NewsCategoryMetaTags.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/CategoryMetaTags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Providers/ViewComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Providers/ViewComposerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/newsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/newsCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/module.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Entities/NewsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Entities/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/NewsCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Providers/ViewComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Providers/ViewComposerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Repositories/NewsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Repositories/NewsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/above-footer/above-footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/above-footer/above-footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/left.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/middle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/middle.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-2/left-middle-2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-2/left-middle-2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-3/left-middle-3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-3/left-middle-3.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-4/left-middle-4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-4/left-middle-4.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-5/left-middle-5.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/left-middle-5/left-middle-5.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/newsByCategory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/newsByCategory.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/above-footer/above-footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/above-footer/above-footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/below-header/below-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/below-header/below-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/right-middle-1/right-middle-1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/right-middle-1/right-middle-1.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/right-middle-2/right-middle-2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/right-middle-2/right-middle-2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/right-middle-3/right-middle-3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/right-middle-3/right-middle-3.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Routes/subRoutes/newsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Routes/subRoutes/newsCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +237,7 @@
       <workItem from="1600068436169" duration="2605000" />
       <workItem from="1600102915487" duration="7143000" />
       <workItem from="1600146003901" duration="25000" />
-      <workItem from="1600176224842" duration="17739000" />
+      <workItem from="1600176224842" duration="18163000" />
     </task>
     <task id="LOCAL-00001" summary="completed news and news category curd">
       <created>1599839426410</created>
@@ -306,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600110124224</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="dynamic content in frontend">
+      <created>1600195088681</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600195088681</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +311,8 @@
     <MESSAGE value="guest and repoerter" />
     <MESSAGE value="site settings" />
     <MESSAGE value="fixes frontend content" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes frontend content" />
+    <MESSAGE value="dynamic content in frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="dynamic content in frontend" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600094332547" />
@@ -384,10 +353,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600110134638">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600195094978">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600110134638" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600195094978" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600185734894">
