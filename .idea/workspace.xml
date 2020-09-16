@@ -8,9 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="dynamic content in frontend">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="dynamic content in frontend" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,7 +165,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../erp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -238,6 +236,7 @@
       <workItem from="1600102915487" duration="7143000" />
       <workItem from="1600146003901" duration="25000" />
       <workItem from="1600176224842" duration="18163000" />
+      <workItem from="1600231750677" duration="101000" />
     </task>
     <task id="LOCAL-00001" summary="completed news and news category curd">
       <created>1599839426410</created>
@@ -274,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600195088681</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="dynamic content in frontend">
+      <created>1600231804562</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600231804562</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,8 +331,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107625033" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600094332547" />
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600231848859">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600231848859" />
     <state width="1145" height="2" key="GridCell.Tab.0.bottom" timestamp="1600192849058">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -353,10 +361,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600195094978">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600231807302">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600195094978" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600231807302" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600185734894">
@@ -373,6 +381,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="444" y="32" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834@0.0.1536.834" timestamp="1600106746241" />
+    <state x="633" y="69" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1600231780763">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="633" y="69" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1536.834@0.0.1536.834" timestamp="1600231780763" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600094332547" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600194572971">
