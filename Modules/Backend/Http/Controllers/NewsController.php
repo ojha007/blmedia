@@ -81,6 +81,7 @@ class NewsController extends Controller
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
+            dd($exception);
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to create News');
         }

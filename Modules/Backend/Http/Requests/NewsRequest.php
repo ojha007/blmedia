@@ -24,7 +24,7 @@ class NewsRequest extends FormRequest
             'image_caption' => 'nullable|string|max:255',
             'short_description' => 'nullable',
             'external_url' => 'nullable',
-            'publish_time' => 'required|date',
+            'publish_date' => 'required|date',
             'expiry_date' => 'nullable|date',
             'image' => 'nullable',
             'video_url' => 'nullable',

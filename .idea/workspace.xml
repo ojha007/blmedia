@@ -9,38 +9,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="first page condition">
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/position.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blmedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blmedia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/newsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/newsCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X052f559fb7240a5ee18190298822b105.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X1577104e55c6babec31d85deac35c3d3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X16111cab9a4cf6ace5c23a6eecf1704e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X1a3f5b9fa9c1bc9a107e7c355f32fe12.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X1c22d7531bd363df24453c9c00162c4b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X2addbb5624b20ddc28a9b66d62b7e6cf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X3af313630dd0519988390d43aeb0c175.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X420473ec9c7da6f38a2da0e388da1fa1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X44cea1c16403747d3c6c0d12b4d538bd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X46787f10927feaa69e300bdf6680b90a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X5cacb8377b4dd8b0cf2872490ebc4f98.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X6691b6d66a6b4c2aeda0ec89471996b2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X711a1c61d5ab56fe344184765c4e2bdd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X81e61484785b0b42042ff67894ea6f18.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X835b2e62888b2dbcb0f61e3529815c9b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X8743c0034ac616bfffb78b925458b97a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X990030278591d188b8b70953265cec59.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X9f3039cb8cfb529b388812f2cdbe9c02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xa238082bc048e282c8252c4c6c827ab9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xaee42d4ac9885f3bee91a8ef00f1d13b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xcd247a588ba8436007a2945bbcf9481f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xe10fc6e07a1869545b0cc53b550d6ef8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xefed9c784a6f974d9e2f0c0ae088f73c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xfa058aac20737ffb02dc8fe16c93d638.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +31,23 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,8 +58,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -180,13 +183,8 @@
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/rap2hpoutre/laravel-log-viewer" />
     </include_path>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="32" />
-    <option name="y" value="59" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1hH9iPbitgqVNbGsFRi8j5w2CwB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -199,7 +197,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../erp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -212,15 +210,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\blmedia\app\Http" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Entities" />
       <recent name="C:\laragon\www\blmedia\config" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\app\Http" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -244,7 +242,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -272,6 +270,7 @@
       <workItem from="1600176224842" duration="18163000" />
       <workItem from="1600231750677" duration="101000" />
       <workItem from="1600258694263" duration="4191000" />
+      <workItem from="1600272757597" duration="2987000" />
     </task>
     <task id="LOCAL-00001" summary="completed news and news category curd">
       <created>1599839426410</created>
@@ -333,7 +332,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -350,7 +349,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -369,7 +370,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="completed news and news category curd" />
@@ -400,9 +400,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1600260638325" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600263516857">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="1852" y="158" key="FileChooserDialogImpl" timestamp="1600271704591">
+      <screen x="1366" y="0" width="1360" height="768" />
     </state>
+    <state x="1852" y="158" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1360.768@1366.0.1360.768" timestamp="1600271704591" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600263516857" />
     <state width="1145" height="2" key="GridCell.Tab.0.bottom" timestamp="1600192849058">
       <screen x="0" y="0" width="1536" height="834" />
@@ -466,9 +467,10 @@
     <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1600258896819" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600094332547" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600262648957">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="383" y="143" width="672" height="625" key="search.everywhere.popup" timestamp="1600274342720">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="383" y="143" width="672" height="625" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1600274342720" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600262648957" />
   </component>
 </project>
