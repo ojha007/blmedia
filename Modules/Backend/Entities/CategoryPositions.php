@@ -1,0 +1,12 @@
+<?php
+
+namespace Modules\Backend\Entities;
+
+use Illuminate\Database\Eloquent\Model;
+
+class CategoryPositions extends Model
+{
+    protected $table = 'category_positions';
+    protected $fillable = ['front_header_position', 'front_body_position', 'detail_header_position', 'detail_body_position'];
+
+}
