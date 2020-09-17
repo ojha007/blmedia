@@ -8,7 +8,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -257,6 +259,7 @@
       <workItem from="1600258694263" duration="4191000" />
       <workItem from="1600272757597" duration="3116000" />
       <workItem from="1600306816737" duration="3858000" />
+      <workItem from="1600318382043" duration="151000" />
     </task>
     <task id="LOCAL-00001" summary="completed news and news category curd">
       <created>1599839426410</created>
@@ -335,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600310082656</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="crud of news completed">
+      <created>1600318401981</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1600318401981</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,11 +411,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107625033" />
-    <state x="296" y="0" key="CommitChangelistDialog2" timestamp="1600318395872">
+    <state x="296" y="0" key="CommitChangelistDialog2" timestamp="1600318400569">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="296" y="0" key="CommitChangelistDialog2/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600310081544" />
-    <state x="296" y="0" key="CommitChangelistDialog2/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1600318395872" />
+    <state x="296" y="0" key="CommitChangelistDialog2/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1600318400569" />
     <state x="296" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1600276190084" />
     <state x="449" y="172" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1600263472451">
       <screen x="0" y="0" width="1536" height="834" />
@@ -452,10 +462,11 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="321" y="134" key="Vcs.Push.Dialog.v2" timestamp="1600310087301">
+    <state x="321" y="134" key="Vcs.Push.Dialog.v2" timestamp="1600318407653">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="321" y="134" key="Vcs.Push.Dialog.v2/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600310087301" />
+    <state x="321" y="134" key="Vcs.Push.Dialog.v2/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1600318407653" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600260652727" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
