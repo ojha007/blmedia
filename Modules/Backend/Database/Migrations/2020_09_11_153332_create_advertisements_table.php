@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateAdvertisementsTable extends Migration
 {
@@ -17,13 +17,13 @@ class CreateAdvertisementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->unique();
             $table->string('image');
-            $table->string('url');
-            $table->string('for');
-            $table->string('sub_for');
-            $table->string('placement');
-            $table->string('sub_placement');
-            $table->text('description');
-            $table->text('sub_description');
+            $table->string('url')->nullable();
+            $table->string('for')->nullable();
+            $table->string('sub_for')->nullable();
+            $table->string('placement')->nullable();
+            $table->string('sub_placement')->nullable();
+            $table->text('description')->nullable();
+            $table->text('sub_description')->nullable();
             $table->boolean('is_active')->default(1);
             $table->softDeletes();
             $table->timestamps();

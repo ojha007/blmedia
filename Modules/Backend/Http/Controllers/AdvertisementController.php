@@ -56,21 +56,21 @@ class AdvertisementController extends Controller
         return new Response($viewPath, $viewData);
     }
 
-    public function update(AdvertisementRequest $request, Advertisement $advertisement)
+    public function update(AdvertisementRequest $request, $id)
     {
         $attributes = $request->validated();
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
-            $this->repository->update($advertisement->id, $attributes);
+            $this->repository->update($id, $attributes);
             DB::commit();
             return redirect()->route($baseRoute . '.index')
-                ->with('success', 'News Updated SuccessFully');
+                ->with('success', 'Advertisement Updated SuccessFully');
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
             return redirect()->back()->withInput()
-                ->with('failed', 'Failed to Update News');
+                ->with('failed', 'Failed to Update Advertisement');
         }
     }
 
@@ -86,10 +86,9 @@ class AdvertisementController extends Controller
                     $fileName = Carbon::now()->format('Y-m-d') .
                         Carbon::now()->format('Y_m_d') . uniqid() . '_' . time();
                     $extension = $request->image->extension();
-                    $request->image->storeAs('/public',  $fileName . "." . $extension);
+                    $request->image->storeAs('/public', $fileName . "." . $extension);
                     $image = Storage::url($fileName . "." . $extension);
                     $attributes['image'] = $image;
-
                 }
             }
             $baseRoute = getBaseRouteByUrl($request);
@@ -101,7 +100,6 @@ class AdvertisementController extends Controller
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
-            dd($exception);
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to create Advertisement');
         }
@@ -125,9 +123,9 @@ class AdvertisementController extends Controller
                 ->with('success', 'Advertisement Deleted SuccessFully');
         } catch (\Exception $exception) {
             DB::rollBack();
-
-            dd($exception);
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()
+                ->with('failed', 'Failed to delete advertisement.');
 
         }
 

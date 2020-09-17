@@ -25,9 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="reporter curd">
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="guest crud">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_11_153332_create_advertisements_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_11_153332_create_advertisements_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/AdvertisementController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600362402245</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="guest crud">
+      <created>1600362914924</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600362914924</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +297,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="reporter curd" />
-    <option name="LAST_COMMIT_MESSAGE" value="reporter curd" />
+    <MESSAGE value="guest crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="guest crud" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600283167460">
@@ -336,14 +345,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1145" height="135" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600352981432" />
-    <state x="147" y="66" key="MergeDialog" timestamp="1600352586271">
+    <state x="147" y="66" key="MergeDialog" timestamp="1600362966361">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="147" y="66" key="MergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600352586271" />
-    <state x="396" y="172" key="MultipleFileMergeDialog" timestamp="1600358041310">
+    <state x="147" y="66" key="MergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600362966361" />
+    <state x="396" y="172" key="MultipleFileMergeDialog" timestamp="1600362968824">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600358041310" />
+    <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600362968824" />
     <state x="522" y="128" key="NewPhpClassDialog" timestamp="1600280462984">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -354,10 +363,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600358054924">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600362984249">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600358054924" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600362984249" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600263465910">
@@ -380,17 +389,17 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="633" y="69" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1536.834@0.0.1536.834" timestamp="1600231780763" />
-    <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600352542130">
+    <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600362942986">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1600352542130" />
+    <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1600362942986" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600281569663">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600281569663" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600362410670">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600363172936">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600362410670" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600363172936" />
   </component>
 </project>
