@@ -1,4 +1,37 @@
 <?php return array (
+  'ads' => 
+  array (
+    'for' => 
+    array (
+      0 => 'categories',
+      1 => 'sub_categories',
+      2 => 'detail_page',
+      3 => 'wishlist',
+      4 => 'slider',
+      5 => 'bottom',
+      6 => 'about',
+      7 => 'blog_list',
+      8 => 'blog_detail',
+    ),
+    'sub_for' => 
+    array (
+      'above_menu' => 'Above Logo and Menu',
+      'below' => 'Below Menu',
+      'aside_logo' => 'Aside Logo',
+      'home_skip_ad' => ' Road Block/Skip Ad Home',
+      'news_skip_ad' => 'Content Block/Skip Ad Single',
+      'below_home_link' => 'Below Link Home',
+      'below_special' => 'Below Special Home',
+      'below_break_home' => 'Below Break Home',
+      'below_trending_home' => ' Below Trending Home',
+      'below_link_report' => 'Below Link Report',
+      'below_single_content' => 'Below Single Content',
+      'below_breaking' => 'Below Breaking',
+      'above_breaking' => 'Above Breaking',
+      'above_video' => 'Above Video',
+      'below_video' => 'Below Video',
+    ),
+  ),
   'app' => 
   array (
     'name' => 'Laravel',

@@ -17,12 +17,12 @@
         </div>
         <div class="form-group col-md-6 {{$errors->has('for')?'has-error':''}}">
             {{ Form::label('for', 'Ads For:', ['class'=>'control-label required'])}}
-            {!! Form::select('for',[], null, array('placeholder' => 'Select ads for','class' => 'form-control select2')) !!}
+            {!! Form::select('for',$selectAdsFor, null, array('placeholder' => 'Select ads for','class' => 'form-control select2')) !!}
 
         </div>
         <div class="form-group col-md-6 {{$errors->has('for')?'has-error':''}}">
             {{ Form::label('sub_for', 'Ads Sub For:', ['class'=>'control-label required'])}}
-            {!! Form::select('sub_for',[], null, array('placeholder' => 'Select sub for ','class' => 'form-control select2')) !!}
+            {!! Form::select('sub_for',$selectAdsSubFor, null, array('placeholder' => 'Select sub for ','class' => 'form-control select2')) !!}
 
         </div>
         <div class="form-group col-md-6 {{$errors->has('placement')?'has-error':''}}">
@@ -36,6 +36,12 @@
 
         </div>
         <div class="form-group col-md-6 ">
+            {{ Form::label('image', 'Image:', ['class'=>'control-label'])}}
+            {!! Form::file('image', null,['class'=>'form-control']) !!}
+            {{--            <input name="is_active" value="1" type="checkbox" data-toggle="toggle" data-on="Yes"--}}
+            {{--                   data-off="No" checked>--}}
+        </div>
+        <div class="form-group col-md-6 ">
             {{ Form::label('is_active', 'Ads Status:', ['class'=>'control-label'])}}
             {!! Form::hidden('is_active', 0) !!}
             <input name="is_active" value="1" type="checkbox" data-toggle="toggle" data-on="Yes"
@@ -46,12 +52,12 @@
             {!! Form::textarea('description', null, array('placeholder' => 'Enter description',
             'class' => 'form-control','rows'=>'5')) !!}
         </div>
-        <div class="form-group col-md-6 {{$errors->has('sub_description') ? 'has-error':''}}">
-            {{ Form::label('sub_description', 'Ads Description:', ['class'=>' control-label '])}}
-            {!! Form::textarea('sub_description', null, array('placeholder' => 'Enter sub description',
-                    'class' => 'form-control','rows'=>'3')) !!}
+{{--        <div class="form-group col-md-6 {{$errors->has('sub_description') ? 'has-error':''}}">--}}
+{{--            {{ Form::label('sub_description', 'Ads Description:', ['class'=>' control-label '])}}--}}
+{{--            {!! Form::textarea('sub_description', null, array('placeholder' => 'Enter sub description',--}}
+{{--                    'class' => 'form-control','rows'=>'3')) !!}--}}
 
-        </div>
+{{--        </div>--}}
     </div>
     <div class="box-footer">
         <a href="{{route($routePrefix.'.advertisements.index')}}" type="button"

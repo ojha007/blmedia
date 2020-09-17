@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-12">
             {!! Form::open(['route'=> $routePrefix.'.advertisements.store',
-           'method'=>'POST','class'=>'','file'=>true] ) !!}
+                        'method'=>'POST','class'=>'','file'=>true] ) !!}
             @include($module.'::advertisement.partials.form')
             {!! Form::close() !!}
         </div>
