@@ -30,7 +30,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
-            ->select('news.title', 'news.slug', 'news.sub_title', 'reporters.name as reporter_name',
+            ->select('news.title', 'news.sub_title', 'reporters.name as reporter_name',
                 'guests.name as guest_name', 'categories.name as categories',
                 'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
             ->join('news_categories', 'news_categories.news_id', '=', 'news.id')

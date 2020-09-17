@@ -41,16 +41,20 @@
                             <tr>
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
-                                {{--                                <td>{{$category->position}}</td>--}}
                                 <td>{!! spanByStatus($category->is_active) !!}</td>
                                 <td>
                                     <a href="{{route($routePrefix.'.category.edit',$category->id)}}"
-                                       class="btn btn-primary btn-flat">
+                                       class="btn btn-primary btn-sm btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <button class="btn btn-danger btn-flat">
+                                    {!! Form::open(['method' => 'DELETE', 'route' =>
+                                            [$routePrefix.'.category.destroy',$category->id],
+                                             'onsubmit' => "return confirm('Are you sure you want to delete?')", 'style'=>"display:inline"
+                                       ])!!}
+                                    <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
                                         <i class="fa fa-trash"></i>
                                     </button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach

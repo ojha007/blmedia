@@ -76,13 +76,13 @@ class ContactController extends Controller
             DB::commit();
             $baseRoute = getBaseRouteByUrl($request);
             return redirect()->route($baseRoute . '.index')
-                ->with('success', 'Contact Created Successfully');
+                ->with('success', $this->model->getType() . ' Created Successfully');
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             return redirect()->back()
                 ->withInput()
-                ->with('failed', 'Failed to update Contacts');
+                ->with('failed', 'Failed to update ' . $this->model->getType());
 
         }
 
@@ -98,13 +98,13 @@ class ContactController extends Controller
             DB::commit();
             $baseRoute = getBaseRouteByUrl($request);
             return redirect()->route($baseRoute . '.index')
-                ->with('success', 'Contact updated Successfully');
+                ->with('success', $this->model->getType() . ' updated Successfully');
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             return redirect()->back()
                 ->withInput()
-                ->with('failed', 'Failed to update contact .');
+                ->with('failed', 'Failed to update '.$this->model->getType());
         }
 
     }

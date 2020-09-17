@@ -32,10 +32,10 @@ class NewsController extends Controller
 
     }
 
-    protected function getNews($slug)
+    protected function getNews($id)
     {
         return DB::table('news')
-            ->where('slug', $slug)
+            ->where('id', $id)
             ->select('news.title', 'news.sub_title', 'news.description')
             ->first();
     }

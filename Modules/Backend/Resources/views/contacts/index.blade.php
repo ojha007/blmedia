@@ -47,7 +47,7 @@
                                 <td>{!! spanByStatus($contact->is_active) !!}</td>
                                 <td>
                                     <a href="{{route($routePrefix.'.'.strtolower($type).'.edit',$contact->id)}}"
-                                       class="btn btn-primary btn-flat">
+                                       class="btn btn-primary btn-sm btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     {!! Form::open(['method' => 'DELETE', 'route' =>

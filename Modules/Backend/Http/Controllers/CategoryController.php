@@ -28,7 +28,6 @@ class CategoryController extends Controller
         $this->repository = new NewsCategoryRepository($category);
     }
 
-
     public function index()
     {
         $categories = $this->repository->getAll();
@@ -74,20 +73,6 @@ class CategoryController extends Controller
         }
     }
 
-    protected function updateOrCreateRelations($category, $request): void
-    {
-        if (array_filter($request->get('position'))) {
-            $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
-            DB::table('category_meta_tags')
-                ->updateOrInsert($attributes);
-        }
-        if (array_filter($request->get('meta'))) {
-            $attributes = array_merge(['category_id' => $category->id], $request->get('meta'));
-            DB::table('category_meta_tags')
-                ->updateOrInsert($attributes);
-        }
-    }
-
     public function store(NewsCategoryRequest $request)
     {
         $attributes = $request->only((new Category())->getFillable());
@@ -107,8 +92,17 @@ class CategoryController extends Controller
         }
     }
 
-//    public function show($id)
-//    {
-//        dd($id);
-//    }
+    protected function updateOrCreateRelations($category, $request): void
+    {
+        if (array_filter($request->get('position'))) {
+            $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
+            $category->position()
+                ->updateOrCreate($attributes);
+        }
+        if (array_filter($request->get('meta'))) {
+            $attributes = array_merge(['category_id' => $category->id], $request->get('meta'));
+            DB::table('category_meta_tags')
+                ->updateOrInsert($attributes);
+        }
+    }
 }
