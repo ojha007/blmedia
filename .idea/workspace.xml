@@ -25,21 +25,26 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="advertsiments fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/blmedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blmedia.iml" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="news -crud fixes">
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/ContactRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_133501_create_guests_and_reporters_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_133501_create_guests_and_reporters_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/CategoryPositions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/CategoryPositions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ReporterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ReporterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsCategoryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/errors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/errors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Traits/MetaInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Traits/MetaInformation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +207,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../erp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Http/Requests" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -214,17 +219,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Entities" />
-      <recent name="C:\laragon\www\blmedia\config" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\blmedia\config" />
       <recent name="C:\laragon\www\blmedia\Modules\Auth\Resources\views" />
       <recent name="C:\laragon\www\blmedia\app\Http" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Requests" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Entities" />
+      <recent name="C:\laragon\www\blmedia\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -316,10 +321,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600283022131" />
-    <state width="434" height="339" key="Git.Branch.Popup" timestamp="1600357015448">
+    <state width="436" height="341" key="Git.Branch.Popup" timestamp="1600358016884">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="434" height="339" key="Git.Branch.Popup/0.0.1536.834@0.0.1536.834" timestamp="1600357015448" />
+    <state width="436" height="341" key="Git.Branch.Popup/0.0.1536.834@0.0.1536.834" timestamp="1600358016884" />
     <state width="1145" height="135" key="GridCell.Tab.0.bottom" timestamp="1600352981432">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -340,10 +345,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="147" y="66" key="MergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600352586271" />
-    <state x="396" y="172" key="MultipleFileMergeDialog" timestamp="1600352588499">
+    <state x="396" y="172" key="MultipleFileMergeDialog" timestamp="1600358041310">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600352588499" />
+    <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600358041310" />
     <state x="522" y="128" key="NewPhpClassDialog" timestamp="1600280462984">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -354,10 +359,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600352592073">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600358054924">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600352592073" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600358054924" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600263465910">
@@ -388,9 +393,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600281569663" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600357638321">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600362135544">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600357638321" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600362135544" />
   </component>
 </project>

@@ -9,6 +9,7 @@ class ReporterController extends ContactController
 
     protected $type = 'REPORTER';
 
+    protected $baseRoute = 'reporters';
 
     public function __construct(Reporter $reporter)
     {

@@ -23,9 +23,9 @@ class CreateGuestsAndReportersTable extends Migration
                 $table->string('organization')->nullable();
                 $table->string('facebook_url')->nullable();
                 $table->string('twitter_url')->nullable();
-                $table->string('phone_number')->unique();
-                $table->string('email')->unique();
-                $table->string('address');
+                $table->string('phone_number')->nullable();
+                $table->string('email')->nullable();
+                $table->string('address')->nullable();
                 $table->string('slug')->unique();
                 $table->string('caption')->nullable();
                 $table->text('description')->nullable();

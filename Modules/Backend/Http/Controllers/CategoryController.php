@@ -6,7 +6,6 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Modules\Backend\Entities\Category;
-use Modules\Backend\Entities\CategoryPositions;
 use Modules\Backend\Http\Requests\NewsCategoryRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\NewsCategoryRepository;
@@ -52,40 +51,55 @@ class CategoryController extends Controller
             'category' => $category,
         ];
         $attributes = array_merge($data, $this->repository->getViewData());
-        $positions = CategoryPositions::all();
-        dd($positions);
         return new Response($this->viewPath . 'edit', $attributes);
     }
 
-    public function update(NewsCategoryRequest $request)
+    public function update(NewsCategoryRequest $request, $id)
     {
-        $attributes = $request->validated();
-        dd($attributes);
+        $attributes = $request->only((new Category())->getFillable());
+        $baseRoute = getBaseRouteByUrl($request);
+        try {
+            DB::beginTransaction();
+            $category = $this->repository->update($id, $attributes);
+//            $this->updateOrCreateRelations($category, $request);
+            DB::commit();
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'News was updated SuccessFully');
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            DB::rollBack();
+//            dd($exception);
+            return redirect()->back()->withInput()
+                ->with('failed', 'Failed to update News');
+        }
+    }
+
+    protected function updateOrCreateRelations($category, $request): void
+    {
+        if (array_filter($request->get('position'))) {
+            $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
+            DB::table('category_meta_tags')
+                ->updateOrInsert($attributes);
+        }
+        if (array_filter($request->get('meta'))) {
+            $attributes = array_merge(['category_id' => $category->id], $request->get('meta'));
+            DB::table('category_meta_tags')
+                ->updateOrInsert($attributes);
+        }
     }
 
     public function store(NewsCategoryRequest $request)
     {
-//        $attributes = $request->validated();
         $attributes = $request->only((new Category())->getFillable());
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
             $category = $this->repository->create($attributes);
-            if (array_filter($request->get('position'))) {
-                $positions = array_merge(['category_id' => $category->id], $request->get('position'));
-                DB::table('category_positions')
-                    ->insert($positions);
-            }
-            if (array_filter($request->get('meta'))) {
-                $metaTags = array_merge(['category_id' => $category->id], $request->get('meta'));
-                DB::table('category_meta_tags')
-                    ->insert($metaTags);
-            }
+            $this->updateOrCreateRelations($category, $request);
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News Created SuccessFully');
         } catch (\Exception $exception) {
-            dd($exception);
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
             return redirect()->back()->withInput()
@@ -93,9 +107,8 @@ class CategoryController extends Controller
         }
     }
 
-
-    public function show($id)
-    {
-        dd($id);
-    }
+//    public function show($id)
+//    {
+//        dd($id);
+//    }
 }

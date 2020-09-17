@@ -10,6 +10,8 @@ use Modules\Backend\Exceptions\InvalidMetaTags;
 
 trait MetaInformation
 {
+//    public $timestamps = false;
+
     /**
      * @param array $attributes
      * @return $this
