@@ -86,7 +86,7 @@ class AdvertisementController extends Controller
                     $fileName = Carbon::now()->format('Y-m-d') .
                         Carbon::now()->format('Y_m_d') . uniqid() . '_' . time();
                     $extension = $request->image->extension();
-                    $request->image->storeAs('/public',  $fileName . "." . $extension);
+                    $request->image->storeAs('/public', $fileName . "." . $extension);
                     $image = Storage::url($fileName . "." . $extension);
                     $attributes['image'] = $image;
 
@@ -107,10 +107,9 @@ class AdvertisementController extends Controller
         }
     }
 
-    public
-    function show(Advertisement $advertisement)
+    public function show(Advertisement $advertisement)
     {
-        return new Response($this->viewPath . 'show', ['news' => $advertisement]);
+        return new Response($this->viewPath . 'show', ['advertisement' => $advertisement]);
     }
 
     public
