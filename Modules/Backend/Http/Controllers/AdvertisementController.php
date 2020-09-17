@@ -105,10 +105,9 @@ class AdvertisementController extends Controller
         }
     }
 
-    public
-    function show(Advertisement $advertisement)
+    public function show(Advertisement $advertisement)
     {
-        return new Response($this->viewPath . 'show', ['news' => $advertisement]);
+        return new Response($this->viewPath . 'show', ['advertisement' => $advertisement]);
     }
 
     public

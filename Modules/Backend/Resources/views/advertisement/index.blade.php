@@ -48,6 +48,10 @@
                                 <td>{!! $ads->description !!}</td>
                                 <td>{!! spanByStatus($ads->is_active) !!}</td>
                                 <td>
+                                    <a href="{{route($routePrefix.'.advertisements.show',$ads->id)}}"
+                                       class="btn btn-primary btn-flat">
+                                        <i class="fa fa-search"></i>
+                                    </a>
                                     <a href="{{route($routePrefix.'.advertisements.edit',$ads->id)}}"
                                        class="btn btn-primary btn-flat">
                                         <i class="fa fa-edit"></i>
