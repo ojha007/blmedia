@@ -51,7 +51,7 @@
                                     </a>
                                     {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'.news.destroy', $news->id],
                                             'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
-                                  ]) !!}
+                                      ])!!}
                                     <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
                                         <i class="fa fa-trash"></i>
                                     </button>

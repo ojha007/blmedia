@@ -25,26 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="news -crud fixes">
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/ContactRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_133501_create_guests_and_reporters_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_133501_create_guests_and_reporters_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165710_create_news_category_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/CategoryPositions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/CategoryPositions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="reporter curd">
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ReporterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ReporterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsCategoryRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/contacts/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news-category/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Traits/MetaInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Traits/MetaInformation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,6 +240,14 @@
       <workItem from="1600313826559" duration="5000" />
       <workItem from="1600356527021" duration="1119000" />
     </task>
+    <task id="LOCAL-00001" summary="reporter curd">
+      <created>1600362402245</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600362402245</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +286,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="reporter curd" />
+    <option name="LAST_COMMIT_MESSAGE" value="reporter curd" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600283167460">
@@ -393,9 +388,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600281569663" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600362135544">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600362410670">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600362135544" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600362410670" />
   </component>
 </project>

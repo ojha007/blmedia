@@ -2,6 +2,7 @@
 
 namespace Modules\Backend\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -108,4 +109,21 @@ class ContactController extends Controller
 
     }
 
+    public function destroy(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+            $this->repository->delete($id);
+            DB::commit();
+            return redirect()->back()
+                ->with('success', 'Contact deleted Successfully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()
+                ->withInput()
+                ->with('failed', 'Failed to delete contact .');
+
+        }
+    }
 }
