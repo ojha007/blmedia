@@ -14,11 +14,16 @@ class AdvertisementRepository extends Repository
         $this->model = $advertisement;
     }
 
-    public function getViewData()
+    public function getViewData($advertisement)
     {
+
         $selectPublishStatuses = [];
         $selectGuests = [];
         $selectReporters = [];
+        $placement = [
+            'one' => 'one',
+            'two' => 'two'
+        ];
         $selectAdsFor = $this->getAdvertisementPositions(config('ads.for'));
         $selectAdsSubFor = $this->getAdvertisementPositions(config('ads.sub_for'));
         return [
@@ -27,6 +32,8 @@ class AdvertisementRepository extends Repository
             'selectGuests' => $selectGuests,
             'selectAdsFor' => $selectAdsFor,
             'selectAdsSubFor' => $selectAdsSubFor,
+            'placement'=>$placement,
+            'advertisement'=>$advertisement
         ];
     }
 

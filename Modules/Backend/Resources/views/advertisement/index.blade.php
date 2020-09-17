@@ -52,9 +52,13 @@
                                        class="btn btn-primary btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <button class="btn btn-danger btn-flat">
+                                    {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'.advertisements.destroy', $ads->id],
+                  'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
+                                  ]) !!}
+                                    <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
                                         <i class="fa fa-trash"></i>
                                     </button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
