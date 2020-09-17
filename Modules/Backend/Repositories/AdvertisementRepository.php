@@ -21,7 +21,6 @@ class AdvertisementRepository extends Repository
         $selectReporters = [];
         $selectAdsFor = config('ads');
         $selectAdsSubFor = config('backend::advertisement.sub_for');
-        dd($selectAdsFor);
         return [
             'selectPublishStatuses' => $selectPublishStatuses,
             'selectReporter' => $selectReporters,
