@@ -30,8 +30,6 @@ class NewsController extends Controller
 
         $this->model = $news;
         $this->repository = new NewsRepository($news);
-//        $this->middleware('auth:account');
-//        $this->middleware('permission:account-permission');
     }
 
 
@@ -42,6 +40,7 @@ class NewsController extends Controller
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->select('news.id', 'reporters.name as reporter', 'guests.name as guest', 'news.title', 'news.publish_date')
             ->orderBy('id', 'DESC')
+            ->whereNull('news.deleted_at')
             ->paginate(20);
         return new Response($this->viewPath . 'index', ['allNews' => $news]);
     }
@@ -77,7 +76,6 @@ class NewsController extends Controller
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
-            dd($exception);
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to Update News');
         }
