@@ -2,11 +2,15 @@
 
 namespace Modules\Backend\Http\Controllers;
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Http\Requests\AdvertisementRequest;
-use Modules\Backend\Http\Requests\NewsRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\AdvertisementRepository;
 
@@ -41,23 +45,91 @@ class AdvertisementController extends Controller
     public function create()
     {
         $viewPath = $this->viewPath . 'create';
-        $viewData = $this->repository->getViewData();
+        $viewData = $this->repository->getViewData(new Advertisement());
         return new Response($viewPath, $viewData);
     }
 
     public function edit(Advertisement $advertisement)
     {
         $viewPath = $this->viewPath . 'edit';
-        return new Response($viewPath, ['advertisement' => $advertisement]);
+        $viewData = $this->repository->getViewData($advertisement);
+        return new Response($viewPath, $viewData);
     }
 
-    public function update()
+    public function update(AdvertisementRequest $request, Advertisement $advertisement)
     {
-
+        $attributes = $request->validated();
+        $baseRoute = getBaseRouteByUrl($request);
+        try {
+            DB::beginTransaction();
+            $this->repository->update($advertisement->id, $attributes);
+            DB::commit();
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'News Updated SuccessFully');
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            DB::rollBack();
+            return redirect()->back()->withInput()
+                ->with('failed', 'Failed to Update News');
+        }
     }
 
     public function store(AdvertisementRequest $request)
     {
-        dd($request->validated());
+        $attributes = $request->validated();
+        try {
+            if ($request->hasFile('image')) {
+                if ($request->file('image')->isValid()) {
+                    $validated = $request->validate([
+                        'image' => 'max:1014',
+                    ]);
+                    $fileName = Carbon::now()->format('Y-m-d') .
+                        Carbon::now()->format('Y_m_d') . uniqid() . '_' . time();
+                    $extension = $request->image->extension();
+                    $request->image->storeAs('/public',  $fileName . "." . $extension);
+                    $image = Storage::url($fileName . "." . $extension);
+                    $attributes['image'] = $image;
+
+                }
+            }
+            $baseRoute = getBaseRouteByUrl($request);
+            DB::beginTransaction();
+            $this->repository->create($attributes);
+            DB::commit();
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'Advertisement Created SuccessFully');
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            DB::rollBack();
+            dd($exception);
+            return redirect()->back()->withInput()
+                ->with('failed', 'Failed to create Advertisement');
+        }
+    }
+
+    public
+    function show(Advertisement $advertisement)
+    {
+        return new Response($this->viewPath . 'show', ['news' => $advertisement]);
+    }
+
+    public
+    function destroy(Request $request, Advertisement $advertisement)
+    {
+        $baseRoute = getBaseRouteByUrl($request);
+        try {
+            DB::beginTransaction();
+            $advertisement->delete();
+            DB::commit();
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'Advertisement Deleted SuccessFully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+
+            dd($exception);
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+
+        }
+
     }
 }

@@ -43,7 +43,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:xt5M7ZRwFLyrWpvi/BZBKtKKJi7HOXQd+PQu9UwAuzQ=',
+    'key' => 'base64:0dnTlKKSY4Wlj/N4ZQDJWp/MGO0bvaXuxGeSqznK4jM=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (

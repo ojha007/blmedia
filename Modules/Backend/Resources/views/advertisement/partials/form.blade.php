@@ -27,7 +27,7 @@
         </div>
         <div class="form-group col-md-6 {{$errors->has('placement')?'has-error':''}}">
             {{ Form::label('placement', 'Placement:', ['class'=>'control-label required'])}}
-            {!! Form::select('placement', [],null, array('placeholder' => 'Select Placement','class' => 'form-control select2')) !!}
+            {!! Form::select('placement', $placement,null, array('placeholder' => 'Select Placement','class' => 'form-control select2')) !!}
 
         </div>
         <div class="form-group col-md-6 {{$errors->has('sub_placement')?'has-error':''}}">
