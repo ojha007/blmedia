@@ -2,6 +2,7 @@
 
 namespace Modules\Backend\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -65,6 +66,21 @@ class NewsController extends Controller
 
     public function update(NewsRequest $request, News $news)
     {
+        $attributes = $request->validated();
+        $baseRoute = getBaseRouteByUrl($request);
+        try {
+            DB::beginTransaction();
+            $this->repository->update($news->id, $attributes);
+            DB::commit();
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'News Updated SuccessFully');
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            DB::rollBack();
+            dd($exception);
+            return redirect()->back()->withInput()
+                ->with('failed', 'Failed to Update News');
+        }
 
     }
 
@@ -86,6 +102,29 @@ class NewsController extends Controller
                 ->with('failed', 'Failed to create News');
         }
     }
-//    public function update(){
 
+    public function show(News $news)
+    {
+        return new Response($this->viewPath . 'show', ['news' => $news]);
+    }
+
+    public function destroy(Request $request, News $news)
+    {
+        $baseRoute = getBaseRouteByUrl($request);
+
+        try {
+            DB::beginTransaction();
+            $news->delete();
+            DB::commit();
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'News Deleted SuccessFully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+
+            dd($exception);
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+
+        }
+
+    }
 }
