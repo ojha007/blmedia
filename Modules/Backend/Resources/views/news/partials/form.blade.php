@@ -35,6 +35,16 @@
                             ])}}
             </div>
 
+{{--            <div class="col-md-12 form-group {{$errors->has('slug') ?'has-error':''}}">--}}
+{{--                {{Form::label('slug','Enter Slug in English:')}}--}}
+{{--                {{Form::text('slug',null,--}}
+{{--                            [--}}
+{{--                            'class'=>'col-md-6 form-control',--}}
+{{--                            'autocomplete'=>'off',--}}
+{{--                            'title'=>'slug',--}}
+{{--                            'placeholder'=>'Enter Slug in English',--}}
+{{--                            ])}}--}}
+{{--            </div>--}}
             <div class="form-group col-md-12 {{$errors->has('category_id' ?'has-error':'')}}">
                 <label>
                     <b>Categories</b>
@@ -132,14 +142,28 @@
     <!-- general form elements -->
     <div class="box box-default">
         <div class="box-body">
-            <div class="form-group col-md-12 {{$errors->has('publish_time') ? 'has-error':''}}"
+            <div class="form-group col-md-12 {{$errors->has('publish_date') ? 'has-error':''}}"
                  style="padding-right: 0">
-                <label for="publish_time"> <i class="fa fa-calendar"></i>
+                <label for="publish_date"> <i class="fa fa-calendar"></i>
                     <b> Publish on</b>
                 </label>
-                <input type="datetime-local" placeholder="Date" class="form-control" name="publish_time"
-                       id="publish_time" value="{{now()->format('Y-m-d H:i:s')}}">
+                <input type="datetime-local" placeholder="Date" class="form-control" name="publish_date"
+                       id="publish_date" value="{{now()->format('Y-m-d H:i:s')}}">
             </div>
+
+            {{--            <div class="form-group col-md-12 {{$errors->has('publish_date') ? 'has-error':''}}"--}}
+            {{--                 style="padding-right: 0">--}}
+            {{--                {{ Form::label('publish_date', 'Publish on:', ['class'=>'control-label required'])}}--}}
+            {{--                <div class="col-sm-8">--}}
+            {{--                    <div class="input-group date">--}}
+            {{--                        <div class="input-group-addon">--}}
+            {{--                            <i class="fa fa-calendar"></i>--}}
+            {{--                        </div>--}}
+            {{--                        {!! Form::text('publish_date',  null,--}}
+            {{--                       array('placeholder' => 'Publish on','class' => 'form-control datepicker', 'autocomplete'=>'off')) !!}--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
             <div class="form-group col-md-12" style="padding-right: 0">
                 <label for="fieldID4">Banner Picture</label>
@@ -203,22 +227,22 @@
                           data-valmsg-replace="true"></span>
                 </div>
             </div>
-            <div class="form-group col-md-12 {{$errors->has('is_anchor' ?'has-error':'')}} align-center">
-                {!! Form::label('bl_Special','BL Special') !!}
-                <div class="form-control">
-                    <label>
-                        <input id="is_special" name="is_special" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_special" name="is_special" type="radio" value="0">
-                        No
-                    </label>
-                    <span class="field-validation-valid help-block" data-valmsg-for="is_special"
-                          data-valmsg-replace="true"></span>
-                </div>
-            </div>
-            <div class="form-group col-md-12 {{$errors->has('is_anchor' ?'has-error':'')}} align-center">
+            {{--            <div class="form-group col-md-12 {{$errors->has('is_anchor' ?'has-error':'')}} align-center">--}}
+            {{--                {!! Form::label('bl_Special','BL Special') !!}--}}
+            {{--                <div class="form-control">--}}
+            {{--                    <label>--}}
+            {{--                        <input id="is_special" name="is_special" type="radio" value="1">--}}
+            {{--                        Yes--}}
+            {{--                    </label>--}}
+            {{--                    <label>--}}
+            {{--                        <input checked="checked" id="is_special" name="is_special" type="radio" value="0">--}}
+            {{--                        No--}}
+            {{--                    </label>--}}
+            {{--                    <span class="field-validation-valid help-block" data-valmsg-for="is_special"--}}
+            {{--                          data-valmsg-replace="true"></span>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            <div class="form-group col-md-12 {{$errors->has('is_mob_notification' ?'has-error':'')}} align-center">
                 {!! Form::label('is_mob_notification','Mobile Notification') !!}
                 <div class="form-control">
                     <label>

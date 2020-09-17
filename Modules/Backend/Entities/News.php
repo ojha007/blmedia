@@ -3,10 +3,12 @@
 namespace Modules\Backend\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class News extends Model
 {
 
+    use SoftDeletes;
     use \Modules\Backend\Traits\MetaInformation;
 
     const PUBLISHED = 'Published';
@@ -14,9 +16,9 @@ class News extends Model
     const DRAFT = 'Draft';
     protected $metaTagsTable = 'news_meta_tags';
     protected $fillable = [
-        'title', 'sub_title', 'slug', 'guest_id', 'reporter_id',
+        'title', 'sub_title', 'guest_id', 'reporter_id',
         'tag_line', 'description', 'short_description', 'view_count',
-        'external_url', 'publish_date', 'expiry_date', 'is_fixed',
+        'external_url', 'publish_date', 'expiry_date', 'publish_status'
     ];
 
     public static function status()

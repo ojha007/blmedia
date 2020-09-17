@@ -5,6 +5,7 @@ namespace Modules\Backend\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\News;
+use Modules\Backend\Http\Requests\AdvertisementRequest;
 use Modules\Backend\Http\Requests\NewsRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\AdvertisementRepository;
@@ -55,7 +56,7 @@ class AdvertisementController extends Controller
 
     }
 
-    public function store(NewsRequest $request)
+    public function store(AdvertisementRequest $request)
     {
         dd($request->validated());
     }

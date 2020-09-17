@@ -26,39 +26,26 @@
                                 null, array('placeholder' => 'Select Parent Category','class' => 'form-control select2')) !!}
 
                     </div>
-                    <div class="form-group col-md-6 {{$errors->has('slug')?'has-error':''}}">
-                        {{ Form::label('category_url', 'Category Url:', ['class'=>'control-label required'])}}
-                        {!! Form::text('category_url', null, array('placeholder' => 'Enter Url','class' => 'form-control')) !!}
-
-                    </div>
                     <div class="form-group col-md-6 {{$errors->has('category_code')?'has-error':''}}">
                         {{ Form::label('category_code', 'Code:', ['class'=>'control-label required'])}}
                         {!! Form::select('category_code', $selectCategoriesCodes, null,
                     array('placeholder' => 'Select Category Code','class' => 'form-control')) !!}
 
                     </div>
-                    <div class="form-group col-md-6" style="margin-top: 15px;margin-bottom: 15px;">
-                        {!! Form::hidden('in_mobile', 0) !!}
-                        {!! Form::hidden('in_front', 0) !!}
-                        <div class="checkbox" style="margin-block-end: 3px;">
-                            <label for="in_front" class="control-label">
-                                <input type="checkbox" checked data-toggle="toggle" value="1" name="in_front">
-                                Show In Front:
-                            </label>
-                            <label for="in_mobile">
-
-                                <input type="checkbox" checked data-toggle="toggle" value="1" name="in_mobile">
-                                Show In Mobile:
-                            </label>
-                        </div>
-
-                    </div>
-                    <div class="form-group col-md-6 {{$errors->has('description') ? 'has-error':''}}">
+                    <div class="form-group col-md-12 {{$errors->has('description') ? 'has-error':''}}">
                         {{ Form::label('description', 'Description:', ['class'=>' control-label '])}}
                         {!! Form::textarea('description', null, array('placeholder' => 'Enter description','class' => 'form-control','rows'=>'3')) !!}
 
                     </div>
+                    <div class="form-group col col-md-offset-6">
+                        {!! Form::hidden('in_mobile', 0) !!}
+                        <label for="in_mobile">
+                            <input type="checkbox" checked data-toggle="toggle" value="1" name="in_mobile">
+                            Show In Mobile:
+                        </label>
+                    </div>
                 </div>
+
             </div>
             <div class="tab-pane" id="position">
                 @include($module.'::news-category.partials.position')

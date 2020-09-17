@@ -16,16 +16,20 @@ class NewsCategoryRequest extends FormRequest
 
         $id = $this->route()->parameter('news_category');
         return [
-            'name' => 'required|unique:news_categories,name,' . $id,
-            'slug' => 'required|unique:news_categories,slug,' . $id,
-            'parent_id' => 'nullable|exists:news_categories,id',
-            'position' => 'required|numeric',
-            'in_front' => 'required|boolean',
+//            'name' => 'required|unique:categories,name,' . $id,
+            /*'slug' => 'required|unique:categories,slug,' . $id,
+            'parent_id' => 'nullable|exists:categories,id',
+//            'front_header_position' => 'required|numeric',
+//            'front_body_position' => 'required|numeric',
+//            'detail_header_position' => 'required|numeric',
+//            'detail_body_position' => 'required|numeric',
+//            'position' => 'required|numeric',
+//            'in_front' => 'required|boolean',
             'in_mobile' => 'required|boolean',
             'category_code' => 'required|in:HM,LS,OT',
             'meta_title' => 'nullable|string',
             'meta_keywords' => 'nullable|string',
-            'meta_description' => 'nullable|string'
+            'meta_description' => 'nullable|string'*/
 
         ];
     }

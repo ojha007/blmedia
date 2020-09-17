@@ -14,7 +14,7 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.news-category.create')}}">
+                   href="{{route($routePrefix.'.category.create')}}">
                     <i class="fa fa-plus"></i>
                     Add News Category
                 </a>
@@ -44,7 +44,7 @@
                                 <td>{{$category->position}}</td>
                                 <td>{!! spanByStatus($category->is_active) !!}</td>
                                 <td>
-                                    <a href="{{route($routePrefix.'.news-category.edit',$category->id)}}"
+                                    <a href="{{route($routePrefix.'.category.edit',$category->id)}}"
                                        class="btn btn-primary btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>

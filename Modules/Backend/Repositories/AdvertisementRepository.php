@@ -19,9 +19,8 @@ class AdvertisementRepository extends Repository
         $selectPublishStatuses = [];
         $selectGuests = [];
         $selectReporters = [];
-        $selectAdsFor = config('ads');
-        $selectAdsSubFor = config('backend::advertisement.sub_for');
-        dd($selectAdsFor);
+        $selectAdsFor = $this->getAdvertisementPositions(config('ads.for'));
+        $selectAdsSubFor = $this->getAdvertisementPositions(config('ads.sub_for'));
         return [
             'selectPublishStatuses' => $selectPublishStatuses,
             'selectReporter' => $selectReporters,
@@ -29,6 +28,17 @@ class AdvertisementRepository extends Repository
             'selectAdsFor' => $selectAdsFor,
             'selectAdsSubFor' => $selectAdsSubFor,
         ];
+    }
+
+    protected function getAdvertisementPositions($positions)
+    {
+        $toArray = [];
+        foreach ($positions as $position) {
+            $toArray[strtolower($position)] = ucwords($position, '_');
+        }
+        return $toArray;
+
+
     }
 
 }
