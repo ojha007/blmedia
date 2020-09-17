@@ -22,6 +22,7 @@
         "laravelcollective/html": "^6.2",
         "laravolt/avatar": "^3.2",
         "nwidart/laravel-modules": "^7.2",
+        "rap2hpoutre/laravel-log-viewer": "^1.7",
         "spatie/laravel-permission": "^3.16",
         "yajra/laravel-auditable": "^4.3"
     },
