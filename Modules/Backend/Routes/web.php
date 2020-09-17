@@ -24,5 +24,6 @@ Route::group(
     include __DIR__ . '/subRoutes/contact.php';
     include __DIR__ . '/subRoutes/advertisement.php';
     include __DIR__ . '/subRoutes/settings.php';
+    include __DIR__ . '/subRoutes/users.php';
 });
 
