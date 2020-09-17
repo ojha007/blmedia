@@ -95,7 +95,6 @@ class NewsController extends Controller
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
-            dd($exception);
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to create News');
         }
@@ -118,10 +117,9 @@ class NewsController extends Controller
                 ->with('success', 'News Deleted SuccessFully');
         } catch (\Exception $exception) {
             DB::rollBack();
-
-            dd($exception);
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
-
+            return redirect()->route($baseRoute . '.index')
+                ->with('failed', 'Failed to delete news.');
         }
 
     }

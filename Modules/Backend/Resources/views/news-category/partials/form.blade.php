@@ -26,12 +26,12 @@
                                 null, array('placeholder' => 'Select Parent Category','class' => 'form-control select2')) !!}
 
                     </div>
-                    <div class="form-group col-md-6 {{$errors->has('category_code')?'has-error':''}}">
-                        {{ Form::label('category_code', 'Code:', ['class'=>'control-label required'])}}
-                        {!! Form::select('category_code', $selectCategoriesCodes, null,
-                    array('placeholder' => 'Select Category Code','class' => 'form-control')) !!}
+{{--                    <div class="form-group col-md-6 {{$errors->has('category_code')?'has-error':''}}">--}}
+{{--                        {{ Form::label('category_code', 'Code:', ['class'=>'control-label required'])}}--}}
+{{--                        {!! Form::select('category_code', $selectCategoriesCodes, null,--}}
+{{--                    array('placeholder' => 'Select Category Code','class' => 'form-control')) !!}--}}
 
-                    </div>
+{{--                    </div>--}}
                     <div class="form-group col-md-12 {{$errors->has('description') ? 'has-error':''}}">
                         {{ Form::label('description', 'Description:', ['class'=>' control-label '])}}
                         {!! Form::textarea('description', null, array('placeholder' => 'Enter description','class' => 'form-control','rows'=>'3')) !!}

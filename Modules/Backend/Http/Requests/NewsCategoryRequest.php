@@ -14,23 +14,23 @@ class NewsCategoryRequest extends FormRequest
     public function rules()
     {
 
-        $id = $this->route()->parameter('news_category');
+        $id = $this->route()->parameter('category');
+//        dd($this->request->all());
         return [
-//            'name' => 'required|unique:categories,name,' . $id,
-            /*'slug' => 'required|unique:categories,slug,' . $id,
+            'name' => 'required|unique:categories,name,' . $id,
+            'slug' => 'required|unique:categories,slug,' . $id,
             'parent_id' => 'nullable|exists:categories,id',
-//            'front_header_position' => 'required|numeric',
-//            'front_body_position' => 'required|numeric',
-//            'detail_header_position' => 'required|numeric',
-//            'detail_body_position' => 'required|numeric',
-//            'position' => 'required|numeric',
-//            'in_front' => 'required|boolean',
+            'position' => 'array',
+            'position.front_header_position' => 'nullable|numeric',
+            'position.front_body_position' => 'nullable|numeric',
+            'position.detail_body_position' => 'nullable|numeric',
+            'position.detail_header_position' => 'nullable|numeric',
+            'metaTags' => 'array',
+            'metaTags.meta_title' => 'nullable',
+            'metaTags.meta_keywords' => 'nullable',
+            'metaTags.meta_description' => 'nullable',
             'in_mobile' => 'required|boolean',
-            'category_code' => 'required|in:HM,LS,OT',
-            'meta_title' => 'nullable|string',
-            'meta_keywords' => 'nullable|string',
-            'meta_description' => 'nullable|string'*/
-
+//            'category_code' => 'required|in:HM,LS,OT',
         ];
     }
 

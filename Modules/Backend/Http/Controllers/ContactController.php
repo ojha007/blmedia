@@ -2,8 +2,12 @@
 
 namespace Modules\Backend\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Modules\Backend\Entities\Contact;
+use Modules\Backend\Http\Requests\ContactRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\ContactRepository;
 
@@ -15,6 +19,7 @@ class ContactController extends Controller
      */
     protected $viewPath = 'backend::contacts';
 
+    protected $type;
 
     private $model;
     /**
@@ -62,16 +67,63 @@ class ContactController extends Controller
 
     }
 
-    public function store()
+    public function store(ContactRequest $request)
     {
+        $attributes = $request->validated();
+        try {
+            DB::beginTransaction();
+            $this->repository->create($attributes);
+            DB::commit();
+            $baseRoute = getBaseRouteByUrl($request);
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'Contact Created Successfully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()
+                ->withInput()
+                ->with('failed', 'Failed to update Contacts');
 
+        }
 
     }
 
-    public function update()
+    public function update(ContactRequest $request, $id)
     {
 
+        $attributes = $request->validated();
+        try {
+            DB::beginTransaction();
+            $this->repository->update($id, $attributes);
+            DB::commit();
+            $baseRoute = getBaseRouteByUrl($request);
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'Contact updated Successfully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()
+                ->withInput()
+                ->with('failed', 'Failed to update contact .');
+        }
 
     }
 
+    public function destroy(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+            $this->repository->delete($id);
+            DB::commit();
+            return redirect()->back()
+                ->with('success', 'Contact deleted Successfully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()
+                ->withInput()
+                ->with('failed', 'Failed to delete contact .');
+
+        }
+    }
 }

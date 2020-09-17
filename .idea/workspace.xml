@@ -25,10 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/AdvertisementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/index.blade.php" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="reporter curd">
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/ContactController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +36,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -191,6 +174,12 @@
       <path value="$PROJECT_DIR$/vendor/rap2hpoutre/laravel-log-viewer" />
     </include_path>
   </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="32" />
+    <option name="y" value="59" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
   <component name="ProjectId" id="1hH9iPbitgqVNbGsFRi8j5w2CwB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -201,7 +190,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Http/Requests" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -219,11 +208,11 @@
       <recent name="C:\laragon\www\blmedia\app\Http" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Requests" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Entities" />
       <recent name="C:\laragon\www\blmedia\config" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -232,7 +221,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -251,12 +240,12 @@
       <workItem from="1600313826559" duration="5000" />
       <workItem from="1600356527021" duration="1119000" />
     </task>
-    <task id="LOCAL-00001" summary="crud of Advertisement completed">
-      <created>1600362321220</created>
+    <task id="LOCAL-00001" summary="reporter curd">
+      <created>1600362402245</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1600362321220</updated>
+      <updated>1600362402245</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -291,16 +280,16 @@
                   </entry>
                 </map>
               </option>
-              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="crud of Advertisement completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud of Advertisement completed" />
+    <MESSAGE value="reporter curd" />
+    <option name="LAST_COMMIT_MESSAGE" value="reporter curd" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600283167460">
@@ -311,16 +300,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1600180137077" />
-    <state x="444" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600360405807">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600280473996">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="444" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600360405807" />
     <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1600280473996" />
-    <state x="296" y="0" key="CommitChangelistDialog2" timestamp="1600362319731">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="296" y="0" key="CommitChangelistDialog2/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600362319731" />
-    <state x="296" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1600358522003" />
     <state x="449" y="172" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1600283026209">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -329,15 +312,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1600260638325" />
-    <state x="488" y="158" key="FileChooserDialogImpl" timestamp="1600362664596">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="488" y="158" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600362664596" />
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600283022131" />
-    <state width="434" height="339" key="Git.Branch.Popup" timestamp="1600357015448">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600283022131">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="434" height="339" key="Git.Branch.Popup/0.0.1536.834@0.0.1536.834" timestamp="1600357015448" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600283022131" />
+    <state width="436" height="341" key="Git.Branch.Popup" timestamp="1600358016884">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="436" height="341" key="Git.Branch.Popup/0.0.1536.834@0.0.1536.834" timestamp="1600358016884" />
     <state width="1145" height="135" key="GridCell.Tab.0.bottom" timestamp="1600352981432">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -358,10 +340,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="147" y="66" key="MergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600352586271" />
-    <state x="396" y="172" key="MultipleFileMergeDialog" timestamp="1600352588499">
+    <state x="396" y="172" key="MultipleFileMergeDialog" timestamp="1600358041310">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600352588499" />
+    <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600358041310" />
     <state x="522" y="128" key="NewPhpClassDialog" timestamp="1600280462984">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -372,11 +354,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="321" y="134" key="Vcs.Push.Dialog.v2" timestamp="1600362327820">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600358054924">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="321" y="134" key="Vcs.Push.Dialog.v2/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600362327820" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600352592073" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600358054924" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600263465910">
@@ -407,10 +388,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600281569663" />
-    <state x="383" y="143" width="672" height="625" key="search.everywhere.popup" timestamp="1600362802552">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600362410670">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="383" y="143" width="672" height="625" key="search.everywhere.popup/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600362802552" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600357638321" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600362410670" />
   </component>
 </project>

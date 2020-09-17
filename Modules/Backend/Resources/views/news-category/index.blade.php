@@ -31,7 +31,7 @@
                         <tr>
                             <th>S.No</th>
                             <th>Category</th>
-                            <th>Position</th>
+                            {{--                            <th>Position</th>--}}
                             <th>status</th>
                             <th class="no-sort">Action</th>
                         </tr>
@@ -41,7 +41,7 @@
                             <tr>
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
-                                <td>{{$category->position}}</td>
+                                {{--                                <td>{{$category->position}}</td>--}}
                                 <td>{!! spanByStatus($category->is_active) !!}</td>
                                 <td>
                                     <a href="{{route($routePrefix.'.category.edit',$category->id)}}"

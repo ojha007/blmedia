@@ -44,6 +44,16 @@
                             ])}}
             </div>
 
+            <div class="col-md-6 form-group {{$errors->has('address') ?'has-error':''}}">
+                {{Form::label('address','Address:')}}
+                {{Form::text('address',null,
+                            [
+                            'class'=>'col-md-6 form-control ',
+                            'autocomplete'=>'off',
+                            'placeholder'=>'Enter Address',
+                            ])}}
+            </div>
+
             <div class="col-md-6 form-group {{$errors->has('organization') ?'has-error':''}}">
                 {{Form::label('organization','Organization:')}}
                 {{Form::text('organization',null,
