@@ -10,7 +10,7 @@ if (is_null($edition)) {
 
 Route::group(
     [
-        'middleware' => 'web',
+        'middleware' => 'auth',
         'prefix' => $edition . '/bl-secure',
         'as' => $edition . '.bl-secure.',
         'edition' => $edition,

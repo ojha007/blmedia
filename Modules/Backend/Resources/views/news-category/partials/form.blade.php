@@ -59,6 +59,7 @@
 
                     </div>
                 </div>
+
             </div>
             <div class="tab-pane" id="position">
                 @include($module.'::news-category.partials.position')
