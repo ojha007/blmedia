@@ -110,8 +110,7 @@ class AdvertisementController extends Controller
         return new Response($this->viewPath . 'show', ['advertisement' => $advertisement]);
     }
 
-    public
-    function destroy(Request $request, Advertisement $advertisement)
+    public function destroy(Request $request, Advertisement $advertisement)
     {
         $baseRoute = getBaseRouteByUrl($request);
         try {
