@@ -18,7 +18,9 @@ class Category extends Model
     const OTHER = 'Other';
     protected $metaTagsTable = 'category_meta_tags';
     protected $metaTagsClass = CategoryMetaTags::class;
-    protected $fillable = ['title', 'slug', ''];
+    protected $categoryPositionsTable = 'category_positions';
+    protected  $categoryPositionsClass = CategoryPositions::class;
+    protected $fillable = ['name', 'slug', 'is_active', 'in_mobile'];
     protected $with = ['metaTags'];
 
     public static function selectCategoryCode()
