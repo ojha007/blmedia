@@ -68,9 +68,12 @@ class SettingController extends Controller
     {
         $attributes = $request->all();
         foreach ($attributes as $name => $value) {
-            \Setting::set($name, $value);
+            if ($value)
+                \Setting::set($name, $value);
         }
         \Setting::save();
+        return redirect()->back()
+            ->with('success', 'Setting Created successfully');
 
     }
 

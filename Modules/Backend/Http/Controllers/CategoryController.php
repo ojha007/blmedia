@@ -49,7 +49,7 @@ class CategoryController extends Controller
         $data = [
             'category' => $category,
         ];
-        $attributes = array_merge($data, $this->repository->getViewData());
+        $attributes = array_merge($data, $this->repository->getViewData($category));
         return new Response($this->viewPath . 'edit', $attributes);
     }
 
@@ -60,16 +60,29 @@ class CategoryController extends Controller
         try {
             DB::beginTransaction();
             $category = $this->repository->update($id, $attributes);
-//            $this->updateOrCreateRelations($category, $request);
+            $this->updateOrCreateRelations($category, $request);
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News was updated SuccessFully');
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
-//            dd($exception);
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to update News');
+        }
+    }
+
+    protected function updateOrCreateRelations($category, $request): void
+    {
+        if (array_filter($request->get('position'))) {
+            $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
+            $category->position
+                ->updateOrCreate($attributes);
+        }
+        if (array_filter($request->get('meta'))) {
+            $attributes = array_merge(['category_id' => $category->id], $request->get('meta'));
+            DB::table('category_meta_tags')
+                ->updateOrInsert($attributes);
         }
     }
 
@@ -89,20 +102,6 @@ class CategoryController extends Controller
             DB::rollBack();
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to create News');
-        }
-    }
-
-    protected function updateOrCreateRelations($category, $request): void
-    {
-        if (array_filter($request->get('position'))) {
-            $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
-            $category->position()
-                ->updateOrCreate($attributes);
-        }
-        if (array_filter($request->get('meta'))) {
-            $attributes = array_merge(['category_id' => $category->id], $request->get('meta'));
-            DB::table('category_meta_tags')
-                ->updateOrInsert($attributes);
         }
     }
 }

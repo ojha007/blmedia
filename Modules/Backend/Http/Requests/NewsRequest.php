@@ -26,11 +26,11 @@ class NewsRequest extends FormRequest
             'short_description' => 'nullable',
             'external_url' => 'nullable',
             'publish_date' => 'required|date',
-            'expiry_date' => 'nullable|date',
+//            'expiry_date' => 'nullable|date',
             'image' => 'nullable',
             'video_url' => 'nullable',
-            'is_flash' => 'required|boolean',
-            'is_fixed' => 'required|boolean',
+//            'is_flash' => 'required|boolean',
+//            'is_fixed' => 'required|boolean',
             'publish_status' => 'required|in:' . implode(',', News::publishStatus()),
         ];
     }

@@ -28,6 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
           integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
           crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
     {{--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>--}}
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -117,6 +118,7 @@ desired effect
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
         integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 @stack('scripts')
 <script>
     $(document).ready(function () {
@@ -125,11 +127,10 @@ desired effect
             todayHighlight: true,
             orientation: "bottom auto",
             autoclose: true,
-        }).inputmask({
-            mask: "9999-99-99",
-            placeholder: 'yyyy-mm-dd',
-            showMaskOnHover: true,
-            showMaskOnFocus: true
+        });
+        $('select.select2').select2({
+            width: 'resolve',
+            height: 100
         });
     });
 </script>

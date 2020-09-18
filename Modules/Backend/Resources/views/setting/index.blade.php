@@ -42,7 +42,7 @@
                                                 class="form-group {{$class}} {{ $errors->has($tab) ? 'has-error':'' }}">
                                                 {{ Form::label($tab, $text.':', ['class'=>"control-label $subClass1"])}}
                                                 <div class="{{$subClass2}}">
-                                                    {{ Form::{$type}($tab, setting('site_name'),
+                                                    {{ Form::{$type}($tab, setting($tab),
                                                     ['class'=>'form-control', 'placeholder'=>$text,'rows'=>$rows]) }}
                                                     {!! $errors->first($tab, '<span class="help-block">:message</span>') !!}
                                                 </div>

@@ -25,18 +25,31 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="removed debugger">
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/user-dropdown.blade.php" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="setting crud">
+      <change beforePath="$PROJECT_DIR$/.idea/blmedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blmedia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/Http/Controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_133501_create_guests_and_reporters_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_133501_create_guests_and_reporters_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Database/Migrations/2020_09_10_165716_create_news_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/SettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/advertisement/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/AdvertisementRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/AdvertisementRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Requests/NewsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Repositories/NewsCategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/news/partials/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/setting/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/setting/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +194,8 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/rap2hpoutre/laravel-log-viewer" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager" />
+      <path value="$PROJECT_DIR$/vendor/jrm2k6/cloudder" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
@@ -248,6 +263,8 @@
       <workItem from="1600281447944" duration="2018000" />
       <workItem from="1600313826559" duration="5000" />
       <workItem from="1600356527021" duration="1119000" />
+      <workItem from="1600399946478" duration="55000" />
+      <workItem from="1600430092621" duration="4688000" />
     </task>
     <task id="LOCAL-00001" summary="reporter curd">
       <created>1600362402245</created>
@@ -284,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600367214840</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="setting crud">
+      <created>1600399977932</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600399977932</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +353,8 @@
     <MESSAGE value="guest crud" />
     <MESSAGE value="fixes crud message" />
     <MESSAGE value="removed debugger" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed debugger" />
+    <MESSAGE value="setting crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting crud" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600283167460">
@@ -394,10 +419,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600107793917" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600094332547" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600367290951">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600399981704">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600367290951" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600399981704" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600094332547" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600094332547" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600263465910">
@@ -424,13 +449,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1600363424229" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1600281569663">
+    <state x="425" y="189" key="run.anything.popup" timestamp="1600432199082">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600281569663" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600369370341">
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600432199082" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600434657585">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600369370341" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600434657585" />
   </component>
 </project>
