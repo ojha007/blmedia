@@ -90,7 +90,6 @@
             <ul class="treeview-menu">
                 @isset($contactTypes)
                     @foreach($contactTypes as $type)
-                        {{--                        @if($loop->index >0)--}}
                         <li class="{{request()->is($urlPrefix.'/'.$type,
                                 $urlPrefix.'/'.$type .'/*') ? 'active': ''}}">
                             <a href="{{route($routePrefix.'.'.$type.'.index')}}">
@@ -98,10 +97,15 @@
                                 {{ucwords($type)}}
                             </a>
                         </li>
-                        {{--                        @endif--}}
                     @endforeach
                 @endisset
             </ul>
+        </li>
+
+        <li class="{{request()->is($urlPrefix.'/team',$urlPrefix.'/team/*') ? 'active' :''}}">
+            <a href="{{route($routePrefix.'.team.index')}}">
+                <i class="fa fa-object-group"></i> <span>Teams</span>
+            </a>
         </li>
 
         <li class="{{request()->is($urlPrefix.'/advertisements',$urlPrefix.'/advertisements/*') ? 'active' :''}}">

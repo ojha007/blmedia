@@ -2,6 +2,7 @@
 
 namespace Modules\Backend\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Backend\Http\Responses\Response;
 
@@ -23,13 +24,12 @@ class SettingController extends Controller
     {
 
         $site_settings = $this->getSettingAttributes();
-        return new Response($this->viewPath . 'index', compact('site_settings'));
+        return new Response($this->viewPath . 'index', ["site_settings" => $site_settings]);
     }
 
     public function getSettingAttributes()
     {
         return [
-
             'general_setting' => [
                 'website_name' => 'text',
                 'slogan' => 'text',
@@ -38,6 +38,7 @@ class SettingController extends Controller
                 'contact_number' => 'tel',
                 'opening_hours' => 'time',
                 'address' => 'text',
+                'default_logo' => 'file',
                 'description' => 'textarea',
                 'map' => 'textarea',
             ],
@@ -61,6 +62,19 @@ class SettingController extends Controller
             ]
 
         ];
+    }
+
+    public function store(Request $request)
+    {
+        $attributes = $request->all();
+        foreach ($attributes as $name => $value) {
+            if ($value)
+                \Setting::set($name, $value);
+        }
+        \Setting::save();
+        return redirect()->back()
+            ->with('success', 'Setting Created successfully');
+
     }
 
 

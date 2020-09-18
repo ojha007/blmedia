@@ -15,7 +15,7 @@ class AdvertisementRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'image' => 'max:1014',
+            'image' => 'required|mimes:jpeg,bmp,jpg,png|between:1, 6000',
             'url' => 'required',
             'for' => 'required',
             'sub_for' => ['nullable'],

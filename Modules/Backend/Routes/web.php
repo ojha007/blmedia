@@ -10,7 +10,7 @@ if (is_null($edition)) {
 
 Route::group(
     [
-//        'middleware' => 'auth',
+        'middleware' => 'auth',
         'prefix' => $edition . '/bl-secure',
         'as' => $edition . '.bl-secure.',
         'edition' => $edition,
@@ -21,6 +21,8 @@ Route::group(
     $router->get('/', 'BackendController@index');
     include __DIR__ . '/subRoutes/newsCategory.php';
     include __DIR__ . '/subRoutes/news.php';
+    include __DIR__ . '/subRoutes/team.php';
+
     include __DIR__ . '/subRoutes/contact.php';
     include __DIR__ . '/subRoutes/advertisement.php';
     include __DIR__ . '/subRoutes/settings.php';

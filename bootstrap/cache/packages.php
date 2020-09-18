@@ -151,6 +151,16 @@
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
   ),
+  'unisharp/laravel-filemanager' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider',
+    ),
+    'aliases' => 
+    array (
+    ),
+  ),
   'yajra/laravel-auditable' => 
   array (
     'providers' => 
