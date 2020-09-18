@@ -12,13 +12,14 @@
     <div>
         <section class="content">
             <div class="row">
-            @include('backend::dashboard.components.info-box')
-            @include('backend::dashboard.components.info-box')
-
-            <!-- fix for small devices only -->
-                <div class="clearfix visible-sm-block"></div>
-                @include('backend::dashboard.components.info-box')
-                @include('backend::dashboard.components.info-box')
+                @foreach($attributes as $key=>$value)
+                    @include('backend::dashboard.components.info-box')
+                @endforeach
+                {{--            @include('backend::dashboard.components.info-box')--}}
+                {{--            <!-- fix for small devices only -->--}}
+                {{--                <div class="clearfix visible-sm-block"></div>--}}
+                {{--                @include('backend::dashboard.components.info-box')--}}
+                {{--                @include('backend::dashboard.components.info-box')--}}
 
             </div>
             <!-- /.row -->

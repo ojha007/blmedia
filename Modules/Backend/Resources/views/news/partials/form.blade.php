@@ -1,4 +1,4 @@
-<div class="col-md-9">
+<div class="col-md-12">
     <div class="box box-default">
         <div class="box-header with-border">
             <h3 class="box-title">
@@ -10,7 +10,7 @@
         </div>
         <div class="box-body">
             <div class="form-group col-md-12 {{$errors->has('title') ?'has-error':''}}">
-                <label class="required" for="title" style='margin-top:20px;'>
+                <label class="required" for="title">
                     <i class="fa fa-tex"></i>
                     Title
                 </label>
@@ -34,49 +34,31 @@
                             'placeholder'=>'Enter Secondary Title',
                             ])}}
             </div>
-
-            {{--            <div class="col-md-12 form-group {{$errors->has('slug') ?'has-error':''}}">--}}
-            {{--                {{Form::label('slug','Enter Slug in English:')}}--}}
-            {{--                {{Form::text('slug',null,--}}
-            {{--                            [--}}
-            {{--                            'class'=>'col-md-6 form-control',--}}
-            {{--                            'autocomplete'=>'off',--}}
-            {{--                            'title'=>'slug',--}}
-            {{--                            'placeholder'=>'Enter Slug in English',--}}
-            {{--                            ])}}--}}
-            {{--            </div>--}}
-            <div class="form-group col-md-12 {{$errors->has('category_id' ?'has-error':'')}}">
+            <div class="col-md-6 form-group {{$errors->has('slug') ?'has-error':''}}">
+                {{Form::label('slug','Enter Slug in English:')}}
+                {{Form::text('slug',null,
+                            [
+                            'class'=>'col-md-6 form-control',
+                            'autocomplete'=>'off',
+                            'title'=>'slug',
+                            'placeholder'=>'Enter Slug in English',
+                            ])}}
+            </div>
+            <div class="form-group col-md-6 {{$errors->has('category_id' ?'has-error':'')}}">
                 <label>
                     <b>Categories</b>
                 </label>
                 {{Form::select('category_id[]',$selectNewsCategories,null,
-                    ['class'=>'select2 form-control select2','multiple'=>'true',
+                    ['class'=>'form-control select2','multiple'=>'true',
                         'data-placeholder'=>'Select Category','style'=>'width:100%'])}}
             </div>
 
-
-            <div class="form-group col-md-12 {{$errors->has('reporter_id') ? 'has-error':''}}">
-                <div class="col-md-9" style="padding-left: 0">
-                    {{Form::label('reporter_id','ByLine:')}}
-                    {{Form::select('reporter_id',$selectReporters,null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
-                </div>
-                <div class="col-md-3">
-                    {{Form::label('is_fixed','Is Fixed :')}}
-                    <div class="form-control">
-                        <label>
-                            <input type="radio" name="is_fixed" value="1">
-                            Yes
-                        </label>
-                        <label>
-                            <input type="radio" name="is_fixed" value="0" checked="">
-                            No
-                        </label>
-
-                    </div>
-                </div>
+            <div class="form-group col-md-6 {{$errors->has('reporter_id') ? 'has-error':''}}">
+                {{Form::label('reporter_id','ByLine:')}}
+                {{Form::select('reporter_id',$selectReporters,null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
             </div>
 
-            <div class="form-group col-md-12 {{$errors->has('guest_id') ? 'has-error':''}}">
+            <div class="form-group col-md-6 {{$errors->has('guest_id') ? 'has-error':''}}">
                 <div class="col-md-11" style="padding-left: 0">
                     {{Form::label('guest_id','Guest By Line:')}}
                     {{Form::select('guest_id',$selectGuests,
@@ -94,7 +76,19 @@
                 </div>
             </div>
 
-            <div class="col-md-12 form-group {{$errors->has('tag_line') ?'has-error':''}}">
+            <div class="form-group col-md-6 {{$errors->has('publish_date') ? 'has-error':''}}"
+                 style="padding-right: 0">
+                {{ Form::label('publish_date', 'Publish on:', ['class'=>'control-label required'])}}
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    {!! Form::text('publish_date',  null,
+                   array('placeholder' => 'Publish on','class' => 'form-control datepicker', 'autocomplete'=>'off')) !!}
+                </div>
+            </div>
+
+            <div class="col-md-6 form-group {{$errors->has('tag_line') ?'has-error':''}}">
                 {{Form::label('tag_line','Tag Line:')}}
                 {{Form::text('tag_line',null,
                             [
@@ -105,57 +99,18 @@
                             ])}}
             </div>
 
-            <div class="form-group col-md-12 {{$errors->has('video_url') ?'has-error':''}}">
+            <div class="form-group col-md-6 {{$errors->has('video_url') ?'has-error':''}}">
                 <label for="title"> <i class="fa fa-youtube-play"></i> <b>Embed Code Only</b></label>
                 {{Form::text('video_url',null,['class'=>'form-control','placeholder'=>'Enter video embed code only '])}}
             </div>
-            <div class="form-group col-md-12 {{$errors->has('date_line') ?'has-error':''}}">
+            <div class="form-group col-md-6 {{$errors->has('date_line') ?'has-error':''}}">
                 <label for="date_line"><i class="fa fa-map-marker"></i> Date Line </label>
                 {{Form::text('date_line',null,['class'=>'form-control','placeholder'=>'Enter dateline'])}}
             </div>
-
-            <div class="form-group col-md-12 {{$errors->has('description') ?'has-error':''}}">
-                <label for="description"> <b>Full description </b></label>
-                {{Form::textarea('description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10'])}}
-
+            <div class="form-group col-md-6 {{$errors->has('external_url'?'has-error':'')}}">
+                <label for="external_url"> External URL </label>
+                {{Form::text('external_url',null,['class'=>'form-control','placeholder'=>'Enter external link if any','autocomplete'=>'any'])}}
             </div>
-            <div class="form-group col-md-12  {{$errors->has('sub_description') ?'has-error':''}}">
-                <label for="sub_description"> <b>Short description </b></label>
-                {{Form::textarea('sub_description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10','placeholder'=>'Enter sub description'])}}
-
-            </div>
-
-        </div>
-        <div class="box-footer">
-            <a href="{{route($routePrefix.'.news.index')}}" type="button" class="btn btn-flat btn-default">
-                <i class="fa fa-arrow-left">
-                </i>
-                Close
-            </a>
-        </div>
-
-    </div>
-</div>
-
-
-<div class="col-md-3">
-    <!-- general form elements -->
-    <div class="box box-default">
-        <div class="box-body">
-            <div class="form-group col-md-12 {{$errors->has('publish_date') ? 'has-error':''}}"
-                 style="padding-right: 0">
-                {{ Form::label('publish_date', 'Publish on:', ['class'=>'control-label required'])}}
-                {{--                <div class="col-sm-">--}}
-                <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                    {!! Form::text('publish_date',  null,
-                   array('placeholder' => 'Publish on','class' => 'form-control datepicker', 'autocomplete'=>'off')) !!}
-                </div>
-                {{--                </div>--}}
-            </div>
-
             <div class="form-group col-md-12" style="padding-right: 0">
                 <label for="fieldID4">Banner Picture</label>
                 <div class="input-append text-center">
@@ -193,47 +148,24 @@
 
             </div>
 
+
             <div class="form-group col-md-12 {{$errors->has('image_caption'?'has-error':'')}}" style="padding-right: 0">
                 {{Form::label('image_caption','Image Caption')}}
                 {{Form::textarea('image_caption',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
 
             </div>
+            <div class="form-group col-md-12  {{$errors->has('sub_description') ?'has-error':''}}">
+                <label for="sub_description"> <b>Short description </b></label>
+                {{Form::textarea('sub_description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10','placeholder'=>'Enter sub description'])}}
 
-            <div class="form-group col-md-12 {{$errors->has('external_url'?'has-error':'')}}">
-                <label for="external_url"> External URL </label>
-                {{Form::text('external_url',null,['class'=>'form-control','placeholder'=>'Enter external link if any','autocomplete'=>'any'])}}
             </div>
-            <div class="form-group col-md-12 {{$errors->has('is_anchor' ?'has-error':'')}} align-center">
-                {!! Form::label('anchor_news','Anchor News') !!}
-                <div class="form-control">
-                    <label>
-                        <input id="is_flash" name="is_flash" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_flash" name="is_flash" type="radio" value="0">
-                        No
-                    </label>
-                    <span class="field-validation-valid help-block" data-valmsg-for="PhoneNumber"
-                          data-valmsg-replace="true"></span>
-                </div>
+
+            <div class="form-group col-md-12 {{$errors->has('description') ?'has-error':''}}">
+                <label for="description"> <b>Full description </b></label>
+                {{Form::textarea('description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10'])}}
+
             </div>
-            {{--            <div class="form-group col-md-12 {{$errors->has('is_anchor' ?'has-error':'')}} align-center">--}}
-            {{--                {!! Form::label('bl_Special','BL Special') !!}--}}
-            {{--                <div class="form-control">--}}
-            {{--                    <label>--}}
-            {{--                        <input id="is_special" name="is_special" type="radio" value="1">--}}
-            {{--                        Yes--}}
-            {{--                    </label>--}}
-            {{--                    <label>--}}
-            {{--                        <input checked="checked" id="is_special" name="is_special" type="radio" value="0">--}}
-            {{--                        No--}}
-            {{--                    </label>--}}
-            {{--                    <span class="field-validation-valid help-block" data-valmsg-for="is_special"--}}
-            {{--                          data-valmsg-replace="true"></span>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-            <div class="form-group col-md-12 {{$errors->has('is_mob_notification' ?'has-error':'')}} align-center">
+            <div class="form-group col-md-6 {{$errors->has('is_mob_notification' ?'has-error':'')}} align-center">
                 {!! Form::label('is_mob_notification','Mobile Notification') !!}
                 <div class="form-control">
                     <label>
@@ -248,64 +180,31 @@
 
                 </div>
             </div>
-            <div class="form-group col-md-12 {{$errors->has('publish_status') ? 'has-error':''}}">
+            <div class="form-group col-md-6 {{$errors->has('publish_status') ? 'has-error':''}}">
                 {!! Form::label('publish_status','Publish Status') !!}
                 {!! Form::select('publish_status',$selectPublishStatuses, null,
                     ['class'=>'form-control select2','placeholder'=>'Select Publish ']) !!}
             </div>
         </div>
         <div class="box-footer">
-            <button type="submit" class="btn btn-primary btn-flat">
+            <a href="{{route($routePrefix.'.news.index')}}" type="button" class="btn pull-left btn-flat btn-default">
+                <i class="fa fa-arrow-left">
+                </i>
+                Close
+            </a>
+            <button type="submit" class="btn btn-primary  pull-right btn-flat">
                 <i class="fa fa-save"></i> Submit
             </button>
         </div>
+
     </div>
-
 </div>
-
-
 
 
 @push('scripts')
     <script>
-
         CKEDITOR.replace('description');
     </script>
-    {{--    <script type="text/javascript" language="javascript">--}}
-    {{--        $(document).on('ready', function () {--}}
-    {{--            $(document).on('click', '#guest_submit_btn', function (event) {--}}
-    {{--                var guest_title = $('#guest_title').val();--}}
-    {{--                var slug = $('#slug').val();--}}
-    {{--                var extension = $('#guest_image').val().split('.').pop().toLowerCase();--}}
-    {{--                if (extension != '') {--}}
-    {{--                    if (jQuery.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1) {--}}
-    {{--                        alert("Invalid Image File");--}}
-    {{--                        $('#guest_image').val('');--}}
-    {{--                        return false;--}}
-    {{--                    }--}}
-    {{--                }--}}
-    {{--                if (guest_title != '' && slug != '') {--}}
-    {{--                    $.ajax({--}}
-    {{--                        url: "<?php echo site_url('news/ajax_guest'); ?>",--}}
-    {{--                        method: 'POST',--}}
-    {{--                            data: new FormData($('#user_form')[0]),--}}
-    {{--                        contentType: false,--}}
-    {{--                        processData: false,--}}
-    {{--                        success: function (data) {--}}
-    {{--                            $('#guest_select').append(--}}
-    {{--                                data.appendGuest--}}
-    {{--                            );--}}
-    {{--                            $('#user_form')[0].reset();--}}
-    {{--                            $('#myModal_form').modal('hide');--}}
 
-    {{--                            dataTable.ajax.reload();--}}
-    {{--                        }--}}
-    {{--                    });--}}
-    {{--                } else {--}}
-    {{--                    alert("Include Both Guest Name And Slug");--}}
-    {{--                }--}}
-    {{--            });--}}
-    {{--        });--}}
-    {{--    </script>--}}
 
 @endpush

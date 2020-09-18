@@ -17,9 +17,8 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('title');
-//            $table->string('slug')->unique();
+            $table->string('slug')->unique();
             $table->text('sub_title')->nullable();
-//            $table->string('slug');
             $table->unsignedBigInteger('guest_id')->nullable();
             $table->foreign('guest_id')
                 ->references('id')
@@ -32,12 +31,8 @@ class CreateNewsTable extends Migration
             $table->text('short_description')->nullable();
             $table->bigInteger('view_count')->default(0);
             $table->string('external_url')->nullable();
-            $table->dateTime('publish_date');
+            $table->date('publish_date');
             $table->enum('publish_status', News::publishStatus());
-//            $table->date('expiry_date');
-//            $table->boolean('is_fixed');
-//            $table->boolean('is_special');
-//            $table->boolean('is_anchor');
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();

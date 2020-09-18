@@ -20,11 +20,6 @@
                 </a>
             </div>
             <div class="box">
-                {{--                @include('common::backend.components.dataTableFilter.FilterByStatus',[--}}
-                {{--                  'selectFiscalYears'=>$selectFiscalYears,--}}
-                {{--                  'fiscal_year_id'=>$fiscal_year_id,--}}
-                {{--                   'status'=>$billStatus--}}
-                {{--                       ])--}}
                 <div class="box-body table-responsive">
                     <table id="dataTable" class="table table-bordered table-condensed">
                         <thead>

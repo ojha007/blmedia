@@ -3,8 +3,9 @@
 namespace Modules\Backend\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Backend\Entities\Guest;
+use Modules\Backend\Entities\News;
 
 class BackendController extends Controller
 {
@@ -14,66 +15,22 @@ class BackendController extends Controller
      */
     public function index()
     {
-        return view('backend::index');
+        $attributes = [
+            'total_publish_news' => $this->newsCount(),
+            'active_guests'=>$this->guestsCount()
+        ];
+
+        return view('backend::index', compact('attributes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
+    protected function newsCount()
     {
-        return view('backend::create');
+        return News::where('publish_status', 'yes')->count();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
+    protected function guestsCount()
     {
-        //
+        return Guest::where('is_active', 1)->count();
     }
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show(int $id)
-    {
-        return view('backend::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit(int $id)
-    {
-        return view('backend::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return void
-     */
-    public function update(Request $request, int $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return void
-     */
-    public function destroy(int $id)
-    {
-        //
-    }
 }
