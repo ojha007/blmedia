@@ -25,7 +25,20 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="first page condition" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="first page condition">
+      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Middleware/DatabaseSwitcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/Database/Seeders/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/Database/Seeders/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/user-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/user-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/SwitchDatabaseConnectionServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SwitchDatabaseConnectionServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,6 +182,8 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/rap2hpoutre/laravel-log-viewer" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager" />
+      <path value="$PROJECT_DIR$/vendor/jrm2k6/cloudder" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -359,8 +374,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="396" y="172" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453472770" />
-    <state x="522" y="128" key="NewPhpClassDialog" timestamp="1600453345769" />
-    <state x="522" y="128" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
+    <state x="522" y="128" key="NewPhpClassDialog" timestamp="1600456849635">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="522" y="128" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1600456849635" />
     <state x="603" y="337" key="NewPhpFileDialog" timestamp="1600453345769" />
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600453345769" />
@@ -391,7 +408,9 @@
     <state x="562" y="49" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453404244" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600453345769" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600453345769" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600456955683">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600456955683" />
   </component>
 </project>

@@ -73,6 +73,7 @@
       23 => 'App\\Providers\\AuthServiceProvider',
       24 => 'App\\Providers\\EventServiceProvider',
       25 => 'App\\Providers\\RouteServiceProvider',
+      26 => 'App\\Providers\\SwitchDatabaseConnectionServiceProvider',
     ),
     'aliases' => 
     array (
@@ -294,7 +295,7 @@
   ),
   'database' => 
   array (
-    'default' => 'mysql',
+    'default' => 'nepali',
     'connections' => 
     array (
       'sqlite' => 
@@ -331,7 +332,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'bl_nepali',
+        'database' => 'bl_ne',
         'username' => 'root',
         'password' => 'lifesucks@123',
         'unix_socket' => '',
@@ -351,7 +352,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'bl_english',
+        'database' => 'bl',
         'username' => 'root',
         'password' => 'lifesucks@123',
         'unix_socket' => '',
@@ -371,7 +372,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'bl_hindi',
+        'database' => 'bl_hi',
         'username' => 'root',
         'password' => 'lifesucks@123',
         'unix_socket' => '',

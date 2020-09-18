@@ -46,6 +46,7 @@
     42 => 'App\\Providers\\AuthServiceProvider',
     43 => 'App\\Providers\\EventServiceProvider',
     44 => 'App\\Providers\\RouteServiceProvider',
+    45 => 'App\\Providers\\SwitchDatabaseConnectionServiceProvider',
   ),
   'eager' => 
   array (
@@ -79,6 +80,7 @@
     27 => 'App\\Providers\\AuthServiceProvider',
     28 => 'App\\Providers\\EventServiceProvider',
     29 => 'App\\Providers\\RouteServiceProvider',
+    30 => 'App\\Providers\\SwitchDatabaseConnectionServiceProvider',
   ),
   'deferred' => 
   array (

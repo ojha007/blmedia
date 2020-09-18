@@ -1,6 +1,12 @@
 <?php
 
-$edition = '';
+$edition = null;
+if (in_array(request()->segment(1), config('editions'))) {
+    $edition = request()->segment(1);
+}
+if (is_null($edition)) {
+    $edition = 'nepali';
+}
 Route::group(
     [
         'middleware' => 'web',

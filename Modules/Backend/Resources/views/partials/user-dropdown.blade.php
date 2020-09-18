@@ -31,12 +31,11 @@
                 <a href="" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-                <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
-                   onclick="document.getElementById('logout-form').submit();">
-                    Sign out
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                     @csrf
+                    <button type="submit" class="btn btn-default btn-flat">
+                        Sign out
+                    </button>
                 </form>
             </div>
         </li>
