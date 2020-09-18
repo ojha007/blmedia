@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <a href="{{route($routePrefix.'.news-category.index')}}" type="button"
+                        <a href="{{route($routePrefix.'.settings.index',request()->route()->parameters)}}" type="button"
                            class="btn btn-default btn-flat pull-left">
                             <i class="fa fa-arrow-left"></i>
                             Close
