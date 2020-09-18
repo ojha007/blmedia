@@ -9,55 +9,55 @@
 
         </div>
         <div class="box-body">
-            <div class="col-md-8">
-                <div class="form-group col-md-12 {{$errors->has('title') ?'has-error':''}}">
-                    <label class="required" for="title">
-                        <i class="fa fa-tex"></i>
-                        Title
-                    </label>
-                    {{Form::text('title',null,
-                        [
-                        'class'=>'col-md-6 form-control required valid',
-                        'placeholder'=>'Enter News Title',
-                        "style"=>"height:40px;font-size:15px"
+            <div class="form-group {{$errors->has('title') ?'has-error':''}}">
+                <label class="required" for="title">
+                    Title
+                </label>
+                {{Form::text('title',null,
+                    [
+                    'class'=>'col-md-6 form-control required valid',
+                    'placeholder'=>'Enter News Title',
+                    "style"=>"height:40px;font-size:15px"
 
-                        ])}}
-                </div>
-                <div class="col-md-12 form-group {{$errors->has('designation') ?'has-error':''}}">
-                    {{Form::label('designation','Designation:')}}
-                    {{Form::text('designation',null,
-                                [
-                                'class'=>' form-control',
-                                'placeholder'=>'Enter Designation',
-                                ])}}
-                </div>
-                <div class="col-md-12 form-group {{$errors->has('email') ?'has-error':''}}">
-                    {{Form::label('email','Email:')}}
-                    {{Form::text('email',null,
-                                [
-                                'class'=>' form-control',
-                                'placeholder'=>'Enter Email',
-                                ])}}
-                </div>
+                    ])}}
+            </div>
+            <div class=" form-group {{$errors->has('designation') ?'has-error':''}}">
+                {{Form::label('designation','Designation:')}}
+                {{Form::text('designation',null,
+                            [
+                            'class'=>' form-control',
+                            'placeholder'=>'Enter Designation',
+                            ])}}
+            </div>
+            <div class=" form-group {{$errors->has('email') ?'has-error':''}}">
+                {{Form::label('email','Email:')}}
+                {{Form::email('email',null,
+                            [
+                            'class'=>' form-control',
+                            'placeholder'=>'Enter Email',
+                            ])}}
+            </div>
 
-                <div class="col-md-12 form-group {{$errors->has('detail') ?'has-error':''}}">
-                    {{Form::label('detail','Detail:')}}
-                    {{Form::text('detail',null,
-                                [
-                                'class'=>'col-md-6 form-control ',
-                                'placeholder'=>'Enter Email',
-                                ])}}
-                </div>
+            <div class=" form-group {{$errors->has('detail') ?'has-error':''}}">
+                {{Form::label('detail','Detail:')}}
+                {{Form::textarea('detail',null,
+                            [
+                            'class'=>'col-md-6 form-control ',
+                            'placeholder'=>'Enter Details',
+                            ])}}
+            </div>
 
-                <div class="col-md-6 form-group {{$errors->has('image') ?'has-error':''}}">
-                    {{Form::label('image','Image:')}}
-                    {{Form::file('image',null, ['class'=>'form-control ',])}}
-                </div>
+            <div class=" form-group {{$errors->has('image') ?'has-error':''}}">
+                {{Form::label('image','Image:')}}
+                {{Form::file('image',null, ['class'=>'form-control ',])}}
+            </div>
 
-                <div class="col-md-12 form-group">
-                    {{ Form::label('is_active', 'Is Active:', ['class'=>' control-label'])}}
-                    {!! Form::hidden('is_active', 0) !!}
-                    <input name="is_active" value="1" type="checkbox" data-toggle="toggle" data-on="Active"
+            <div class="col-md-12 form-group">
+                {{ Form::label('is_active', 'Is Active:')}}
+                {!! Form::hidden('is_active', 0) !!}
+                <div class="row">
+                    <input name="is_active" value="1" type="checkbox" class="form-control" data-toggle="toggle"
+                           data-on="Active"
                            data-off="Inactive">
                 </div>
             </div>

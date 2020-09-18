@@ -12,8 +12,8 @@
     @include('backend::partials.errors')
     <div class="row">
         {!! Form::model($team,['route'=> [$routePrefix.'.team.update',$team->id],
-            'method'=>'PATCH','class'=>'form-horizontal','file'=>true,'enctype' => 'multipart/form-data'] ) !!}
-{{--        @dd($team)--}}
+            'method'=>'PATCH','file'=>true,'enctype' => 'multipart/form-data'] ) !!}
+        {{--        @dd($team)--}}
         @include($module.'::team.partials.form')
         {!! Form::close() !!}
 
