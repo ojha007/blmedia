@@ -42,16 +42,16 @@ class FrontendController extends Controller
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 8);
         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
-        $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 7);
-        $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 3);
+        $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
+        $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
         $sixthPositionNews = $this->newsRepository->getNewsByPosition(6, 10);
         $seventhPositionNews = $this->newsRepository->getNewsByPosition(7, 5);
-        $eighthPositionNews = $this->newsRepository->getNewsByPosition(8, 5);
-        $ninthPositionNews = $this->newsRepository->getNewsByPosition(9, 5);
+        $eighthPositionNews = $this->newsRepository->getNewsByPosition(8, 7);
+        $ninthPositionNews = $this->newsRepository->getNewsByPosition(9, 6);
         $tenthPositionNews = $this->newsRepository->getNewsByPosition(10, 6);
         $eleventhPositionNews = $this->newsRepository->getNewsByPosition(11, 5);
         $twelvePositionNews = $this->newsRepository->getNewsByPosition(12, 5);
-        $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 5);
+        $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 4);
         return view('frontend::index', compact('headerCategories',
             'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
             'fifthPositionNews', 'sixthPositionNews', 'seventhPositionNews', 'eighthPositionNews',

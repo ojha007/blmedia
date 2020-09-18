@@ -5,7 +5,7 @@
                 <figure class="brand-logo">
                     <a href="{{route($routePrefix.'index')}}">
                         <img class="responsive-img" id="logo_image_nav"
-                             src="https://www.breaknlinks.com/nepali/uploads/pictures/9b985eb1206505396c15126062c31befblnepali.png"
+                             src="{{asset('frontend/img/logo.png')}}"
                              alt="BL Media">
                     </a>
                 </figure>

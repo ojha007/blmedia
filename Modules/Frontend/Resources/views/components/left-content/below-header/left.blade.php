@@ -1,4 +1,4 @@
-<div class="newsBlock type-1">
+<div class="newsBlock type-1" id="front_body_position_1">
     @if(count($firstPositionNews))
         <div class="block-header gn-heading">
             <h2>
@@ -12,8 +12,9 @@
                 <div class="news-item">
                     <figure class="news-image">
                         <a href="{{route($routePrefix.'news.show',$news->slug)}}">
-                            <img src="{{$news->image}}" alt="{{$news->image}}"
-                                 class="responsive-img">
+{{--                            <img src="{{$news->image}}" alt="{{$news->image}}"--}}
+{{--                                 class="responsive-img">--}}
+                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" style="height: 5em;">
                         </a>
                     </figure>
                     <div class="news-content new-type-1">
@@ -22,7 +23,7 @@
                                 {{$news->title}}
                             </a></h5>
                         <ul class="hr-list wide stamp">
-                            <li><i class="fa fa-circle blus"></i>{{$news->reporter_name}}</li>
+                            <li><i class="fa fa-circle blus"></i> blmedia</li>
                         </ul>
                     </div>
                 </div>

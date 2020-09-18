@@ -1,4 +1,4 @@
-<div class="newsBlock type-3">
+<div class="newsBlock type-3" id="front_body_position_8">
     @if(count($eighthPositionNews))
         <div class="block-header gn-heading">
             <h2>
@@ -14,8 +14,9 @@
                         <div class="news-item highlight-news news-am-hl">
                             <figure class="news-image">
                                 <a href="{{route($routePrefix.'news.show',$news->slug)}}">
-                                    <img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img" title="">
+                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
+                                         class="responsive-img" title="">--}}
+                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                                 </a>
                             </figure>
                             <div class="news-content">
@@ -24,15 +25,16 @@
                                         {{$news->title}}
                                     </a>
                                 </h5>
-                                <p class="short-news"> {!! $news->sub_title !!}</p>
+                                <p class="short-news"> {!! $news->short_description !!}</p>
                             </div>
                         </div>
                     @else
                         <div class="news-item am-news-item">
                             <figure class="news-image">
                                 <a href="{{route($routePrefix.'news.show',$news->slug)}}">
-                                    <img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img am-circle-img" title="">
+                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
+                                         class="responsive-img am-circle-img" title="">--}}
+                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                                 </a>
                             </figure>
                             <div class="news-content">

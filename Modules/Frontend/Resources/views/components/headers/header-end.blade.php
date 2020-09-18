@@ -65,14 +65,14 @@
                     </li>
                     <li>
                         <a href="{{setting('facebook_url')}}" target="_blank"><i
-                                class="fa fa-facebook-square">
+                                class="fab fa-facebook-square">
 
                             </i>
                         </a>
                     </li>
                     <li>
                         <a href="{{setting('twitter_url')}}" target="_blank"><i
-                                class="fa fa-twitter-square"></i></a>
+                                class="fab fa-twitter-square"></i></a>
                     </li>
                 </ul>
 

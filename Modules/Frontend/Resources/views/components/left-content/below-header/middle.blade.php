@@ -1,4 +1,4 @@
-<div class="newsBlock type-2 " id="BL_link">
+<div class="newsBlock type-2 " id="BL_link front_body_position_2">
     @if(count($secondPositionNews))
         <div class="block-header gn-heading">
 
@@ -19,6 +19,7 @@
                             {{--                            <img src="{{$news->image}}" alt="{{$news->image_description}}"--}}
                             {{--                                 title="{{$news->image_title}}" class="img responsive-img">--}}
 {{--                </a>--}}
+                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">
                         </figure>
 
                         <div class="news-content">
@@ -27,9 +28,9 @@
                                     {{$news->title}}
                                 </a></h4>
                             <ul class="hr-list wide stamp">
-                                <li><i class="fa fa-circle blus"></i>{{$news->guest_name}}</li>
+                                <li><i class="fa fa-circle blus"></i> blmedia</li>
                             </ul>
-                            <p> {{$news->sub_title}}</p>
+                            <p> {{Str::limit($news->short_description), 10}}</p>
                         </div>
                     </div>
                 @else
@@ -38,9 +39,10 @@
                             <a href="{{route($routePrefix.'news.show',$news->slug)}}">
                                 {{--                            <img src="{{$news->image}}" alt="{{$news->image_description}}"--}}
                                 {{--                                 title="{{$news->image_title}}">--}}
+                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                             </a>
                             <ul class="hr-list wide stamp">
-                                <li><i class="fa fa-circle blus"></i>{{$news->guest_name}}</li>
+                                <li><i class="fa fa-circle blus"></i> blmedia</li>
                             </ul>
                         </figure>
                         <div class="news-content">
@@ -49,7 +51,7 @@
                                     {{$news->title}}
                                 </a></h4>
 
-                            <p>{{$news->sub_title}}</p>
+                            <p>{{\Str::limit($news->short_description), 300}}</p>
 
                         </div>
                     </div>

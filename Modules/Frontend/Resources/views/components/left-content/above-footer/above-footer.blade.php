@@ -1,5 +1,5 @@
 @if(count($thirteenPositionNews))
-    <div class="newsBlock type-5 position-13">
+    <div class="newsBlock type-5 position-13" id="front_body_position_13" style="padding: 0 15px;">
         <div class="block-header gn-heading">
             <h2>
                 <a href="{{route($routePrefix.'news-category.show',$thirteenPositionNews->first()->category_slug)}}">
@@ -14,8 +14,9 @@
                         <div class="news-item highlight-news">
                             <figure class="news-image  ghumphir-am-bl">
                                 <a href="{{route($routePrefix.'news.show',$news->slug)}}">
-                                    <img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img" title="">
+                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
+                                         class="responsive-img" title="">--}}
+                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                                 </a>
                             </figure>
                             <div class="news-content-overlay">
@@ -33,8 +34,9 @@
                         <div class="news-item">
                             <figure class="news-image">
                                 <a href="{{route($routePrefix.'news.show',$news->slug)}}">
-                                    <img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img" title="">
+                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
+                                         class="responsive-img" title="">--}}
+                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                                 </a>
                             </figure>
                             <div class="news-content">

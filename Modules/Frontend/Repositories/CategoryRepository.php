@@ -31,7 +31,7 @@ class CategoryRepository extends Repository
 
     }
 
-    public function getDetailPageHeaderCategoriesByPosition($limit = 11)
+    public function getDetailPageHeaderCategoriesByPosition($limit = 10)
     {
         return DB::table('categories')
             ->select('categories.name', 'categories.slug')
@@ -45,7 +45,7 @@ class CategoryRepository extends Repository
             ->get();
     }
 
-    public function getFrontPageHeaderCategoriesByPosition($limit = 11)
+    public function getFrontPageHeaderCategoriesByPosition($limit = 10)
     {
         return DB::table('categories')
             ->select('categories.name', 'categories.slug')

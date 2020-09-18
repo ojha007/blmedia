@@ -1,6 +1,6 @@
-<div class="newsBlock type-8 " id="bl-break-section-01">
+<div class="newsBlock type-8 " id="bl-break-section-01 front_body_position_5">
     @if(count($fifthPositionNews))
-        <div class="block-header gn-heading mb-5">
+        <div class="block-header gn-heading ">
             <h2>
                 <a href="{{route($routePrefix.'news-category.show',$fifthPositionNews->first()->category_slug)}}">
                     {{$fifthPositionNews->first()->categories}}
@@ -12,8 +12,9 @@
                     <div class="news-item highlight-news">
                         <div class="ggl_adBlk _300x600 vr-block ">
                             <a href="{{route($routePrefix.'news.show',$news->slug)}}">
-                                <img src="{{$news->image}}" alt="{{$news->image}}"
-                                     class="responsive-img">
+                                {{--<img src="{{$news->image}}" alt="{{$news->image}}"
+                                     class="responsive-img">--}}
+                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                             </a>
                             <div class="news-content-am">
                                 <h5 class="news-title-am"><a
@@ -21,7 +22,9 @@
                                         {{$news->title}}
                                     </a></h5>
                                 <ul class="hr-list wide stamp">
-                                    <li><i class="fa fa-circle blus"></i>{{$news->reporter_name}}</li>
+                                    <li><i class="fa fa-circle blus"></i>
+                                        blmedia
+                                    </li>
 
                                 </ul>
                             </div>
@@ -33,8 +36,9 @@
                     <div class="news-item breakNew">
                         <figure class="news-image">
                             <a href="{{route($routePrefix.'news.show',$news->slug)}}">
-                                <img src="{{$news->image}}" alt="{{$news->image}}"
-                                     class="responsive-img">
+                               {{-- <img src="{{$news->image}}" alt="{{$news->image}}"
+                                     class="responsive-img">--}}
+                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                             </a>
                         </figure>
 
@@ -46,7 +50,7 @@
                                 </a></h4>
                             <ul class="hr-list wide stamp">
                                 <li><i class="fa fa-circle blus"></i>
-                                    {{$news->reporter_name}}
+                                    blmedia
                                 </li>
 
                             </ul>
