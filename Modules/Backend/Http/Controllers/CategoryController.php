@@ -2,9 +2,11 @@
 
 namespace Modules\Backend\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Modules\Backend\Entities\Category;
 use Modules\Backend\Http\Requests\NewsCategoryRequest;
 use Modules\Backend\Http\Responses\Response;
@@ -56,6 +58,7 @@ class CategoryController extends Controller
     public function update(NewsCategoryRequest $request, $id)
     {
         $attributes = $request->only((new Category())->getFillable());
+        $attributes['slug'] = Str::slug($request->get('slug'));
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
@@ -63,12 +66,12 @@ class CategoryController extends Controller
             $this->updateOrCreateRelations($category, $request);
             DB::commit();
             return redirect()->route($baseRoute . '.index')
-                ->with('success', 'News was updated SuccessFully');
+                ->with('success', 'News Category updated SuccessFully');
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             DB::rollBack();
             return redirect()->back()->withInput()
-                ->with('failed', 'Failed to update News');
+                ->with('failed', 'Failed to update News Category');
         }
     }
 
@@ -76,7 +79,7 @@ class CategoryController extends Controller
     {
         if (array_filter($request->get('position'))) {
             $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
-            $category->position
+            $category->position()
                 ->updateOrCreate($attributes);
         }
         if (array_filter($request->get('meta'))) {
@@ -89,6 +92,7 @@ class CategoryController extends Controller
     public function store(NewsCategoryRequest $request)
     {
         $attributes = $request->only((new Category())->getFillable());
+        $attributes['slug'] = Str::slug($request->get('slug'));
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
@@ -102,6 +106,21 @@ class CategoryController extends Controller
             DB::rollBack();
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to create News');
+        }
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $baseRoute = getBaseRouteByUrl($request);
+        try {
+            $this->repository->delete($id);
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'News Category deleted  SuccessFully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()->withInput()
+                ->with('failed', 'Failed to delete News Category');
         }
     }
 }

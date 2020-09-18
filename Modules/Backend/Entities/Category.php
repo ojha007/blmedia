@@ -3,12 +3,13 @@
 namespace Modules\Backend\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Backend\Traits\MetaInformation;
 
 class Category extends Model
 {
 
-    use MetaInformation;
+    use MetaInformation, SoftDeletes;
 
     const HM = 'HM';
     const OT = 'OT';

@@ -90,15 +90,13 @@
             <ul class="treeview-menu">
                 @isset($contactTypes)
                     @foreach($contactTypes as $type)
-                        @if($loop->index >0)
-                            <li class="{{request()->is($urlPrefix.'/'.$type,
+                        <li class="{{request()->is($urlPrefix.'/'.$type,
                                 $urlPrefix.'/'.$type .'/*') ? 'active': ''}}">
-                                <a href="{{route($routePrefix.'.'.$type.'.index')}}">
-                                    <i class="fa fa-circle-o"></i>
-                                    {{ucwords($type)}}
-                                </a>
-                            </li>
-                        @endif
+                            <a href="{{route($routePrefix.'.'.$type.'.index')}}">
+                                <i class="fa fa-circle-o"></i>
+                                {{ucwords($type)}}
+                            </a>
+                        </li>
                     @endforeach
                 @endisset
             </ul>

@@ -1,12 +1,14 @@
 @extends($module.'::layouts.master')
+
 @section('header')
-    News
+    Users
 @stop
 @section('subHeader')
-    List of News
+    List of  users
 @stop
+
 @section('breadcrumb')
-    {{--    {{ Breadcrumbs::render('news.index',$routePrefix) }}--}}
+    {{ Breadcrumbs::render('users.index',$routePrefix) }}
 @stop
 @section('content')
     @include('backend::partials.errors')
@@ -14,9 +16,9 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.category.create')}}">
+                   href="{{route($routePrefix.'.users.create')}}">
                     <i class="fa fa-plus"></i>
-                    Add News Category
+                    Add User
                 </a>
             </div>
             <div class="box">
@@ -25,26 +27,29 @@
                         <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>Category</th>
-                            {{--                            <th>Position</th>--}}
-                            <th>status</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Image</th>
+                            <th>Status</th>
                             <th class="no-sort">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($categories as $category)
+                        @foreach($users as $user)
                             <tr>
-                                <td>{{$category->id}}</td>
-                                <td>{{$category->name}}</td>
-                                <td>{!! spanByStatus($category->is_active) !!}</td>
+                                <td>{{$user->id}}</td>
+                                <td>{{$user->full_name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->image}}</td>
+                                <td>{!! spanByStatus($user->status) !!}</td>
                                 <td>
-                                    <a href="{{route($routePrefix.'.category.edit',$category->id)}}"
-                                       class="btn btn-primary btn-sm btn-flat">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
+                                    {{--                                    <a href="{{route($routePrefix.'.users.edit',$user->id)}}"--}}
+                                    {{--                                       class="btn btn-primary btn-sm btn-flat">--}}
+                                    {{--                                        <i class="fa fa-edit"></i>--}}
+                                    {{--                                    </a>--}}
                                     {!! Form::open(['method' => 'DELETE', 'route' =>
-                                            [$routePrefix.'.category.destroy',$category->id],
-                                             'onsubmit' => "return confirm('Are you sure you want to delete?')", 'style'=>"display:inline"
+                                            [$routePrefix.'.users.destroy',$user->id],
+                                             'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
                                        ])!!}
                                     <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
                                         <i class="fa fa-trash"></i>
@@ -55,6 +60,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    {{$users->links()}}
                 </div>
                 <!-- /.box-body -->
             </div>

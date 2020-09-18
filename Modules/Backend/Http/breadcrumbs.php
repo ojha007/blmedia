@@ -20,5 +20,6 @@ Breadcrumbs::for('settings.index', function ($trail, $setting, $routePrefix) use
 Breadcrumbs::resource('news', 'News');
 Breadcrumbs::resource('reporters', 'Reporters');
 Breadcrumbs::resource('guests', 'Guests');
+Breadcrumbs::resource('users', 'Users');
 Breadcrumbs::resource('advertisements', 'Advertisements');
 
