@@ -25,30 +25,16 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="fixes crud issues">
-      <change afterPath="$PROJECT_DIR$/Modules/Auth/Database/Seeders/UsersTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Auth/Http/Requests/CreateUserRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Auth/Notifications/UserInvited.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Auth/Repositories/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/users/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/users/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/users/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/users/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="reporter curd">
+      <change beforePath="$PROJECT_DIR$/.idea/blmedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blmedia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f0dc190-a6af-4826-a612-740b2f61e8bf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/Database/Seeders/AuthDatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/Database/Seeders/AuthDatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/Entities/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/Entities/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Entities/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/BackendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/BackendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Http/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Http/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/dashboard/components/info-box.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/dashboard/components/info-box.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/subRoutes/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +43,23 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,7 +72,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -197,12 +199,6 @@
       <path value="$PROJECT_DIR$/vendor/jrm2k6/cloudder" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="32" />
-    <option name="y" value="59" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
-  </component>
   <component name="ProjectId" id="1hH9iPbitgqVNbGsFRi8j5w2CwB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -212,6 +208,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Backend/Http/Requests" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -225,17 +222,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\blmedia\config" />
-      <recent name="C:\laragon\www\blmedia\Modules\Auth\Resources\views" />
-      <recent name="C:\laragon\www\blmedia\app\Http" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Requests" />
-      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Repositories" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Resources\views" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Entities" />
+      <recent name="C:\laragon\www\blmedia\Modules\Backend\Database\Migrations" />
       <recent name="C:\laragon\www\blmedia\config" />
+      <recent name="C:\laragon\www\blmedia\Modules\Auth\Resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -244,7 +243,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -264,6 +263,8 @@
       <workItem from="1600356527021" duration="1119000" />
       <workItem from="1600399946478" duration="55000" />
       <workItem from="1600430092621" duration="10643000" />
+      <workItem from="1600445066046" duration="2058000" />
+      <workItem from="1600447203590" duration="2839000" />
     </task>
     <task id="LOCAL-00001" summary="reporter curd">
       <created>1600362402245</created>
@@ -318,7 +319,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -347,12 +348,12 @@
                   </entry>
                 </map>
               </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="reporter curd" />
@@ -372,9 +373,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1600437230301" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600437321309">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="444" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600448529539">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="444" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600448529539" />
     <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1600437321309" />
     <state x="449" y="172" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1600283026209">
       <screen x="0" y="0" width="1536" height="834" />
@@ -388,9 +390,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600283022131" />
-    <state width="438" height="343" key="Git.Branch.Popup" timestamp="1600367282546">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="398" height="324" key="Git.Branch.Popup" timestamp="1600444613710">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="398" height="324" key="Git.Branch.Popup/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600444613710" />
     <state width="438" height="343" key="Git.Branch.Popup/0.0.1536.834@0.0.1536.834" timestamp="1600367282546" />
     <state width="1145" height="135" key="GridCell.Tab.0.bottom" timestamp="1600352981432">
       <screen x="0" y="0" width="1536" height="834" />
@@ -456,13 +459,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="585" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1600363424229" />
+    <state x="1366" y="26" width="888" height="749" maximized="true" key="dock-window-1" timestamp="1600448415029">
+      <screen x="1366" y="0" width="1360" height="768" />
+    </state>
+    <state x="1366" y="26" width="888" height="749" maximized="true" key="dock-window-1/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600448415029" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600432199082">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600432199082" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600440981664">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="383" y="143" width="672" height="625" key="search.everywhere.popup" timestamp="1600449913477">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="383" y="143" width="672" height="625" key="search.everywhere.popup/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1600449913477" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600440981664" />
   </component>
 </project>

@@ -102,6 +102,12 @@
             </ul>
         </li>
 
+        <li class="{{request()->is($urlPrefix.'/team',$urlPrefix.'/team/*') ? 'active' :''}}">
+            <a href="{{route($routePrefix.'.team.index')}}">
+                <i class="fa fa-object-group"></i> <span>Teams</span>
+            </a>
+        </li>
+
         <li class="{{request()->is($urlPrefix.'/advertisements',$urlPrefix.'/advertisements/*') ? 'active' :''}}">
             <a href="{{route($routePrefix.'.advertisements.index')}}">
                 <i class="fa  fa-sliders"></i> <span>Advertisement</span>

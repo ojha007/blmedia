@@ -22,4 +22,6 @@ Breadcrumbs::resource('reporters', 'Reporters');
 Breadcrumbs::resource('guests', 'Guests');
 Breadcrumbs::resource('users', 'Users');
 Breadcrumbs::resource('advertisements', 'Advertisements');
+Breadcrumbs::resource('team', 'Team');
+
 
