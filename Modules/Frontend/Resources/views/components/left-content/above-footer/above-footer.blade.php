@@ -1,5 +1,5 @@
 @if(count($thirteenPositionNews))
-    <div class="newsBlock above-footer type-5 position-13" id="front_body_position_13" >
+    <div class="newsBlock front_body_position_13 above-footer type-5 position-13" style="padding: 0 15px;" >
         <div class="block-header gn-heading">
             <h2>
                 <a href="{{route($routePrefix.'news-category.show',$thirteenPositionNews->first()->category_slug)}}">
@@ -48,10 +48,10 @@
                             </div>
                         </div>
                     @endif
-
                 @endforeach
-
             </div>
+            <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
+               class=" btn btn-viewAll float-right" role="button">सब</a>
         </div>
     </div>
 @endif

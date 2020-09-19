@@ -1,4 +1,4 @@
-<div class="newsBlock type-5" id="front_body_position_6">
+<div class="newsBlock front_body_position_6 type-5" >
     @if(count($sixthPositionNews))
         <div class="block-header gn-heading">
             <h2>
@@ -20,7 +20,7 @@
                                 </a>
 
                             </figure>
-                            <div class="news-content">
+                            <div class="news-content" style="height: auto;">
                                 <h5 class="news-title-am"><a
                                         href="{{route($routePrefix.'news.show',$news->slug)}}">
                                         {{$news->title}}
@@ -54,12 +54,12 @@
                     @else
                         <ul class="news-items ">
                             <li class="news-contents amdot">
-                                <h5 class="news-title-blamtitle">
+                                <h4 class="news-title blamtitle">
                                     <i class="fa fa-info-circle text-dark" aria-hidden="true"></i>&nbsp;
-                                    <a href="{{route($routePrefix.'news.show',$news->slug)}}" class="text-dark" style="">
+                                    <a href="{{route($routePrefix.'news.show',$news->slug)}}" class="text-dark" >
                                         {{$news->title}}
                                     </a>
-                                </h5>
+                                </h4>
                             </li>
                         </ul>
                     @endif
