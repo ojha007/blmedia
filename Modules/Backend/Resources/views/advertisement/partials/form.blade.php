@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="box-footer">
-        <a href="{{route($routePrefix.'.advertisements.index')}}" type="button"
+        <a href="{{route($routePrefix.'advertisements.index')}}" type="button"
            class="btn btn-default btn-flat pull-left">
             <i class="fa fa-arrow-left"></i>
             Close

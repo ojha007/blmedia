@@ -34,6 +34,7 @@
                             <th>For</th>
                             <th>Placement</th>
                             <th>Description</th>
+                            <th>Created date</th>
                             <th>Status</th>
                             <th class="no-sort">Action</th>
                         </tr>
@@ -46,14 +47,15 @@
                                 <td>{{$ads->for}}</td>
                                 <td>{{$ads->placement}}</td>
                                 <td>{!! $ads->description !!}</td>
+                                <td>{{\Carbon\Carbon::parse( $ads->created_at)->format('Y-m-d')}}</td>
                                 <td>{!! spanByStatus($ads->is_active) !!}</td>
                                 <td>
-                                    <a href="{{route($routePrefix.'advertisements.show',$ads->id)}}"
-                                       class="btn btn-primary btn-flat">
-                                        <i class="fa fa-search"></i>
-                                    </a>
+                                    {{--                                    <a href="{{route($routePrefix.'advertisements.show',$ads->id)}}"--}}
+                                    {{--                                       class="btn btn-primary btn-flat">--}}
+                                    {{--                                        <i class="fa fa-search"></i>--}}
+                                    {{--                                    </a>--}}
                                     <a href="{{route($routePrefix.'advertisements.edit',$ads->id)}}"
-                                       class="btn btn-primary btn-flat">
+                                       class="btn btn-primary btn-sm btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'advertisements.destroy', $ads->id],

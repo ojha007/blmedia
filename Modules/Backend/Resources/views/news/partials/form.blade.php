@@ -48,7 +48,8 @@
                 <label>
                     <b>Categories</b>
                 </label>
-                {{Form::select('category_id[]',$selectNewsCategories,null,
+                {{Form::select('category_id[]',$selectNewsCategories,isset($news) ?
+                           $news->categories->pluck('id')->toArray() : null,
                     ['class'=>'form-control select2','multiple'=>'true',
                         'style'=>'width:100%'])}}
             </div>

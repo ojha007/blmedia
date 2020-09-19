@@ -26,11 +26,14 @@
     },
     "dependencies": {
         "admin-lte": "^3.0.5",
+        "bootstrap-datepicker": "^1.9.0",
         "bootstrap-toggle": "^2.2.2",
         "ckeditor": "^4.12.1",
         "datatables": "^1.10.18",
+        "datatables.net-bs4": "^1.10.22",
         "font-awesome": "^4.7.0",
         "icheck": "^1.0.2",
+        "ionicons": "^5.1.2",
         "morris": "^0.1.4",
         "select2": "^4.0.13"
     }

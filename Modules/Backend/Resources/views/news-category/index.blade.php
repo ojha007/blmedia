@@ -6,7 +6,7 @@
     List of News
 @stop
 @section('breadcrumb')
-    {{--    {{ Breadcrumbs::render('news.index',$routePrefix) }}--}}
+    {{ Breadcrumbs::render('news.index',$routePrefix) }}
 @stop
 @section('content')
     @include('backend::partials.errors')
@@ -21,37 +21,18 @@
             </div>
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="dataTable" class="table table-bordered table-condensed">
+                    <table id="dataTable" class="table table-bordered table-condensed tree-table">
                         <thead>
                         <tr>
-                            <th>S.No</th>
                             <th>Category</th>
-                            {{--                            <th>Position</th>--}}
                             <th>status</th>
                             <th class="no-sort">Action</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @php($padding = 0)
                         @foreach($categories as $category)
-                            <tr>
-                                <td>{{$category->id}}</td>
-                                <td>{{$category->name}}</td>
-                                <td>{!! spanByStatus($category->is_active) !!}</td>
-                                <td>
-                                    <a href="{{route($routePrefix.'category.edit',$category->id)}}"
-                                       class="btn btn-primary btn-sm btn-flat">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    {!! Form::open(['method' => 'DELETE', 'route' =>
-                                            [$routePrefix.'category.destroy',$category->id],
-                                             'onsubmit' => "return confirm('Are you sure you want to delete?')", 'style'=>"display:inline"
-                                       ])!!}
-                                    <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
+                            @include('backend::news-category.partials.tr-element',['category'=>$category,'padding'=>$padding])
                         @endforeach
                         </tbody>
                     </table>
@@ -63,4 +44,5 @@
     </div>
 @endsection
 @push('scripts')
+
 @endpush

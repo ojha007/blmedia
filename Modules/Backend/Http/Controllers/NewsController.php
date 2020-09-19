@@ -35,12 +35,8 @@ class NewsController extends Controller
 
     public function index()
     {
-        $news = DB::table('news')
-            ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
-            ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
-            ->select('news.id', 'reporters.name as reporter', 'guests.name as guest', 'news.title', 'news.publish_date')
-            ->orderBy('id', 'DESC')
-            ->whereNull('news.deleted_at')
+        $news = News::with(['categories', 'reporter', 'guest'])
+            ->orderBy('news.id','DESC')
             ->paginate(20);
         return new Response($this->viewPath . 'index', ['allNews' => $news]);
     }
@@ -63,13 +59,14 @@ class NewsController extends Controller
         return new Response($viewPath, $attributes);
     }
 
-    public function update(NewsRequest $request, News $news)
+    public function update(NewsRequest $request, $id)
     {
         $attributes = $request->validated();
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
-            $this->repository->update($news->id, $attributes);
+            $news = $this->repository->update($id, $attributes);
+            $news->categories()->sync($request->get('category_id'));
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News Updated SuccessFully');
@@ -88,7 +85,8 @@ class NewsController extends Controller
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
-            $this->repository->create($attributes);
+            $news = $this->repository->create($attributes);
+            $news->categories()->sync($request->get('category_id'));
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News Created SuccessFully');

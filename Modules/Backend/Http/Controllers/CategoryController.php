@@ -32,7 +32,9 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = $this->repository->getAll();
+        $categories = Category::with('childCategories')
+            ->whereNull('parent_id')
+            ->get();
         return new Response($this->viewPath . 'index', ['categories' => $categories]);
     }
 

@@ -27,18 +27,11 @@
 
                     </div>
                     <div class="form-group col-md-12">
-                        {!! Form::hidden('in_mobile', 0) !!}
-                        <label for="in_mobile">
-                            <input type="checkbox" checked data-toggle="toggle" value="1" name="in_mobile">
-                            Show In Mobile:
-                        </label>
+                        @include('backend::partials.toggle-button',['value'=>'in_mobile','checked'=>$category->in_mobile])
                     </div>
-                    {{--                    <div class="form-group col-md-6 {{$errors->has('category_code')?'has-error':''}}">--}}
-                    {{--                        {{ Form::label('category_code', 'Code:', ['class'=>'control-label required'])}}--}}
-                    {{--                        {!! Form::select('category_code', $selectCategoriesCodes, null,--}}
-                    {{--                    array('placeholder' => 'Select Category Code','class' => 'form-control')) !!}--}}
-
-                    {{--                    </div>--}}
+                    <div class="form-group col-md-12">
+                        @include('backend::partials.toggle-button',['value'=>'is_active','checked'=>$category->is_active])
+                    </div>
                     <div class="form-group col-md-12 {{$errors->has('description') ? 'has-error':''}}">
                         {{ Form::label('description', 'Description:', ['class'=>' control-label '])}}
                         {!! Form::textarea('description', null, array('placeholder' => 'Enter description','class' => 'form-control','rows'=>'3')) !!}

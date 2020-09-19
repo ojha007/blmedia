@@ -12,7 +12,7 @@
     @include('backend::partials.errors')
     <div class="row">
         {!! Form::model($news,['route'=> [$routePrefix.'news.update',$news->id],
-            'method'=>'PATCH','class'=>'form-horizontal','file'=>true,'enctype' => 'multipart/form-data'] ) !!}
+            'method'=>'PATCH','file'=>true] ) !!}
 {{--        @dd($news)--}}
         @include($module.'::news.partials.form')
         {!! Form::close() !!}

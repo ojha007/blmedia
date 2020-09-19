@@ -2,13 +2,19 @@
 function spanByStatus($status, $withPull = '')
 {
     switch (strtolower($status)) {
+        case 'yes':
         case '1':
             $labelClass = 'label-success';
             $labelName = 'Active';
             break;
+        case 'no';
         case '0':
             $labelClass = 'label-warning';
             $labelName = 'Inactive';
+            break;
+        case 'draft':
+            $labelClass = 'label-info';
+            $labelName = 'Draft';
             break;
         default:
             $labelClass = 'label-warning';

@@ -18,7 +18,7 @@ class NewsRequest extends FormRequest
             'title' => 'required',
             'sub_title' => 'nullable|string|max:255',
             'tag_line' => 'nullable',
-//            'slug' => 'nullable',
+            'slug' => 'nullable',
             'reporter_id' => 'nullable|exists:reporters,id',
             'guest_id' => 'nullable|exists:guests,id',
             'description' => 'required',
@@ -26,11 +26,8 @@ class NewsRequest extends FormRequest
             'short_description' => 'nullable',
             'external_url' => 'nullable',
             'publish_date' => 'required|date',
-//            'expiry_date' => 'nullable|date',
             'image' => 'nullable',
             'video_url' => 'nullable',
-//            'is_flash' => 'required|boolean',
-//            'is_fixed' => 'required|boolean',
             'publish_status' => 'required|in:' . implode(',', News::publishStatus()),
         ];
     }

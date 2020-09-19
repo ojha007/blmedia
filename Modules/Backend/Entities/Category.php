@@ -43,5 +43,10 @@ class Category extends Model
         return $this->hasOne(CategoryPositions::class);
     }
 
+    public function childCategories()
+    {
+        return $this->hasMany(Category::class, 'parent_id');
+    }
+
 
 }

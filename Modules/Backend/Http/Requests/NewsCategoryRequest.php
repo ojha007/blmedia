@@ -15,7 +15,6 @@ class NewsCategoryRequest extends FormRequest
     {
 
         $id = $this->route()->parameter('category');
-//        dd($this->request->all());
         return [
             'name' => 'required|unique:categories,name,' . $id,
             'slug' => 'required|unique:categories,slug,' . $id,
@@ -30,7 +29,7 @@ class NewsCategoryRequest extends FormRequest
             'metaTags.meta_keywords' => 'nullable',
             'metaTags.meta_description' => 'nullable',
             'in_mobile' => 'required|boolean',
-//            'category_code' => 'required|in:HM,LS,OT',
+            'is_active' => 'required|boolean',
         ];
     }
 
