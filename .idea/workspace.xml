@@ -26,11 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="fixes routes and multiple database connections issues">
+      <change afterPath="$PROJECT_DIR$/bl_english.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bl_nepali.rar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/headers/header-top.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/headers/header-top.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/auth_module.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/auth_module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blmedia_db.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,17 +206,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\blmedia\config" />
+      <recent name="C:\laragon\www\blmedia\Modules\Auth\Resources\views" />
+      <recent name="C:\laragon\www\blmedia\app\Http" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\blmedia\Modules\Auth\Providers" />
       <recent name="C:\laragon\www\blmedia\public\frontend\img" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Requests" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Http\Controllers" />
       <recent name="C:\laragon\www\blmedia\Modules\Backend\Routes\subRoutes" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\blmedia\config" />
-      <recent name="C:\laragon\www\blmedia\Modules\Auth\Resources\views" />
-      <recent name="C:\laragon\www\blmedia\app\Http" />
     </key>
   </component>
   <component name="RunManager">
@@ -402,10 +401,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600453345769" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600502863641">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600507078360">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600502863641" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600507078360" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600453345769" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600453345769" />
@@ -430,9 +429,9 @@
     <state x="562" y="49" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.834@0.0.1536.834" timestamp="1600502823795" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600453345769" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600502835005">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600506098646">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600502835005" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600506098646" />
   </component>
 </project>
