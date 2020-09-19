@@ -25,11 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="fixes routes and multiple database connections issues">
-      <change afterPath="$PROJECT_DIR$/bl_english.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bl_nepali.rar" afterDir="false" />
+    <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="new_database_zip">
+      <change afterPath="$PROJECT_DIR$/bl_nepali.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blmedia_db.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bl_english.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bl_nepali.rar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600502859216</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new_database_zip">
+      <created>1600507105735</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600507105735</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +356,8 @@
     <MESSAGE value="fixes multiple database" />
     <MESSAGE value="fixes multiple database connections" />
     <MESSAGE value="fixes routes and multiple database connections issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes routes and multiple database connections issues" />
+    <MESSAGE value="new_database_zip" />
+    <option name="LAST_COMMIT_MESSAGE" value="new_database_zip" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600492543462">
@@ -401,10 +410,10 @@
     <state x="603" y="337" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
     <state x="277" y="63" key="SettingsEditor" timestamp="1600453345769" />
     <state x="277" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600507078360">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1600507123317">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600507078360" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1600507123317" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600453345769" />
     <state x="667" y="303" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
     <state x="621" y="298" width="308" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600453345769" />
@@ -429,9 +438,9 @@
     <state x="562" y="49" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.834@0.0.1536.834" timestamp="1600502823795" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600453345769" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600506098646">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600507473964">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600506098646" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600507473964" />
   </component>
 </project>
