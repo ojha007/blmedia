@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="box-footer">
-            <a href="{{route($routePrefix.'.team.index')}}" type="button" class="btn pull-left btn-flat btn-default">
+            <a href="{{route($routePrefix.'team.index')}}" type="button" class="btn pull-left btn-flat btn-default">
                 <i class="fa fa-arrow-left">
                 </i>
                 Close

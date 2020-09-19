@@ -23,7 +23,7 @@
     <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="{{request()->is($urlPrefix) ? 'active' :' '}}">
-            <a href="{{route($routePrefix.'.')}}">
+            <a href="{{route($routePrefix.'dashboard')}}">
                 <i class="fa fa-dashboard"></i>
                 <span>Dashboard</span>
             </a>
@@ -41,13 +41,13 @@
             </a>
             <ul class="treeview-menu">
                 <li class="{{request()->is($urlPrefix.'/news') ? 'active':''}}">
-                    <a href="{{route($routePrefix.'.news.index')}}">
+                    <a href="{{route($routePrefix.'news.index')}}">
                         <i class="fa fa-circle-o"></i>
                         All News
                     </a>
                 </li>
                 <li class="{{request()->is($urlPrefix.'/news/create') ? 'active':''}}">
-                    <a href="{{route($routePrefix.'.news.create')}}">
+                    <a href="{{route($routePrefix.'news.create')}}">
                         <i class="fa fa-circle-o"></i>
                         Add News</a>
                 </li>
@@ -66,12 +66,12 @@
             </a>
             <ul class="treeview-menu">
                 <li class="{{request()->is($urlPrefix.'/category') ? 'active': ''}}">
-                    <a href="{{route($routePrefix.'.category.index')}}">
+                    <a href="{{route($routePrefix.'category.index')}}">
                         <i class="fa fa-circle-o"></i>
                         All Category
                     </a></li>
                 <li class="{{request()->is($urlPrefix.'/category/create') ?'active':'' }}">
-                    <a href="{{route($routePrefix.'.category.create')}}">
+                    <a href="{{route($routePrefix.'category.create')}}">
                         <i class="fa fa-circle-o"></i>
                         Add Category
                     </a></li>
@@ -92,7 +92,7 @@
                     @foreach($contactTypes as $type)
                         <li class="{{request()->is($urlPrefix.'/'.$type,
                                 $urlPrefix.'/'.$type .'/*') ? 'active': ''}}">
-                            <a href="{{route($routePrefix.'.'.$type.'.index')}}">
+                            <a href="{{route($routePrefix.$type.'.index')}}">
                                 <i class="fa fa-circle-o"></i>
                                 {{ucwords($type)}}
                             </a>
@@ -103,13 +103,13 @@
         </li>
 
         <li class="{{request()->is($urlPrefix.'/team',$urlPrefix.'/team/*') ? 'active' :''}}">
-            <a href="{{route($routePrefix.'.team.index')}}">
+            <a href="{{route($routePrefix.'team.index')}}">
                 <i class="fa fa-object-group"></i> <span>Teams</span>
             </a>
         </li>
 
         <li class="{{request()->is($urlPrefix.'/advertisements',$urlPrefix.'/advertisements/*') ? 'active' :''}}">
-            <a href="{{route($routePrefix.'.advertisements.index')}}">
+            <a href="{{route($routePrefix.'advertisements.index')}}">
                 <i class="fa  fa-sliders"></i> <span>Advertisement</span>
             </a>
         </li>
@@ -127,7 +127,7 @@
             <ul class="treeview-menu">
                 @foreach($settings as $setting)
                     <li class="{{request()->is($urlPrefix.'/settings/*') ? 'active': ''}}">
-                        <a href="{{route($routePrefix.'.settings.index',$setting)}}">
+                        <a href="{{route($routePrefix.'settings.index',$setting)}}">
                             <i class="fa fa-circle-o"></i>
                             {{ucwords(str_replace('-', ' ' ,$setting))}}
                         </a>

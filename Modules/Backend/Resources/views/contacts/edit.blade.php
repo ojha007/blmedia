@@ -11,7 +11,7 @@
 @section('content')
     @include('backend::partials.errors')
     <div class="row">
-        {!! Form::model($contact,['route'=> [$routePrefix.'.'.strtolower($type).'.update',$contact->id],
+        {!! Form::model($contact,['route'=> [$routePrefix.strtolower($type).'.update',$contact->id],
             'method'=>'PATCH','class'=>'','file'=>true] ) !!}
         @include($module.'::contacts.partials.form')
         {!! Form::close() !!}

@@ -11,7 +11,7 @@
 @section('content')
     @include('backend::partials.errors')
     <div class="row">
-        {!! Form::open(['route'=> $routePrefix.'.news.store','method'=>'POST','class'=>'','file'=>true] ) !!}
+        {!! Form::open(['route'=> $routePrefix.'news.store','method'=>'POST','class'=>'','file'=>true] ) !!}
         @include($module.'::news.partials.form')
         {!! Form::close() !!}
 

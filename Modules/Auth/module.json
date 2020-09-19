@@ -5,7 +5,8 @@
     "keywords": [],
     "order": 0,
     "providers": [
-        "Modules\\Auth\\Providers\\AuthServiceProvider"
+        "Modules\\Auth\\Providers\\AuthServiceProvider",
+        "Modules\\Auth\\Providers\\ViewComposerServiceProvider"
     ],
     "aliases": {},
     "files": [],

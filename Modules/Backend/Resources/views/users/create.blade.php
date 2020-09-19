@@ -11,7 +11,7 @@
 @section('content')
     @include('backend::partials.errors')
     <div class="row">
-        {!! Form::open(['route'=> $routePrefix.'.users.store',
+        {!! Form::open(['route'=> $routePrefix.'users.store',
             'method'=>'POST','class'=>'form-horizontal','file'=>true] ) !!}
                 @include($module.'::users.partials.form')
         {!! Form::close() !!}

@@ -50,7 +50,7 @@
                 </label>
                 {{Form::select('category_id[]',$selectNewsCategories,null,
                     ['class'=>'form-control select2','multiple'=>'true',
-                        'data-placeholder'=>'Select Category','style'=>'width:100%'])}}
+                        'style'=>'width:100%'])}}
             </div>
 
             <div class="form-group col-md-6 {{$errors->has('reporter_id') ? 'has-error':''}}">
@@ -187,7 +187,7 @@
             </div>
         </div>
         <div class="box-footer">
-            <a href="{{route($routePrefix.'.news.index')}}" type="button" class="btn pull-left btn-flat btn-default">
+            <a href="{{route($routePrefix.'news.index')}}" type="button" class="btn pull-left btn-flat btn-default">
                 <i class="fa fa-arrow-left">
                 </i>
                 Close

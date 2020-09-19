@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                {!! Form::open(array('route' => $routePrefix.'.settings.store','method'=>'POST','class'=>'form-horizontal',
+                {!! Form::open(array('route' => $routePrefix.'settings.store','method'=>'POST','class'=>'form-horizontal',
                         'enctype'=>'multipart/form-data', 'id'=>'setting_form')) !!}
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">

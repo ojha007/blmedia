@@ -14,7 +14,7 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.team.create')}}">
+                   href="{{route($routePrefix.'team.create')}}">
                     <i class="fa fa-plus"></i>
                     Add Teams
                 </a>
@@ -57,11 +57,11 @@
                                 </td>
                                 <td>{!! spanByStatus($team->is_active) !!}</td>
                                 <td>
-                                    <a href="{{route($routePrefix.'.team.edit',$team->id)}}"
+                                    <a href="{{route($routePrefix.'team.edit',$team->id)}}"
                                        class="btn btn-primary btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'.team.destroy', $team->id],
+                                    {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'team.destroy', $team->id],
                                             'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
                                       ])!!}
                                     <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">

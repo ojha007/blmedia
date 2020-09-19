@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="box-footer">
-            <a href="{{route($routePrefix.'.users.index')}}" type="button" class="btn btn-flat pull-left btn-default">
+            <a href="{{route($routePrefix.'users.index')}}" type="button" class="btn btn-flat pull-left btn-default">
                 <i class="fa fa-arrow-left">
                 </i>
                 Close

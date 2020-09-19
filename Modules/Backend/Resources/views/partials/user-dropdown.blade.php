@@ -1,3 +1,4 @@
+{{--@dd($routePrefix)--}}
 <li class="dropdown user user-menu">
     <!-- Menu Toggle Button -->
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -29,9 +30,10 @@
             <div class="pull-left">
 
                 <a href="" class="btn btn-default btn-flat">Profile</a>
+
             </div>
             <div class="pull-right">
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                <form id="logout-form" action="{{ route($routePrefix.'logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-default btn-flat">
                         Sign out

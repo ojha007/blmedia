@@ -12,7 +12,7 @@
     @include('backend::partials.errors')
     <div class="row">
         <div class="col-md-12">
-            {!! Form::open(['route'=> $routePrefix.'.advertisements.store',
+            {!! Form::open(['route'=> $routePrefix.'advertisements.store',
                         'method'=>'POST','class'=>'','file'=>true,'enctype' => 'multipart/form-data'] ) !!}
             @include($module.'::advertisement.partials.form')
             {!! Form::close() !!}

@@ -16,7 +16,7 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.users.create')}}">
+                   href="{{route($routePrefix.'users.create')}}">
                     <i class="fa fa-plus"></i>
                     Add User
                 </a>
@@ -48,7 +48,7 @@
                                     {{--                                        <i class="fa fa-edit"></i>--}}
                                     {{--                                    </a>--}}
                                     {!! Form::open(['method' => 'DELETE', 'route' =>
-                                            [$routePrefix.'.users.destroy',$user->id],
+                                            [$routePrefix.'users.destroy',$user->id],
                                              'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
                                        ])!!}
                                     <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">

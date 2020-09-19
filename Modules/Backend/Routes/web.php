@@ -14,11 +14,11 @@ Route::group(
         'prefix' => $edition . '/bl-secure',
         'as' => $edition . '.bl-secure.',
         'edition' => $edition,
-        'routePrefix' => 'bl-secure',
+        'routePrefix' => 'bl-secure.',
         'systemName' => ucwords($edition) . '-' . 'Backend',
         'systemAbbr' => 'Bl',
         'module' => 'backend'], function ($router) {
-    $router->get('/', 'BackendController@index');
+    $router->get('/', 'BackendController@index')->name('dashboard');
     include __DIR__ . '/subRoutes/newsCategory.php';
     include __DIR__ . '/subRoutes/news.php';
     include __DIR__ . '/subRoutes/team.php';

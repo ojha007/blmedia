@@ -11,7 +11,7 @@
 @section('content')
     @include('backend::partials.errors')
     <div class="row">
-        {!! Form::model($user,['route'=> [$routePrefix.'.users.update',$user->id],
+        {!! Form::model($user,['route'=> [$routePrefix.'users.update',$user->id],
             'method'=>'PATCH','class'=>'form-horizontal','file'=>true] ) !!}
         @include($module.'::users.partials.form')
         {!! Form::close() !!}
