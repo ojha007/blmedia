@@ -1,5 +1,5 @@
 @if(count($thirteenPositionNews))
-    <div class="newsBlock type-5 position-13" id="front_body_position_13" style="padding: 0 15px;">
+    <div class="newsBlock above-footer type-5 position-13" id="front_body_position_13" >
         <div class="block-header gn-heading">
             <h2>
                 <a href="{{route($routePrefix.'news-category.show',$thirteenPositionNews->first()->category_slug)}}">

@@ -1,6 +1,6 @@
 @extends('frontend::layouts.master')
 @section('content')
-    <section class="page-body page-body-homepage" style="overflow-x: hidden;">
+    <section class="page-body page-body-homepage " style="overflow-x: hidden;">
         <div class="container-fluid">
             <!--top section news-->
             <section class="cmn-section">
