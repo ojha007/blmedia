@@ -5,8 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontendController@index')->name('index');
 
-//Auth::routes(['login' => false]);
-
 Route::get('logs', function () {
     $controller = new \Rap2hpoutre\LaravelLogViewer\LogViewerController();
     return $controller->index();

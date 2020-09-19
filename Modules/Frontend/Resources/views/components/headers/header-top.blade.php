@@ -9,9 +9,21 @@
                     <div class="mask">
                         <ul id="scrollNewsList" class="newsTickerLisst newsticker"
                             style="width: 3454px; left: -2434.21px;">
-                            @foreach(config('editions') as $key=>$edition)
-                                <li><a href="{{route($edition)}}" class="am-bl-topscroll active"
-                                       target="_blank">{{ucwords($key)}}</a></li>
+                            @foreach(config('editions') as $k=> $e)
+                                @if(in_array(request()->segment(1), config('editions')))
+                                    @if(request()->segment(1) != $e)
+                                        <li>
+                                            <a href="{{route($e)}}" class="am-bl-topscroll active"
+                                               target="_blank">{{ucwords($k)}}</a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li>
+                                        <a href="{{route($e)}}" class="am-bl-topscroll active"
+                                           target="_blank">{{ucwords($k)}}</a>
+                                    </li>
+                                @endif
+
                             @endforeach
                         </ul>
                     </div>
