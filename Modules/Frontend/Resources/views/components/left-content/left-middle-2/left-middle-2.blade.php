@@ -29,7 +29,6 @@
                                     <li><i class="fa fa-circle blus"></i> blmedia</li>
 
                                 </ul>
-
                                 <p class="short-news">
                                     {!! $news->short_description !!}
                                 </p>
