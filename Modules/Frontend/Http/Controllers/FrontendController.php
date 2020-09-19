@@ -40,13 +40,13 @@ class FrontendController extends Controller
     {
 
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
-        $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 8);
+        $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
         $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
         $sixthPositionNews = $this->newsRepository->getNewsByPosition(6, 10);
         $seventhPositionNews = $this->newsRepository->getNewsByPosition(7, 5);
-        $eighthPositionNews = $this->newsRepository->getNewsByPosition(8, 7);
+        $eighthPositionNews = $this->newsRepository->getNewsByPosition(8, 9);
         $ninthPositionNews = $this->newsRepository->getNewsByPosition(9, 6);
         $tenthPositionNews = $this->newsRepository->getNewsByPosition(10, 6);
         $eleventhPositionNews = $this->newsRepository->getNewsByPosition(11, 5);

@@ -1,4 +1,4 @@
-<div class="newsBlock type-6 position-12" id="front_body_position_12">
+<div class="newsBlock type-6 position-12 front_body_position_12" >
     @if(count($twelvePositionNews))
         <div class="block-header gn-heading">
             <h2>
@@ -57,8 +57,9 @@
 
                     </div>
                 </div>
-
             </div>
+            <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
+               class=" btn btn-viewAll float-right" role="button">सब</a>
             @endif
         </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="newsBlock type-3 position-10" id="front_body_position_10">
+<div class="newsBlock type-3 position-10 front_body_position_10" >
     @if(count($tenthPositionNews))
         <div class="block-header gn-heading">
             <h2>
@@ -48,9 +48,9 @@
                         </div>
                     @endif
                 @endforeach
-                {{--                <a href="https://www.breaknlinks.com/hindi/category/art-1-39"--}}
-                {{--                   class=" btn btn-viewAll float-right" role="button">सब</a>--}}
             </div>
+            <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
+               class=" btn btn-viewAll float-right" role="button">सब</a>
         </div>
     @endif
 </div>

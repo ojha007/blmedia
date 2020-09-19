@@ -1,4 +1,4 @@
-<div class="newsBlock type-1" id="front_body_position_1">
+<div class="newsBlock front_body_position_1 type-1" >
     @if(count($firstPositionNews))
         <div class="block-header gn-heading">
             <h2>

@@ -327,16 +327,20 @@
         display: block;
         color: #fff;
         width: 95% !important;
-        margin-left: 0px;
+        margin-left: 0;
+        /*margin-right: 15px!important;*/
+        padding-right: 10px!important;
         height: 90px;
         z-index: 99;
         margin-top: -40px;
     }
     .newsBlock.type-5 .news-item.highlight-news .news-content {
-        /*margin-left-content: 16px;*/
         height: 90px;
         z-index: 99;
         margin-top: -40px;
+    }
+    .newsBlock.above-footer{
+        padding: 0!important;
     }
     figure.news-image.amsportkhel {
         height: 210px !important;
@@ -484,8 +488,8 @@
         padding-right: 15px !important;
     }
     .ggl_adBlk._300x600 {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+        /*padding-left: 15px !important;*/
+        /*padding-right: 15px !important;*/
     }
     .highlight-news .news-content {
         width: 100% !important;

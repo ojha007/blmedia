@@ -1,4 +1,4 @@
-<div class="newsBlock type-3" id="front_body_position_8">
+<div class="newsBlock type-3 front_body_position_8" >
     @if(count($eighthPositionNews))
         <div class="block-header gn-heading">
             <h2>
@@ -40,15 +40,15 @@
                             <div class="news-content">
                                 <h5 class="news-title"><a
                                         href="{{route($routePrefix.'news.show',$news->slug)}}">
-                                        {{$news->title}}
+                                        {{\Str::limit($news->title, 69)}}
                                     </a>
                                 </h5>
                             </div>
                         </div>
                     @endif
                 @endforeach
-                {{--                <a href="https://www.breaknlinks.com/hindi/category/econimics-5"--}}
-                {{--                   class=" btn btn-viewAll float-right" role="button">सब</a>--}}
+                    <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
+                       class=" btn btn-viewAll float-right" role="button">सब</a>
             </div>
         </div>
     @endif

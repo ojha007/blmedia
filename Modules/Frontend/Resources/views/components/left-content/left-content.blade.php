@@ -40,15 +40,16 @@
     </section>
     <section class="left-middle-5-section">
         <div class="section-row sport-row">
-            <!--sport type-6-hello-->
             <div class="inner-row">
                 @include('frontend::components.left-content.left-middle-5.left-middle-5')
             </div>
         </div>
     </section>
     <section class="above-footer-section">
-        <div class="inner-row">
-            @include('frontend::components.left-content.above-footer.above-footer')
+        <div class="section-row">
+            <div class="inner-row">
+                @include('frontend::components.left-content.above-footer.above-footer')
+            </div>
         </div>
     </section>
 </div>

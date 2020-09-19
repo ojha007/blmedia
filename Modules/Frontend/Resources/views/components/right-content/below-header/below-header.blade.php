@@ -1,4 +1,4 @@
-<div class="newsBlock type-8" id="front_body_position_3">
+<div class="newsBlock type-8 front_body_position_3 " >
 
     @if(count($thirdPositionNews))
         <div class="block-header gn-heading">
@@ -30,7 +30,9 @@
                 </div>
             @endforeach
 
+                <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
+                   class=" btn btn-viewAll float-right" role="button">सब</a>
         </div>
     @endif
 </div>
-{{--@dd($thirdPositionNews)--}}
+
