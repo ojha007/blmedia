@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'India' => 'hindi',
-    'Nepal' => 'nepali',
-    'USA' => 'en',
-    'Spain' => 'spanish',
-    'Arabic' => 'arabic',
-    'China' => 'chinese'
+    'हिन्दी' => 'hindi',
+    'नेपाली' => 'nepali',
+    'English' => 'en',
+    'Español' => 'spanish',
+    'عربي' => 'arabic',
+    '中文网' => 'chinese'
 ];

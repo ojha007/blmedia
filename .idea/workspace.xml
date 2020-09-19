@@ -26,18 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad46d2da-3925-4f98-ae29-3bbde258d721" name="Default Changelist" comment="first page condition">
-      <change afterPath="$PROJECT_DIR$/Modules/Backend/Http/Middleware/DatabaseSwitcher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/Database/Seeders/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/Database/Seeders/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/user-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Backend/Resources/views/partials/user-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Http/Controllers/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Providers/ViewComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Providers/ViewComposerServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/headers/header-mid.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/headers/header-mid.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/headers/header-top.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/headers/header-top.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/left-content/below-header/left.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/below-header/below-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Resources/views/components/right-content/below-header/below-header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Frontend/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Frontend/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/SwitchDatabaseConnectionServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SwitchDatabaseConnectionServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/editions.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/editions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +56,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="development" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -342,8 +341,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="removed debugger" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600453345769" />
-    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
+    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600492543462">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1600492543462" />
     <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600453345769" />
     <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
     <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600453345769" />
@@ -354,18 +355,26 @@
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600453345769" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state width="438" height="343" key="Git.Branch.Popup" timestamp="1600453398395">
+    <state width="440" height="345" key="Git.Branch.Popup" timestamp="1600492150264">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="438" height="343" key="Git.Branch.Popup/0.0.1536.834@0.0.1536.834" timestamp="1600453398395" />
-    <state width="1145" height="135" key="GridCell.Tab.0.bottom" timestamp="1600453345769" />
-    <state width="1145" height="135" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state width="1145" height="135" key="GridCell.Tab.0.center" timestamp="1600453345769" />
-    <state width="1145" height="135" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state width="1145" height="135" key="GridCell.Tab.0.left" timestamp="1600453345769" />
-    <state width="1145" height="135" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state width="1145" height="135" key="GridCell.Tab.0.right" timestamp="1600453345769" />
-    <state width="1145" height="135" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
+    <state width="440" height="345" key="Git.Branch.Popup/0.0.1536.834@0.0.1536.834" timestamp="1600492150264" />
+    <state width="1145" height="2" key="GridCell.Tab.0.bottom" timestamp="1600497689498">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="2" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600497689498" />
+    <state width="1145" height="2" key="GridCell.Tab.0.center" timestamp="1600497689498">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="2" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1600497689498" />
+    <state width="1145" height="2" key="GridCell.Tab.0.left" timestamp="1600497689498">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="2" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1600497689498" />
+    <state width="1145" height="2" key="GridCell.Tab.0.right" timestamp="1600497689498">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1145" height="2" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600497689498" />
     <state x="147" y="66" key="MergeDialog" timestamp="1600453469142">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -408,9 +417,9 @@
     <state x="562" y="49" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.834@0.0.1536.834" timestamp="1600453404244" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600453345769" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600453345769" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600456955683">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600498583820">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600456955683" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600498583820" />
   </component>
 </project>
