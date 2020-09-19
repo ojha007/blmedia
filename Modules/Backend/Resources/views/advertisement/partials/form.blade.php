@@ -35,29 +35,28 @@
             {!! Form::select('sub_placement', [], null, array('placeholder' => 'Select Sub Placement Code','class' => 'form-control select2')) !!}
 
         </div>
-        <div class="form-group col-md-6 ">
+        <div class="form-group col-md-6">
             {{ Form::label('image', 'Image:', ['class'=>'control-label'])}}
             {!! Form::file('image', null,['class'=>'form-control']) !!}
-            {{--            <input name="is_active" value="1" type="checkbox" data-toggle="toggle" data-on="Yes"--}}
-            {{--                   data-off="No" checked>--}}
         </div>
-        <div class="form-group col-md-6 ">
+        <div class="form-group col-md-6" style="margin-top: 12px; height: 36px;">
             {{ Form::label('is_active', 'Ads Status:', ['class'=>'control-label'])}}
             {!! Form::hidden('is_active', 0) !!}
             <input name="is_active" value="1" type="checkbox" data-toggle="toggle" data-on="Yes"
                    data-off="No" checked>
         </div>
-        <div class="form-group col-md-6 {{$errors->has('description') ? 'has-error':''}}">
-            {{ Form::label('description', 'Ads Description:', ['class'=>' control-label '])}}
+
+        <div class="form-group col-md-6 {{$errors->has('sub_description') ? 'has-error':''}}">
+            {{ Form::label('sub_description', 'Sub Description:', ['class'=>' control-label '])}}
+            {!! Form::textarea('sub_description', null, array('placeholder' => 'Enter sub description',
+                    'class' => 'form-control','rows'=>'3')) !!}
+
+        </div>
+        <div class="form-group col-md-12 {{$errors->has('description') ? 'has-error':''}}">
+            {{ Form::label('description', 'Description:', ['class'=>' control-label '])}}
             {!! Form::textarea('description', null, array('placeholder' => 'Enter description',
             'class' => 'form-control','rows'=>'5')) !!}
         </div>
-{{--        <div class="form-group col-md-6 {{$errors->has('sub_description') ? 'has-error':''}}">--}}
-{{--            {{ Form::label('sub_description', 'Ads Description:', ['class'=>' control-label '])}}--}}
-{{--            {!! Form::textarea('sub_description', null, array('placeholder' => 'Enter sub description',--}}
-{{--                    'class' => 'form-control','rows'=>'3')) !!}--}}
-
-{{--        </div>--}}
     </div>
     <div class="box-footer">
         <a href="{{route($routePrefix.'.advertisements.index')}}" type="button"

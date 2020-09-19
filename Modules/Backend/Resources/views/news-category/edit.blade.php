@@ -12,7 +12,7 @@
     @include('backend::partials.errors')
     <div class="row">
         <div class="col-md-12">
-            {!! Form::model($category,array('route' => [$routePrefix.'.category.update',$category->id],
+            {!! Form::model($category,array('route' => [$routePrefix.'category.update',$category->id],
                                        'method'=>'PATCH','class'=>' tab_form')) !!}
             @include($module.'::news-category.partials.form')
             {!! Form::close() !!}

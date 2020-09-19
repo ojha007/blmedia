@@ -35,12 +35,12 @@
                             <td>{!! $advertisement->description !!}</td>
                             <td>{!! spanByStatus($advertisement->is_active) !!}</td>
                             <td>
-                                <a href="{{route($routePrefix.'.advertisements.edit',$advertisement->id)}}"
+                                <a href="{{route($routePrefix.'advertisements.edit',$advertisement->id)}}"
                                    class="btn btn-primary btn-flat">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'.advertisements.destroy', $advertisement->id],
-              'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
+                                {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'advertisements.destroy', $advertisement->id],
+                                          'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
                               ]) !!}
                                 <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
                                     <i class="fa fa-trash"></i>

@@ -33,8 +33,7 @@
                 </a>
             </div>
             <p class="login-box-msg">{{ __('Login') }}</p>
-
-            <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+            <form method="POST" action="{{ route($routePrefix.'login') }}" aria-label="{{ __('Login') }}">
                 @csrf
                 <div class="form-group has-feedback{{ $errors->has('user_name') ? ' has-error' : '' }}">
                     <input id="user_name" type="text"

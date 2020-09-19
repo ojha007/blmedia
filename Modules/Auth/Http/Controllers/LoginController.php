@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-//use Modules\Auth\Entities\User;
-
 class LoginController extends Controller
 {
     /*
@@ -54,7 +52,6 @@ class LoginController extends Controller
 
     protected function credentials(Request $request)
     {
-//        dd($request->all());
         $request->validate([
             'user_name' => 'required|min:3|max:50',
             'password' => 'required|confirmed|min:6',
@@ -67,8 +64,10 @@ class LoginController extends Controller
         return 'user_name';
     }
 
-    protected function authenticated(Request $request, User $user)
+    protected function authenticated(Request $request)
     {
         return redirect()->intended($this->redirectPath());
     }
+
+
 }

@@ -16,7 +16,7 @@ class News extends Model
     const DRAFT = 'Draft';
     protected $metaTagsTable = 'news_meta_tags';
     protected $fillable = [
-        'title', 'sub_title', 'guest_id', 'reporter_id',
+        'title', 'sub_title', 'guest_id', 'reporter_id', 'slug',
         'tag_line', 'description', 'short_description', 'view_count',
         'external_url', 'publish_date', 'expiry_date', 'publish_status'
     ];

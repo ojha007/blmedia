@@ -14,7 +14,7 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.advertisements.create')}}">
+                   href="{{route($routePrefix.'advertisements.create')}}">
                     <i class="fa fa-plus"></i>
                     Add Advertisements
                 </a>
@@ -48,16 +48,16 @@
                                 <td>{!! $ads->description !!}</td>
                                 <td>{!! spanByStatus($ads->is_active) !!}</td>
                                 <td>
-                                    <a href="{{route($routePrefix.'.advertisements.show',$ads->id)}}"
+                                    <a href="{{route($routePrefix.'advertisements.show',$ads->id)}}"
                                        class="btn btn-primary btn-flat">
                                         <i class="fa fa-search"></i>
                                     </a>
-                                    <a href="{{route($routePrefix.'.advertisements.edit',$ads->id)}}"
+                                    <a href="{{route($routePrefix.'advertisements.edit',$ads->id)}}"
                                        class="btn btn-primary btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'.advertisements.destroy', $ads->id],
-                  'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
+                                    {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'advertisements.destroy', $ads->id],
+                                           'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
                                   ]) !!}
                                     <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
                                         <i class="fa fa-trash"></i>

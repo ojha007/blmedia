@@ -45,12 +45,12 @@
                                 {{$news->publish_date}}
                             </td>
                             <td>
-                                <a href="{{route($routePrefix.'.news.edit',$news->id)}}"
+                                <a href="{{route($routePrefix.'news.edit',$news->id)}}"
                                    class="btn btn-primary btn-flat">
                                     <i class="fa fa-edit"></i>
                                 </a>
 
-                                {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'.news.destroy', $news->id],
+                                {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'news.destroy', $news->id],
                       'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
                                       ]) !!}
                                 <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">

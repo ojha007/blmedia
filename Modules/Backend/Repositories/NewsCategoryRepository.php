@@ -12,12 +12,17 @@ class NewsCategoryRepository extends Repository
     public function __construct(Category $category)
     {
         $this->model = $category;
+
     }
 
-    public function getViewData()
+    public function getViewData($category = null)
     {
         $selectCategoryCodes = Category::selectCategoryCode();
-        $selectParentCategories = $this->model->whereNull('parent_id')
+        $selectParentCategories = $this->getModel()
+            ->whereNull('parent_id')
+            ->when($category, function ($a) use ($category) {
+                $a->where('id', '<>', $category->id);
+            })
             ->pluck('name', 'id');
         return [
             'selectCategoriesCodes' => $selectCategoryCodes,

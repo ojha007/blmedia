@@ -2,8 +2,8 @@
 
 namespace Modules\Auth\Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
 
 class AuthDatabaseSeeder extends Seeder
 {
@@ -16,6 +16,6 @@ class AuthDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call(UsersTableSeeder::class);
     }
 }

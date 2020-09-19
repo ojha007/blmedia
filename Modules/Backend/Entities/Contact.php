@@ -25,6 +25,7 @@ class Contact extends Model
         'description',
         'image',
         'is_active',
+        'designation'
     ];
 
     /**

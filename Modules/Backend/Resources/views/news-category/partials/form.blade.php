@@ -55,7 +55,7 @@
                 @include($module.'::meta-info.form',['meta'=>$category->metaTags])
             </div>
             <div class="box-footer">
-                <a href="{{route($routePrefix.'.category.index')}}" type="button"
+                <a href="{{route($routePrefix.'category.index')}}" type="button"
                    class="btn btn-default btn-flat pull-left">
                     <i class="fa fa-arrow-left"></i>
                     Close

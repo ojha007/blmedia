@@ -14,17 +14,12 @@
         <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'.category.create')}}">
+                   href="{{route($routePrefix.'category.create')}}">
                     <i class="fa fa-plus"></i>
                     Add News Category
                 </a>
             </div>
             <div class="box">
-                {{--                @include('common::backend.components.dataTableFilter.FilterByStatus',[--}}
-                {{--                  'selectFiscalYears'=>$selectFiscalYears,--}}
-                {{--                  'fiscal_year_id'=>$fiscal_year_id,--}}
-                {{--                   'status'=>$billStatus--}}
-                {{--                       ])--}}
                 <div class="box-body table-responsive">
                     <table id="dataTable" class="table table-bordered table-condensed">
                         <thead>
@@ -43,12 +38,12 @@
                                 <td>{{$category->name}}</td>
                                 <td>{!! spanByStatus($category->is_active) !!}</td>
                                 <td>
-                                    <a href="{{route($routePrefix.'.category.edit',$category->id)}}"
+                                    <a href="{{route($routePrefix.'category.edit',$category->id)}}"
                                        class="btn btn-primary btn-sm btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     {!! Form::open(['method' => 'DELETE', 'route' =>
-                                            [$routePrefix.'.category.destroy',$category->id],
+                                            [$routePrefix.'category.destroy',$category->id],
                                              'onsubmit' => "return confirm('Are you sure you want to delete?')", 'style'=>"display:inline"
                                        ])!!}
                                     <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">

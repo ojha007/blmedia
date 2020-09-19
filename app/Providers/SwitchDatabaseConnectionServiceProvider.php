@@ -17,24 +17,22 @@ class SwitchDatabaseConnectionServiceProvider extends ServiceProvider
 
     public function register()
     {
-
         $this->changeDatabaseConnection();
-
     }
 
     protected function changeDatabaseConnection()
     {
-//        $edition = null;
-//        if (in_array(request()->segment(1), config('editions'))) {
-//            $edition = request()->segment(1);
-//        }
-//        if (is_null($edition)) {
-//            $edition = 'nepali';
-//        }
-//        DB::purge('mysql');
-//        DB::disconnect();
-//        Config::set('database.default', $edition);
-//        DB::reconnect();
+        $edition = null;
+        if (in_array(request()->segment(1), config('editions'))) {
+            $edition = request()->segment(1);
+        }
+        if (is_null($edition)) {
+            $edition = 'nepali';
+        }
+        DB::purge('mysql');
+        DB::disconnect();
+        Config::set('database.default', $edition);
+        DB::reconnect();
     }
 
     /**

@@ -11,7 +11,7 @@
 @section('content')
     @include('backend::partials.errors')
     <div class="row">
-        {!! Form::open(['route'=> $routePrefix.'.'.strtolower($type).'.store',
+        {!! Form::open(['route'=> $routePrefix.strtolower($type).'.store',
             'method'=>'POST','class'=>'','file'=>true] ) !!}
         @include($module.'::contacts.partials.form')
         {!! Form::close() !!}
