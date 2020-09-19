@@ -34,7 +34,7 @@
                     <div class="collapse navbar-collapse" id="primaryNav">
                         <ul class="navbar-nav">
                             <li class="nav-item active home-site-logo-home">
-                                <a href="https://www.breaknlinks.com/hindi/" class="nav-link"><i
+                                <a href="{{route($routePrefix.'index')}}" class="nav-link"><i
                                         class="fa fa-home"></i> <span class="sr-only">Home</span>
                                 </a>
                             </li>
