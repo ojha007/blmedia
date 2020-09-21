@@ -53,7 +53,7 @@ class FrontendController extends Controller
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
-        $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 4);
+        $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 6);
         $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
         $sixthPositionNews = $this->newsRepository->getNewsByPosition(6, 10);
         $seventhPositionNews = $this->newsRepository->getNewsByPosition(7, 6);
@@ -63,7 +63,8 @@ class FrontendController extends Controller
         $eleventhPositionNews = $this->newsRepository->getNewsByPosition(11, 5);
         $twelvePositionNews = $this->newsRepository->getNewsByPosition(12, 5);
         $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 4);
-        $fourteenPositionNews = $this->newsRepository->getNewsByPosition(14, 6);
+        $fourteenPositionNews = $this->newsRepository->getNewsByPosition(14, 7);
+//        dd($fourteenPositionNews);
         return view('frontend::index', compact('headerCategories',
             'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
             'fifthPositionNews', 'sixthPositionNews',
