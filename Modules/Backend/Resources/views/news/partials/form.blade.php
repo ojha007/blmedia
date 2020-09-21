@@ -84,7 +84,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    {!! Form::text('publish_date',  null,
+                    {!! Form::text('publish_date',  isset($news) ? $news->publish_date : now()->format('Y-m-d'),
                    array('placeholder' => 'Publish on','class' => 'form-control datepicker', 'autocomplete'=>'off')) !!}
                 </div>
             </div>
@@ -116,35 +116,10 @@
                 <label for="fieldID4">Banner Picture</label>
                 <div class="input-append text-center">
                     {{Form::text('image',null,['class'=>'form-control','style'=>'margin-bottom:5px'])}}
-                    <a data-toggle="modal" href="javascript:void (0);"
-                       data-target="#myModal"
-                       class="btn btn-primary text-center  btn-flat pt-3" type="button">
+                    <a data-toggle="modal" id="blFilemanager"
+                       class="btn btn-primary text-center   btn-flat pt-3" type="button">
                         <i class="fa fa-cloud-upload"> Select</i>
                     </a>
-                </div>
-
-                <div id="myModal" class="modal fade bs-example-modal-xl" role="dialog">
-                    <div class="modal-dialog modal-xl">
-
-
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;
-                                </button>
-                                <h4 class="modal-title">BL MEDIA GALLERY</h4>
-                            </div>
-                            <div class="modal-body">
-                                <iframe width="100%" height="400"
-                                        style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">
-                                    Close
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
 
             </div>
@@ -163,7 +138,7 @@
 
             <div class="form-group col-md-12 {{$errors->has('description') ?'has-error':''}}">
                 <label for="description"> <b>Full description </b></label>
-                {{Form::textarea('description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10'])}}
+                {{Form::textarea('description' ,null,['class'=>'form-control','rows'=>'8','cols'=>'10','placeholder'=>'Enter     description'])}}
 
             </div>
             <div class="form-group col-md-6 {{$errors->has('is_mob_notification' ?'has-error':'')}} align-center">
@@ -197,15 +172,43 @@
                 <i class="fa fa-save"></i> Submit
             </button>
         </div>
+        {{--        <div id="myModal" class="modal fade bs-example-modal-xl" role="dialog">--}}
+        {{--            <div class="modal-dialog modal-xl">--}}
 
+
+        {{--                <div class="modal-content">--}}
+        {{--                    <div class="modal-header">--}}
+        {{--                        <button type="button" class="close" data-dismiss="modal">&times;--}}
+        {{--                        </button>--}}
+        {{--                        <h4 class="modal-title">BL MEDIA GALLERY</h4>--}}
+        {{--                    </div>--}}
+        {{--                    <div class="modal-body">--}}
+        {{--                        <iframe width="100%" height="400"--}}
+        {{--                                style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>--}}
+        {{--                    </div>--}}
+        {{--                    <div class="modal-footer">--}}
+        {{--                        <button type="button" class="btn btn-default" data-dismiss="modal">--}}
+        {{--                            Close--}}
+        {{--                        </button>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+
+        {{--            </div>--}}
+        {{--        </div>--}}
     </div>
 </div>
 
-
 @push('scripts')
+    <script src="{{asset('/vendor/laravel-filemanager/js/stand-alone-button.js')}}"></script>
     <script>
-        CKEDITOR.replace('description');
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+        CKEDITOR.replace('description', options);
+        $('#blFilemanager').filemanager();
     </script>
-
 
 @endpush

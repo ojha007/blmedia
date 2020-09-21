@@ -80,14 +80,14 @@ class CategoryController extends Controller
     protected function updateOrCreateRelations($category, $request): void
     {
         if (array_filter($request->get('position'))) {
-            $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
             $category->position()
-                ->updateOrCreate($attributes);
+                ->updateOrCreate(
+                    ['category_id' => $category->id], $request->get('position')
+                );
         }
         if (array_filter($request->get('meta'))) {
-            $attributes = array_merge(['category_id' => $category->id], $request->get('meta'));
             DB::table('category_meta_tags')
-                ->updateOrInsert($attributes);
+                ->updateOrInsert(['category_id' => $category->id], $request->get('meta'));
         }
     }
 

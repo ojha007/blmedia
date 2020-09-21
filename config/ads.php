@@ -28,7 +28,5 @@ return [
         'above_breaking' => 'Above Breaking',
         'above_video' => 'Above Video',
         'below_video' => 'Below Video'
-
-
     ]
 ];

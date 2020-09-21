@@ -4,7 +4,9 @@ namespace Modules\Frontend\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
+use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\News;
+use Modules\Backend\Repositories\AdvertisementRepository;
 use Modules\Backend\Repositories\NewsCategoryRepository;
 use Modules\Frontend\Entities\Category;
 use Modules\Frontend\Repositories\CategoryRepository;
@@ -25,11 +27,16 @@ class FrontendController extends Controller
      * @var CategoryRepository
      */
     private $categoryRepository;
+    /**
+     * @var AdvertisementRepository
+     */
+    private $adsRepository;
 
     public function __construct()
     {
         $this->categoryRepository = new CategoryRepository(new Category());
         $this->newsRepository = new NewsRepository(new News());
+        $this->adsRepository = new AdvertisementRepository(new Advertisement());
     }
 
     /**
@@ -41,6 +48,9 @@ class FrontendController extends Controller
 
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
+        $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
+        $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
+        $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
         $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
@@ -54,9 +64,31 @@ class FrontendController extends Controller
         $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 4);
         return view('frontend::index', compact('headerCategories',
             'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
-            'fifthPositionNews', 'sixthPositionNews', 'seventhPositionNews', 'eighthPositionNews',
-            'ninthPositionNews', 'tenthPositionNews', 'eleventhPositionNews', 'twelvePositionNews',
+            'fifthPositionNews', 'sixthPositionNews',
+            'seventhPositionNews', 'eighthPositionNews',
+            'ninthPositionNews', 'tenthPositionNews',
+            'eleventhPositionNews', 'twelvePositionNews',
+            'ads_above_top_menu', 'ads_below_top_menu',
+            'ads_aside_logo',
             'thirteenPositionNews'));
+
+    }
+
+    public function getAllActiveAdvertisements()
+    {
+        $selectAdsFor = $this->adsRepository->ads_page();
+        $selectAdsSubFor = $this->adsRepository->ads_Positions();
+        $placements = $this->adsRepository->adsPlacements();
+        $toArray = [];
+        $limit = 2;
+        foreach ($selectAdsFor as $f => $for) {
+            foreach ($selectAdsSubFor as $s => $sub_for) {
+                foreach ($placements as $p => $placement) {
+                    $toArray['ads_' . $f . '_' . $s . '_' . $p] = $this->adsRepository->getAdsByForAndSubForAndPlacement($f, $s, $p, $limit);
+                }
+            }
+        }
+        return array_filter($toArray);
     }
 
     public function getAllEditions()
@@ -78,5 +110,6 @@ class FrontendController extends Controller
     {
         return view('frontend::components.detail-page');
     }
+
 
 }

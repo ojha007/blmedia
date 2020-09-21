@@ -30,4 +30,6 @@
         </div>
         <div class="clearfix"></div>
     </div>
+    @include('frontend::components.ads.ads-1',['ads'=>$ads_below_top_menu])
+{{--    @include('fronted::components.ads.ads-1', ['ads'=>$ads_aside_logo])--}}
 </section>

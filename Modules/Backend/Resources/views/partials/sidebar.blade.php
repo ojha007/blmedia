@@ -135,6 +135,13 @@
                 @endforeach
             </ul>
         </li>
+        <li class="header">Media</li>
+        <li class="{{request()->is($urlPrefix.'/file-manager',
+                    $urlPrefix.'/file-manager/*') ? 'active' :''}}">
+            <a href="{{route($routePrefix.'file-manager.index')}}">
+                <i class="fa fa-picture-o" aria-hidden="true"></i> <span>Gallery</span>
+            </a>
+        </li>
     </ul>
 </section>
 

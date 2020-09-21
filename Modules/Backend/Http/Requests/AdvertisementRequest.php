@@ -15,11 +15,11 @@ class AdvertisementRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'image' => 'required|mimes:jpeg,bmp,jpg,png|between:1, 6000',
+            'image' => 'required|image|mimes:jpeg,bmp,jpg,png|between:1, 6000',
             'url' => 'required',
-            'for' => 'required',
-            'sub_for' => ['nullable'],
-            'placement' => 'required',
+            'placement' => 'nullable',
+            'for' => 'required_if:is_active,==,1',
+            'sub_for' => 'required_with:for',
             'description' => 'nullable',
             'sub_description' => 'nullable|max:255',
             'is_active' => 'required|boolean',

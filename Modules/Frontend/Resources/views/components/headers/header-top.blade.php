@@ -1,8 +1,9 @@
+@include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
 <section class="header-top">
     <div class="container-fluid">
         <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 float-left scroll-news">
             <div class="scroll-header">
-                <h4>और संस्करण</h4>
+                <h4>{{trans('messages.editions')}}</h4>
             </div>
             <div class="scroll-news-content">
                 <div class="tickercontainer">
@@ -54,3 +55,5 @@
         <div class="clearfix"></div>
     </div>
 </section>
+@include('frontend::components.ads.ads-1',['ads'=>$ads_below_top_menu])
+

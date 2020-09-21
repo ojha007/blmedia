@@ -20,11 +20,6 @@
                 </a>
             </div>
             <div class="box">
-                {{--                @include('common::backend.components.dataTableFilter.FilterByStatus',[--}}
-                {{--                  'selectFiscalYears'=>$selectFiscalYears,--}}
-                {{--                  'fiscal_year_id'=>$fiscal_year_id,--}}
-                {{--                   'status'=>$billStatus--}}
-                {{--                       ])--}}
                 <div class="box-body table-responsive">
                     <table id="dataTable" class="table table-bordered table-condensed">
                         <thead>
@@ -44,8 +39,8 @@
                             <tr>
                                 <td>{{$ads->id}}</td>
                                 <td>{{$ads->title}}</td>
-                                <td>{{$ads->for}}</td>
-                                <td>{{$ads->placement}}</td>
+                                <td>{{ucwords($ads->for, '_')}}</td>
+                                <td>{{ucwords($ads->sub_for, '_')}}</td>
                                 <td>{!! $ads->description !!}</td>
                                 <td>{{\Carbon\Carbon::parse( $ads->created_at)->format('Y-m-d')}}</td>
                                 <td>{!! spanByStatus($ads->is_active) !!}</td>

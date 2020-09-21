@@ -26,12 +26,12 @@
 
         </div>
         <div class="form-group col-md-6 {{$errors->has('placement')?'has-error':''}}">
-            {{ Form::label('placement', 'Placement:', ['class'=>'control-label required'])}}
+            {{ Form::label('placement', 'Placement:', ['class'=>'control-label'])}}
             {!! Form::select('placement', $placement,null, array('placeholder' => 'Select Placement','class' => 'form-control select2')) !!}
 
         </div>
         <div class="form-group col-md-6 {{$errors->has('sub_placement')?'has-error':''}}">
-            {{ Form::label('sub_placement', 'Ads Sub Placement:', ['class'=>'control-label required'])}}
+            {{ Form::label('sub_placement', 'Ads Sub Placement:', ['class'=>'control-label '])}}
             {!! Form::select('sub_placement', [], null, array('placeholder' => 'Select Sub Placement Code','class' => 'form-control select2')) !!}
 
         </div>
@@ -40,10 +40,8 @@
             {!! Form::file('image', null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group col-md-6" style="margin-top: 12px; height: 36px;">
-            {{ Form::label('is_active', 'Ads Status:', ['class'=>'control-label'])}}
-            {!! Form::hidden('is_active', 0) !!}
-            <input name="is_active" value="1" type="checkbox" data-toggle="toggle" data-on="Yes"
-                   data-off="No" checked>
+            @php($checked  =$advertisement->is_active == 1 || old('is_active') == 1 || is_null($advertisement->is_active) )
+            @include('backend::partials.toggle-button',['value'=>'is_active','checked'=>$checked])
         </div>
 
         <div class="form-group col-md-6 {{$errors->has('sub_description') ? 'has-error':''}}">
