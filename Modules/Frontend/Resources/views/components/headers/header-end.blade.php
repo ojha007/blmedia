@@ -39,7 +39,8 @@
                                 </a>
                             </li>
                             <li class="nav-item  home-site-logo">
-                                <a class="nav-link navbar-brand-img-logo" href="#">
+                                <a class="nav-link navbar-brand-img-logo  " href="{{route($routePrefix.'index')}}">
+                                    <img class="responsive-img" id="logo_image_nav" src="{{asset('frontend/img/logo.png')}}" alt="BL Media">
                                 </a>
                             </li>
                             @foreach($headerCategories as $category)
@@ -61,7 +62,7 @@
 
                 <ul class="follow-social-media">
                     <li>
-                        <button type="button" class="btn btn-link">फलाे करें</button>
+                        <button type="button" class="btn btn-link">{{trans('messages.follow_us')}}</button>
                     </li>
                     <li>
                         <a href="{{setting('facebook_url')}}" target="_blank"><i

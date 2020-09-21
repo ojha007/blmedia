@@ -2,5 +2,8 @@
 return [
     'welcome' => 'Welcome to our application',
     'view_all' => 'View All',
-    'editions' => 'Editions'
+    'read_more' => 'Read More',
+    'editions' => 'Editions',
+    'follow_us' => 'Follow Us'
+
 ];

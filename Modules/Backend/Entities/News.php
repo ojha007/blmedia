@@ -53,4 +53,10 @@ class News extends Model
     {
         return $this->belongsTo(Guest::class);
     }
+
+    public function getCategoryNameAttribute()
+    {
+//        dd($this->categories()->pluck('slug'));
+        return $this->categories()->pluck('slug')->toArray();
+    }
 }

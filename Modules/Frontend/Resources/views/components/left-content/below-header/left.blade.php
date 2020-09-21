@@ -28,10 +28,7 @@
                     </div>
                 </div>
             @endforeach
-            <a href="https://www.breaknlinks.com/hindi/category/link-27"
-               class=" btn btn-viewAll float-right" role="button">सब</a>
-
-
+                @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
         </div>
     @endif
 </div>

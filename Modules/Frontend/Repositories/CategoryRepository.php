@@ -58,4 +58,33 @@ class CategoryRepository extends Repository
             ->get();
 
     }
+
+    public function getChildCategory($slug, int $limit)
+    {
+        return DB::table('categories as c1')
+            ->select('c2.name', 'c2.slug')
+            ->join('categories as c2', 'c1.id', '=', 'c2.parent_id')
+            ->whereNotNull('c2.parent_id')
+            ->where('c2.is_active', true)
+            ->whereNull('c2.deleted_at')
+            ->where('c1.slug', '=', $slug)
+            ->limit($limit)
+            ->get();
+    }
+
+    public function getSimilarNewsByCategorySlug($slug, $limit)
+    {
+
+        $slug = is_array($slug) ? $slug : [$slug];
+        return DB::table('news')
+            ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.id as slug', 'news.publish_date')
+            ->join('news_categories', 'news_categories.news_id', 'news.id')
+            ->join('categories', 'categories.id', 'news_categories.category_id')
+            ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
+            ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+            ->whereIn('categories.slug', $slug)
+            ->orderBy('news.created_at', 'DESC')
+            ->limit($limit)
+            ->get();
+    }
 }

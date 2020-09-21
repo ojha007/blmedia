@@ -26,12 +26,9 @@
                     <ul class="hr-list wide stamp">
                         <li><i class="fa fa-circle blus"></i> blmedia</li>
                     </ul>
-
                 </div>
             @endforeach
-
-                <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
-                   class=" btn btn-viewAll float-right" role="button">सब</a>
+                @include('frontend::components.buttons.view-all-category-button', ['position' => $thirdPositionNews])
         </div>
     @endif
 </div>

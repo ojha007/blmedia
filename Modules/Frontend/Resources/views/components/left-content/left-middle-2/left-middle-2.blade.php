@@ -65,6 +65,7 @@
                     @endif
                 @endforeach
             </div>
+            @include('frontend::components.buttons.view-all-category-button', ['position' => $sixthPositionNews])
         </div>
     @endif
 </div>
