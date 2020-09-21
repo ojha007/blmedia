@@ -2,5 +2,7 @@
 return [
     'welcome' => 'Welcome to our application',
     'view_all' => 'View All',
-    'editions' => 'Editions'
+    'all' => 'All',
+    'editions' => 'Editions',
+    'follow_us' => 'Follow Us'
 ];
