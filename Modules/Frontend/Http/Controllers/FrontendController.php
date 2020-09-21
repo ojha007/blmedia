@@ -55,13 +55,14 @@ class FrontendController extends Controller
         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
         $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
         $sixthPositionNews = $this->newsRepository->getNewsByPosition(6, 10);
-        $seventhPositionNews = $this->newsRepository->getNewsByPosition(7, 5);
+        $seventhPositionNews = $this->newsRepository->getNewsByPosition(7, 6);
         $eighthPositionNews = $this->newsRepository->getNewsByPosition(8, 9);
         $ninthPositionNews = $this->newsRepository->getNewsByPosition(9, 6);
         $tenthPositionNews = $this->newsRepository->getNewsByPosition(10, 6);
         $eleventhPositionNews = $this->newsRepository->getNewsByPosition(11, 5);
         $twelvePositionNews = $this->newsRepository->getNewsByPosition(12, 5);
         $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 4);
+        $fourteenPositionNews = $this->newsRepository->getNewsByPosition(14, 6);
         return view('frontend::index', compact('headerCategories',
             'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
             'fifthPositionNews', 'sixthPositionNews',
@@ -70,7 +71,7 @@ class FrontendController extends Controller
             'eleventhPositionNews', 'twelvePositionNews',
             'ads_above_top_menu', 'ads_below_top_menu',
             'ads_aside_logo',
-            'thirteenPositionNews'));
+            'thirteenPositionNews','fourteenPositionNews'));
 
     }
 

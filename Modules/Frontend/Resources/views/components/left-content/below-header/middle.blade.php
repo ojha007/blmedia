@@ -57,8 +57,8 @@
                     </div>
                 @endif
             @endforeach
-            <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
-               class=" btn btn-viewAll float-right" role="button">सब</a>
+
+                @include('frontend::components.buttons.view-all-category-button', ['position' => $secondPositionNews])
         </div>
     @endif
 </div>

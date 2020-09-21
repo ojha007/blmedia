@@ -40,7 +40,7 @@
     'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'UTC',
-    'locale' => 'en',
+    'locale' => 'ne',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
     'key' => 'base64:xt5M7ZRwFLyrWpvi/BZBKtKKJi7HOXQd+PQu9UwAuzQ=',

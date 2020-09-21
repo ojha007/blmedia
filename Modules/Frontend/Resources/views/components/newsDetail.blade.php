@@ -17,9 +17,7 @@
                                 <div class="col-sm-6 col-md-4 col-lg-6">
                                     <div class="post-info">
                                             <span>
-                                                <img
-                                                        src="https://www.breaknlinks.com/hindi/uploads/reporter/2487634d11ab76a0bf08a3facdb9de10BLLOGO.jpg"
-                                                        class="responsive-img" alt="">
+                                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">
                                             </span>
                                         <p>
                                             <a href="https://www.breaknlinks.com/hindi/author/reporter/breaknlinks"
@@ -51,9 +49,11 @@
                         </div>
                         <div class="news-banner">
                             <figure class="bannerImg">
-                                <img width="100%"
+                                {{--<img width="100%"
                                      src="https://www.breaknlinks.com/hindi/uploads/Mumbai%20Local%20Photo/unnamed.png"
-                                     class="img-responsive" alt="खाली पेट चबाएं तुलसी और पुदीना !">
+                                     class="img-responsive" alt="खाली पेट चबाएं तुलसी और पुदीना !">--}}
+                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" width="100%"
+                                     class="responsive-img">
                             </figure>
                         </div>
 
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <div class="section-row">
-                        <div class="newsBlock type-4">
+                        <div class="newsBlock type-4 recommendation">
                             <div class="block-header gn-heading">
                                 <h2><a href="#">अन्य खबरें</a></h2>
                             </div>
@@ -124,7 +124,7 @@
                                                     <a href="{{route($routePrefix.'news.show',$news->slug)}}">
                                                         {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                                              class="responsive-img" title="">--}}
-                                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt="">
+                                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                                                     </a>
                                                 </figure>
                                                 <div class="news-content">
@@ -183,8 +183,7 @@
                                         </ul>
                                     </div>
                                 @endforeach
-                                <a href="{{route($routePrefix.'news-category.show',$firstPositionNews->first()->category_slug)}}"
-                                   class=" btn btn-viewAll float-right" role="button">सब</a>
+                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
                             </div>
                         @endif
                     </div>
@@ -216,8 +215,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                <a href="{{route($routePrefix.'news-category.show',$secondPositionNews->first()->category_slug)}}"
-                                   class=" btn btn-viewAll float-right" role="button">सब</a>
+                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $secondPositionNews])
                             </div>
                         @endif
                     </div>
@@ -252,8 +250,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                <a href="{{route($routePrefix.'news-category.show',$thirdPositionNews->first()->category_slug)}}"
-                                   class=" btn btn-viewAll float-right" role="button">सब</a>
+                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $thirdPositionNews])
                             </div>
                         @endif
                     </div>

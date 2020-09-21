@@ -66,6 +66,7 @@
         padding-left: 0em;
         padding-top: 0.9375em; } }
 @media only screen and (max-width: 768px) {
+
     .above-footer{
         /*padding: 0!important;*/
     }
@@ -235,6 +236,9 @@
     .newsBlock.type-5 .news-item.highlight-news .news-image {width: 100%;}
 }
 @media only screen and (max-width: 720px) {
+    .newsBlock.recommendation div figure{
+        padding: 0 15px;
+    }
     .amnavnd .nav.nav-pills {
         margin-right: 73px;
     }
