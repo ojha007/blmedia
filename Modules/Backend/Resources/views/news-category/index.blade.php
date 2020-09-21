@@ -30,7 +30,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @php($padding = 0)
+                        @php($padding = 1)
                         @foreach($categories as $category)
                             @include('backend::news-category.partials.tr-element',['category'=>$category,'padding'=>$padding])
                         @endforeach
@@ -44,5 +44,17 @@
     </div>
 @endsection
 @push('scripts')
-
+    <script>
+        var table = $('#dataTable').DataTable({
+            "ordering": false,
+            "paging": false,
+            "bInfo": false,
+            "order": [],
+            "columnDefs": [{
+                "targets": 'no-sort',
+                "orderable": false,
+            }]
+        });
+        // $(".tree-table").treetable()
+    </script>
 @endpush

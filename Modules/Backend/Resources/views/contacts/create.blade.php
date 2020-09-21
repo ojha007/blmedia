@@ -12,7 +12,7 @@
     @include('backend::partials.errors')
     <div class="row">
         {!! Form::open(['route'=> $routePrefix.strtolower($type).'.store',
-            'method'=>'POST','class'=>'','file'=>true] ) !!}
+            'method'=>'POST','class'=>'','file'=>true, "enctype"=>"multipart/form-data"] ) !!}
         @include($module.'::contacts.partials.form')
         {!! Form::close() !!}
 

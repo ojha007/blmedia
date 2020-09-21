@@ -17,6 +17,8 @@ class TeamRequest extends FormRequest
             'title' => 'required',
             'designation' => 'nullable|string|max:255',
             'email' => 'email|required',
+            'is_active' => 'required|boolean',
+            'image' => 'nullable|image',
             'detail' => 'nullable|string|max:255',
         ];
     }

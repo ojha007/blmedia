@@ -17,7 +17,7 @@ class NewsRequest extends FormRequest
         return [
             'title' => 'required',
             'sub_title' => 'nullable|string|max:255',
-            'tag_line' => 'nullable',
+            'tags' => 'nullable',
             'slug' => 'nullable',
             'reporter_id' => 'nullable|exists:reporters,id',
             'guest_id' => 'nullable|exists:guests,id',

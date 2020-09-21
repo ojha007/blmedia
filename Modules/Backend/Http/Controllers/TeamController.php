@@ -56,18 +56,14 @@ class TeamController extends Controller
         return new Response($viewPath, null);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return RedirectResponse
-     */
+
     public function store(TeamRequest $request)
     {
         $attributes = $request->validated();
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
+            $attributes['image'] = $this->storeImage($request);
             $this->repository->create($attributes);
             DB::commit();
             return redirect()->route($baseRoute . '.index')
@@ -78,6 +74,15 @@ class TeamController extends Controller
             return redirect()->back()->withInput()
                 ->with('failed', 'Failed to create Team');
         }
+    }
+
+    protected function storeImage($request)
+    {
+        if ($request->has('image')) {
+            $folder = $request->route()->getAction('edition') . '/teams';
+            return $request->file('image')->store($folder);
+        }
+        return null;
     }
 
     /**
@@ -104,20 +109,14 @@ class TeamController extends Controller
         return new Response($viewPath, ['team' => $team]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param \App\Team $team
-     * @return RedirectResponse
-     */
-    public function update(TeamRequest $request, Team $team)
+    public function update(TeamRequest $request, $id)
     {
         $attributes = $request->validated();
         $baseRoute = getBaseRouteByUrl($request);
         try {
             DB::beginTransaction();
-            $this->repository->update($team->id, $attributes);
+            $attributes['image'] = $this->storeImage($request);
+            $this->repository->update($id, $attributes);
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'Team Updated SuccessFully');

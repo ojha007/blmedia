@@ -13,21 +13,22 @@ $(function () {
         hideIfAllHiddenChildren($table, $row);
         if (children.length) {
             var expander = $columnName.prepend('' +
-                '<span class="treegrid-expander glyphicon glyphicon-minus" style="padding-right: 10px;"></span>');
+                '<span class="treegrid-expander fa fa-minus" style="padding-right: 10px;"></span>');
 
             children.show();
 
             expander.find('.treegrid-expander').on('click', function (e) {
                 var $target = $(e.target);
-                if ($target.hasClass('glyphicon-plus')) {
+                if ($target.hasClass('fa-plus')) {
                     $target
-                        .removeClass('glyphicon-plus')
-                        .addClass('glyphicon-minus');
+                        .removeClass('fa-plus')
+                        .addClass('fa-minus');
                     children.show();
+
                 } else {
                     $target
-                        .removeClass('glyphicon-minus')
-                        .addClass('glyphicon-plus');
+                        .removeClass('fa-minus')
+                        .addClass('fa-plus');
 
                     reverseHide($table, $row);
                 }
@@ -48,24 +49,20 @@ $(function () {
             $element = $(element),
             id = $element.data('id'), subTotals = {},
             children = table.find('tr[data-parent="' + id + '"]');
-        $(element).find('td[data-value]').each(function (k, v) {
-            if ($(v).attr('data-actual-value') && $(v).data('actual-value') != 0) {
-                subTotals[k] = parseFloat($(this).data('value'));
-                $(v).data('actual-value', subTotals[k]);
-            } else {
-                subTotals[k] = 0;
-            }
-        });
+
         if (children.length) {
             children.each(function (i, e) {
                 reverseHide(table, e);
+
             });
 
             $element
-                .find('.glyphicon-minus')
-                .removeClass('glyphicon-minus')
-                .addClass('glyphicon-plus');
+                .find('.fa-minus')
+                .removeClass('fa-minus')
+                .addClass('fa-plus');
+
             children.hide();
+
         }
     };
 

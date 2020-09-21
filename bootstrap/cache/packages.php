@@ -1,4 +1,11 @@
 <?php return array (
+  'alexusmai/laravel-file-manager' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Alexusmai\\LaravelFileManager\\FileManagerServiceProvider',
+    ),
+  ),
   'anlutro/l4-settings' => 
   array (
     'aliases' => 
@@ -19,6 +26,13 @@
     'aliases' => 
     array (
       'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
+    ),
+  ),
+  'cviebrock/eloquent-taggable' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Cviebrock\\EloquentTaggable\\ServiceProvider',
     ),
   ),
   'davejamesmiller/laravel-breadcrumbs' => 

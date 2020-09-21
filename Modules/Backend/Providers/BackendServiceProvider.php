@@ -3,6 +3,7 @@
 namespace Modules\Backend\Providers;
 
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
 class BackendServiceProvider extends ServiceProvider
@@ -29,6 +30,9 @@ class BackendServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+        Relation::morphMap([
+            'News' => 'Modules\Backend\Entities\News',
+        ]);
     }
 
     /**

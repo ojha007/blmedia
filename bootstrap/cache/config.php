@@ -1193,6 +1193,23 @@
       'foo' => 'bar',
     ),
   ),
+  'taggable' => 
+  array (
+    'delimiters' => ',;',
+    'glue' => ',',
+    'normalizer' => 'mb_strtolower',
+    'connection' => NULL,
+    'throwEmptyExceptions' => false,
+    'taggedModels' => 
+    array (
+    ),
+    'model' => 'Cviebrock\\EloquentTaggable\\Models\\Tag',
+    'tables' => 
+    array (
+      'taggable_tags' => 'tags',
+      'taggable_taggables' => 'taggables',
+    ),
+  ),
   'view' => 
   array (
     'paths' => 
@@ -1200,6 +1217,44 @@
       0 => 'C:\\laragon\\www\\blmedia\\resources\\views',
     ),
     'compiled' => 'C:\\laragon\\www\\blmedia\\storage\\framework\\views',
+  ),
+  'file-manager' => 
+  array (
+    'configRepository' => 'Alexusmai\\LaravelFileManager\\Services\\ConfigService\\DefaultConfigRepository',
+    'aclRepository' => 'Alexusmai\\LaravelFileManager\\Services\\ACLService\\ConfigACLRepository',
+    'routePrefix' => 'file-manager',
+    'diskList' => 
+    array (
+      0 => 'public',
+    ),
+    'leftDisk' => NULL,
+    'rightDisk' => NULL,
+    'leftPath' => NULL,
+    'rightPath' => NULL,
+    'cache' => NULL,
+    'windowsConfig' => 2,
+    'maxUploadFileSize' => NULL,
+    'allowFileTypes' => 
+    array (
+    ),
+    'hiddenFiles' => true,
+    'middleware' => 
+    array (
+      0 => 'web',
+    ),
+    'acl' => false,
+    'aclHideFromFM' => true,
+    'aclStrategy' => 'blacklist',
+    'aclRulesCache' => NULL,
+    'aclRules' => 
+    array (
+      '' => 
+      array (
+      ),
+      1 => 
+      array (
+      ),
+    ),
   ),
   'debugbar' => 
   array (
@@ -1403,6 +1458,22 @@
       1 => '#^_ignition#',
       2 => '#^routes$#',
     ),
+  ),
+  'imagecache' => 
+  array (
+    'route' => NULL,
+    'paths' => 
+    array (
+      0 => 'C:\\laragon\\www\\blmedia\\public\\upload',
+      1 => 'C:\\laragon\\www\\blmedia\\public\\images',
+    ),
+    'templates' => 
+    array (
+      'small' => 'Intervention\\Image\\Templates\\Small',
+      'medium' => 'Intervention\\Image\\Templates\\Medium',
+      'large' => 'Intervention\\Image\\Templates\\Large',
+    ),
+    'lifetime' => 43200,
   ),
   'auditable' => 
   array (

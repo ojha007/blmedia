@@ -89,15 +89,20 @@
                 </div>
             </div>
 
-            <div class="col-md-6 form-group {{$errors->has('tag_line') ?'has-error':''}}">
-                {{Form::label('tag_line','Tag Line:')}}
-                {{Form::text('tag_line',null,
-                            [
-                            'class'=>'col-md-6 form-control ',
-                            'autocomplete'=>'off',
-                            'title'=>'Title',
-                            'placeholder'=>'Enter Tag Line',
-                            ])}}
+            <div class="col-md-6 form-group {{$errors->has('tags') ?'has-error':''}}">
+                <label for="tags">Tags</label>
+                <select class="form-control" multiple="multiple" id="tags" name="tags[]">
+                    @foreach($allTags as $key=>$tag)
+                        <option value="{{$tag}}"
+                                @isset($news_tags)
+                                @if(in_array($tag,$news_tags))
+                                selected
+                            @endif
+                            @endisset>
+                            {{$tag}}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group col-md-6 {{$errors->has('video_url') ?'has-error':''}}">
@@ -150,6 +155,23 @@
                     </label>
                     <label>
                         <input checked="checked" id="is_mob_notification" name="is_mob_notification" type="radio"
+                               value="0">
+                        No
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group col-md-6 {{$errors->has('is_anchor' ?'has-error':'')}} align-center">
+                {!! Form::label('is_anchor','Is Anchor') !!}
+                <div class="form-control">
+
+                    <label>
+                        <input id="is_anchor" name="is_anchor" type="radio" value="1">
+                        Yes
+                    </label>
+                    <label>
+                        <input checked="checked" id="is_anchor" name="is_anchor" type="radio"
                                value="0">
                         No
                     </label>
@@ -209,6 +231,9 @@
         };
         CKEDITOR.replace('description', options);
         $('#blFilemanager').filemanager();
+        $("#tags").select2({
+            tags: true
+        });
     </script>
 
 @endpush

@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" type="text/css"
           href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -112,7 +113,9 @@ desired effect
         integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-<script src="{{asset('/backend/js/minimal.tree.blade.php')}}" rel="script"></script>
+<script src="{{asset('/backend/js/minimal.tree.js')}}" rel="script"></script>
+{{--<script src="{{asset('/backend/js/tree.js')}}" rel="script"></script>--}}
+{{--<script src="{{asset('/backend/js/minimal.tree.blade.php')}}" rel="script"></script>--}}
 @stack('scripts')
 <script>
     $(document).ready(function () {

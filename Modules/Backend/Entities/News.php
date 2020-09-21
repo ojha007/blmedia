@@ -2,13 +2,14 @@
 
 namespace Modules\Backend\Entities;
 
+use Cviebrock\EloquentTaggable\Taggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class News extends Model
 {
 
-    use SoftDeletes;
+    use SoftDeletes, Taggable;
     use \Modules\Backend\Traits\MetaInformation;
 
     const PUBLISHED = 'Published';
@@ -21,6 +22,7 @@ class News extends Model
         'external_url', 'publish_date', 'expiry_date', 'publish_status'
     ];
     protected $with = ['categories'];
+
 
     public static function status()
     {

@@ -1,7 +1,7 @@
 <tr data-id="{{ $category->id }}"
     data-parent="{{ $category->parent_id?$category->parent_id:0 }}"
     data-level="{{ $padding }}">
-    <td data-name="{{$category->name}}"
+    <td data-column="name"
         data-level="{{ $padding }}">
         {{$category->name}}</td>
     <td>{!! spanByStatus($category->is_active) !!}</td>
@@ -20,9 +20,10 @@
         {!! Form::close() !!}
     </td>
 </tr>
+<?php
+$padding = $padding + 1;
+?>
 @foreach($category->childCategories as $childCategory)
-    <?php
-    $padding = $padding + 1;
-    ?>
+
     @include('backend::news-category.partials.tr-element',['category'=>$childCategory,'padding'=>$padding])
 @endforeach

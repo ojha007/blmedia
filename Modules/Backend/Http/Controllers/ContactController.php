@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Modules\Backend\Entities\Contact;
 use Modules\Backend\Http\Requests\ContactRequest;
 use Modules\Backend\Http\Responses\Response;
@@ -69,9 +70,11 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
-        $attributes = $request->validated();
+        $attributes = $request->validated();;
+
         try {
             DB::beginTransaction();
+            $attributes['image'] = $this->storeImage($request);
             $this->repository->create($attributes);
             DB::commit();
             $baseRoute = getBaseRouteByUrl($request);
@@ -88,12 +91,22 @@ class ContactController extends Controller
 
     }
 
+    protected function storeImage($request)
+    {
+        if ($request->has('image')) {
+            $folder = $request->route()->getAction('edition') . '/' . Str::lower($this->type);
+            return $request->file('image')->store($folder);
+        }
+        return null;
+    }
+
     public function update(ContactRequest $request, $id)
     {
 
         $attributes = $request->validated();
         try {
             DB::beginTransaction();
+            $attributes['image'] = $this->storeImage($request);
             $this->repository->update($id, $attributes);
             DB::commit();
             $baseRoute = getBaseRouteByUrl($request);
@@ -104,7 +117,7 @@ class ContactController extends Controller
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             return redirect()->back()
                 ->withInput()
-                ->with('failed', 'Failed to update '.$this->model->getType());
+                ->with('failed', 'Failed to update ' . $this->model->getType());
         }
 
     }
