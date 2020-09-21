@@ -23,6 +23,28 @@ class SwitchDatabaseConnectionServiceProvider extends ServiceProvider
 
     protected function changeDatabaseConnection()
     {
+
+        $edition = null;
+        if (in_array(request()->segment(1), config('editions'))) {
+            $edition = request()->segment(1);
+        }
+        if (is_null($edition)) {
+            $edition = 'nepali';
+        }
+        DB::purge('mysql');
+        DB::disconnect();
+        Config::set('database.default', $edition);
+        DB::reconnect();
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+
+    {
         $language = [
             'nepali' => 'ne',
             'en' => 'en',
@@ -36,21 +58,7 @@ class SwitchDatabaseConnectionServiceProvider extends ServiceProvider
         if (is_null($edition)) {
             $edition = 'nepali';
         }
-        DB::purge('mysql');
-        DB::disconnect();
-        Config::set('database.default', $edition);
-//        App::setLocale($language[$edition]);
-        DB::reconnect();
-    }
-
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-
-    {
-
+        App::setLocale($language[$edition]);
+//        dd(\config('app.locale'));
     }
 }

@@ -61,7 +61,7 @@
 
                 <ul class="follow-social-media">
                     <li>
-                        <button type="button" class="btn btn-link">फलाे करें</button>
+                        <button type="button" class="btn btn-link">{{trans('messages.follow_us')}}</button>
                     </li>
                     <li>
                         <a href="{{setting('facebook_url')}}" target="_blank"><i
