@@ -39,7 +39,7 @@ class ContactController extends Controller
     {
 
         $viewPath = $this->viewPath . '.index';
-        $contacts = $this->repository->paginate(20);
+        $contacts = $this->repository->getAll();
         return new Response($viewPath, [
             'contacts' => $contacts,
             'type' => $this->model->getType()

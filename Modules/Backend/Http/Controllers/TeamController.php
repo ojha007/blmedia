@@ -40,7 +40,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::paginate(10);
+        $teams = $this->repository->getAll();
         return new Response($this->viewPath . 'index', ['teams' => $teams]);
 
     }

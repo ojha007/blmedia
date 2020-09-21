@@ -21,7 +21,7 @@
             </div>
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="dataTable" class="table table-bordered table-condensed">
+                    <table id="dataTable" class="table table-bordered dataTable table-condensed">
                         <thead>
                         <tr>
                             <th>S.No</th>
@@ -65,7 +65,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{$advertisements->links()}}
+{{--                    {{$advertisements->links()}}--}}
                 </div>
                 <!-- /.box-body -->
             </div>

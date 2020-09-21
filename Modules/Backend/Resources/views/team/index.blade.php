@@ -28,7 +28,7 @@
                             <th>Title</th>
                             <th>Details</th>
                             <th>Designation</th>
-                            <th>Image</th>
+                            <th width="20%">Image</th>
                             <th>Email</th>
                             <th>Status</th>
                             <th class="no-sort">Action</th>
@@ -50,7 +50,6 @@
                                     {{$team->designation}}
                                 </td>
                                 <td>
-                                    {{$team->image}}
                                 </td>
                                 <td>
                                     {{$team->email}}
@@ -58,7 +57,7 @@
                                 <td>{!! spanByStatus($team->is_active) !!}</td>
                                 <td>
                                     <a href="{{route($routePrefix.'team.edit',$team->id)}}"
-                                       class="btn btn-primary btn-flat">
+                                       class="btn btn-primary btn-sm btn-flat">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'team.destroy', $team->id],
@@ -73,7 +72,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{$teams->links()}}
                 </div>
                 <!-- /.box-body -->
             </div>
