@@ -63,8 +63,7 @@ class FrontendController extends Controller
         $eleventhPositionNews = $this->newsRepository->getNewsByPosition(11, 5);
         $twelvePositionNews = $this->newsRepository->getNewsByPosition(12, 5);
         $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 4);
-        $fourteenPositionNews = $this->newsRepository->getNewsByPosition(14, 7);
-//        dd($fourteenPositionNews);
+        $fourteenPositionNews = $this->newsRepository->getNewsByPosition(14, 6);
         return view('frontend::index', compact('headerCategories',
             'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
             'fifthPositionNews', 'sixthPositionNews',
@@ -105,31 +104,32 @@ class FrontendController extends Controller
 
     }
 
-    /* public function singlePage()
-     {
-         $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
-         $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
-         $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
-         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
-         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
-         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
-         return view('frontend::components.single-page', compact(
-             'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
-             'ads_above_top_menu', 'ads_below_top_menu',
-             'ads_aside_logo'));
-     }
-     public function detailPage()
-     {
-         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
-         $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
-         $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
-         $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
-         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
-         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
-         return view('frontend::components.detail-page', compact(
-             'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
-             'ads_above_top_menu', 'ads_below_top_menu',
-             'ads_aside_logo'));
-     }*/
+    public function subCategory()
+    {
+        $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
+        $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
+        $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
+        $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
+        $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
+        $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
+        $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
+        return view('frontend::components.subCategory', compact(
+            'headerCategories', 'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
+            'ads_above_top_menu', 'ads_below_top_menu',
+            'ads_aside_logo'));
+    }
+    /*public function detailPage()
+    {
+        $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
+        $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
+        $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
+        $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
+        $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
+        $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
+        return view('frontend::components.detail-page', compact(
+            'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
+            'ads_above_top_menu', 'ads_below_top_menu',
+            'ads_aside_logo'));
+    }*/
 
 }

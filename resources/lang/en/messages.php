@@ -4,6 +4,7 @@ return [
     'view_all' => 'View All',
     'read_more' => 'Read More',
     'editions' => 'Editions',
-    'follow_us' => 'Follow Us'
-
+    'follow_us' => 'Follow Us',
+    'perv' => 'Perv',
+    'next' => 'Next'
 ];

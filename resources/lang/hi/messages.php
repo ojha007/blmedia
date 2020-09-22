@@ -4,5 +4,7 @@ return [
     'read_more' => 'सभी देखें',
     'view_all' => 'सब',
     'editions' => 'अन्य संस्करण',
-    'follow_us' => 'फलाे करें'
+    'follow_us' => 'फलाे करें',
+    'perv' => 'पिछला',
+    'next' => 'आगे'
 ];

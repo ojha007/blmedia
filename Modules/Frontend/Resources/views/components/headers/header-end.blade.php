@@ -1,8 +1,23 @@
-<section class="amnavnd header-end">
+<section class="select-language-section bg-site-color" style="display: none;">
+    <select class="form-control form-control-sm bg-transparent border-0 text-white " style=" transition: max-height 1s;">
+        <option class="bg-site-color border-0 ">{{trans('messages.editions')}}</option>
+        @foreach(config('editions') as $k=> $e)
+            @if(in_array(request()->segment(1), config('editions')))
+                @if(request()->segment(1) != $e)
+                    <option class="bg-site-color border-0">{{ucwords($k)}}</option>
+                @endif
+            @else
+                <option class="bg-site-color border-0">{{ucwords($k)}}</option>
+            @endif
+        @endforeach
+    </select>
+</section>
+<section class="amnavnd header-end ">
     <div class="container-fluid">
         <div class="row" style="border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;">
             <div class="col-md-2 col-lg-2 hiderfixed_navbar12">
-                <a class="navbar-brand  hiderfixed_navbar-brand" href="https://www.breaknlinks.com/hindi/">
+                <a class="navbar-brand  hiderfixed_navbar-brand" href="{{route($routePrefix.'index')}}">
+                    <img class="responsive-img" id="logo_image_nav" src="{{asset('frontend/img/logo.png')}}" alt="BL Media">
                 </a>
             </div>
             <div class="col-md-4 col-lg-0 col-xl-4 nav-pills-float">
@@ -11,12 +26,11 @@
                         <form class="form-inline base-form">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="search" name="newsSearch" class="form-control"
+                                    <input type="search" name="newsSearch" class="form-control px-0"
                                            placeholder="Search...">
-
                                     <div class="input-group-append">
                                         <button type="submit" name="search" class="btn btn-trans"><i
-                                                class="fa fa-search"></i></button>
+                                                class="fa fa-search" style="font-size: 10px; margin-top: 13px; padding-left: 20px;"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -81,3 +95,5 @@
         </div>
     </div>
 </section>
+
+

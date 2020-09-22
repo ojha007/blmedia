@@ -5,4 +5,6 @@ return [
     'view_all' => 'सबै ',
     'editions' => 'अन्य संस्करण',
     'follow_us' => 'फलाे',
+    'perv' => 'अगाडी',
+    'next' => 'पछाडी'
 ];

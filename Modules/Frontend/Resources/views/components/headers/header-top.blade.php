@@ -24,7 +24,6 @@
                                            target="_blank">{{ucwords($k)}}</a>
                                     </li>
                                 @endif
-
                             @endforeach
                         </ul>
                     </div>
@@ -41,7 +40,6 @@
                             <div class="input-group">
                                 <input type="search" name="newsSearch" class="form-control" placeholder="Search..."
                                        required="">
-
                                 <div class="input-group-append">
                                     <button type="submit" name="search" class="btn btn-trans"><i
                                             class="fa fa-search"></i></button>
