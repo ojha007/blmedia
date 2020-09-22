@@ -91,7 +91,7 @@ class CategoryController extends Controller
         }
     }
 
-    protected function makeNullToCommon($attributes)
+    protected function makeNullToCommon($attributes): void
     {
         $a = CategoryPositions::where('front_header_position', $attributes['front_header_position'])->get();
         $b = CategoryPositions::where('front_body_position', $attributes['front_body_position'])->get();
