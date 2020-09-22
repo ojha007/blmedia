@@ -12,6 +12,47 @@
     @include('backend::partials.errors')
     <div class="row">
         <div class="col-xs-12">
+            <div class="box box-default ">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Customize Search</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa @if(request()->has('is_anchor')) fa-plus @else  fa-minus @endif"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    {!! Form::open(array('route'=>[$routePrefix.'news.index'],'method'=>'GET')) !!}
+
+                    <div class="row">
+                        @include('backend::partials.filter',['filterBy'=>[
+                                  'is_anchor'=>[
+                                      '1'=>'True',
+                                      '0'=>'False',
+                                         ],
+                                  'is_special'=>[
+                                       '1'=>'True',
+                                      '0'=>'False',
+                                     ],
+                                 ]])
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-flat btn-primary">
+                            <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Filter News
+                        </button>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             <div class="box-header">
                 <a class="btn btn-primary pull-right btn-flat"
                    href="{{route($routePrefix.'news.create')}}">
@@ -20,6 +61,7 @@
                 </a>
             </div>
             <div class="box">
+
                 <div class="box-body table-responsive">
                     <table id="" class="table table-bordered table-condensed">
                         <thead>

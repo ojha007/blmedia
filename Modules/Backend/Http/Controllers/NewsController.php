@@ -35,8 +35,16 @@ class NewsController extends Controller
 
     public function index()
     {
+        $is_special = \request()->get('is_special');
+        $is_anchor = \request()->get('is_anchor');
         $news = News::with(['categories', 'reporter', 'guest'])
             ->orderBy('news.id', 'DESC')
+            ->when($is_special, function ($a) use ($is_special) {
+                $a->where('is_special', $is_special);
+            })
+            ->when($is_anchor, function ($a) use ($is_anchor) {
+                $a->where('is_anchor', $is_anchor);
+            })
             ->paginate(20);
         return new Response($this->viewPath . 'index', ['allNews' => $news]);
     }
@@ -52,15 +60,13 @@ class NewsController extends Controller
     {
         $viewPath = $this->viewPath . 'edit';
         $viewData = $this->repository->getViewData();
-        $newsTags = $news->tags()->pluck('name')->toArray();
-        $allTags = $viewData['allTags'];
-        if (is_array($newsTags)) {
-            $newsTags = array_merge($allTags, $newsTags);
+        $newsTags = $news->tagList ?? [];
+        if ($newsTags) {
+            $newsTags = explode(',', $newsTags);
         }
-        $viewData['allTags'] = array_unique($newsTags);
         $attributes = [
             'news' => $news,
-            'news_tags' => $newsTags
+            'news_tags' => is_array($newsTags) ? $newsTags : []
         ];
         $attributes = array_merge($attributes, $viewData);
         return new Response($viewPath, $attributes);
@@ -74,7 +80,8 @@ class NewsController extends Controller
             DB::beginTransaction();
             $news = $this->repository->update($id, $attributes);
             $news->categories()->sync($request->get('category_id'));
-            $news->retag($request->get('tags'));
+            if ($request->get('tags'))
+                $news->retag($request->get('tags'));
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News Updated SuccessFully');
@@ -98,7 +105,8 @@ class NewsController extends Controller
             }
             $news = $this->repository->create($attributes);
             $news->categories()->sync($request->get('category_id'));
-            $news->tag($request->get('tags'));
+            if ($request->get('tags'))
+                $news->tag($request->get('tags'));
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News Created SuccessFully');

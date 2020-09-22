@@ -119,14 +119,16 @@
             </div>
             <div class="form-group col-md-12" style="padding-right: 0">
                 <label for="fieldID4">Banner Picture</label>
-                <div class="input-append text-center">
-                    {{Form::text('image',null,['class'=>'form-control','style'=>'margin-bottom:5px'])}}
-                    <a data-toggle="modal" id="blFilemanager"
-                       class="btn btn-primary text-center   btn-flat pt-3" type="button">
-                        <i class="fa fa-cloud-upload"> Select</i>
-                    </a>
+                <div class="input-group">
+                   <span class="input-group-btn btn-flat">
+                     <a id="banner_image" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                       <i class="fa fa-picture-o"></i> Choose
+                     </a>
+                   </span>
+                    <label for="thumbnail">
+                    </label><input id="thumbnail" class="form-control" type="text" name="image">
                 </div>
-
+                <img id="holder" style="margin-top:15px;max-height:100px;" alt="">
             </div>
 
 
@@ -146,24 +148,10 @@
                 {{Form::textarea('description' ,null,['class'=>'form-control','rows'=>'8','cols'=>'10','placeholder'=>'Enter     description'])}}
 
             </div>
-            <div class="form-group col-md-6 {{$errors->has('is_mob_notification' ?'has-error':'')}} align-center">
-                {!! Form::label('is_mob_notification','Mobile Notification') !!}
-                <div class="form-control">
-                    <label>
-                        <input id="is_mob_notification" name="is_mob_notification" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_mob_notification" name="is_mob_notification" type="radio"
-                               value="0">
-                        No
-                    </label>
 
-                </div>
-            </div>
 
-            <div class="form-group col-md-6 {{$errors->has('is_anchor' ?'has-error':'')}} align-center">
-                {!! Form::label('is_anchor','Is Anchor') !!}
+            <div class="form-group col-md-6 {{$errors->has('is_anchor') ?'has-error':''}} align-center">
+                {!! Form::label('is_anchor','Is Anchor ?') !!}
                 <div class="form-control">
 
                     <label>
@@ -172,6 +160,38 @@
                     </label>
                     <label>
                         <input checked="checked" id="is_anchor" name="is_anchor" type="radio"
+                               value="0">
+                        No
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group col-md-6 {{$errors->has('is_special') ?'has-error':''}} align-center">
+                {!! Form::label('is_special','Is Special ? ') !!}
+                <div class="form-control">
+
+                    <label>
+                        <input id="is_special" name="is_special" type="radio" value="1">
+                        Yes
+                    </label>
+                    <label>
+                        <input checked="checked" id="is_special" name="is_special" type="radio"
+                               value="0">
+                        No
+                    </label>
+
+                </div>
+            </div>
+            <div class="form-group col-md-6 {{$errors->has('is_mob_notification') ?'has-error':''}} align-center">
+                {!! Form::label('is_mob_notification','Mobile Notification') !!}
+                <div class="form-control">
+                    <label>
+                        <input id="is_mob_notification" name="is_mob_notification" type="radio" value="1">
+                        Yes
+                    </label>
+                    <label>
+                        <input checked="checked" id="is_mob_notification" name="is_mob_notification" type="radio"
                                value="0">
                         No
                     </label>
@@ -194,32 +214,36 @@
                 <i class="fa fa-save"></i> Submit
             </button>
         </div>
-        {{--        <div id="myModal" class="modal fade bs-example-modal-xl" role="dialog">--}}
-        {{--            <div class="modal-dialog modal-xl">--}}
+        <div id="blFilemanager" class="modal fade bs-example-modal-xl" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;
+                        </button>
+                        <h4 class="modal-title">BL MEDIA GALLERY</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="{{ url('laravel-filemanager') }}"
+                                style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-flat pull-left btn-default" data-dismiss="modal">
+                            <i class="fa fa-arrow-left">
+                                Close
+                            </i>
+                        </button>
+                    </div>
+                </div>
 
-
-        {{--                <div class="modal-content">--}}
-        {{--                    <div class="modal-header">--}}
-        {{--                        <button type="button" class="close" data-dismiss="modal">&times;--}}
-        {{--                        </button>--}}
-        {{--                        <h4 class="modal-title">BL MEDIA GALLERY</h4>--}}
-        {{--                    </div>--}}
-        {{--                    <div class="modal-body">--}}
-        {{--                        <iframe width="100%" height="400"--}}
-        {{--                                style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>--}}
-        {{--                    </div>--}}
-        {{--                    <div class="modal-footer">--}}
-        {{--                        <button type="button" class="btn btn-default" data-dismiss="modal">--}}
-        {{--                            Close--}}
-        {{--                        </button>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-
-        {{--            </div>--}}
-        {{--        </div>--}}
+            </div>
+        </div>
     </div>
 </div>
-
+<style>
+    #blFilemanager {
+        z-index: 10011;
+    }
+</style>
 @push('scripts')
     <script src="{{asset('/vendor/laravel-filemanager/js/stand-alone-button.js')}}"></script>
     <script>
@@ -229,11 +253,67 @@
             filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
             filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
         };
+
         CKEDITOR.replace('description', options);
-        $('#blFilemanager').filemanager();
+
+        CKEDITOR.on('dialogDefinition', function (ev) {
+            var editor = ev.editor;
+            var dialogDefinition = ev.data.definition;
+
+            // This function will be called when the user will pick a file in file manager
+            var cleanUpFuncRef = CKEDITOR.tools.addFunction(function (a) {
+                $('#blFilemanager').modal('hide');
+                CKEDITOR.tools.callFunction(1, a, "");
+            });
+            var tabCount = dialogDefinition.contents.length;
+            for (var i = 0; i < tabCount; i++) {
+                var browseButton = dialogDefinition.contents[i].get('browse');
+                if (browseButton !== null) {
+                    browseButton.onClick = function (dialog, i) {
+                        editor._.filebrowserSe = this;
+                        var iframe = $('#blFilemanager').find('iframe').attr({
+                            src: editor.config.filebrowserBrowseUrl + '&CKEditor=body&CKEditorFuncNum=' + cleanUpFuncRef + '&langCode=en'
+                        });
+                        $('#blFilemanager').appendTo('body').modal('show');
+                    }
+                }
+            }
+        });
         $("#tags").select2({
             tags: true
         });
+        // (function ($) {
+        //     $.fn.filemanager = function (type, options) {
+        //         type = type || 'file';
+        //         this.on('click', function (e) {
+        //             // console.log($(this))
+        //             var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+        //             // var iframe = $('#blFilemanager').find('iframe').attr({
+        //             //     src: editor.config.filebrowserBrowseUrl + '&CKEditor=body&CKEditorFuncNum=' + cleanUpFuncRef + '&langCode=en'
+        //             //     $('#blFilemanager').modal('show')
+        //             localStorage.setItem('target_input', $(this).data('input'));
+        //             localStorage.setItem('target_preview', $(this).data('preview'));
+        //             // $('iframe').attr('src', route_prefix + '?type=' + type)
+        //             window.open(route_prefix + '?type=' + type, 'FileManager', 'width=900,height=600');
+        //             window.SetUrl = function (url, file_path) {
+        //                 //     //     //set the value of the desired input to image url
+        //                 var target_input = $('#' + localStorage.getItem('target_input'));
+        //                 target_input.val(file_path).trigger('change');
+        //                 //     //
+        //                 //     //     //set or change the preview image src
+        //                 // var target_preview = $('#' + localStorage.getItem('target_preview'));
+        //                 // target_preview.attr('src', url).trigger('change');
+        //             };
+        //             // });
+        //             // $('#blFilemanager').appendTo('body').modal('show');
+        //             return false;
+        //         });
+        //     }
+        //
+        // })(jQuery);
+        $('#banner_image').filemanager('image');
+        // $('#image').filemanager('image', {prefix: '/bl-secure/laravel-filemanager'});
     </script>
+
 
 @endpush

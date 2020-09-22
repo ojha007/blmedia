@@ -17,7 +17,7 @@ class News extends Model
     const DRAFT = 'Draft';
     protected $metaTagsTable = 'news_meta_tags';
     protected $fillable = [
-        'title', 'sub_title', 'guest_id', 'reporter_id', 'slug',
+        'title', 'sub_title', 'guest_id', 'reporter_id', 'slug', 'is_special', 'is_anchor',
         'tag_line', 'description', 'short_description', 'view_count',
         'external_url', 'publish_date', 'expiry_date', 'publish_status'
     ];
@@ -39,11 +39,6 @@ class News extends Model
 
     }
 
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class, 'news_categories');
-    }
-
     public function reporter()
     {
         return $this->belongsTo(Reporter::class);
@@ -58,5 +53,10 @@ class News extends Model
     {
 //        dd($this->categories()->pluck('slug'));
         return $this->categories()->pluck('slug')->toArray();
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'news_categories');
     }
 }

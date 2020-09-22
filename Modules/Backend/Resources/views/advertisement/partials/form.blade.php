@@ -35,16 +35,25 @@
             {!! Form::select('sub_placement', [], null, array('placeholder' => 'Select Sub Placement Code','class' => 'form-control select2')) !!}
 
         </div>
-        <div class="form-group col-md-6">
-            {{ Form::label('image', 'Image:', ['class'=>'control-label'])}}
-            {!! Form::file('image', null,['class'=>'form-control']) !!}
-        </div>
         <div class="form-group col-md-6" style="margin-top: 12px; height: 36px;">
-            @php($checked  =$advertisement->is_active == 1 || old('is_active') == 1 || is_null($advertisement->is_active) )
+            @php($checked =$advertisement->is_active == 1 || old('is_active') == 1 || is_null($advertisement->is_active) )
             @include('backend::partials.toggle-button',['value'=>'is_active','checked'=>$checked])
         </div>
-
-        <div class="form-group col-md-6 {{$errors->has('sub_description') ? 'has-error':''}}">
+        <div class="form-group col-md-12">
+            <label for="image">Image</label>
+            <div class="input-group">
+                   <span class="input-group-btn btn-flat">
+                     <a id="image-upload" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                       <i class="fa fa-picture-o"></i> Choose
+                     </a>
+                   </span>
+                <label for="thumbnail">
+                </label>
+                <input id="thumbnail" class="form-control" type="text" name="image">
+            </div>
+            <img id="holder" style="margin-top:15px;max-height:100px;" alt="">
+        </div>
+        <div class="form-group col-md-12 {{$errors->has('sub_description') ? 'has-error':''}}">
             {{ Form::label('sub_description', 'Sub Description:', ['class'=>' control-label '])}}
             {!! Form::textarea('sub_description', null, array('placeholder' => 'Enter sub description',
                     'class' => 'form-control','rows'=>'3')) !!}
@@ -68,6 +77,12 @@
         </button>
     </div>
 </div>
+@push('scripts')
+    <script src="{{asset('/vendor/laravel-filemanager/js/stand-alone-button.js')}}"></script>
+    <script>
+        $('#image-upload').filemanager('image');
+    </script>
+@endpush
 
 
 

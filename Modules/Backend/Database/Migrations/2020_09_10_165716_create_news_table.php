@@ -30,6 +30,8 @@ class CreateNewsTable extends Migration
             $table->longText('description');
             $table->text('short_description')->nullable();
             $table->bigInteger('view_count')->default(0);
+            $table->boolean('is_special')->default(0);
+            $table->boolean('is_anchor')->default(0);
             $table->string('external_url')->nullable();
             $table->date('publish_date');
             $table->enum('publish_status', News::publishStatus());

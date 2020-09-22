@@ -2,7 +2,7 @@
     <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
             <li class="active"><a href="#general" data-toggle="tab" aria-expanded="true">General </a></li>
-            <li class=""><a href="#position" data-toggle="tab" aria-expanded="true">Position</a></li>
+            <li class=""><a href="#position" data-toggle="tab" aria-expanded="true">Display Order</a></li>
             <li class=""><a href="#meta" data-toggle="tab" aria-expanded="false">Meta</a></li>
 
         </ul>

@@ -1,6 +1,9 @@
 <div class="box-body">
+    <p>
+        Enter the number to show the category in corresponding positions!
+    </p>
     <div class="form-group col-md-6 {{$errors->has('title')?'has-error':''}}">
-        {{ Form::label('front_header_position', 'Front Header Position:', ['class'=>'control-label required'])}}
+        {{ Form::label('front_header_position', 'Front Show In Top:', ['class'=>'control-label required'])}}
         {!! Form::number("position[front_header_position]", null, array('placeholder' => 'Front Header Position','class' => 'form-control')) !!}
 
     </div>

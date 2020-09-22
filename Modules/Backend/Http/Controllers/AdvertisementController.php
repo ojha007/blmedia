@@ -38,7 +38,6 @@ class AdvertisementController extends Controller
     public function index()
     {
         $advertisements = $this->repository->getAll();
-
         return new Response($this->viewPath . 'index', ['advertisements' => $advertisements]);
     }
 

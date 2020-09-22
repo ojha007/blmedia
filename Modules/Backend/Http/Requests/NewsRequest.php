@@ -26,6 +26,8 @@ class NewsRequest extends FormRequest
             'short_description' => 'nullable',
             'external_url' => 'nullable',
             'publish_date' => 'required|date',
+            'is_anchor' => 'required|boolean',
+            'is_special' => 'required|boolean',
             'image' => 'nullable',
             'video_url' => 'nullable',
             'publish_status' => 'required|in:' . implode(',', News::publishStatus()),
