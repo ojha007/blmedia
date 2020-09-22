@@ -31,7 +31,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
         return DB::table('news')
             ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
-                'guests.name as guest_name', 'categories.name as categories', 'news.id as slug',
+                'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
                 'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
             ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
             ->join('categories', 'categories.id', '=', 'news_categories.category_id')
@@ -48,7 +48,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
         return DB::table('news')
             ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
-                'guests.name as guest_name', 'categories.name as categories', 'news.id as slug',
+                'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
                 'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
             ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
             ->join('categories', 'categories.id', '=', 'news_categories.category_id')
@@ -64,7 +64,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('categories')
-            ->select('categories.slug')
+            ->select('categories.slug as category_slug')
             ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
 //            ->whereNull('category_positions.detail_body_position')
 //            ->whereNull('category_positions.front_body_position')

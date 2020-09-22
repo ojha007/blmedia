@@ -13,7 +13,7 @@
                     @if($key == 0)
                         <div class="news-item highlight-news am-kala position-10-highlight">
                             <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                     {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                          class="responsive-img" title="">--}}
                                     <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
@@ -21,7 +21,7 @@
                             </figure>
                             <div class="news-content">
                                 <h5 class="news-title-am"><a
-                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         {{$news->title}}
                                     </a>
                                 </h5>
@@ -31,7 +31,7 @@
                     @else
                         <div class="news-item am-kala-item p-10-item">
                             <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                     {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                          class="responsive-img" title="">--}}
                                     <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
@@ -39,7 +39,7 @@
                             </figure>
                             <div class="news-content">
                                 <h5 class="news-title-am"><a
-                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         {{$news->title}}
                                     </a>
                                 </h5>

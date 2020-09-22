@@ -74,7 +74,7 @@ class CategoryController extends Controller
             ->join('news', 'news_categories.news_id', '=', 'news.id')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
-            ->select('news.sub_title', 'news.slug as slug', 'news.title', 'news.short_description',
+            ->select('news.sub_title', 'news.slug as news_slug', 'news.title', 'news.short_description',
                 'news.description', 'news.publish_date',
                 'categories.slug as category_slug', 'categories.name as category'
             )->selectRaw('IFNULL(reporters.name,guests.name) as author, IFNULL(news.reporter_id,news.guest_id) as author_type')
@@ -98,7 +98,7 @@ class CategoryController extends Controller
             })
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
-            ->select('news.sub_title', 'news.slug as slug', 'news.title', 'news.short_description',
+            ->select('news.sub_title', 'news.slug as news_slug', 'news.title', 'news.short_description',
                 'news.description', 'news.publish_date',
                 'cat.slug as category_slug', 'cat.name as category', 'cat.c2_id'
             )->selectRaw('IFNULL(reporters.name,guests.name) as author, IF(news.reporter_id,1,2) as author_type')

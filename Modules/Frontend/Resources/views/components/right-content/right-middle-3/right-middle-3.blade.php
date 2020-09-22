@@ -11,7 +11,7 @@
             @foreach($ninthPositionNews as $key=>$news)
                     <div class="news-item">
                         <figure class="news-image">
-                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                 {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                      class="responsive-img" title="">--}}
                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt=""  >
@@ -19,7 +19,7 @@
                         </figure>
                         <div class="news-content">
                             <h5 class="news-title"><a
-                                    href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                    href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                     {{$news->title}}
                                 </a>
                             </h5>

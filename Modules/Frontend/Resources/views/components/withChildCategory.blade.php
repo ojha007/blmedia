@@ -27,12 +27,12 @@
                 @if($key > 0)
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="small_bx">
-                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
                                      class="arch-img img-fluid">
                             </a>
                             <h2 class="news-title"><a
-                                    href="{{route($routePrefix.'news.show',$news->slug)}}">{{$news->title}}</a>
+                                    href="{{route($routePrefix.'news.show',$news->news_slug)}}">{{$news->title}}</a>
                             </h2>
                         </div>
                     </div>

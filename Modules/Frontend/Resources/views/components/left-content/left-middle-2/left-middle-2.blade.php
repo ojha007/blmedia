@@ -13,7 +13,7 @@
                     @if($key == 0)
                         <div class="news-item highlight-news">
                             <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                    {{-- <img src="{{$news->image}}" alt="{{$news->image}}"
                                          class="responsive-img" title="">--}}
                                     <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
@@ -22,7 +22,7 @@
                             </figure>
                             <div class="news-content" style="height: auto;">
                                 <h5 class="news-title-am"><a
-                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         {{$news->title}}
                                     </a></h5>
                                 <ul class="hr-list wide stamp">
@@ -37,7 +37,7 @@
                     @elseif($key <=3)
                         <div class="news-item">
                             <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                     {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                          class="responsive-img amresize" title="">--}}
                                     <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
@@ -45,7 +45,7 @@
                             </figure>
                             <div class="news-content">
                                 <h5 class="news-title-am"><a
-                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         {{$news->title}}
                                     </a>
                                 </h5>
@@ -56,7 +56,7 @@
                             <li class="news-contents amdot">
                                 <h4 class="news-title blamtitle">
                                     <i class="fa fa-info-circle text-dark" aria-hidden="true"></i>&nbsp;
-                                    <a href="{{route($routePrefix.'news.show',$news->slug)}}" class="text-dark" >
+                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}" class="text-dark" >
                                         {{$news->title}}
                                     </a>
                                 </h4>

@@ -17,7 +17,8 @@
                                 <div class="col-sm-6 col-md-4 col-lg-6">
                                     <div class="post-info">
                                             <span>
-                                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">
+                                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
+                                                      class="responsive-img">
                                             </span>
                                         <p>
                                             <a href="https://www.breaknlinks.com/hindi/author/reporter/breaknlinks"
@@ -96,15 +97,15 @@
                                          data-numposts="5" fb-xfbml-state="rendered"
                                          fb-iframe-plugin-query="app_id=264188744527053&amp;container_width=912&amp;height=100&amp;href=https%3A%2F%2Fwww.breaknlinks.com%2Fhindi%2Fnews%2F1939&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;version=v4.0&amp;width="
                                          style="width: 100%;"><span
-                                                style="vertical-align: top; width: 100%; height: 0px; overflow: hidden;"><iframe
-                                                    name="f10491cb376b48" width="1000px" height="100px"
-                                                    data-testid="fb:comments Facebook Social Plugin"
-                                                    title="fb:comments Facebook Social Plugin" frameborder="0"
-                                                    allowtransparency="true" allowfullscreen="true" scrolling="no"
-                                                    allow="encrypted-media"
-                                                    src="https://www.facebook.com/v4.0/plugins/comments.php?app_id=264188744527053&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df202fa61db2be6c%26domain%3Dwww.breaknlinks.com%26origin%3Dhttps%253A%252F%252Fwww.breaknlinks.com%252Ff29dde41e6a9a1%26relation%3Dparent.parent&amp;container_width=912&amp;height=100&amp;href=https%3A%2F%2Fwww.breaknlinks.com%2Fhindi%2Fnews%2F1939&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;version=v4.0&amp;width="
-                                                    style="border: none; visibility: visible; width: 0px; height: 0px;"
-                                                    __idm_frm__="164"></iframe></span></div>
+                                            style="vertical-align: top; width: 100%; height: 0px; overflow: hidden;"><iframe
+                                                name="f10491cb376b48" width="1000px" height="100px"
+                                                data-testid="fb:comments Facebook Social Plugin"
+                                                title="fb:comments Facebook Social Plugin" frameborder="0"
+                                                allowtransparency="true" allowfullscreen="true" scrolling="no"
+                                                allow="encrypted-media"
+                                                src="https://www.facebook.com/v4.0/plugins/comments.php?app_id=264188744527053&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df202fa61db2be6c%26domain%3Dwww.breaknlinks.com%26origin%3Dhttps%253A%252F%252Fwww.breaknlinks.com%252Ff29dde41e6a9a1%26relation%3Dparent.parent&amp;container_width=912&amp;height=100&amp;href=https%3A%2F%2Fwww.breaknlinks.com%2Fhindi%2Fnews%2F1939&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;version=v4.0&amp;width="
+                                                style="border: none; visibility: visible; width: 0px; height: 0px;"
+                                                __idm_frm__="164"></iframe></span></div>
                                 </div>
                                 <!--ended login block-->
                             </div>
@@ -121,15 +122,16 @@
                                         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 float-left">
                                             <div class="news-item no-bdr">
                                                 <figure class="news-image">
-                                                    <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                         {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                                              class="responsive-img" title="">--}}
-                                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
+                                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
+                                                             class="responsive-img">
                                                     </a>
                                                 </figure>
                                                 <div class="news-content">
                                                     <h5 class="news-title"><a
-                                                                href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                            href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                             {{$news->title}}
                                                         </a>
                                                     </h5>
@@ -165,7 +167,7 @@
                                 @foreach($firstPositionNews as $news)
                                     <div class="news-item">
                                         <figure class="news-image">
-                                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                 {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                                      class="responsive-img" title="">--}}
                                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
@@ -174,7 +176,7 @@
                                         </figure>
                                         <div class="news-content">
                                             <h5 class="news-title"><a
-                                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                    href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                     {{$news->title}}
                                                 </a></h5>
                                         </div>
@@ -183,7 +185,7 @@
                                         </ul>
                                     </div>
                                 @endforeach
-                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
+                                @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
                             </div>
                         @endif
                     </div>
@@ -200,7 +202,7 @@
                                 @foreach($secondPositionNews as $key=>$news)
                                     <div class="news-item">
                                         <figure class="news-image">
-                                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                 {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                                      class="responsive-img" title="">--}}
                                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt="">
@@ -208,14 +210,14 @@
                                         </figure>
                                         <div class="news-content">
                                             <h5 class="news-title"><a
-                                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                    href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                     {{$news->title}}
                                                 </a>
                                             </h5>
                                         </div>
                                     </div>
                                 @endforeach
-                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $secondPositionNews])
+                                @include('frontend::components.buttons.view-all-category-button', ['position' => $secondPositionNews])
                             </div>
                         @endif
                     </div>
@@ -232,7 +234,7 @@
                                 @foreach($thirdPositionNews as $news)
                                     <div class="news-item">
                                         <figure class="news-image">
-                                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                 {{--                            <img src="{{$news->image}}" alt="{{$news->image}}"--}}
                                                 {{--                                 class="responsive-img">--}}
                                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
@@ -241,7 +243,7 @@
                                         </figure>
                                         <div class="news-content new-type-1">
                                             <h5 class="news-title"><a
-                                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                    href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                     {{$news->title}}
                                                 </a></h5>
                                             <ul class="hr-list wide stamp">
@@ -250,7 +252,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $thirdPositionNews])
+                                @include('frontend::components.buttons.view-all-category-button', ['position' => $thirdPositionNews])
                             </div>
                         @endif
                     </div>

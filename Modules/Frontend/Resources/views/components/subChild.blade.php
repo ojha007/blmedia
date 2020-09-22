@@ -10,14 +10,14 @@
                         @if($key== 0)
                             <div class="bigOverLay">
                                 <figure class="news-image">
-                                    <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
                                              class="responsive-img">
                                     </a>
                                 </figure>
                                 <div class="ovLay">
                                     <h2 class="news-title">
-                                        <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                        <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                             {!! $news->title !!}
                                         </a>
                                     </h2>
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         <h2 class="news-title"><a
-                                                href="{{route($routePrefix.'news.show',$news->slug)}}">{{$news->title}}</a>
+                                                href="{{route($routePrefix.'news.show',$news->news_slug)}}">{{$news->title}}</a>
                                         </h2>
                                     </div>
                                 </div>

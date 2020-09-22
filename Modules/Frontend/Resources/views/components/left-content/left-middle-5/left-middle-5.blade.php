@@ -14,7 +14,7 @@
                         <div class="col eq-highlight">
                             <div class="news-item">
                                 <figure class="">
-                                    <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                              class="responsive-img" title="">--}}
                                         <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
@@ -22,7 +22,7 @@
                                 </figure>
                                 <div class="news-content">
                                     <h5 class="news-title new-title-type001"><a
-                                            href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                            href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                             {{$news->title}}
                                         </a>
                                     </h5>
@@ -38,7 +38,7 @@
                             @if($key >0)
                                 <div class="news-item">
                                     <figure class="news-image">
-                                        <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                        <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                             {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                                  class="responsive-img" title="">--}}
                                             <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
@@ -46,7 +46,7 @@
                                     </figure>
                                     <div class="news-content">
                                         <h5 class="news-title">
-                                            <a href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                                 {{$news->title}}
                                             </a>
                                         </h5>

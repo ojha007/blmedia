@@ -77,7 +77,7 @@ class CategoryRepository extends Repository
 
         $slug = is_array($slug) ? $slug : [$slug];
         return DB::table('news')
-            ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.id as slug', 'news.publish_date')
+            ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.slug as news_slug', 'news.publish_date')
             ->join('news_categories', 'news_categories.news_id', 'news.id')
             ->join('categories', 'categories.id', 'news_categories.category_id')
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
