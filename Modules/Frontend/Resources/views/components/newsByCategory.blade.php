@@ -1,81 +1,19 @@
 @extends('frontend::layouts.master')
 @section('content')
-    @if(count($breadcrumbs))
-        <section class="breadcrumb-section">
-            <div class="breadcrumb-wrapper">
-                <div class="container-fluid">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 float-left">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="https://www.breaknlinks.com/hindi/">
-                                        गृहपृष्ठ
-                                    </a>
-                                </li>
-
-                                @foreach($breadcrumbs as $breadcrumb)
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                        <a href="{{route($routePrefix.'news-category.show',$breadcrumb->slug)}}"
-                                           itemprop="item">
-                                            {{$breadcrumb->name}}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ol>
-                        </nav>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </section>
-    @endisset
+    @include('frontend::components.breadcrumb')
     <section class="body-section">
         <section class="page-body">
             <div class="container-fluid">
                 <section class="cmn-section">
-                    <!--news listing section-->
                     <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 float-left">
                         <div class="gn-heading">
                             <h2>{{$newsByCategory->first()->category ?? ''}}</h2>
                         </div>
-                        <div class="news-list-view">
-                            <!--repeatable block-->
-                            {{--                            @dd($newsByCategory)--}}
-                            @foreach($newsByCategory as $news)
-                                <div class="news-item">
-                                    <div class="news-image">
-                                        <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img arch-img" >
-                                        </a>
-                                    </div>
-                                    <div class="news-content">
-                                        <h4 class="news-title">
-                                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                                {{$news->title}}
-                                            </a></h4>
-
-                                        <ul class="hr-list wide stamp">
-                                            <li>
-                                                <i class="fa fa-clock-o"></i>
-                                                {{\Carbon\Carbon::parse($news->publish_date)->format('Y-mm-d')}}
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-clock-o"></i>
-                                                {{$news->author}}
-                                            </li>
-
-                                        </ul>
-                                        <p>{!! $news->short_description !!}</p>
-                                        <p>
-                                            @include('frontend::components.buttons.read-more-button', ['news' => $news])
-                                        </p>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="pagination-wrapper">
-                            {{ $newsByCategory->links('vendor.pagination.custom') }}
-                        </div>
+                        @if(count($childCategoriesNews))
+                            @include('frontend::components.withChildCategory')
+                        @else
+                            @include('frontend::components.no-childCategory')
+                        @endif
                     </div>
                     <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 float-right">
                         <div class="newsBlock type-8 front_body_position_3 ">
@@ -99,7 +37,7 @@
                                             </figure>
                                             <div class="news-content">
                                                 <h5 class="news-title"><a
-                                                            href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
                                                         {{$news->title}}
                                                     </a></h5>
                                             </div>
@@ -108,7 +46,7 @@
                                             </ul>
                                         </div>
                                     @endforeach
-                                        @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
+                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
                                 </div>
                             @endif
                         </div>
@@ -133,14 +71,14 @@
                                             </figure>
                                             <div class="news-content">
                                                 <h5 class="news-title"><a
-                                                            href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
                                                         {{$news->title}}
                                                     </a>
                                                 </h5>
                                             </div>
                                         </div>
                                     @endforeach
-                                        @include('frontend::components.buttons.view-all-category-button', ['position' => $secondPositionNews])
+                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $secondPositionNews])
                                 </div>
                             @endif
                         </div>
@@ -166,7 +104,7 @@
                                             </figure>
                                             <div class="news-content new-type-1">
                                                 <h5 class="news-title"><a
-                                                            href="{{route($routePrefix.'news.show',$news->slug)}}">
+                                                        href="{{route($routePrefix.'news.show',$news->slug)}}">
                                                         {{$news->title}}
                                                     </a></h5>
                                                 <ul class="hr-list wide stamp">
@@ -175,7 +113,7 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                        @include('frontend::components.buttons.view-all-category-button', ['position' => $thirdPositionNews])
+                                    @include('frontend::components.buttons.view-all-category-button', ['position' => $thirdPositionNews])
                                 </div>
                             @endif
                         </div>
