@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Modules\Backend\Entities\Category;
+use Modules\Backend\Entities\CategoryPositions;
 use Modules\Backend\Http\Requests\NewsCategoryRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\NewsCategoryRepository;
@@ -80,6 +81,8 @@ class CategoryController extends Controller
     protected function updateOrCreateRelations($category, $request): void
     {
         if (array_filter($request->get('position'))) {
+            $attributes = array_merge(['category_id' => $category->id], $request->get('position'));
+            $this->makeNullToCommon($attributes);
             $category->position()
                 ->updateOrCreate(
                     ['category_id' => $category->id], $request->get('position')
@@ -88,6 +91,40 @@ class CategoryController extends Controller
         if (array_filter($request->get('meta'))) {
             DB::table('category_meta_tags')
                 ->updateOrInsert(['category_id' => $category->id], $request->get('meta'));
+        }
+    }
+
+    protected function makeNullToCommon($attributes): void
+    {
+        $a = CategoryPositions::where('front_header_position', $attributes['front_header_position'])->get();
+        $b = CategoryPositions::where('front_body_position', $attributes['front_body_position'])->get();
+        $c = CategoryPositions::where('detail_header_position', $attributes['detail_header_position'])->get();
+        $d = CategoryPositions::where('detail_body_position', $attributes['detail_body_position'])->get();
+//        $collections = $a->concat($b)->concat($c)->concat($d);
+//        dd($collections);
+        if (!$a->isEmpty()) {
+            foreach ($a as $aa) {
+                $aa->front_header_position = null;
+                $aa->save();
+            }
+        }
+        if (!$b->isEmpty()) {
+            foreach ($b as $aa) {
+                $aa->front_body_position = null;
+                $aa->save();
+            }
+        }
+        if (!$c->isEmpty()) {
+            foreach ($c as $aa) {
+                $aa->detail_header_position = null;
+                $aa->save();
+            }
+        }
+        if (!$d->isEmpty()) {
+            foreach ($d as $aa) {
+                $aa->detail_body_position = null;
+                $aa->save();
+            }
         }
     }
 
