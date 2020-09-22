@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<button onclick="topFunction()" id="scrollTop" class="btn btn-sm " title="Scroll top"><i class="fas fa-arrow-up"></i></button>
 <!-- Main Header -->
 @include('frontend::partials.header')
 {{--    Header Close--}}

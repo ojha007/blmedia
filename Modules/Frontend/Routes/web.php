@@ -18,6 +18,7 @@ Route::group(
     $router->get('/', 'FrontendController@index')->name('index');
     $router->get('/single-page', 'FrontendController@singlePage')->name('singlePage');
     $router->get('/detail-page', 'FrontendController@detailPage')->name('detailPage');
+    $router->get('/subCategory', 'FrontendController@subCategory')->name('subCategory');
 
 });
 
