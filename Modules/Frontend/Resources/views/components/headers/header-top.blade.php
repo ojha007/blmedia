@@ -1,6 +1,10 @@
-@include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
-<section class="header-top">
-    <div class="container-fluid">
+<section class="ads-section mb-3">
+    <div class="container-fluid text-center">
+        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
+    </div>
+</section>
+<section class="header-top mb-3">
+    <div class="container-fluid ">
         <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 float-left scroll-news">
             <div class="scroll-header">
                 <h4>{{trans('messages.editions')}}</h4>
@@ -53,5 +57,5 @@
         <div class="clearfix"></div>
     </div>
 </section>
-@include('frontend::components.ads.ads-1',['ads'=>$ads_below_top_menu])
+
 

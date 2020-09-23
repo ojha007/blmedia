@@ -1,6 +1,9 @@
-@isset($ads_above_footer)
-    @include('frontend::components.ads.ads-1',['ads'=>$ads_above_footer])
-@endisset
+<section class="ads-section pb-3">
+    <div class="container-fluid text-center">
+        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
+    </div>
+</section>
+<!--start page footer-->
 <footer class="page-footer">
     <div class="container-fluid">
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 float-left">
