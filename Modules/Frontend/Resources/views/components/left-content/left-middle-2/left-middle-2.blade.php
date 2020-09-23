@@ -27,35 +27,34 @@
                             </div>
                         </div>
                     @endif
-
                 @endforeach
             </div>
-{{--            <div class="row d-block">--}}
-{{--                <div class="news-items">--}}
-{{--                    @foreach($sixthPositionNews as $key=>$news)--}}
-{{--                        @if($key >3)--}}
-{{--                            <div class="news-contents amdot">--}}
-{{--                                <div class="col-md-3 pull-left">--}}
-{{--                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}"--}}
-{{--                                       class="text-dark">--}}
-{{--                                        {{$news->title}}--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+            {{--            <div class="row d-block">--}}
+            {{--                <div class="news-items">--}}
+            {{--                    @foreach($sixthPositionNews as $key=>$news)--}}
+            {{--                        @if($key >3)--}}
+            {{--                            <div class="news-contents amdot">--}}
+            {{--                                <div class="col-md-3 pull-left">--}}
+            {{--                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}"--}}
+            {{--                                       class="text-dark">--}}
+            {{--                                        {{$news->title}}--}}
+            {{--                                    </a>--}}
+            {{--                                </div>--}}
+            {{--                            </div>--}}
 
-{{--                            <h4 class="news-title blamtitle">--}}
-{{--                                <i class="fa fa-info-circle text-dark" aria-hidden="true"></i>&nbsp;--}}
+            {{--                            <h4 class="news-title blamtitle">--}}
+            {{--                                <i class="fa fa-info-circle text-dark" aria-hidden="true"></i>&nbsp;--}}
 
-{{--                            </h4>--}}
-{{--                </div>--}}
+            {{--                            </h4>--}}
+            {{--                </div>--}}
 
-{{--                @endif--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
+            {{--                @endif--}}
+            {{--                @endforeach--}}
+            {{--            </div>--}}
         </div>
-</div>
-@include('frontend::components.buttons.view-all-category-button', ['position' => $sixthPositionNews])
-@endif
+
+        @include('frontend::components.buttons.view-all-category-button', ['position' => $sixthPositionNews])
+    @endif
 </div>
 
 
