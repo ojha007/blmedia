@@ -2,13 +2,13 @@
     <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="big_bx">
             @if(count($newsByCategory))
-                <a href="{{route($routePrefix.'news.show',$newsByCategory->first()->slug)}}">
+                <a href="{{route($routePrefix.'news.show',$newsByCategory->first()->news_slug)}}">
                     <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
                          class="arch-img img-fluid">
                 </a>
                 <div class="ovrLay">
                     <h2 class="news-title"><a
-                            href="{{route($routePrefix.'news.show',$newsByCategory->first()->slug)}}">
+                            href="{{route($routePrefix.'news.show',$newsByCategory->first()->news_slug)}}">
                             {{$newsByCategory->first()->title}}
                         </a>
                     </h2>
@@ -40,7 +40,7 @@
             @endforeach
         </div>
     </div>
-    <div class=" col col-12">
+    <div class="col col-12">
         @include('frontend::components.buttons.view-all-category-button', ['position' => $newsByCategory])
     </div>
 </div>

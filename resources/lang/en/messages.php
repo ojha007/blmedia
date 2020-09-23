@@ -8,5 +8,5 @@ return [
     'perv' => 'Perv',
     'next' => 'Next',
     'write_your_comment' => 'Write Your Comment',
-    'other_news' => 'Recommendations'
+    'other_news' => 'Related News'
 ];

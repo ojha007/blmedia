@@ -80,10 +80,7 @@
     </div>
 </div>
 @push('scripts')
-    <script src="{{asset('/vendor/laravel-filemanager/js/stand-alone-button.js')}}"></script>
-    <script>
-        $('#image-upload').filemanager('image');
-    </script>
+
 @endpush
 
 

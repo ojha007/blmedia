@@ -1,6 +1,5 @@
 @isset($ads)
     @if(count($ads)>0)
-{{--        @dd($ads)--}}
         @foreach($ads as $ad)
             <div class="cmn-fw">
                 <div class="col-sm-12">
