@@ -13,3 +13,6 @@
         @endforeach
     @endif
 @endisset
+<div class="col-12 _1230*100">
+    <img src="{{asset('frontend/img/1230_100.gif')}}" alt="" class="responsive-img w-100">
+</div>

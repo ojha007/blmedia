@@ -1,3 +1,8 @@
+<section class="ads-section pb-3">
+    <div class="container-fluid text-center">
+        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
+    </div>
+</section>
 <!--start page footer-->
 <footer class="page-footer">
     <div class="container-fluid">

@@ -1,14 +1,17 @@
 <section class="select-language-section bg-site-color" style="display: none;">
-    <select class="form-control form-control-sm bg-transparent border-0 text-white " style=" transition: max-height 1s;">
-        <option class="bg-site-color border-0 ">{{trans('messages.editions')}}</option>
+    <select class="form-control form-control-sm bg-transparent border-0 text-white "  onchange="location = this.value;" style=" transition: max-height 1s;">
         @foreach(config('editions') as $k=> $e)
-            @if(in_array(request()->segment(1), config('editions')))
-                @if(request()->segment(1) != $e)
-                    <option class="bg-site-color border-0">{{ucwords($k)}}</option>
+                @if(in_array(request()->segment(1), config('editions')))
+                    @if(request()->segment(1) != $e)
+                    <option class="bg-site-color border-0"  value="{{route($e)}}">
+                        {{ucwords($k)}}
+                    </option>
+                    @endif
+                @else
+                <option class="bg-site-color border-0"  value="{{route($e)}}">
+                    {{ucwords($k)}}
+                </option>
                 @endif
-            @else
-                <option class="bg-site-color border-0">{{ucwords($k)}}</option>
-            @endif
         @endforeach
     </select>
 </section>
@@ -93,6 +96,11 @@
 
             </div>
         </div>
+    </div>
+</section>
+<section class="ads-section pt-3">
+    <div class="container-fluid text-center">
+        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
     </div>
 </section>
 

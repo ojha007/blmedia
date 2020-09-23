@@ -1,12 +1,12 @@
 @if(count($childCategoriesNews))
     <div class="row">
-        @foreach($childCategoriesNews->take(2) as $childNews)
+        @foreach($childCategoriesNews as $childNews)
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="contentH">
                     <div class="gn-heading nh">
-                        <h2>{{$news->category}}</h2>
+                        <h2>{{$childNews->first()->category}}</h2>
                     </div>
-                    @foreach($childNews->take(4) as $key=>$news)
+                    @foreach($childNews->take(5) as $key=>$news)
                         @if($key== 0)
                             <div class="bigOverLay">
                                 <figure class="news-image">

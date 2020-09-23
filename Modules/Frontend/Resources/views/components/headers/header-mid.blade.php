@@ -10,26 +10,10 @@
                     </a>
                 </figure>
             </div>
-            <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 float-right d-sm-none d-md-block">
-
-                <div class="ggl_adBlk _768x90 float-right logo-adv">
-
-                    <!--- Google Ads Start--->
-                    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Aside Logo -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6371925597086820"
-                         data-ad-slot="3110130257" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <!--- Google Ads End --->
-
-                </div>
+            <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 float-right d-sm-none d-md-block ">
+                @include('frontend::components.ads.ads-1',['ads'=>$ads_below_top_menu])
             </div>
-
         </div>
         <div class="clearfix"></div>
     </div>
-    @include('frontend::components.ads.ads-1',['ads'=>$ads_below_top_menu])
-{{--    @include('fronted::components.ads.ads-1', ['ads'=>$ads_aside_logo])--}}
 </section>

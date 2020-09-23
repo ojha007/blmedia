@@ -82,6 +82,7 @@
                                 </div>
                             @endif
                         </div>
+{{--                        @dd($thirdPositionNews)--}}
                         <div class="newsBlock front_body_position_1 type-1">
                             @if(count($thirdPositionNews))
                                 <div class="block-header gn-heading">
