@@ -1,4 +1,4 @@
-<div class="newsBlock front_body_position_1 type-1" >
+<div class="newsBlock front_body_position_1 type-1">
     @if(count($firstPositionNews))
         <div class="block-header gn-heading">
             <h2>
@@ -12,9 +12,10 @@
                 <div class="news-item">
                     <figure class="news-image">
                         <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-{{--                            <img src="{{$news->image}}" alt="{{$news->image}}"--}}
-{{--                                 class="responsive-img">--}}
-                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" style="height: 5em;">
+                            {{--                            <img src="{{$news->image}}" alt="{{$news->image}}"--}}
+                            {{--                                 class="responsive-img">--}}
+                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img"
+                                 style="height: 5em;">
                         </a>
                     </figure>
                     <div class="news-content new-type-1">
@@ -23,12 +24,18 @@
                                 {{$news->title}}
                             </a></h5>
                         <ul class="hr-list wide stamp">
-                            <li><i class="fa fa-circle blus"></i> blmedia</li>
+                            <li>
+                                <a href="{{route($routePrefix.'news.by.author',[$news->author_type,$news->author_slug])}}">
+                                    <i class="fa fa-user"></i>
+                                    {{$news->author_name}}
+
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             @endforeach
-                @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
+            @include('frontend::components.buttons.view-all-category-button', ['position' => $firstPositionNews])
         </div>
     @endif
 </div>

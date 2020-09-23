@@ -19,8 +19,10 @@
                         {{\Carbon\Carbon::parse($news->publish_date)->format('Y-mm-d')}}
                     </li>
                     <li>
-                        <i class="fa fa-clock-o"></i>
-                        {{$news->author}}
+                        <a href="{{route($routePrefix.'news.by.author',[$news->author_type,$news->author_slug])}}">
+                            <i class="fa fa-user"></i>
+                            {{$news->author_name}}
+                        </a>
                     </li>
 
                 </ul>

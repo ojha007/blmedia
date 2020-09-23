@@ -30,9 +30,12 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
-            ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
-                'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
+            ->select('news.title', 'news.sub_title', 'news.short_description',
+                'categories.name as categories', 'news.id as news_slug',
                 'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
             ->join('categories', 'categories.id', '=', 'news_categories.category_id')
             ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
@@ -50,6 +53,9 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
                 'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
                 'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
             ->join('categories', 'categories.id', '=', 'news_categories.category_id')
             ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
