@@ -13,7 +13,7 @@
             <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 float-right d-sm-none d-md-block">
 
                 <div class="ggl_adBlk _768x90 float-right logo-adv">
-                @include('frontend::components.ads.ads-1',['ads'=>$ads_aside_logo])
+                     @include('frontend::components.ads.ads-1',['ads'=>$ads_aside_logo])
                     <!--- Google Ads Start--->
                     <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Aside Logo -->

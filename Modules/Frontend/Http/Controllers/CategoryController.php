@@ -66,9 +66,9 @@ class CategoryController extends Controller
             ->with($advertisements);
     }
 
-    public function getNewsByCategorySlug($slug, $perPage = 10)
+    public function getNewsByCategorySlug($slug, $perPage = 15)
     {
-        return DB::table('categories')
+       return  DB::table('categories')
             ->join('news_categories', 'categories.id', '=', 'news_categories.category_id')
             ->join('news', 'news_categories.news_id', '=', 'news.id')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
@@ -78,7 +78,9 @@ class CategoryController extends Controller
                 'categories.slug as category_slug', 'categories.name as category'
             )->selectRaw('IFNULL(reporters.name,guests.name) as author, IFNULL(news.reporter_id,news.guest_id) as author_type')
             ->where('categories.slug', $slug)
+            ->whereDate('news.created_at', '<=', now()->addMonths(2))
             ->paginate($perPage);
+        dd($a);
     }
 
     public function getChildCategoryNews($slug, $limit)
