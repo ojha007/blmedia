@@ -47,9 +47,7 @@ class FrontendController extends Controller
     {
 
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
-        $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
-        $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
-        $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
+        $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
         $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
@@ -64,16 +62,23 @@ class FrontendController extends Controller
         $twelvePositionNews = $this->newsRepository->getNewsByPosition(12, 5);
         $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 4);
         $fourteenPositionNews = $this->newsRepository->getNewsByPosition(14, 6);
-        return view('frontend::index', compact('headerCategories',
-            'firstPositionNews', 'secondPositionNews', 'thirdPositionNews',
-            'fifthPositionNews', 'sixthPositionNews',
-            'seventhPositionNews', 'eighthPositionNews',
-            'ninthPositionNews', 'tenthPositionNews',
-            'eleventhPositionNews', 'twelvePositionNews',
-            'ads_above_top_menu', 'ads_below_top_menu',
-            'ads_aside_logo',
+        return view('frontend::index', compact(
+            'headerCategories',
+            'firstPositionNews',
+            'secondPositionNews',
+            'thirdPositionNews',
+            'fifthPositionNews',
+            'sixthPositionNews',
+            'seventhPositionNews',
+            'eighthPositionNews',
+            'ninthPositionNews',
+            'tenthPositionNews',
+            'eleventhPositionNews',
+            'twelvePositionNews',
             'fourthPositionNews',
-            'thirteenPositionNews', 'fourteenPositionNews'));
+            'thirteenPositionNews',
+            'fourteenPositionNews'))
+            ->with($advertisements);
 
     }
 

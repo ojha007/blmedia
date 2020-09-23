@@ -34,7 +34,9 @@
                                     </div>
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         <h2 class="news-title"><a
-                                                href="{{route($routePrefix.'news.show',$news->news_slug)}}">{{$news->title}}</a>
+                                                href="{{route($routePrefix.'news.show',$news->news_slug)}}">
+                                                {{$news->title}}
+                                            </a>
                                         </h2>
                                     </div>
                                 </div>

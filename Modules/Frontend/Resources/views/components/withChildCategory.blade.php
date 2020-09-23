@@ -40,7 +40,7 @@
             @endforeach
         </div>
     </div>
-    <div class=" col col-12">
+    <div class="col col-12">
         @include('frontend::components.buttons.view-all-category-button', ['position' => $newsByCategory])
     </div>
 </div>

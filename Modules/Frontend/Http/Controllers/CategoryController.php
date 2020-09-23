@@ -50,9 +50,7 @@ class CategoryController extends Controller
 
         $newsByCategory = $this->getNewsByCategorySlug($slug);
         $headerCategories = $this->repository->getDetailPageHeaderCategoriesByPosition();
-        $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
-        $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
-        $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
+        $advertisements = $this->adsRepository->getAllAdvertisements('category_page');
         $firstPositionNews = $this->newsRepository->getDetailNewsByPosition(1, 6);
         $secondPositionNews = $this->newsRepository->getDetailNewsByPosition(2, 6);
         $thirdPositionNews = $this->newsRepository->getDetailNewsByPosition(3, 6);
@@ -61,10 +59,11 @@ class CategoryController extends Controller
         return view($this->viewPath . '.newsByCategory',
             compact('newsByCategory', 'breadcrumbs',
                 'childCategoriesNews',
-                'headerCategories', 'ads_above_top_menu',
-                'ads_aside_logo', 'ads_below_top_menu',
+                'headerCategories',
+                'ads_aside_logo',
                 'firstPositionNews', 'secondPositionNews', 'thirdPositionNews'
-            ));
+            ))
+            ->with($advertisements);
     }
 
     public function getNewsByCategorySlug($slug, $perPage = 10)

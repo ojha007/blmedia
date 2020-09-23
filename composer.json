@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "alexusmai/laravel-file-manager": "^2.5",
         "anlutro/l4-settings": "^1.0",
         "cloudinary/cloudinary_php": "^1.18",
         "cviebrock/eloquent-taggable": "^7.0",
@@ -27,7 +28,6 @@
         "nwidart/laravel-modules": "^7.2",
         "rap2hpoutre/laravel-log-viewer": "^1.7",
         "spatie/laravel-permission": "^3.16",
-        "unisharp/laravel-filemanager": "^2.1",
         "yajra/laravel-auditable": "^4.3"
     },
     "require-dev": {

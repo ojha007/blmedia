@@ -117,6 +117,13 @@
                 <label for="external_url"> External URL </label>
                 {{Form::text('external_url',null,['class'=>'form-control','placeholder'=>'Enter external link if any','autocomplete'=>'any'])}}
             </div>
+            {{--            <div class="input-group">--}}
+            {{--                <input type="text" id="image_label" class="form-control" name="image"--}}
+            {{--                       aria-label="Image" aria-describedby="button-image">--}}
+            {{--                <div class="input-group-append">--}}
+            {{--                    <button class="btn btn-outline-secondary" type="button" id="button-image">Select</button>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
             <div class="form-group col-md-12" style="padding-right: 0">
                 <label for="fieldID4">Banner Picture</label>
                 <div class="input-group">
@@ -125,8 +132,9 @@
                        <i class="fa fa-picture-o"></i> Choose
                      </a>
                    </span>
-                    <label for="thumbnail">
-                    </label><input id="thumbnail" class="form-control" type="text" name="image">
+                    <label for="image_label">
+                    </label>
+                    <input type="text" id="image_label" class="form-control" name="image">
                 </div>
                 <img id="holder" style="margin-top:15px;max-height:100px;" alt="">
             </div>
@@ -200,7 +208,7 @@
             </div>
             <div class="form-group col-md-6 {{$errors->has('publish_status') ? 'has-error':''}}">
                 {!! Form::label('publish_status','Publish Status') !!}
-                {!! Form::select('publish_status',$selectPublishStatuses, null,
+                {!! Form::select('publish_status',$selectPublishStatuses, 'Yes',
                     ['class'=>'form-control select2','placeholder'=>'Select Publish ']) !!}
             </div>
         </div>
@@ -223,7 +231,7 @@
                         <h4 class="modal-title">BL MEDIA GALLERY</h4>
                     </div>
                     <div class="modal-body">
-                        <iframe src="{{ url('laravel-filemanager') }}"
+                        <iframe src="{{ url('file-manager/fm-button') }}"
                                 style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
                     </div>
                     <div class="modal-footer">
@@ -239,81 +247,22 @@
         </div>
     </div>
 </div>
+
 <style>
     #blFilemanager {
         z-index: 10011;
     }
 </style>
+
 @push('scripts')
-    <script src="{{asset('/vendor/laravel-filemanager/js/stand-alone-button.js')}}"></script>
+
     <script>
-        var options = {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-        };
 
-        CKEDITOR.replace('description', options);
+        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
 
-        CKEDITOR.on('dialogDefinition', function (ev) {
-            var editor = ev.editor;
-            var dialogDefinition = ev.data.definition;
-
-            // This function will be called when the user will pick a file in file manager
-            var cleanUpFuncRef = CKEDITOR.tools.addFunction(function (a) {
-                $('#blFilemanager').modal('hide');
-                CKEDITOR.tools.callFunction(1, a, "");
-            });
-            var tabCount = dialogDefinition.contents.length;
-            for (var i = 0; i < tabCount; i++) {
-                var browseButton = dialogDefinition.contents[i].get('browse');
-                if (browseButton !== null) {
-                    browseButton.onClick = function (dialog, i) {
-                        editor._.filebrowserSe = this;
-                        var iframe = $('#blFilemanager').find('iframe').attr({
-                            src: editor.config.filebrowserBrowseUrl + '&CKEditor=body&CKEditorFuncNum=' + cleanUpFuncRef + '&langCode=en'
-                        });
-                        $('#blFilemanager').appendTo('body').modal('show');
-                    }
-                }
-            }
-        });
         $("#tags").select2({
             tags: true
         });
-        // (function ($) {
-        //     $.fn.filemanager = function (type, options) {
-        //         type = type || 'file';
-        //         this.on('click', function (e) {
-        //             // console.log($(this))
-        //             var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
-        //             // var iframe = $('#blFilemanager').find('iframe').attr({
-        //             //     src: editor.config.filebrowserBrowseUrl + '&CKEditor=body&CKEditorFuncNum=' + cleanUpFuncRef + '&langCode=en'
-        //             //     $('#blFilemanager').modal('show')
-        //             localStorage.setItem('target_input', $(this).data('input'));
-        //             localStorage.setItem('target_preview', $(this).data('preview'));
-        //             // $('iframe').attr('src', route_prefix + '?type=' + type)
-        //             window.open(route_prefix + '?type=' + type, 'FileManager', 'width=900,height=600');
-        //             window.SetUrl = function (url, file_path) {
-        //                 //     //     //set the value of the desired input to image url
-        //                 var target_input = $('#' + localStorage.getItem('target_input'));
-        //                 target_input.val(file_path).trigger('change');
-        //                 //     //
-        //                 //     //     //set or change the preview image src
-        //                 // var target_preview = $('#' + localStorage.getItem('target_preview'));
-        //                 // target_preview.attr('src', url).trigger('change');
-        //             };
-        //             // });
-        //             // $('#blFilemanager').appendTo('body').modal('show');
-        //             return false;
-        //         });
-        //     }
-        //
-        // })(jQuery);
-        $('#banner_image').filemanager('image');
-        // $('#image').filemanager('image', {prefix: '/bl-secure/laravel-filemanager'});
     </script>
-
 
 @endpush
