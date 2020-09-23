@@ -1,11 +1,12 @@
 @if(count($allNews))
     <div class="newsBlock type-8 front_body_position_3 ">
-        <div class="block-header gn-heading">
-            <h2><a href="">
-                    {{$allNews->first()->categories}}
-                </a>
-            </h2>
-        </div>
+        {{--        <div class="block-header gn-heading">--}}
+        {{--            <h2><a href="">--}}
+        {{--                    {{$allNews->first()->categories}}--}}
+        {{--                </a>--}}
+        {{--            </h2>--}}
+        {{--        </div>--}}
+        @include('frontend::components.news.category-heading')
         <div class="block-body {{$class ?? ''}}">
             @foreach($allNews as $news)
                 <div class="news-item">

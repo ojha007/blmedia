@@ -77,14 +77,28 @@ class CategoryRepository extends Repository
 
         $slug = is_array($slug) ? $slug : [$slug];
         return DB::table('news')
-            ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.slug as news_slug', 'news.publish_date')
+            ->select('news.title', 'news.description',
+                'news.slug as news_slug', 'news.publish_date')
             ->join('news_categories', 'news_categories.news_id', 'news.id')
             ->join('categories', 'categories.id', 'news_categories.category_id')
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->whereIn('categories.slug', $slug)
             ->orderBy('news.created_at', 'DESC')
             ->limit($limit)
             ->get();
+    }
+
+    public function getCategorySlugByPosition($column, $position): string
+    {
+        $a = DB::table('categories as c')
+            ->join('category_positions as cp', 'c.id', '=', 'cp.category_id')
+            ->where($column, $position)
+            ->first();
+        if ($a) return $a->slug;
+        return '';
     }
 }

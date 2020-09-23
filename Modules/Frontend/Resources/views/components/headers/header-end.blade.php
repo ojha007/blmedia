@@ -79,17 +79,15 @@
                 </nav>
 
             </div>
-
             <div class="col-md-12 col-lg-2 pl-0">
                 <div class="addthis_inline_follow_toolbox"></div>
             </div>
         </div>
     </div>
 </section>
-<section class="ads-section pt-3">
-    <div class="container-fluid text-center">
-        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
-    </div>
-</section>
+<div class="container-fluid text-center">
+    @include('frontend::components.ads.ads-2',['ads'=>$ads_below_logo_and_menu])
+</div>
+
 
 

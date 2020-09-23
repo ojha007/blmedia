@@ -67,7 +67,7 @@ class NewsController extends Controller
                 'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
             ->addSelect($db . '.name as author_name')
             ->selectRaw('IF(news.guest_id,"guests","reporters") as author_type')
-            ->selectRaw($db.'.slug as author_slug')
+            ->selectRaw($db . '.slug as author_slug')
             ->join($db, 'news.' . $column, '=', $db . '.id')
             ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
             ->join('categories', 'categories.id', '=', 'news_categories.category_id')

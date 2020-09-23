@@ -1,8 +1,6 @@
-<section class="ads-section mb-3">
-    <div class="container-fluid text-center">
-        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
-    </div>
-</section>
+<div class="container-fluid text-center">
+    @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
+</div>
 <section class="header-top mb-3">
     <div class="container-fluid ">
         <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 float-left scroll-news">
@@ -57,5 +55,3 @@
         <div class="clearfix"></div>
     </div>
 </section>
-
-

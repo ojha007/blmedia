@@ -19,7 +19,9 @@
                                                       class="responsive-img">
                                             </span>
                                         <p>
-                                            <a href="https://www.breaknlinks.com/hindi/author/reporter/breaknlinks"
+                                            @php($author_type = $news->reporter ? 'reporters' : 'guests')
+                                            @php($author_slug = $news->reporter ? $news->reporter->slug : $news->guest->slug)
+                                            <a href="{{route($routePrefix.'news.by.author',[$author_type,$author_slug])}}"
                                                class="highlight">
                                                 <span class="usr">
                                                     {{ $news->reporter ? $news->reporter->name
@@ -28,10 +30,9 @@
                                             </a>
 
                                         </p>
-
                                         <ul class="post-info-details">
                                             <li>
-                                                <p>  {{ Carbon\Carbon::parse($news->publish_date)->format('Y-m-d') }} </p>
+                                                <p> <i class="fa fa-clock"></i> {{ Carbon\Carbon::parse($news->publish_date)->format('Y-m-d') }} </p>
                                             </li>
                                         </ul>
                                     </div>
@@ -64,7 +65,8 @@
                             <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10 offset-lg-1">
                                 {!! $news->description !!}
                                 <div class="col-sm-6 col-xs-12">
-                                    Sep 05, 2020 11:04:15 <b> - मे प्रकाशित </b>
+                                    {{\Carbon\Carbon::parse($news->publish_date)->format('Y-m-d')}} <b>
+                                        - {{trans('messages.publish_date')}}</b>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="adsssss amadam">

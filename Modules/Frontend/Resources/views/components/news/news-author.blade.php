@@ -1,3 +1,4 @@
+@if($news->author_type && $news->author_slug)
 <ul class="hr-list wide stamp">
     <li>
         <a href="{{route($routePrefix.'news.by.author',[$news->author_type,$news->author_slug])}}">
@@ -6,3 +7,4 @@
         </a>
     </li>
 </ul>
+@endif

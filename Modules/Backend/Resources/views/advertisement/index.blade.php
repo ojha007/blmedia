@@ -24,6 +24,7 @@
                     <table id="dataTable" class="table table-bordered dataTable table-condensed">
                         <thead>
                         <tr>
+                            <th>S.No</th>
                             <th style="width: 30%">Title</th>
                             <th>For</th>
                             <th>Placement</th>
@@ -37,6 +38,7 @@
                         <tbody>
                         @foreach($advertisements as $ads)
                             <tr>
+                                <td>#{{$ads->id}}</td>
                                 <td>{{$ads->title}}</td>
                                 <td>{{ucwords(str_replace('_',' ' ,$ads->for))}}</td>
                                 <td>{{ucwords(str_replace('_',' ' ,$ads->placement))}}</td>
@@ -71,4 +73,9 @@
     </div>
 @endsection
 @push('scripts')
+    <script>
+        $('#dataTable').dataTable({
+            "order": []
+        })
+    </script>
 @endpush

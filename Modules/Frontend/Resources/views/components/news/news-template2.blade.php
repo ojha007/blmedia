@@ -17,17 +17,7 @@
                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">
                             </a>
                             <div class="news-content-am">
-                                <h5 class="news-title-am"><a
-                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                        {{$news->title}}
-                                    </a></h5>
-                                {{--                                <ul class="hr-list wide stamp">--}}
-                                {{--                                    <li>--}}
-                                {{--                                        <i class="fa fa-circle blus"></i>--}}
-                                {{--                                        blmedia--}}
-                                {{--                                    </li>--}}
-
-                                {{--                                </ul>--}}
+                                @include('frontend::components.news.news-content',['class'=>'news-title-am'])
                                 @include('frontend::components.news.news-author')
                             </div>
                         </div>

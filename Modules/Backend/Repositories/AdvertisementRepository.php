@@ -7,6 +7,8 @@ namespace Modules\Backend\Repositories;
 use App\Repositories\Repository;
 use Illuminate\Support\Facades\DB;
 use Modules\Backend\Entities\Advertisement;
+use Modules\Frontend\Entities\Category;
+use Modules\Frontend\Repositories\CategoryRepository;
 
 class AdvertisementRepository extends Repository
 {
@@ -89,6 +91,12 @@ class AdvertisementRepository extends Repository
 
     public function getAllAdvertisements($page)
     {
+        //s = second ;
+        //p =positions;
+        //c = category;
+
+        $categoryRepo = new CategoryRepository(new Category());
+        $s_p_c = $categoryRepo->getCategorySlugByPosition('front_body_position', 2);
         $ads_above_top_menu = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'top_menu', 'above', 2);
         $ads_below_top_menu = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'top_menu', 'below', 2);
         $ads_aside_logo = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'logo', 'aside', 1);
@@ -97,6 +105,8 @@ class AdvertisementRepository extends Repository
         $ads_above_footer = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'footer', 'above', 2);
         $ads_above_recommendation_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'other_news', 'above', 2);
         $ads_below_recommendation_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'other_news', 'below', 2);
+        $ads_below_second_position_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], $s_p_c, 'below', 2);
+//        dd($ads_below_second_position_news);
         return [
             'ads_aside_logo' => $ads_aside_logo,
             'ads_below_top_menu' => $ads_below_top_menu,
@@ -106,6 +116,7 @@ class AdvertisementRepository extends Repository
             'ads_above_footer' => $ads_above_footer,
             'ads_above_recommendation_news' => $ads_above_recommendation_news,
             'ads_below_recommendation_news' => $ads_below_recommendation_news,
+            'ads_below_second_position_news' => $ads_below_second_position_news,
         ];
     }
 
@@ -123,5 +134,6 @@ class AdvertisementRepository extends Repository
             ->get()
             ->toArray();
     }
+
 
 }

@@ -11,7 +11,7 @@
                 </figure>
             </div>
             <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 float-right d-sm-none d-md-block ">
-                @include('frontend::components.ads.ads-1',['ads'=>$ads_below_top_menu])
+                @include('frontend::components.ads.ads-1',['ads'=>$ads_aside_logo])
             </div>
         </div>
         <div class="clearfix"></div>

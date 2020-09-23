@@ -14,7 +14,7 @@ class AdvertisementRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|max:255|unique:advertisements,title',
             'image' => 'required',
             'url' => 'required',
             'placement' => 'nullable',

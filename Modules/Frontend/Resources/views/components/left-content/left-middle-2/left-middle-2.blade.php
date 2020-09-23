@@ -1,34 +1,26 @@
-<div class="newsBlock front_body_position_6 type-5" >
+<div class="newsBlock front_body_position_6 type-5">
     @if(count($sixthPositionNews))
-        <div class="block-header gn-heading">
-            <h2>
-                <a href="{{route($routePrefix.'news-category.show',$sixthPositionNews->first()->category_slug)}}">
-                    {{$sixthPositionNews->first()->categories}}
-                </a>
-            </h2>
-        </div>
+        @include('frontend::components.news.category-heading',['allNews'=>$sixthPositionNews])
         <div class="block-body">
             <div class="row d-block">
                 @foreach($sixthPositionNews as $key=>$news)
                     @if($key == 0)
                         <div class="news-item highlight-news">
-                            <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                   {{-- <img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img" title="">--}}
-                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                                </a>
+                            @include('frontend::components.news.news-image')
+{{--                            <figure class="news-image">--}}
+{{--                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">--}}
+{{--                                    --}}{{-- <img src="{{$news->image}}" alt="{{$news->image}}"--}}
+{{--                                          class="responsive-img" title="">--}}
+{{--                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">--}}
+{{--                                </a>--}}
 
-                            </figure>
+{{--                            </figure>--}}
                             <div class="news-content" style="height: auto;">
                                 <h5 class="news-title-am"><a
                                         href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         {{$news->title}}
                                     </a></h5>
-                                <ul class="hr-list wide stamp">
-                                    <li><i class="fa fa-circle blus"></i> blmedia</li>
-
-                                </ul>
+                                 @include('frontend::components.news.news-author')
                                 <p class="short-news">
                                     {!! $news->short_description !!}
                                 </p>
@@ -40,7 +32,7 @@
                                 <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                     {{--<img src="{{$news->image}}" alt="{{$news->image}}"
                                          class="responsive-img amresize" title="">--}}
-                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
+                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">
                                 </a>
                             </figure>
                             <div class="news-content">
@@ -56,7 +48,7 @@
                             <li class="news-contents amdot">
                                 <h4 class="news-title blamtitle">
                                     <i class="fa fa-info-circle text-dark" aria-hidden="true"></i>&nbsp;
-                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}" class="text-dark" >
+                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}" class="text-dark">
                                         {{$news->title}}
                                     </a>
                                 </h4>

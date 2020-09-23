@@ -8,5 +8,6 @@ return [
     'perv' => 'Perv',
     'next' => 'Next',
     'write_your_comment' => 'Write Your Comment',
-    'other_news' => 'Related News'
+    'other_news' => 'Related News',
+    'publish_date' => 'Publish'
 ];
