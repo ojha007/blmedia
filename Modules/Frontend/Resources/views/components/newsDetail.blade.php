@@ -30,6 +30,7 @@
                                             </a>
 
                                         </p>
+
                                         <ul class="post-info-details">
                                             <li>
                                                 <p>  {{ Carbon\Carbon::parse($news->publish_date)->format('Y-m-d') }} </p>
@@ -38,9 +39,15 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-8 col-lg-6">
-                                    <div class="adsssss">
-                                        <div class="addthis_inline_share_toolbox_lt3c"></div>
-                                    </div>
+                                    <div class="addthis_inline_share_toolbox"
+                                         data-url="{{route($routePrefix.'news.show',$news->slug)}}"
+                                         data-title="{{$news->title}}!"
+                                    ></div>
+{{--                                    <div class="sharethis-inline-share-buttons"--}}
+                                    {{--                                         data-url="{{route($routePrefix.'news.show',$news->slug)}}"></div>--}}
+                                    {{--                                    <div class="adsssss">--}}
+                                    {{--                                        <div class="addthis_inline_share_toolbox_lt3c"></div>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
                             <div class="row">
@@ -66,7 +73,11 @@
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="adsssss amadam">
-                                        <div class="addthis_inline_share_toolbox_lt3c"></div>
+                                        <div class="addthis_inline_share_toolbox"
+                                             data-url="{{route($routePrefix.'news.show',$news->slug)}}"
+                                             data-title="{{$news->title}}!"
+                                        ></div>
+                                        {{--                                        <div class="addthis_inline_share_toolbox_lt3c"></div>--}}
                                     </div>
                                 </div>
 
@@ -87,7 +98,7 @@
                     <div class="section-row">
                         <div class="commentReview">
                             <div class="block-header">
-                                <h2>अपना काँमेंट लिखें</h2>
+                                <h2>{{trans('messages.write_your_comment')}}</h2>
                             </div>
                             <div class="block-body">
                                 <!--if user is not logged then this block shold be display-->
@@ -114,7 +125,7 @@
                     <div class="section-row">
                         <div class="newsBlock type-4 recommendation">
                             <div class="block-header gn-heading">
-                                <h2><a href="#">अन्य खबरें</a></h2>
+                                <h2><a href="#">{{trans('messages.other_news')}}</a></h2>
                             </div>
                             <div class="block-body">
                                 <div class="row">

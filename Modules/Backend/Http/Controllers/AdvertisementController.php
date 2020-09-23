@@ -37,7 +37,8 @@ class AdvertisementController extends Controller
 
     public function index()
     {
-        $advertisements = $this->repository->getAll();
+        $advertisements = $this->repository->getAll()
+            ->sortByDesc('created_at');
         return new Response($this->viewPath . 'index', ['advertisements' => $advertisements]);
     }
 

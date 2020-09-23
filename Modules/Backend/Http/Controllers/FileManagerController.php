@@ -4,17 +4,17 @@
 namespace Modules\Backend\Http\Controllers;
 
 
+use App\Http\Controllers\Controller;
 use UniSharp\LaravelFilemanager\Controllers\LfmController;
 
-class FileManagerController extends LfmController
+class FileManagerController extends Controller
 {
 
     protected $viewPath = 'backend::file-manager.';
 
     public function index()
     {
-        return view($this->viewPath . 'index')
-            ->withHelper($this->helper);
+        return view($this->viewPath . 'index');
     }
 
 

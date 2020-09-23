@@ -6,5 +6,7 @@ return [
     'editions' => 'Editions',
     'follow_us' => 'Follow Us',
     'perv' => 'Perv',
-    'next' => 'Next'
+    'next' => 'Next',
+    'write_your_comment' => 'Write Your Comment',
+    'other_news' => 'Recommendations'
 ];

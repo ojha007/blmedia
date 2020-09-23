@@ -3,7 +3,6 @@
 namespace Modules\Frontend\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;
@@ -34,9 +33,7 @@ class NewsController extends Controller
     {
         $news = $this->getNews($slug);
         $category_slug = $news->category_name;
-        $ads_above_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'above', 2);
-        $ads_below_top_menu = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'below', 2);
-        $ads_aside_logo = $this->adsRepository->getAdsByForAndSubForAndPlacement('main_page', 'top_menu', 'aside', 1);
+        $advertisements = $this->adsRepository->getAllAdvertisements('detail_page');
         $headerCategories = $this->categoryRepository->getHeaderCategories();
         $firstPositionNews = $this->newsRepository->getDetailNewsByPosition(1, 7);
         $secondPositionNews = $this->newsRepository->getDetailNewsByPosition(2, 7);
@@ -46,9 +43,11 @@ class NewsController extends Controller
         }
         $sameCategoryNews = $this->categoryRepository->getSimilarNewsByCategorySlug($category_slug, 9);
         return view($this->viewPath . '.newsDetail',
-            compact('news', 'headerCategories', 'ads_above_top_menu', 'ads_aside_logo', 'ads_below_top_menu', 'sameCategoryNews',
+            compact('news', 'headerCategories',
+                'sameCategoryNews',
                 'firstPositionNews', 'secondPositionNews', 'thirdPositionNews'
-            ));
+            ))
+            ->with($advertisements);
     }
 
     protected function getNews($id)

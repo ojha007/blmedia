@@ -19,7 +19,7 @@
                             </a>
                             <div class="news-content-am">
                                 <h5 class="news-title-am"><a
-                                            href="{{route($routePrefix.'news.show',$news->news_slug)}}">
+                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         {{$news->title}}
                                     </a>
                                 </h5>
@@ -51,7 +51,10 @@
                     </div>
                 @endif
             @endforeach
-                @include('frontend::components.buttons.view-all-category-button', ['position' => $eleventhPositionNews])
+            @include('frontend::components.buttons.view-all-category-button', ['position' => $eleventhPositionNews])
         </div>
     @endif
 </div>
+@if(count($ads_above_footer))
+    @include('frontend::components.ads.ads-1',['ads'=>$ads_above_footer])
+@endif

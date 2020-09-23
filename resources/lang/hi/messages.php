@@ -6,5 +6,7 @@ return [
     'editions' => 'अन्य संस्करण',
     'follow_us' => 'फलाे करें',
     'perv' => 'पिछला',
-    'next' => 'आगे'
+    'next' => 'आगे',
+    'write_your_comment' => 'अपना काँमेंट लिखें',
+    'other_news'=>'अन्य खबरें'
 ];

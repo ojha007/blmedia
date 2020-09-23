@@ -34,21 +34,30 @@
                             'placeholder'=>'Enter Email',
                             ])}}
             </div>
-            <div class=" form-group  col-md-6 {{$errors->has('image') ?'has-error':''}}">
-                {{Form::label('image','Image:')}}
-                {{Form::file('image',null, ['class'=>'form-control ',])}}
+            <div class="form-group col-md-6" style="padding-right: 0">
+                <label for="fieldID4">Image</label>
+                <div class="input-group">
+                   <span class="input-group-btn btn-flat">
+                     <a id="banner_image" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                       <i class="fa fa-picture-o"></i> Choose
+                     </a>
+                   </span>
+                    <label for="image_label">
+                    </label>
+                    <input type="text" id="image_label" class="form-control" name="image">
+                </div>
+                <img id="holder" style="margin-top:15px;max-height:100px;" alt="">
             </div>
-
             <div class="col-md-12 form-group">
-               <div class="col-md-11">
-                   {{ Form::label('is_active', 'Is Active:')}}
-                   {!! Form::hidden('is_active', 0) !!}
-                   <div class="row">
-                       <input name="is_active" value="1" type="checkbox" class="form-control" data-toggle="toggle"
-                              data-on="Active"
-                              data-off="Inactive">
-                   </div>
-               </div>
+                <div class="col-md-11">
+                    {{ Form::label('is_active', 'Is Active:')}}
+                    {!! Form::hidden('is_active', 0) !!}
+                    <div class="row">
+                        <input name="is_active" value="1" type="checkbox" class="form-control" data-toggle="toggle"
+                               data-on="Active"
+                               data-off="Inactive">
+                    </div>
+                </div>
             </div>
             <div class=" form-group  col-md-12 {{$errors->has('detail') ?'has-error':''}}">
                 {{Form::label('detail','Detail:')}}
@@ -78,8 +87,6 @@
 
 @push('scripts')
     <script>
-        CKEDITOR.replace('description');
+        CKEDITOR.replace('detail', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
     </script>
-
-
 @endpush

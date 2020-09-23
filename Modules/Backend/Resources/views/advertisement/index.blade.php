@@ -24,10 +24,10 @@
                     <table id="dataTable" class="table table-bordered dataTable table-condensed">
                         <thead>
                         <tr>
-                            <th>S.No</th>
-                            <th>Title</th>
+                            <th style="width: 30%">Title</th>
                             <th>For</th>
                             <th>Placement</th>
+                            <th>sub For</th>
                             <th>Description</th>
                             <th>Created date</th>
                             <th>Status</th>
@@ -37,18 +37,15 @@
                         <tbody>
                         @foreach($advertisements as $ads)
                             <tr>
-                                <td>{{$ads->id}}</td>
                                 <td>{{$ads->title}}</td>
-                                <td>{{ucwords($ads->for, '_')}}</td>
-                                <td>{{ucwords($ads->sub_for, '_')}}</td>
+                                <td>{{ucwords(str_replace('_',' ' ,$ads->for))}}</td>
+                                <td>{{ucwords(str_replace('_',' ' ,$ads->placement))}}</td>
+                                <td>{{ucwords(str_replace('_',' ' ,$ads->sub_for))}}</td>
                                 <td>{!! $ads->description !!}</td>
                                 <td>{{\Carbon\Carbon::parse( $ads->created_at)->format('Y-m-d')}}</td>
                                 <td>{!! spanByStatus($ads->is_active) !!}</td>
                                 <td>
-                                    {{--                                    <a href="{{route($routePrefix.'advertisements.show',$ads->id)}}"--}}
-                                    {{--                                       class="btn btn-primary btn-flat">--}}
-                                    {{--                                        <i class="fa fa-search"></i>--}}
-                                    {{--                                    </a>--}}
+
                                     <a href="{{route($routePrefix.'advertisements.edit',$ads->id)}}"
                                        class="btn btn-primary btn-sm btn-flat">
                                         <i class="fa fa-edit"></i>
@@ -65,7 +62,7 @@
                         @endforeach
                         </tbody>
                     </table>
-{{--                    {{$advertisements->links()}}--}}
+                    {{--                    {{$advertisements->links()}}--}}
                 </div>
                 <!-- /.box-body -->
             </div>

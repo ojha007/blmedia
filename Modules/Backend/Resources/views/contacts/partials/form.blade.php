@@ -115,10 +115,20 @@
                             'placeholder'=>'Enter Caption ',
                             ])}}
             </div>
-            <div class="col-md-6 form-group {{$errors->has('image') ?'has-error':''}}">
-                {{Form::label('image','Image:')}}
-                {{Form::file('image',null, ['class'=>'form-control ',])}}
 
+            <div class="form-group col-md-12">
+                <label for="fieldID4">Image</label>
+                <div class="input-group">
+                   <span class="input-group-btn btn-flat">
+                     <a id="banner_image" data-input="thumbnail" data-preview="holder" class="btn btn-flat btn-primary">
+                       <i class="fa fa-picture-o"></i> Choose
+                     </a>
+                   </span>
+                    <label for="image_label">
+                    </label>
+                    <input type="text" id="image_label" class="form-control" name="image">
+                </div>
+                <img id="holder" style="margin-top:15px;max-height:100px;" alt="">
             </div>
 
             <div class="col-md-12 form-group {{$errors->has('description') ?'has-error':''}}">
@@ -134,7 +144,8 @@
 
         </div>
         <div class="box-footer">
-            <a href="{{route($routePrefix.strtolower($type).'.index')}}" type="button" class="btn btn-flat pull-left btn-default">
+            <a href="{{route($routePrefix.strtolower($type).'.index')}}" type="button"
+               class="btn btn-flat pull-left btn-default">
                 <i class="fa fa-arrow-left">
                 </i>
                 Close

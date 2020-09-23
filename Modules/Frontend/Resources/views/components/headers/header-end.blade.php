@@ -1,5 +1,6 @@
 <section class="select-language-section bg-site-color" style="display: none;">
-    <select class="form-control form-control-sm bg-transparent border-0 text-white " style=" transition: max-height 1s;">
+    <select class="form-control form-control-sm bg-transparent border-0 text-white "
+            style=" transition: max-height 1s;">
         <option class="bg-site-color border-0 ">{{trans('messages.editions')}}</option>
         @foreach(config('editions') as $k=> $e)
             @if(in_array(request()->segment(1), config('editions')))
@@ -17,7 +18,8 @@
         <div class="row" style="border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;">
             <div class="col-md-2 col-lg-2 hiderfixed_navbar12">
                 <a class="navbar-brand  hiderfixed_navbar-brand" href="{{route($routePrefix.'index')}}">
-                    <img class="responsive-img" id="logo_image_nav" src="{{asset('frontend/img/logo.png')}}" alt="BL Media">
+                    <img class="responsive-img" id="logo_image_nav" src="{{asset('frontend/img/logo.png')}}"
+                         alt="BL Media">
                 </a>
             </div>
             <div class="col-md-4 col-lg-0 col-xl-4 nav-pills-float">
@@ -30,7 +32,9 @@
                                            placeholder="Search...">
                                     <div class="input-group-append">
                                         <button type="submit" name="search" class="btn btn-trans"><i
-                                                class="fa fa-search" style="font-size: 10px; margin-top: 13px; padding-left: 20px;"></i></button>
+                                                class="fa fa-search"
+                                                style="font-size: 10px; margin-top: 13px; padding-left: 20px;"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +58,8 @@
                             </li>
                             <li class="nav-item  home-site-logo">
                                 <a class="nav-link navbar-brand-img-logo  " href="{{route($routePrefix.'index')}}">
-                                    <img class="responsive-img" id="logo_image_nav" src="{{asset('frontend/img/logo.png')}}" alt="BL Media">
+                                    <img class="responsive-img" id="logo_image_nav"
+                                         src="{{asset('frontend/img/logo.png')}}" alt="BL Media">
                                 </a>
                             </li>
                             @foreach($headerCategories as $category)
@@ -73,24 +78,7 @@
             </div>
 
             <div class="col-md-12 col-lg-2 pl-0">
-
-                <ul class="follow-social-media">
-                    <li>
-                        <button type="button" class="btn btn-link">{{trans('messages.follow_us')}}</button>
-                    </li>
-                    <li>
-                        <a href="{{setting('facebook_url')}}" target="_blank"><i
-                                class="fab fa-facebook-square">
-
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{setting('twitter_url')}}" target="_blank"><i
-                                class="fab fa-twitter-square"></i></a>
-                    </li>
-                </ul>
-
+                <div class="addthis_inline_follow_toolbox"></div>
             </div>
         </div>
     </div>
