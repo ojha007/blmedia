@@ -32,7 +32,9 @@
                                         </p>
                                         <ul class="post-info-details">
                                             <li>
-                                                <p> <i class="fa fa-clock"></i> {{ Carbon\Carbon::parse($news->publish_date)->format('Y-m-d') }} </p>
+                                                <p>
+                                                    <i class="fa fa-clock"></i> {{ Carbon\Carbon::parse($news->publish_date)->format('Y-m-d') }}
+                                                </p>
                                             </li>
                                         </ul>
                                     </div>
@@ -42,11 +44,6 @@
                                          data-url="{{route($routePrefix.'news.show',$news->slug)}}"
                                          data-title="{{$news->title}}!"
                                     ></div>
-                                    {{--                                    <div class="sharethis-inline-share-buttons"--}}
-                                    {{--                                         data-url="{{route($routePrefix.'news.show',$news->slug)}}"></div>--}}
-                                    {{--                                    <div class="adsssss">--}}
-                                    {{--                                        <div class="addthis_inline_share_toolbox_lt3c"></div>--}}
-                                    {{--                                    </div>--}}
                                 </div>
                             </div>
                             <div class="row">
