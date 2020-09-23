@@ -52,7 +52,6 @@
                                 </a></h4>
 
                             <p>{{\Str::limit($news->short_description), 300}}</p>
-
                         </div>
                     </div>
                 @endif
