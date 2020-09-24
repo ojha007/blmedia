@@ -1,19 +1,14 @@
-<div class="newsBlock type-6 position-12 front_body_position_12" >
+<div class="newsBlock type-6 position-12 front_body_position_12">
     @if(count($twelvePositionNews))
-        <div class="block-header gn-heading">
-            <h2>
-                <a href="{{route($routePrefix.'news-category.show',$twelvePositionNews->first()->category_slug)}}">
-                    {{$twelvePositionNews->first()->categories}}
-                </a>
-            </h2>
-        </div>
+        @include('frontend::components.news.category-heading',['allNews'=>$twelvePositionNews])
         <div class="block-body">
             <div class="row">
                 @foreach($twelvePositionNews as $key=>$news)
                     @if($key ==0 )
                         <div class="col eq-highlight">
                             <div class="news-item">
-                                <figure >
+                                @include('frontend::components.news.news-image',['figureClass'=>''])
+                                {{--<figure >
                                     <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                                         <img src="{{is_null($news->image) ? asset('frontend/img/logo.png') :  $news->image}}"
                                              alt="{{$news->image_alt}}"
@@ -21,13 +16,9 @@
                                              class="responsive-img {{$imgClass ?? ''}}">
 
                                     </a>
-                                </figure>
+                                </figure>--}}
                                 <div class="news-content">
-                                    <h5 class="news-title new-title-type001"><a
-                                            href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                            {{$news->title}}
-                                        </a>
-                                    </h5>
+                                    @include('frontend::components.news.news-content')
                                     <p class="short-news"> {!! $news->short_description !!}</p>
                                 </div>
                             </div>
@@ -41,11 +32,7 @@
                                 <div class="news-item">
                                     @include('frontend::components.news.news-image')
                                     <div class="news-content">
-                                        <h5 class="news-title">
-                                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                                {{$news->title}}
-                                            </a>
-                                        </h5>
+                                        @include('frontend::components.news.news-content')
                                     </div>
                                 </div>
                             @endif

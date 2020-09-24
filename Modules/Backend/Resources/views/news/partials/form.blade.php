@@ -152,7 +152,7 @@
             </div>
 
 
-            <div class="form-group col-md-6 {{$errors->has('is_anchor') ?'has-error':''}} align-center">
+            <div class="form-group col-md-3 {{$errors->has('is_anchor') ?'has-error':''}} align-center">
                 {!! Form::label('is_anchor','Is Anchor ?') !!}
                 <div class="form-control">
 
@@ -169,7 +169,7 @@
                 </div>
             </div>
 
-            <div class="form-group col-md-6 {{$errors->has('is_special') ?'has-error':''}} align-center">
+            <div class="form-group col-md-3 {{$errors->has('is_special') ?'has-error':''}} align-center">
                 {!! Form::label('is_special','Is Special ? ') !!}
                 <div class="form-control">
 
@@ -185,7 +185,7 @@
 
                 </div>
             </div>
-            <div class="form-group col-md-6 {{$errors->has('is_mob_notification') ?'has-error':''}} align-center">
+            <div class="form-group col-md-3 {{$errors->has('is_mob_notification') ?'has-error':''}} align-center">
                 {!! Form::label('is_mob_notification','Mobile Notification') !!}
                 <div class="form-control">
                     <label>
@@ -200,7 +200,7 @@
 
                 </div>
             </div>
-            <div class="form-group col-md-6 {{$errors->has('publish_status') ? 'has-error':''}}">
+            <div class="form-group col-md-3 {{$errors->has('publish_status') ? 'has-error':''}}">
                 {!! Form::label('publish_status','Publish Status') !!}
                 {!! Form::select('publish_status',$selectPublishStatuses, 'Yes',
                     ['class'=>'form-control select2','placeholder'=>'Select Publish ']) !!}

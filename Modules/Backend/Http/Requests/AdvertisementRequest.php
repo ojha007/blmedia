@@ -13,8 +13,10 @@ class AdvertisementRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->route()->parameter('advertisement');
+//        dd($id);
         return [
-            'title' => 'required|max:255|unique:advertisements,title',
+            'title' => 'required|max:255|unique:advertisements,title,'.$id,
             'image' => 'required',
             'url' => 'required',
             'placement' => 'nullable',

@@ -14,6 +14,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
     public function getNewsByCategory($category_id, $limit)
     {
+//        dd('gg');
         return DB::table('news')
             ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name')
             ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
@@ -21,7 +22,8 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('news_category_id', '=', $category_id)
-            ->orderBy('news.created_at', 'DESC')
+            ->where('news.publish_status', '=', 'Yes')
+            ->orderByDesc('news.id')
             ->limit($limit);
 
     }
@@ -43,6 +45,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('category_positions.front_body_position', $position)
+            ->orderByDesc('news.id')
             ->limit($limit)
             ->get();
     }
@@ -53,7 +56,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
         return DB::table('news')
             ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
                 'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
-                'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
+                'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt')
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')

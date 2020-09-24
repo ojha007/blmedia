@@ -2,12 +2,14 @@
     <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="big_bx">
             @if(count($newsByCategory))
-                <a href="{{route($routePrefix.'news.show',$newsByCategory->first()->news_slug)}}">
-                    <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
-                         class="arch-img img-fluid">
-                </a>
+                @include('frontend::components.news.news-image')
+                {{--                <a href="{{route($routePrefix.'news.show',$newsByCategory->first()->news_slug)}}">--}}
+                {{--                    <img src="{{asset('frontend/img/orange.jpg')}}" alt=""--}}
+                {{--                         class="arch-img img-fluid">--}}
+                {{--                </a>--}}
                 <div class="ovrLay">
-                    <h2 class="news-title"><a
+                    <h2 class="news-title">
+                        <a
                             href="{{route($routePrefix.'news.show',$newsByCategory->first()->news_slug)}}">
                             {{$newsByCategory->first()->title}}
                         </a>

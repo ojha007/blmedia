@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="en">
 <head>
     <link rel="shortcut icon" type="image/png" href="{{ asset('backend/images/logo.png') }}">
@@ -13,26 +10,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/css/all.css') }}">
-
-    <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css"
-          href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"/>
-{{--    <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">--}}
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    @include('backend::partials.styles')
     @stack('styles')
     <style>
         .skin-yellow .main-header .navbar {
@@ -48,26 +31,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition sidebar-mini skin-yellow @yield('sidebar-type')">
 <div class="wrapper">
     <!-- Main Header -->
@@ -99,22 +62,7 @@ desired effect
     @include('backend::partials.footer')
 </div>
 </body>
-
-<script src="https://adminlte.io/themes/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="https://adminlte.io/themes/AdminLTE/bower_components/fastclick/lib/fastclick.js"></script>
-<script src="https://adminlte.io/themes/AdminLTE/dist/js/adminlte.min.js"></script>
-<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
-        integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
-        crossorigin="anonymous"></script>
-<script src="{{asset('/backend/js/minimal.tree.js')}}" rel="script"></script>
-{{--<script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>--}}
+@include('backend::partials.scripts')
 @stack('scripts')
 <script>
     function fmSetLink($url) {
@@ -133,22 +81,24 @@ desired effect
     });
 
 
-    // $(document).ready(function () {
-    //     $('select.select2').select2({dropdownAutoWidth: true});
-    //     $('.datepicker').datepicker({
-    //         format: 'yyyy-mm-dd',
-    //         todayHighlight: true,
-    //         orientation: "bottom auto",
-    //         "autoclose": true
-    //     });
-    //
+    $(document).ready(function () {
+        $('select.select2').select2({dropdownAutoWidth: true});
+
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            todayHighlight: true,
+            orientation: "bottom auto",
+            "autoclose": true
+        });
+
     $('.dataTable').DataTable();
-    // $('input').iCheck({
-    //     checkboxClass: 'icheckbox_square-blue',
-    //     radioClass: 'iradio_square-blue',
-    //     increaseArea: '20%' /* optional */
-    // });
-    // });
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' /* optional */
+    });
+
+    });
 </script>
 </html>
 
