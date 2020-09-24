@@ -1,12 +1,13 @@
 <div class="news-list-view">
     @foreach($newsByCategory as $news)
         <div class="news-item">
-            <div class="news-image">
-                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                    <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
-                         class="responsive-img arch-img">
-                </a>
-            </div>
+{{--            <div class="news-image">--}}
+{{--                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">--}}
+{{--                    <img src="{{asset('frontend/img/orange.jpg')}}" alt=""--}}
+{{--                         class="responsive-img arch-img">--}}
+{{--                </a>--}}
+{{--            </div>--}}
+            @include('frontend::components.news.news-image')
             <div class="news-content">
                 <h4 class="news-title">
                     <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">

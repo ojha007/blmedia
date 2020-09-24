@@ -15,7 +15,8 @@
                                 <div class="col-sm-6 col-md-4 col-lg-6">
                                     <div class="post-info">
                                             <span>
-                                                 <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
+                                                 <img src="{{$news->image}}" alt="{{$news->image_alt}}"
+                                                      title="{{$news->sub_description}}"
                                                       class="responsive-img">
                                             </span>
                                         <p>
@@ -44,6 +45,11 @@
                                          data-url="{{route($routePrefix.'news.show',$news->slug)}}"
                                          data-title="{{$news->title}}!"
                                     ></div>
+                                    {{--                                    <div class="sharethis-inline-share-buttons"--}}
+                                    {{--                                         data-url="{{route($routePrefix.'news.show',$news->slug)}}"></div>--}}
+                                    {{--                                    <div class="adsssss">--}}
+                                    {{--                                        <div class="addthis_inline_share_toolbox_lt3c"></div>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
                             <div class="row">
@@ -51,11 +57,13 @@
                                 </div>
                             </div>
                         </div>
+                        {{--                       --}}
                         <div class="news-banner">
-                            <figure class="bannerImg">
-                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" width="100%"
-                                     class="responsive-img">
-                            </figure>
+                            @include('frontend::components.news.news-image',['figureClass'=>'bannerImg'])
+                            {{--                            <figure class="bannerImg">--}}
+                            {{--                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" width="100%"--}}
+                            {{--                                     class="responsive-img">--}}
+                            {{--                            </figure>--}}
                         </div>
 
                         <div class="news-story">
