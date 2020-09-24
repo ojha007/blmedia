@@ -16,9 +16,12 @@
                                         <div class="item">
                                             <div class="video-gallery">
                                                 <div class="image-gallery">
-                                                    <a href="https://www.breaknlinks.com/hindi/news/1840">
-                                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
-                                                             class="responsive-img">
+                                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
+                                                        <img src="{{is_null($news->image) ? asset('frontend/img/logo.png') :  $news->image}}"
+                                                             alt="{{$news->image_alt}}"
+                                                             title="{{$news->image_description}}"
+                                                             class="responsive-img {{$imgClass ?? ''}}">
+
                                                     </a>
                                                     <div class="overlay">
                                                         <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">

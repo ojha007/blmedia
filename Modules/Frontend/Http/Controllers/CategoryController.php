@@ -49,6 +49,7 @@ class CategoryController extends Controller
     {
 
         $newsByCategory = $this->getNewsByCategorySlug($slug);
+//        dd($newsByCategory);
         $headerCategories = $this->repository->getDetailPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('category_page');
         $firstPositionNews = $this->newsRepository->getDetailNewsByPosition(1, 6);
@@ -80,7 +81,8 @@ class CategoryController extends Controller
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->where('categories.slug', $slug)
-            ->whereDate('news.created_at', '<=', now()->addMonths(2))
+//            ->where('news.publish_status', '=', 'Yes')
+            ->orderByDesc('news.id')
             ->paginate($perPage);
 
     }

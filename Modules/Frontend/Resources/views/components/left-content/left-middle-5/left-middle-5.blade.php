@@ -8,6 +8,15 @@
                         <div class="col eq-highlight">
                             <div class="news-item">
                                 @include('frontend::components.news.news-image',['figureClass'=>''])
+                                {{--<figure >
+                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
+                                        <img src="{{is_null($news->image) ? asset('frontend/img/logo.png') :  $news->image}}"
+                                             alt="{{$news->image_alt}}"
+                                             title="{{$news->image_description}}"
+                                             class="responsive-img {{$imgClass ?? ''}}">
+
+                                    </a>
+                                </figure>--}}
                                 <div class="news-content">
                                     @include('frontend::components.news.news-content')
                                     <p class="short-news"> {!! $news->short_description !!}</p>

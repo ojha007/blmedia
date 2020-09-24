@@ -37,6 +37,11 @@ class CreateNewsTable extends Migration
             $table->string('image_description')->nullable();
             $table->string('image_alt')->nullable();
             $table->boolean('is_active')->default(1);
+            $table->boolean('is_active')->default(1);
+//            $table->enum('publish_status', News::publishStatus());
+            $table->string('image')->nullable();
+            $table->string('image_description')->nullable();
+            $table->string('image_alt')->nullable();
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();
