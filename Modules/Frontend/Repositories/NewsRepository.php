@@ -70,6 +70,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('category_positions.detail_body_position', $position)
             ->where('news.is_active', true)
+            ->distinct()
             ->limit($limit)
             ->get();
     }

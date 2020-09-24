@@ -88,6 +88,7 @@ class CategoryRepository extends Repository
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->whereIn('categories.slug', $slug)
             ->orderBy('news.created_at', 'DESC')
+            ->where('news.is_active', '=', 1)
             ->limit($limit)
             ->get();
     }

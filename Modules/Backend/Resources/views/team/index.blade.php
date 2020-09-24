@@ -44,7 +44,7 @@
                                     {{$team->title}}
                                 </td>
                                 <td>
-                                    {{$team->detail}}
+                                    {!! $team->detail !!}
                                 </td>
                                 <td>
                                     {{$team->designation}}
