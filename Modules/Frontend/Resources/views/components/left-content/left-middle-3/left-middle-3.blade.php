@@ -12,13 +12,7 @@
                 @foreach($eighthPositionNews as $key=>$news)
                     @if($key == 0)
                         <div class="news-item highlight-news news-am-hl">
-                            <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img" title="">--}}
-                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                                </a>
-                            </figure>
+                            @include('frontend::components.news.news-image')
                             <div class="news-content">
                                 <h5 class="news-title"><a
                                         href="{{route($routePrefix.'news.show',$news->news_slug)}}">
@@ -30,13 +24,7 @@
                         </div>
                     @else
                         <div class="news-item am-news-item">
-                            <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img am-circle-img" title="">--}}
-                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                                </a>
-                            </figure>
+                            @include('frontend::components.news.news-image')
                             <div class="news-content">
                                 <h5 class="news-title"><a
                                         href="{{route($routePrefix.'news.show',$news->news_slug)}}">

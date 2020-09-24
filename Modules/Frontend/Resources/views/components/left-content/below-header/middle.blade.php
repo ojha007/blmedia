@@ -13,15 +13,7 @@
             @foreach($secondPositionNews as $key=>$news)
                 @if($key == 0)
                     <div class="news-item highlight-news">
-                        <figure class="news-image">
-
-                            {{--                        <a href="{{route($routePrefix.'news.show',$news->slug)}}">--}}
-                            {{--                            <img src="{{$news->image}}" alt="{{$news->image_description}}"--}}
-                            {{--                                 title="{{$news->image_title}}" class="img responsive-img">--}}
-{{--                </a>--}}
-                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">
-                        </figure>
-
+                        @include('frontend::components.news.news-image')
                         <div class="news-content">
                             <h4 class="news-title"><a
                                     href="{{route($routePrefix.'news.show',$news->news_slug)}}">
@@ -35,16 +27,7 @@
                     </div>
                 @else
                     <div class="news-item">
-                        <figure class="news-image">
-                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                {{--                            <img src="{{$news->image}}" alt="{{$news->image_description}}"--}}
-                                {{--                                 title="{{$news->image_title}}">--}}
-                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                            </a>
-                            <ul class="hr-list wide stamp">
-                                <li><i class="fa fa-circle blus"></i> blmedia</li>
-                            </ul>
-                        </figure>
+                        @include('frontend::components.news.news-image')
                         <div class="news-content">
                             <h4 class="news-title"><a
                                     href="{{route($routePrefix.'news.show',$news->news_slug)}}">
