@@ -6,9 +6,7 @@
             <div class="container-fluid">
                 <section class="cmn-section">
                     <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 float-left">
-                        <div class="gn-heading">
-                            <h2>{{$newsByCategory->first()->category ?? ''}}</h2>
-                        </div>
+                        @include('frontend::components.news.category-heading',['allNews'=>$newsByCategory])
                         @if(count($childCategoriesNews))
                             @include('frontend::components.withChildCategory')
                         @else

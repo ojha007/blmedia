@@ -1,31 +1,15 @@
-<div class="newsBlock type-6 position-12 front_body_position_12" >
+<div class="newsBlock type-6 position-12 front_body_position_12">
     @if(count($twelvePositionNews))
-        <div class="block-header gn-heading">
-            <h2>
-                <a href="{{route($routePrefix.'news-category.show',$twelvePositionNews->first()->category_slug)}}">
-                    {{$twelvePositionNews->first()->categories}}
-                </a>
-            </h2>
-        </div>
+        @include('frontend::components.news.category-heading',['allNews'=>$twelvePositionNews])
         <div class="block-body">
             <div class="row">
                 @foreach($twelvePositionNews as $key=>$news)
                     @if($key ==0 )
                         <div class="col eq-highlight">
                             <div class="news-item">
-                                <figure class="">
-                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                        {{--<img src="{{$news->image}}" alt="{{$news->image}}"
-                                             class="responsive-img" title="">--}}
-                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                                    </a>
-                                </figure>
+                                @include('frontend::components.news.news-image',['figureClass'=>''])
                                 <div class="news-content">
-                                    <h5 class="news-title new-title-type001"><a
-                                            href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                            {{$news->title}}
-                                        </a>
-                                    </h5>
+                                    @include('frontend::components.news.news-content')
                                     <p class="short-news"> {!! $news->short_description !!}</p>
                                 </div>
                             </div>
@@ -37,19 +21,9 @@
                         @foreach($twelvePositionNews as $key=>$news)
                             @if($key >0)
                                 <div class="news-item">
-                                    <figure class="news-image">
-                                        <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                            {{--<img src="{{$news->image}}" alt="{{$news->image}}"
-                                                 class="responsive-img" title="">--}}
-                                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                                        </a>
-                                    </figure>
+                                    @include('frontend::components.news.news-image')
                                     <div class="news-content">
-                                        <h5 class="news-title">
-                                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                                {{$news->title}}
-                                            </a>
-                                        </h5>
+                                        @include('frontend::components.news.news-content')
                                     </div>
                                 </div>
                             @endif

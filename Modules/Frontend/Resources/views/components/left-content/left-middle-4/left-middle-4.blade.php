@@ -1,49 +1,22 @@
-<div class="newsBlock type-3 position-10 front_body_position_10" >
+<div class="newsBlock type-3 position-10 front_body_position_10">
     @if(count($tenthPositionNews))
-        <div class="block-header gn-heading">
-            <h2>
-                <a href="{{route($routePrefix.'news-category.show',$tenthPositionNews->first()->category_slug)}}">
-                    {{$tenthPositionNews->first()->categories}}
-                </a>
-            </h2>
-        </div>
+        @include('frontend::components.news.category-heading',['allNews'=>$tenthPositionNews])
         <div class="block-body">
             <div class="row d-block">
                 @foreach($tenthPositionNews as $key=>$news)
                     @if($key == 0)
                         <div class="news-item highlight-news am-kala position-10-highlight">
-                            <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img" title="">--}}
-                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                                </a>
-                            </figure>
+                            @include('frontend::components.news.news-image')
                             <div class="news-content">
-                                <h5 class="news-title-am"><a
-                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                        {{$news->title}}
-                                    </a>
-                                </h5>
+                                @include('frontend::components.news.news-content')
                                 <p class="short-news">{!! $news->short_description !!}</p>
                             </div>
                         </div>
                     @else
                         <div class="news-item am-kala-item p-10-item">
-                            <figure class="news-image">
-                                <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                    {{--<img src="{{$news->image}}" alt="{{$news->image}}"
-                                         class="responsive-img" title="">--}}
-                                    <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
-                                </a>
-                            </figure>
+                            @include('frontend::components.news.news-image')
                             <div class="news-content">
-                                <h5 class="news-title-am"><a
-                                        href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                        {{$news->title}}
-                                    </a>
-                                </h5>
-
+                                @include('frontend::components.news.news-content')
                             </div>
                         </div>
                     @endif

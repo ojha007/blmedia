@@ -75,7 +75,7 @@ class CategoryController extends Controller
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
             ->select('news.sub_title', 'news.slug as news_slug', 'news.title', 'news.short_description',
                 'news.description', 'news.publish_date', 'news.image', 'news.image_alt', 'news.image_description',
-                'categories.slug as category_slug', 'categories.name as category'
+                'categories.slug as category_slug', 'categories.name as categories'
             )->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
