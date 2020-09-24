@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"/>
 {{--    <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">--}}
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
 
@@ -119,6 +119,7 @@ desired effect
 <script>
     function fmSetLink($url) {
         document.getElementById('image_label').value = $url;
+        document.getElementById('holder').src = $url;
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -141,12 +142,12 @@ desired effect
     //         "autoclose": true
     //     });
     //
-        $('.dataTable').DataTable();
-        // $('input').iCheck({
-        //     checkboxClass: 'icheckbox_square-blue',
-        //     radioClass: 'iradio_square-blue',
-        //     increaseArea: '20%' /* optional */
-        // });
+    $('.dataTable').DataTable();
+    // $('input').iCheck({
+    //     checkboxClass: 'icheckbox_square-blue',
+    //     radioClass: 'iradio_square-blue',
+    //     increaseArea: '20%' /* optional */
+    // });
     // });
 </script>
 </html>

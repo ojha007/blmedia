@@ -50,9 +50,10 @@
                    </span>
                 <label for="image_label">
                 </label>
-                <input type="text" id="image_label" class="form-control" name="image">
+                {{Form::text('image',null,['id'=>'image_label','class'=>'form-control'])}}
             </div>
-            <img id="holder" style="margin-top:15px;max-height:100px;" alt="">
+            <img id="holder" style="margin-top:15px;max-height:1500px;width: 100px" alt=""
+                 src="{{isset($advertisement) ? $advertisement->image : ''}}">
         </div>
 
         <div class="form-group col-md-12 {{$errors->has('sub_description') ? 'has-error':''}}">

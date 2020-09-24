@@ -32,7 +32,8 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
         return DB::table('news')
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.id as news_slug',
-                'categories.slug as category_slug', 'news.id as image', 'news.id as image_description')
+                'categories.slug as category_slug', 'news.image',
+                'news.image_description', 'news.image_alt')
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')

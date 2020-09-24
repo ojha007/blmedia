@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Modules\Backend\Entities\Category;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Http\Requests\NewsRequest;
 use Modules\Backend\Http\Responses\Response;
 use Modules\Backend\Repositories\NewsRepository;
+use Modules\Frontend\Repositories\CategoryRepository;
 
 class NewsController extends Controller
 {
@@ -37,6 +39,11 @@ class NewsController extends Controller
     {
         $is_special = \request()->get('is_special');
         $is_anchor = \request()->get('is_anchor');
+        $category_id = \request()->get('category');
+        $q = \request()->get('q');
+        $selectCategories = (new CategoryRepository(new Category()))->getAll()
+            ->where('is_active', true)
+            ->pluck('name', 'id');
         $news = News::with(['categories', 'reporter', 'guest'])
             ->orderBy('news.id', 'DESC')
             ->when($is_special, function ($a) use ($is_special) {
@@ -44,9 +51,17 @@ class NewsController extends Controller
             })
             ->when($is_anchor, function ($a) use ($is_anchor) {
                 $a->where('is_anchor', $is_anchor);
+            })->when($category_id, function ($a) use ($category_id) {
+                $a->whereHas('categories', function ($b) use ($category_id) {
+                    $b->where('categories.id', $category_id);
+                });
+            })->when($q, function ($a) use ($q) {
+                $a->where('title', 'like', '%' . $q . '%')
+                    ->orWhere('sub_title', 'like', '%' . $q . '%')
+                    ->orWhere('short_description', 'like', '%' . $q . '%');
             })
             ->paginate(20);
-        return new Response($this->viewPath . 'index', ['allNews' => $news]);
+        return new Response($this->viewPath . 'index', ['allNews' => $news, 'selectCategories' => $selectCategories]);
     }
 
     public function create()

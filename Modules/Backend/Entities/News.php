@@ -17,9 +17,13 @@ class News extends Model
     const DRAFT = 'Draft';
     protected $metaTagsTable = 'news_meta_tags';
     protected $fillable = [
-        'title', 'sub_title', 'guest_id', 'reporter_id', 'slug', 'is_special', 'is_anchor',
-        'tag_line', 'description', 'short_description', 'view_count',
-        'external_url', 'publish_date', 'expiry_date', 'publish_status'
+        'title', 'sub_title', 'guest_id', 'reporter_id', 'slug',
+        'is_special',
+        'is_anchor',
+        'tag_line', 'description', 'short_description',
+        'view_count',
+        'external_url', 'publish_date', 'expiry_date', 'publish_status',
+        'image', 'image_description',
     ];
     protected $with = ['categories'];
 
@@ -51,7 +55,6 @@ class News extends Model
 
     public function getCategoryNameAttribute()
     {
-//        dd($this->categories()->pluck('slug'));
         return $this->categories()->pluck('slug')->toArray();
     }
 

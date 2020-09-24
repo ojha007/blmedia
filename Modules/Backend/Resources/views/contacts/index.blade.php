@@ -22,11 +22,6 @@
                 </a>
             </div>
             <div class="box">
-                {{--                @include('common::backend.components.dataTableFilter.FilterByStatus',[--}}
-                {{--                  'selectFiscalYears'=>$selectFiscalYears,--}}
-                {{--                  'fiscal_year_id'=>$fiscal_year_id,--}}
-                {{--                   'status'=>$billStatus--}}
-                {{--                       ])--}}
                 <div class="box-body table-responsive">
                     <table id="dataTable" class="table table-bordered  dataTable table-condensed">
                         <thead>
@@ -43,7 +38,10 @@
                             <tr>
                                 <td>{{$contact->id}}</td>
                                 <td>{{$contact->name}}</td>
-                                <td>{{$contact->image}}</td>
+                                <td>
+                                    <img width="150px;" height="100px;" src="{{$contact->image}}"
+                                         alt="{{$contact->slug}}">
+                                </td>
                                 <td>{!! spanByStatus($contact->is_active) !!}</td>
                                 <td>
                                     <a href="{{route($routePrefix.strtolower($type).'.edit',$contact->id)}}"
@@ -63,7 +61,7 @@
                         @endforeach
                         </tbody>
                     </table>
-{{--                    {{$contacts->links()}}--}}
+                    {{--                    {{$contacts->links()}}--}}
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -72,4 +70,9 @@
     </div>
 @endsection
 @push('scripts')
+    <script>
+        $('#dataTable').dataTable({
+            order: []
+        })
+    </script>
 @endpush
