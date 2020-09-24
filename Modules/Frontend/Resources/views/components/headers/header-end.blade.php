@@ -17,7 +17,7 @@
         @endforeach
     </select>
 </section>
-<section class="amnavnd header-end headerfixed ">
+<section class="amnavnd header-end ">
     <div class="container-fluid">
         <div class="row" style="border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;">
             <div class="col-md-2 col-lg-2 hiderfixed_navbar12">

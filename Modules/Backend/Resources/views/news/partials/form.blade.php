@@ -151,7 +151,6 @@
 
             </div>
 
-
             <div class="form-group col-md-6 {{$errors->has('is_anchor') ?'has-error':''}} align-center">
                 {!! Form::label('is_anchor','Is Anchor ?') !!}
                 <div class="form-control">
@@ -249,14 +248,13 @@
 </style>
 
 @push('scripts')
-
     <script>
-
-        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
-
         $("#tags").select2({
             tags: true
         });
+    </script>
+    <script>
+        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
     </script>
 
 @endpush
