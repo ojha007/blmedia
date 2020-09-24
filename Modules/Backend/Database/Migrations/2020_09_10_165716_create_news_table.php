@@ -36,6 +36,7 @@ class CreateNewsTable extends Migration
             $table->date('publish_date');
             $table->string('image')->nullable();
             $table->string('image_description')->nullable();
+            $table->string('image_alt')->nullable();
             $table->enum('publish_status', News::publishStatus());
             $table->auditableWithDeletes();
             $table->timestamps();
