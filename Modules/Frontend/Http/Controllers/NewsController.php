@@ -76,6 +76,7 @@ class NewsController extends Controller
             ->where($db . '.slug', '=', $author_slug)
             ->where('news.is_active', '=', 1)
             ->distinct()
+            ->orderBy('news_id')
             ->paginate(15);
         $advertisements = $this->adsRepository->getAllAdvertisements('category_page');
         $headerCategories = $this->categoryRepository->getDetailPageHeaderCategoriesByPosition();

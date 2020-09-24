@@ -81,7 +81,6 @@ class CategoryController extends Controller
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->where('categories.slug', $slug)
             ->where('news.is_active', '=', 1)
-            ->distinct('news.id')
             ->orderByDesc('news.id')
             ->paginate($perPage);
 
