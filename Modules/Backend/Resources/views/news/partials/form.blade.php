@@ -117,13 +117,6 @@
                 <label for="external_url"> External URL </label>
                 {{Form::text('external_url',null,['class'=>'form-control','placeholder'=>'Enter external link if any','autocomplete'=>'any'])}}
             </div>
-            {{--            <div class="input-group">--}}
-            {{--                <input type="text" id="image_label" class="form-control" name="image"--}}
-            {{--                       aria-label="Image" aria-describedby="button-image">--}}
-            {{--                <div class="input-group-append">--}}
-            {{--                    <button class="btn btn-outline-secondary" type="button" id="button-image">Select</button>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
             <div class="form-group col-md-12" style="padding-right: 0">
                 <label for="fieldID4">Banner Picture</label>
                 <div class="input-group">
@@ -134,9 +127,10 @@
                    </span>
                     <label for="image_label">
                     </label>
-                    <input type="text" id="image_label" class="form-control" name="image">
+                    {{Form::text('image',null,['id'=>'image_label','class'=>'form-control'])}}
                 </div>
-                <img id="holder" style="margin-top:15px;max-height:100px;" alt="">
+                <img id="holder" style="margin-top:15px;height:150px;width: 200px" alt=""
+                     src="{{isset($news) ? $news->image : ''}}">
             </div>
 
 

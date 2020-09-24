@@ -21,9 +21,10 @@ class CreateNewsCategoryTable extends Migration
             $table->foreign('parent_id')
                 ->references('id')
                 ->on('categories');
-//            $table->enum('code', ['HM', 'LS', 'OT']);
             $table->boolean('is_active')->default(1);
             $table->boolean('in_mobile')->default(1);
+            $table->string('image')->nullable();
+            $table->string('image_description')->nullable();
             $table->auditableWithDeletes();
             $table->timestamps();
             $table->softDeletes();

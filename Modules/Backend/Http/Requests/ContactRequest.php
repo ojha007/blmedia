@@ -25,6 +25,7 @@ class  ContactRequest extends FormRequest
             'phone_number' => 'nullable',
             'email' => 'nullable|email',
             'caption' => 'nullable',
+            'image' => 'nullable',
             'description' => 'nullable|max:255',
         ];
     }

@@ -36,6 +36,7 @@
                                        '1'=>'True',
                                       '0'=>'False',
                                      ],
+                                     'category'=>$selectCategories
                                  ]])
                     </div>
 
@@ -61,8 +62,21 @@
                 </a>
             </div>
             <div class="box">
+                <div class="box-header">
+                    <div class="col-md-12">
+                        <div class="col-md-3 pull-right pb-2">
+                            {!! Form::open(['route'=> $routePrefix.'news.index','method'=>'GET'] ) !!}
+                            <input class="form-control" type="text"
+                                   name="q"
+                                   value="{{request()->get('q')}}"
+                                   placeholder="Search topics or keywords">
+                            {{Form::close()}}
+                        </div>
+                    </div>
+                </div>
 
                 <div class="box-body table-responsive">
+
                     <table id="" class="table table-bordered table-condensed">
                         <thead>
                         <tr>

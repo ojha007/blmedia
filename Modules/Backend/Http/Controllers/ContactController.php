@@ -39,7 +39,8 @@ class ContactController extends Controller
     {
 
         $viewPath = $this->viewPath . '.index';
-        $contacts = $this->repository->getAll();
+        $contacts = $this->repository->getAll()
+        ->sortByDesc('id');
         return new Response($viewPath, [
             'contacts' => $contacts,
             'type' => $this->model->getType()
@@ -74,7 +75,6 @@ class ContactController extends Controller
 
         try {
             DB::beginTransaction();
-            $attributes['image'] = $this->storeImage($request);
             $this->repository->create($attributes);
             DB::commit();
             $baseRoute = getBaseRouteByUrl($request);
@@ -91,22 +91,13 @@ class ContactController extends Controller
 
     }
 
-    protected function storeImage($request)
-    {
-        if ($request->has('image')) {
-            $folder = $request->route()->getAction('edition') . '/' . Str::lower($this->type);
-            return $request->file('image')->store($folder);
-        }
-        return null;
-    }
-
     public function update(ContactRequest $request, $id)
     {
 
         $attributes = $request->validated();
         try {
             DB::beginTransaction();
-            $attributes['image'] = $this->storeImage($request);
+//            $attributes['image'] = $this->storeImage($request);
             $this->repository->update($id, $attributes);
             DB::commit();
             $baseRoute = getBaseRouteByUrl($request);
@@ -120,6 +111,15 @@ class ContactController extends Controller
                 ->with('failed', 'Failed to update ' . $this->model->getType());
         }
 
+    }
+
+    protected function storeImage($request)
+    {
+        if ($request->has('image')) {
+            $folder = $request->route()->getAction('edition') . '/' . Str::lower($this->type);
+            return $request->file('image')->store($folder);
+        }
+        return null;
     }
 
     public function destroy(Request $request, $id)
