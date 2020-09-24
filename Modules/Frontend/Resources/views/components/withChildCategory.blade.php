@@ -2,11 +2,7 @@
     <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="big_bx">
             @if(count($newsByCategory))
-                @include('frontend::components.news.news-image')
-                {{--                <a href="{{route($routePrefix.'news.show',$newsByCategory->first()->news_slug)}}">--}}
-                {{--                    <img src="{{asset('frontend/img/orange.jpg')}}" alt=""--}}
-                {{--                         class="arch-img img-fluid">--}}
-                {{--                </a>--}}
+                @include('frontend::components.news.news-image',['news'=>$newsByCategory->first()])
                 <div class="ovrLay">
                     <h2 class="news-title">
                         <a
@@ -14,14 +10,12 @@
                             {{$newsByCategory->first()->title}}
                         </a>
                     </h2>
-
                 </div>
                 <p>
                     {!! $newsByCategory->first()->short_description !!}
                 </p>
             @endif
         </div>
-
     </div>
     <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="row">
@@ -29,13 +23,9 @@
                 @if($key > 0)
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="small_bx">
-                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
-                                     class="arch-img img-fluid">
-                            </a>
-                            <h2 class="news-title"><a
-                                    href="{{route($routePrefix.'news.show',$news->news_slug)}}">{{$news->title}}</a>
-                            </h2>
+                            @include('frontend::components.news.news-image',['figureClass'=>''])
+                            @include('frontend::components.news.news-content')
+                            @include('frontend::components.news.news-author')
                         </div>
                     </div>
                 @endif
