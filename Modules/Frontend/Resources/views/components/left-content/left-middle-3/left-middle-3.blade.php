@@ -17,7 +17,7 @@
                         <div class="news-item am-news-item">
                             @include('frontend::components.news.news-image')
                             <div class="news-content">
-                                @include('frontend::components.news.news-content')
+                                @include('frontend::components.news.news-content',['limit'=>40])
                                 @include('frontend::components.news.news-author')
                             </div>
                         </div>

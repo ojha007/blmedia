@@ -1,4 +1,4 @@
-<div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 p-0 sm-mb-3 float-left">
+
     <section class="below-header-section">
         @include('frontend::components.left-content.below-header.below-header')
     </section>
@@ -52,4 +52,4 @@
             </div>
         </div>
     </section>
-</div>
+

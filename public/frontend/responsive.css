@@ -159,8 +159,10 @@
     }
 
     .page-body-homepage {
-        /*display: none;*/
         display: inline-block;
+    }
+    .page-body .container-fluid .row .left-content, .page-body .container-fluid .row .right-content{
+        padding: 0 15px!important;
     }
 
     .headerfixed .hiderfixed_navbar-brand {
