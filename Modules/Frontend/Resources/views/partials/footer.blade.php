@@ -1,6 +1,6 @@
 <section class="ads-section pb-3">
     <div class="container-fluid text-center">
-        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_top_menu])
+        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_footer])
     </div>
 </section>
 <!--start page footer-->
@@ -25,7 +25,4 @@
 
     </div>
 </footer>
-@isset($ads_below_footer)
-    @include('frontend::components.ads.ads-1',['ads'=>$ads_below_footer])
-@endisset
 <!--ended page footer-->

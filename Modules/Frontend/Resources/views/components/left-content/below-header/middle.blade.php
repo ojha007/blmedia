@@ -1,5 +1,5 @@
-<div class="newsBlock front_body_position_2 type-2 " id="BL_link ">
-    @if(count($secondPositionNews))
+@if(count($secondPositionNews))
+    <div class="newsBlock front_body_position_2 type-2 " id="BL_link ">
         @include('frontend::components.news.category-heading',['allNews'=>$secondPositionNews])
         <div class="block-body">
             @foreach($secondPositionNews as $key=>$news)
@@ -25,5 +25,5 @@
             @endforeach
             @include('frontend::components.buttons.view-all-category-button', ['position' => $secondPositionNews])
         </div>
-    @endif
 </div>
+@endif

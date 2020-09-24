@@ -1,6 +1,10 @@
 <h5 class="news-title {{$class ?? ''}}">
     <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-        {{$news->title}}
+        @isset($limit)
+            {{\Illuminate\Support\Str::limit($news->title, $limit)}}
+        @else
+            {!! $news->title !!}
+        @endisset
     </a>
 </h5>
 

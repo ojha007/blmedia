@@ -1,16 +1,18 @@
 @extends('frontend::layouts.master')
 @section('content')
     <section class="page-body page-body-homepage " style="overflow-x: hidden;">
-        <div class="container-fluid">
-            <!--top section news-->
-            <section class="cmn-section">
-                @include('frontend::components.left-content.left-content')
-                @include('frontend::components.right-content.right-content')
-            </section>
-            <!--ended top section news-->
-            <div class="clearfix"></div>
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 p-0 sm-mb-3 float-left left-content" >
+                    @include('frontend::components.left-content.left-content')
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 float-right right-content" >
+                    @include('frontend::components.right-content.right-content')
+                </div>
+            </div>
         </div>
     </section>
+
 @endsection
 @push('scripts')
     <script>
