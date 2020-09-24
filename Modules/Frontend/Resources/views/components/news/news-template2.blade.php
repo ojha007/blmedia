@@ -1,21 +1,12 @@
 <div class="newsBlock type-8 front_body_position_5" id="bl-break-section-01 ">
     @if(count($allNews))
-        <div class="block-header gn-heading ">
-            <h2>
-                <a href="{{route($routePrefix.'news-category.show',$allNews->first()->category_slug)}}">
-                    {{$allNews->first()->categories}}
-                </a></h2>
-        </div>
+        @include('frontend::components.news.category-heading')
         <div class="block-body">
             @foreach($allNews as $key=>$news)
                 @if($key==0)
                     <div class="news-item highlight-news">
                         <div class="ggl_adBlk _300x600 vr-block ">
-                            <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                {{--<img src="{{$news->image}}" alt="{{$news->image}}"
-                                     class="responsive-img">--}}
-                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img">
-                            </a>
+                            @include('frontend::components.news.news-image',['figureClass'=>''])
                             <div class="news-content-am">
                                 @include('frontend::components.news.news-content',['class'=>'news-title-am'])
                                 @include('frontend::components.news.news-author')
