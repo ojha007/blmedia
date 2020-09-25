@@ -104,5 +104,15 @@ class FrontendController extends Controller
         return config('editions');
     }
 
+    public function videos(){
+        $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
+        $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
+        $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 9);
+        return view('frontend::components.videos.videos', compact('headerCategories','fourthPositionNews')) ->with($advertisements);
+    }
+
+
+
+
 
 }
