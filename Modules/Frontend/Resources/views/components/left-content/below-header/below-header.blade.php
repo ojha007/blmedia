@@ -2,10 +2,10 @@
 
     @php
         $subFor =[];
-        if(isset($firstPositionNews) ){
+        if(isset($firstPositionNews) && count($firstPositionNews) ){
             array_push($subFor,$firstPositionNews->first()->category_slug);
         }
-        if(isset($secondPositionNews) ){
+        if(isset($secondPositionNews) && count($secondPositionNews) ){
             array_push($subFor,$secondPositionNews->first()->category_slug);
         }
     @endphp
