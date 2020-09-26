@@ -3,25 +3,17 @@
         @foreach($childCategoriesNews as $childNews)
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="contentH">
-                    @include('frontend::components.news.category-heading',['allNews'=>$newsByCategory])
+                    @include('frontend::components.news.category-heading',['allNews'=>$childNews])
                     @foreach($childNews->take(5) as $key=>$news)
                         @if($key== 0)
                             <div class="bigOverLay">
-                                {{--                                <figure class="news-image">--}}
-                                {{--                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">--}}
-                                {{--                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt=""--}}
-                                {{--                                             class="responsive-img">--}}
-                                {{--                                    </a>--}}
-                                {{--                                </figure>--}}
                                 @include('frontend::components.news.news-image',['figureClass'=>''])
                                 <div class="ovLay">
-                                    @include('frontend::components.news.news-content')
-                                    @include('frontend::components.news.news-author')
-                                    {{--                                    <h2 class="news-title">--}}
-                                    {{--                                        <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">--}}
-                                    {{--                                            {!! $news->title !!}--}}
-                                    {{--                                        </a>--}}
-                                    {{--                                    </h2>--}}
+                                    <h2 class="news-title">
+                                        <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
+                                            {!! $news->title !!}
+                                        </a>
+                                    </h2>
                                 </div>
                             </div>
                         @else

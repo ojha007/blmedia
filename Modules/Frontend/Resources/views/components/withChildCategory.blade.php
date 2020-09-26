@@ -27,8 +27,10 @@
             @endforeach
         </div>
     </div>
-    <div class="col col-12">
-        @include('frontend::components.buttons.view-all-category-button', ['position' => $newsByCategory])
-    </div>
+    @if(count($newsByCategory))
+        <div class="col col-12">
+            @include('frontend::components.buttons.view-all-category-button', ['position' => $newsByCategory])
+        </div>
+    @endif
 </div>
 @include('frontend::components.subChild')
