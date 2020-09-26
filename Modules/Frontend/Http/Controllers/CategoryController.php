@@ -82,6 +82,7 @@ class CategoryController extends Controller
             ->where('categories.slug', $slug)
             ->where('news.is_active', '=', 1)
             ->orderByDesc('news.id')
+            ->distinct()
             ->paginate($perPage);
 
     }
@@ -94,7 +95,7 @@ class CategoryController extends Controller
             ->where('c1.slug', $slug)
             ->where('c2.is_active', true);
 
-     return DB::table('news')
+        return DB::table('news')
             ->join('news_categories', 'news.id', '=', 'news_categories.news_id')
             ->joinSub($category, 'cat', function ($query) {
                 $query->on('news_categories.category_id', '=', 'cat.c2_id')
@@ -111,6 +112,7 @@ class CategoryController extends Controller
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
+            ->distinct()
             ->get()
             ->groupBy('c2_id')
             ->map(function ($news) use ($limit) {
