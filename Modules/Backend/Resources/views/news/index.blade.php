@@ -131,7 +131,7 @@
                                     {{$news->publish_date}}
                                 </td>
                                 <td>
-                                    {!! spanByStatus($news->publish_status,'') !!}
+                                    {!! spanByStatus($news->is_active,'') !!}
                                 </td>
                                 <td>
                                     <a href="{{route($routePrefix.'news.edit',$news->id)}}"

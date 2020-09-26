@@ -14,15 +14,17 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
     public function getNewsByCategory($category_id, $limit)
     {
-//        dd('gg');
         return DB::table('news')
-            ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name')
+            ->select('news.title', 'news.description')
             ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
             ->join('news_categories', 'news_categories.id', 'news_categories_pivot.news_category_id')
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->where('news_category_id', '=', $category_id)
-            ->where('news.publish_status', '=', 'Yes')
+            ->where('news.is_active', true)
             ->orderByDesc('news.id')
             ->limit($limit);
 
@@ -45,7 +47,8 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('category_positions.front_body_position', $position)
-            ->orderByDesc('news.id')
+            ->orderBy('news.id', 'DESC')
+            ->where('news.is_active', true)
             ->limit($limit)
             ->get();
     }
@@ -66,6 +69,8 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('category_positions.detail_body_position', $position)
+            ->where('news.is_active', true)
+            ->distinct()
             ->limit($limit)
             ->get();
     }

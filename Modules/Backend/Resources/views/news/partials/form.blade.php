@@ -249,14 +249,13 @@
 </style>
 
 @push('scripts')
-
     <script>
-
-        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
-
         $("#tags").select2({
             tags: true
         });
+    </script>
+    <script>
+        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
     </script>
 
 @endpush
