@@ -4,6 +4,7 @@ namespace Modules\Frontend\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;

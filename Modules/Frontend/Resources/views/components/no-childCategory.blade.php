@@ -1,7 +1,9 @@
 <div class="news-list-view">
     @foreach($newsByCategory as $news)
         <div class="news-item">
-            @include('frontend::components.news.news-image')
+            <div class="news-second-card">
+                @include('frontend::components.news.news-image')
+            </div>
             <div class="news-content">
                 @include('frontend::components.news.news-content')
                 <ul class="hr-list wide stamp">
