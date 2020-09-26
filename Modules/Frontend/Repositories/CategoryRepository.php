@@ -77,6 +77,7 @@ class CategoryRepository extends Repository
 
         $slug = is_array($slug) ? $slug : [$slug];
         return DB::table('news')
+            ->selectRaw(DB::raw('distinct(news.id)'))
             ->select('news.title', 'news.description',
                 'news.slug as news_slug', 'news.publish_date', 'news.image', 'news.image_description', 'news.image_alt')
             ->join('news_categories', 'news_categories.news_id', 'news.id')

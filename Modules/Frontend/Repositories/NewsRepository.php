@@ -14,7 +14,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
     public function getNewsByCategory($category_id, $limit)
     {
-//        dd('gg');
+
         return DB::table('news')
             ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name')
             ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
@@ -32,6 +32,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
+            ->selectRaw(DB::raw('distinct(news.id)'))
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
@@ -55,6 +56,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
+            ->selectRaw(DB::raw('distinct(news.id)'))
             ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
                 'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
                 'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt')
@@ -67,6 +69,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('category_positions.detail_body_position', $position)
+            ->where('news.is_active', true)
             ->limit($limit)
             ->get();
     }
@@ -77,10 +80,12 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
         return DB::table('categories')
             ->select('categories.slug as category_slug')
             ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
-//            ->whereNull('category_positions.detail_body_position')
-//            ->whereNull('category_positions.front_body_position')
+            ->whereNull('category_positions.detail_body_position')
+            ->whereNull('category_positions.front_body_position')
+            ->where('is_active', true)
             ->limit(10)
-            ->get()->pluck('slug');
+            ->get()
+            ->pluck('slug');
     }
 
 
