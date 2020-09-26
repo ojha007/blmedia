@@ -6,7 +6,8 @@
         @include('frontend::components.ads.ads-1')
     </section>
     <section class="left-middle-1-section">
-        @include('frontend::components.left-content.left-middle-1.left-middle-1')
+        @include('frontend::components.left-content.left-middle-3.left-middle-3')
+{{--        @include('frontend::components.left-content.left-middle-1.left-middle-1')--}}
     </section>
     <section class="left-middle-2-section">
         <div class="section-row">

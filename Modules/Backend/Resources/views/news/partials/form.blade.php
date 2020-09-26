@@ -153,57 +153,19 @@
 
 
             <div class="form-group col-md-3 {{$errors->has('is_anchor') ?'has-error':''}} align-center">
-                {!! Form::label('is_anchor','Is Anchor ?') !!}
-                <div class="form-control">
+                @include('backend::partials.toggle-button',['value'=>'is_anchor','checked'=>$news->is_anchor ?? 0])
 
-                    <label>
-                        <input id="is_anchor" name="is_anchor" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_anchor" name="is_anchor" type="radio"
-                               value="0">
-                        No
-                    </label>
-
-                </div>
             </div>
 
             <div class="form-group col-md-3 {{$errors->has('is_special') ?'has-error':''}} align-center">
-                {!! Form::label('is_special','Is Special ? ') !!}
-                <div class="form-control">
-
-                    <label>
-                        <input id="is_special" name="is_special" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_special" name="is_special" type="radio"
-                               value="0">
-                        No
-                    </label>
-
-                </div>
+                @include('backend::partials.toggle-button',['value'=>'is_special','checked'=> $news->is_special ?? 0])
             </div>
             <div class="form-group col-md-3 {{$errors->has('is_mob_notification') ?'has-error':''}} align-center">
-                {!! Form::label('is_mob_notification','Mobile Notification') !!}
-                <div class="form-control">
-                    <label>
-                        <input id="is_mob_notification" name="is_mob_notification" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_mob_notification" name="is_mob_notification" type="radio"
-                               value="0">
-                        No
-                    </label>
+                @include('backend::partials.toggle-button',['value'=>'is_mob_notification','checked'=>$news->is_mob_notification ?? 0] )
 
-                </div>
             </div>
             <div class="form-group col-md-3 {{$errors->has('publish_status') ? 'has-error':''}}">
-                {!! Form::label('publish_status','Publish Status') !!}
-                {!! Form::select('publish_status',$selectPublishStatuses, 'Yes',
-                    ['class'=>'form-control select2','placeholder'=>'Select Publish ']) !!}
+                @include('backend::partials.toggle-button',['value'=>'is_active','checked'=>$news->is_active ?? 1])
             </div>
         </div>
         <div class="box-footer">

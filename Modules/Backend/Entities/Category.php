@@ -21,7 +21,7 @@ class Category extends Model
     protected $metaTagsClass = CategoryMetaTags::class;
     protected $categoryPositionsTable = 'category_positions';
     protected $categoryPositionsClass = CategoryPositions::class;
-    protected $fillable = ['name', 'slug', 'is_active', 'in_mobile', 'parent_id'];
+    protected $fillable = ['name', 'slug', 'is_active', 'in_mobile', 'parent_id', 'is_video', 'new_design'];
     protected $with = ['metaTags', 'position'];
 
     public static function selectCategoryCode()
