@@ -4,7 +4,6 @@ namespace Modules\Frontend\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;
@@ -51,7 +50,7 @@ class FrontendController extends Controller
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
         $secondPositionNews = $this->newsRepository->getNewsByExtraColumn(2, 7, 'is_anchor');
-        $thirdPositionNews = $this->newsRepository->getNewsByExtraColumn(3, 8, 'is_special');
+        $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
         $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 6);
         $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
         $sixthPositionNews = $this->newsRepository->getNewsByPosition(6, 10);
