@@ -100,6 +100,9 @@ class CategoryController extends Controller
                 $query->on('news_categories.category_id', '=', 'cat.c2_id')
                     ->groupBy('cat.cat2_id');
             })
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
             ->select('news.sub_title', 'news.slug as news_slug', 'news.title',
