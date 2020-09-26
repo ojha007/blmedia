@@ -18,7 +18,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
         try {
             return DB::table('news')
-                ->selectRaw(DB::raw('SELECT distinct(news.id)'))
+//                ->selectRaw(DB::raw('SELECT distinct(news.id)'))
                 ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.id', 'categories.is_video')
                 ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
                 ->join('news_categories', 'news_categories.id', 'news_categories_pivot.news_category_id')
@@ -58,7 +58,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->orderByDesc('news.id')
             ->where('news.is_active', true)
             ->whereNull('news.deleted_at')
-            ->distinct()
+//            ->distinct()
             ->limit($limit)
             ->get();
     }
@@ -84,7 +84,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->orderByDesc('news.id')
             ->where('news.is_active', true)
             ->whereNull('news.deleted_at')
-            ->distinct()
+//            ->distinct()
             ->limit($limit)
             ->get();
     }
@@ -108,7 +108,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
         $category = $extra_column == 'is_anchor' ? 'anchor' : 'blspecial-37-25-38';
         return DB::table('news')
-            ->selectRaw('SELECT distinct(news.id)')
+//            ->selectRaw('SELECT distinct(news.id)')
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.slug as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
