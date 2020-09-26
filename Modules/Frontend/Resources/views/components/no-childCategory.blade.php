@@ -9,7 +9,7 @@
                 <ul class="hr-list wide stamp">
                     <li>
                         <i class="fa fa-clock-o"></i>
-                        {{\Carbon\Carbon::parse($news->publish_date)->format('Y-mm-d')}}
+                        {{\Carbon\Carbon::parse($news->publish_date)->format('Y-m-d')}}
                     </li>
                     <li>
                         <a href="{{route($routePrefix.'news.by.author',[$news->author_type,$news->author_slug])}}">
