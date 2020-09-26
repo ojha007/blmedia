@@ -17,7 +17,7 @@ class BackendController extends Controller
     {
         $attributes = [
             'total_publish_news' => $this->newsCount(),
-            'active_guests'=>$this->guestsCount()
+            'active_guests' => $this->guestsCount()
         ];
 
         return view('backend::index', compact('attributes'));
@@ -25,7 +25,7 @@ class BackendController extends Controller
 
     protected function newsCount()
     {
-        return News::where('publish_status', 'yes')->count();
+        return News::where('is_active', true)->count();
     }
 
     protected function guestsCount()

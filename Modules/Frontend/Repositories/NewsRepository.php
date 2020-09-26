@@ -22,7 +22,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('news_category_id', '=', $category_id)
-            ->where('news.publish_status', '=', 'Yes')
+            ->where('news.is_active', true)
             ->orderByDesc('news.id')
             ->limit($limit);
 
@@ -33,7 +33,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
         return DB::table('news')
             ->select('news.title', 'news.sub_title', 'news.short_description',
-                'categories.name as categories', 'news.id as news_slug','news.publish_date',
+                'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
                 'news.image_description', 'news.image_alt')
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
@@ -46,6 +46,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('category_positions.front_body_position', $position)
             ->orderByDesc('news.id')
+            ->where('news.is_active', true)
             ->limit($limit)
             ->get();
     }

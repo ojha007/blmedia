@@ -22,7 +22,7 @@ class News extends Model
         'is_anchor',
         'tag_line', 'description', 'short_description',
         'view_count',
-        'external_url', 'publish_date', 'expiry_date', 'publish_status',
+        'external_url', 'publish_date', 'expiry_date',
         'image', 'image_description',
     ];
     protected $with = ['categories'];

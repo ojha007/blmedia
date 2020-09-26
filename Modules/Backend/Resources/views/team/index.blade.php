@@ -24,7 +24,7 @@
                     <table id="dataTable" class="table table-bordered table-condensed dataTable">
                         <thead>
                         <tr>
-                            <th>S.No</th>
+{{--                            <th>S.No</th>--}}
                             <th>Title</th>
                             <th>Details</th>
                             <th>Designation</th>
@@ -37,14 +37,12 @@
                         <tbody>
                         @foreach($teams as $team)
                             <tr>
+
                                 <td>
-                                    {{$team->id}}
+                                    {!! $team->title !!}
                                 </td>
                                 <td>
-                                    {{$team->title}}
-                                </td>
-                                <td>
-                                    {{$team->detail}}
+                                    {!! $team->detail !!}
                                 </td>
                                 <td>
                                     {{$team->designation}}
