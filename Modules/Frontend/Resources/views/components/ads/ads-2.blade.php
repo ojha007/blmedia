@@ -1,15 +1,15 @@
 @isset($ads)
     @if(count($ads)>0)
         @php
-            $ads = $ads->where('placement',$placement);
-                    if(is_array($sub_for)){
-                          $ads->whereIn('sub_for',$sub_for);
-                    }else{
-                        $ads->where('sub_for',$sub_for);
-                    }
-                   $ads= $ads->take(2);
-
-
+            if(is_array($sub_for)){
+             $ads = $ads->where('placement','=',$placement)
+                  ->whereIn('sub_for',$sub_for)
+                  ->take(2);
+            }else{
+                $ads = $ads->where('placement','=',$placement)
+                        ->where('sub_for','=',$sub_for)
+                        ->take(2);
+            }
         @endphp
         @foreach($ads as $ad)
             <div class="cmn-fw">

@@ -12,5 +12,7 @@
     </div>
 </div>
 
-@endif
+@push('scripts')
+
+@endpush
 
