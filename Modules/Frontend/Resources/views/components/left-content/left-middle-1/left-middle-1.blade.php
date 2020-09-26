@@ -1,4 +1,5 @@
 @if(count($fourthPositionNews))
+
     <div class="section-row pt-0">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 float-left">
             <div class="row">
@@ -18,5 +19,6 @@
             </div>
         </div>
     </div>
+
 @endif
 

@@ -1,4 +1,5 @@
 @if(count($firstPositionNews))
+
     <div class="newsBlock front_body_position_1 type-1">
         @include('frontend::components.news.category-heading',['allNews'=>$firstPositionNews])
         <div class="block-body">
