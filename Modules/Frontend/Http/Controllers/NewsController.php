@@ -33,7 +33,6 @@ class NewsController extends Controller
     public function showNews($slug)
     {
         $news = $this->getNews($slug);
-//        dd($news);
         $category_slug = $news->category_name;
         $advertisements = $this->adsRepository->getAllAdvertisements('detail_page');
         $headerCategories = $this->categoryRepository->getHeaderCategories();
@@ -55,7 +54,9 @@ class NewsController extends Controller
     protected function getNews($id)
     {
         return News::with('categories', 'reporter', 'guest')
-            ->find($id);
+            ->where('id',$id)
+            ->where('slug',$id)
+            ->first();
     }
 
     public function newsByAuthor($author_type, $author_slug)

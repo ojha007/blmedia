@@ -122,7 +122,8 @@
     </div>
 </section>
 <div class="container-fluid text-center">
-    @include('frontend::components.ads.ads-2',['ads'=>$ads_below_logo_and_menu])
+    @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'below','sub_for'=>'logo_and_menu'])
+    {{--    @include('frontend::components.ads.ads-2',['ads'=>$ads_below_logo_and_menu])--}}
 </div>
 
 

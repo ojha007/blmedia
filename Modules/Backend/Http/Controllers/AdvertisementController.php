@@ -2,12 +2,10 @@
 
 namespace Modules\Backend\Http\Controllers;
 
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Http\Requests\AdvertisementRequest;
@@ -78,19 +76,6 @@ class AdvertisementController extends Controller
     {
         $attributes = $request->validated();
         try {
-            if ($request->hasFile('image')) {
-                if ($request->file('image')->isValid()) {
-                    $validated = $request->validate([
-                        'image' => 'max:1014',
-                    ]);
-                    $fileName = Carbon::now()->format('Y-m-d') .
-                        Carbon::now()->format('Y_m_d') . uniqid() . '_' . time();
-                    $extension = $request->image->extension();
-                    $request->image->storeAs('/public', $fileName . "." . $extension);
-                    $image = Storage::url($fileName . "." . $extension);
-                    $attributes['image'] = $image;
-                }
-            }
             $baseRoute = getBaseRouteByUrl($request);
             DB::beginTransaction();
             $this->repository->create($attributes);

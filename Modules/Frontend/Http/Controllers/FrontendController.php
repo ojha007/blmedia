@@ -50,8 +50,8 @@ class FrontendController extends Controller
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
-        $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 5);
-        $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
+        $secondPositionNews = $this->newsRepository->getNewsByExtraColumn(2, 7, 'is_anchor');
+        $thirdPositionNews = $this->newsRepository->getNewsByExtraColumn(3, 8, 'is_special');
         $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 6);
         $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
         $sixthPositionNews = $this->newsRepository->getNewsByPosition(6, 10);
@@ -105,11 +105,12 @@ class FrontendController extends Controller
         return config('editions');
     }
 
-    public function videos(){
+    public function videos()
+    {
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
         $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 9);
-        return view('frontend::components.videos.videos', compact('headerCategories','fourthPositionNews')) ->with($advertisements);
+        return view('frontend::components.videos.videos', compact('headerCategories', 'fourthPositionNews'))->with($advertisements);
     }
 
 

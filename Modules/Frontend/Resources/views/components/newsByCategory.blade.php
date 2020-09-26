@@ -13,6 +13,8 @@
                             @include('frontend::components.no-childCategory')
                         @endif
                     </div>
+
+
                     <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 float-right">
                         @include('frontend::components.news.news-template',
                                   [

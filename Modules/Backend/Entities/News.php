@@ -25,7 +25,7 @@ class News extends Model
         'external_url',
         'publish_date', 'expiry_date',
 //        'publish_status',
-        'image_alt',
+        'image_alt','is_active',
         'image', 'image_description',
     ];
     protected $with = ['categories'];
