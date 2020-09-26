@@ -69,6 +69,7 @@ class CategoryController extends Controller
     public function getNewsByCategorySlug($slug, $perPage = 15)
     {
         return DB::table('categories')
+            ->selectRaw(DB::raw('SELECT distinct(news.id)'))
             ->join('news_categories', 'categories.id', '=', 'news_categories.category_id')
             ->join('news', 'news_categories.news_id', '=', 'news.id')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
@@ -82,7 +83,7 @@ class CategoryController extends Controller
             ->where('categories.slug', $slug)
             ->where('news.is_active', '=', 1)
             ->orderByDesc('news.id')
-            ->distinct()
+//            ->distinct()
             ->paginate($perPage);
 
     }
@@ -96,6 +97,7 @@ class CategoryController extends Controller
             ->where('c2.is_active', true);
 
         return DB::table('news')
+            ->selectRaw(DB::raw('SELECT distinct(news.id)'))
             ->join('news_categories', 'news.id', '=', 'news_categories.news_id')
             ->joinSub($category, 'cat', function ($query) {
                 $query->on('news_categories.category_id', '=', 'cat.c2_id')
@@ -112,7 +114,6 @@ class CategoryController extends Controller
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
-            ->distinct()
             ->get()
             ->groupBy('c2_id')
             ->map(function ($news) use ($limit) {

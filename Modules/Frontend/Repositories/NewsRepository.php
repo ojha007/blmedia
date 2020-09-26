@@ -18,7 +18,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
         try {
             return DB::table('news')
-//                ->selectRaw(DB::raw('SELECT distinct(news.id)'))
+                ->selectRaw(DB::raw('SELECT distinct(news.id)'))
                 ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.id', 'categories.is_video')
                 ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
                 ->join('news_categories', 'news_categories.id', 'news_categories_pivot.news_category_id')
