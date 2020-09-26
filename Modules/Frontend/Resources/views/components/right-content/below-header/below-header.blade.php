@@ -1,4 +1,4 @@
-@if(count($thirdPositionNews))
+{{--@if(count($thirdPositionNews))
     <div class="newsBlock type-8 front_body_position_3">
 
         <div class="block-header gn-heading">
@@ -14,7 +14,6 @@
                         <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
                             <img src="{{$news->image}}" alt="{{$news->image}}"
                                  class="responsive-img" title="">
-                            <img src="{{asset('frontend/img/orange.jpg')}}" alt="" class="responsive-img" >
                         </a>
                     </figure>
                     <div class="news-content">
@@ -31,11 +30,11 @@
                 @include('frontend::components.buttons.view-all-category-button', ['position' => $thirdPositionNews])
         </div>
 </div>
-@endif
+@endif--}}
 
-{{--@include('frontend::components.news.news-template',
+@include('frontend::components.news.news-template',
                                  [
                                      'allNews'=>$thirdPositionNews,
                                      'class'=>' blspecial-body bisheshNew'
 
-                                     ])--}}
+                                     ])

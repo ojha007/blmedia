@@ -16,11 +16,14 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 //        dd('gg');
         return DB::table('news')
-            ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name')
+            ->select('news.title', 'news.description')
             ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
             ->join('news_categories', 'news_categories.id', 'news_categories_pivot.news_category_id')
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->where('news_category_id', '=', $category_id)
             ->where('news.is_active', true)
             ->orderByDesc('news.id')
@@ -33,7 +36,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 
         return DB::table('news')
             ->select('news.title', 'news.sub_title', 'news.short_description',
-                'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
+                'categories.name as categories', 'news.id as news_slug','news.publish_date',
                 'categories.slug as category_slug', 'news.image',
                 'news.image_description', 'news.image_alt')
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
@@ -67,6 +70,8 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('category_positions.detail_body_position', $position)
+            ->where('news.is_active', true)
+            ->distinct()
             ->limit($limit)
             ->get();
     }

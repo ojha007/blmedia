@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Repositories\Contracts\RepositoryInterface;
+use Illuminate\Support\Facades\Log;
 
 abstract class Repository implements RepositoryInterface
 {
@@ -21,7 +22,6 @@ abstract class Repository implements RepositoryInterface
 
     public function create(array $attributes)
     {
-
         return $this->model->create($attributes);
     }
 

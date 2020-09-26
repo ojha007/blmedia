@@ -97,7 +97,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-
+.video-collection .row{
+    padding: 0 15px;
+}
     .header-end{
         margin-bottom: 15px;
     }

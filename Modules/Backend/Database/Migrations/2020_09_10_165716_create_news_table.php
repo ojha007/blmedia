@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Modules\Backend\Entities\News;
 
 class CreateNewsTable extends Migration
 {
@@ -34,10 +33,7 @@ class CreateNewsTable extends Migration
             $table->boolean('is_anchor')->default(0);
             $table->string('external_url')->nullable();
             $table->date('publish_date');
-            $table->string('image')->nullable();
-            $table->string('image_description')->nullable();
-            $table->string('image_alt')->nullable();
-            $table->enum('publish_status', News::publishStatus());
+            $table->boolean('is_active')->default(1);
             $table->string('image')->nullable();
             $table->string('image_description')->nullable();
             $table->string('image_alt')->nullable();

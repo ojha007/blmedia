@@ -19,7 +19,15 @@ class UsersTableSeeder extends Seeder
         Model::unguard();
         $edition = config('database.default');
         User::updateOrCreate(
-            ['email' => 'blmedia@gmail.com', 'user_name' => 'blmedia_' . $edition],
+            [
+                'email' => 'blmedia@gmail.com',
+                'user_name' => 'blmedia_' . $edition
+            ],
+            ['user_name' => 'blmedia',
+                'password' => Hash::make('blmedia@321'),
+                'status' => true
+            ]);
+        User::create(
             ['user_name' => 'blmedia',
                 'password' => Hash::make('blmedia@321'),
                 'status' => true
