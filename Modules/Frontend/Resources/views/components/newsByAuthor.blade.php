@@ -25,6 +25,7 @@
                         @include('frontend::components.news.news-template',['allNews'=>$thirdPositionNews])
                     </div>
                 </section>
+
                 @include('frontend::components.ads.ads-2',[
                                     'ads'=>$allAds,'placement'=>'below',
                                     'sub_for'=>$newsByAuthor->first()->category_slug
