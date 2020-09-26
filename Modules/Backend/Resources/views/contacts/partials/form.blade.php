@@ -129,7 +129,7 @@
                     {{Form::text('image',null,['id'=>'image_label','class'=>'form-control'])}}
                 </div>
                 <img id="holder" style="margin-top:15px;max-height:100px;" alt=""
-                     src="{{$contact ? $contact->image : ''}}">
+                     src="{{isset($contact) ? $contact->image : ''}}">
             </div>
 
             <div class="col-md-12 form-group {{$errors->has('description') ?'has-error':''}}">

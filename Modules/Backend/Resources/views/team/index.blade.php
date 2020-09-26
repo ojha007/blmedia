@@ -41,7 +41,7 @@
                                     {{$team->id}}
                                 </td>
                                 <td>
-                                    {{$team->title}}
+                                    {!! $team->title !!}
                                 </td>
                                 <td>
                                     {!! $team->detail !!}

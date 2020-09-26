@@ -64,7 +64,7 @@ return [
         'nepali' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST_NEPALI', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE_NEPALI', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
@@ -83,7 +83,7 @@ return [
         'en' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST_EN', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE_EN', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
@@ -102,7 +102,7 @@ return [
         'hindi' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST_HINDI', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE_HINDI', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
