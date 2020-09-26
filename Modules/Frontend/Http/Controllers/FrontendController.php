@@ -49,7 +49,7 @@ class FrontendController extends Controller
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
         $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
-        $secondPositionNews = $this->newsRepository->getNewsByExtraColumn(2, 7, 'is_anchor');
+        $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 7);
         $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
         $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 6);
         $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
