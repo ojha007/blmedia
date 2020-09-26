@@ -4,12 +4,7 @@
             @if(count($newsByCategory))
                 @include('frontend::components.news.news-image',['news'=>$newsByCategory->first()])
                 <div class="ovrLay">
-                    <h2 class="news-title">
-                        <a
-                            href="{{route($routePrefix.'news.show',$newsByCategory->first()->news_slug)}}">
-                            {{$newsByCategory->first()->title}}
-                        </a>
-                    </h2>
+                    @include('frontend::components.news.category-heading',['allNews'=>$newsByCategory])
                 </div>
                 <p>
                     {!! $newsByCategory->first()->short_description !!}
