@@ -134,16 +134,35 @@ html {
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
-    color: #FF5E14;
+    color: white;
+    z-index: 9999;
 }
 
 .thumbnail i:hover {
-    color: white;
+    color: #FF5E14;
 }
 .news-second-card figure img{
     /*background-color: red !important;*/
     padding: 10px 0;
     height: 200px!important;
     width: 100%;
+}
+
+/* [1] The container */
+.img-hover-zoom {
+    height: 200px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+/* Point-zoom Container */
+.img-hover-zoom--point-zoom img {
+    transform-origin: 65% 75%;
+    transition: transform 1s, filter .5s ease-out;
+}
+/* The Transformation */
+.img-hover-zoom--point-zoom:hover img {
+    transform: scale(5);
+}
+.img-hover-zoom--point-zoom:hover i{
+    color: #FF5E14;
 }
 
