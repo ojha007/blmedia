@@ -1,6 +1,5 @@
 <?php
 
-use Aws\S3\Exception\S3Exception;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -49,3 +48,4 @@ Route::get('c-w-l', function () {
     }
 
 });
+

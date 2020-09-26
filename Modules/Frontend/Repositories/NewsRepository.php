@@ -5,6 +5,7 @@ namespace Modules\Frontend\Repositories;
 
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
 {
@@ -15,17 +16,24 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     public function getNewsByCategory($category_id, $limit)
     {
 
-        return DB::table('news')
-            ->selectRaw(DB::raw('SELECT distinct(news.id)'))
-            ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.id', 'categories.is_video')
-            ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
-            ->join('news_categories', 'news_categories.id', 'news_categories_pivot.news_category_id')
-            ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
-            ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
-            ->where('news_category_id', '=', $category_id)
-            ->where('news.is_active', true)
-            ->orderByDesc('news.id')
-            ->limit($limit);
+        try {
+            return DB::table('news')
+                ->selectRaw(DB::raw('SELECT distinct(news.id)'))
+                ->select('news.title', 'news.description', 'guests.name as guest_name', 'reporters.name as reporter_name', 'news.id', 'categories.is_video')
+                ->join('news_categories_pivot', 'news_id', '=', 'news_category_id')
+                ->join('news_categories', 'news_categories.id', 'news_categories_pivot.news_category_id')
+                ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
+                ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+                ->where('news_category_id', '=', $category_id)
+                ->where('news.is_active', true)
+                ->orderByDesc('news.id')
+                ->whereNull('news.deleted_at')
+                ->limit($limit);
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->route('/');
+        }
+
 
     }
 
@@ -33,10 +41,11 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
-            ->selectRaw(DB::raw('SELECT distinct(news.id)'))
+//            ->selectRaw(DB::raw('SELECT DISTINCT id, COUNT(*) AS count_pid'))
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
+                'reporters.image as reporter_image', 'guests.image as guest_image',
                 'news.image_description', 'news.image_alt', 'categories.is_video')
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
@@ -49,6 +58,8 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->where('category_positions.front_body_position', $position)
             ->orderByDesc('news.id')
             ->where('news.is_active', true)
+            ->whereNull('news.deleted_at')
+            ->distinct()
             ->limit($limit)
             ->get();
     }
@@ -61,7 +72,8 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
                 'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
                 'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt',
-                'categories.is_video'
+                'categories.is_video',
+                'reporters.image as reporter_image', 'guests.image as guest_image'
             )
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
@@ -73,6 +85,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
             ->where('news.is_active', true)
             ->where('category_positions.detail_body_position', $position)
+            ->whereNull('news.deleted_at')
             ->limit($limit)
             ->get();
     }
@@ -114,6 +127,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->where('news.' . $extra_column, '=', 1)
             ->orderByDesc('news.id')
             ->where('news.is_active', true)
+            ->whereNull('news.deleted_at')
             ->limit($limit)
             ->get();
     }

@@ -15,7 +15,8 @@
                                 <div class="col-sm-6 col-md-4 col-lg-6">
                                     <div class="post-info">
                                             <span>
-                                                 <img src="{{$news->image}}" alt="{{$news->image_alt}}"
+                                                 <img src="{{$news->reporter->image ?? asset('/frontend/images/logo.png')}}"
+                                                      alt="{{$news->image_alt}}"
                                                       title="{{$news->sub_description}}"
                                                       class="responsive-img">
                                             </span>
