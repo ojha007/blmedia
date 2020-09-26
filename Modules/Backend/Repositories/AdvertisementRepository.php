@@ -89,41 +89,11 @@ class AdvertisementRepository extends Repository
 
     public function getAllAdvertisements($page)
     {
-        //s = second ;
-        //p =positions;
-        //c = category;
 
-//        $categoryRepo = new CategoryRepository(new Category());
-//        $s_p_c = $categoryRepo->getCategorySlugByPosition('front_body_position', 2);
-//        $s_p_c3 = $categoryRepo->getCategorySlugByPosition('front_body_position', 3);
         $allAds = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page']);
         return [
             'allAds' => $allAds
         ];
-//        dd($ads);
-//        $ads_below_top_menu = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'top_menu', 'below', 2);
-//        $ads_aside_logo = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'logo', 'aside', 1);
-//        $ads_above_logo_and_menu = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'logo_and_menu', 'above', 2);
-//        $ads_below_logo_and_menu = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'logo_and_menu', 'below', 2);
-//        $ads_above_footer = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'footer', 'above', 2);
-//        $ads_above_recommendation_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'other_news', 'above', 2);
-//        $ads_below_recommendation_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], 'other_news', 'below', 2);
-//        $ads_below_second_position_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], $s_p_c, 'below', 2);
-//        $ads_below_third_position_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], $s_p_c3, 'below', 2);
-//        $ads_above_third_position_news = $this->getAdsByForAndSubForAndPlacement([$page, 'all_page'], $s_p_c3, 'below', 2);
-//        return [
-//            'top_menu_ads' => $top_menu_ads,
-////            'ads_below_top_menu' => $ads_below_top_menu,
-////            'ads_above_logo_and_menu' => $ads_above_logo_and_menu,
-////            'ads_above_top_menu' => $ads_above_top_menu,
-////            'ads_below_logo_and_menu' => $ads_below_logo_and_menu,
-////            'ads_above_footer' => $ads_above_footer,
-////            'ads_above_recommendation_news' => $ads_above_recommendation_news,
-////            'ads_below_recommendation_news' => $ads_below_recommendation_news,
-////            'ads_below_second_position_news' => $ads_below_second_position_news,
-////            'ads_below_third_position_news' => $ads_below_third_position_news,
-////            'ads_above_third_position_news' => $ads_above_third_position_news,
-//        ];
     }
 
     public function getAdsByForAndSubForAndPlacement(array $for)
@@ -135,7 +105,6 @@ class AdvertisementRepository extends Repository
             ->where('is_active', true)
             ->whereNull('deleted_at')
             ->orderBy('created_at', 'DESC')
-//            ->limit($limit)
             ->get();
     }
 

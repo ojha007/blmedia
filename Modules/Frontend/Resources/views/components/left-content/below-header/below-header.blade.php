@@ -1,5 +1,4 @@
 <div class="section-row pt-0">
-
     @php
         $subFor =[];
         if(isset($firstPositionNews) && count($firstPositionNews) ){
