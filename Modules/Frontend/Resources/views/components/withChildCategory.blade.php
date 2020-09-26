@@ -4,7 +4,8 @@
             @if(count($newsByCategory))
                 @include('frontend::components.news.news-image',['news'=>$newsByCategory->first()])
                 <div class="ovrLay">
-                    @include('frontend::components.news.news-content',['allNews'=>$newsByCategory])
+                    @include('frontend::components.news.news-content',['news'=>$newsByCategory->first()])
+                    @include('frontend::components.news.news-author',['news'=>$newsByCategory->first()])
                 </div>
                 <p>
                     {!! $newsByCategory->first()->short_description !!}
