@@ -41,7 +41,6 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
-//            ->selectRaw(DB::raw('SELECT DISTINCT id, COUNT(*) AS count_pid'))
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
@@ -68,24 +67,24 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
-            ->selectRaw(DB::raw('SELECT distinct news.id'))
-            ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
-                'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
-                'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt',
-                'categories.is_video',
-                'reporters.image as reporter_image', 'guests.image as guest_image'
-            )
+            ->select('news.title', 'news.sub_title', 'news.short_description',
+                'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
+                'categories.slug as category_slug', 'news.image',
+                'reporters.image as reporter_image', 'guests.image as guest_image',
+                'news.image_description', 'news.image_alt', 'categories.is_video')
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
-            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
             ->join('categories', 'categories.id', '=', 'news_categories.category_id')
             ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
             ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
             ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
-            ->where('news.is_active', true)
             ->where('category_positions.detail_body_position', $position)
+            ->orderByDesc('news.id')
+            ->where('news.is_active', true)
             ->whereNull('news.deleted_at')
+            ->distinct()
             ->limit($limit)
             ->get();
     }
