@@ -28,7 +28,7 @@
 
                                       ])
                         @include('frontend::components.news.news-template',['allNews'=>$secondPositionNews])
-                        @include('frontend::components.news.news-template',['allNews'=>$thirdPositionNews])
+                        @include('frontend::components.news.news-template',['allNews'=>$thirdPositionNews,'image'=>'reporter_image'])
                     </div>
                 </section>
                 @include('frontend::components.ads.ads-2',[

@@ -21,7 +21,7 @@
                                       'class'=>' blspecial-body bisheshNew'
 
                                       ])
-                        @include('frontend::components.news.news-template',['allNews'=>$secondPositionNews])
+                        @include('frontend::components.news.news-template',['allNews'=>$secondPositionNews,'image'=>'reporter_image'])
                         @include('frontend::components.news.news-template',['allNews'=>$thirdPositionNews])
                     </div>
                 </section>
