@@ -140,3 +140,10 @@ html {
 .thumbnail i:hover {
     color: white;
 }
+.news-second-card figure img{
+    /*background-color: red !important;*/
+    padding: 10px 0;
+    height: 200px!important;
+    width: 100%;
+}
+
