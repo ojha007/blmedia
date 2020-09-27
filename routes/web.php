@@ -10,12 +10,12 @@ foreach (config('editions') as $edition) {
 }
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-Route::get('hindi/c-w-l', function () {
+Route::get('en/c-w-l', function () {
 
     try {
         $start = microtime(TRUE);
 
-        $news = \Modules\Backend\Entities\News::
+        $news = \Modules\Backend\Entities\Reporter::
         select("*")
             ->orderBy("id", 'DESC')
             ->get();
@@ -26,7 +26,7 @@ Route::get('hindi/c-w-l', function () {
                 if ($handle) {
                     $contents = file_get_contents($url);
                     $name = substr($url, strrpos($url, '/') + 1);
-                    $fileName = 'english/news/' . $name;
+                    $fileName = 'english/uploads/reporters/' . $name;
                     Storage::disk('s3')->put($fileName, $contents, 'public');
                     $a = Storage::disk('s3')->url($fileName);
                     $n->update([
