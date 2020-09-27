@@ -28,7 +28,9 @@ class UsersTableSeeder extends Seeder
                 'status' => true
             ]);
         User::create(
-            ['user_name' => 'blmedia',
+            [
+                'user_name' => 'blmedia',
+                'email' => 'blmedia@gmail.com',
                 'password' => Hash::make('blmedia@321'),
                 'status' => true
             ]);
