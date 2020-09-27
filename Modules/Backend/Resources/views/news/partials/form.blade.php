@@ -178,38 +178,9 @@
                 <i class="fa fa-save"></i> Submit
             </button>
         </div>
-        <div id="blFilemanager" class="modal fade bs-example-modal-xl" role="dialog">
-            <div class="modal-dialog  modal-lg">
-                <div class="modal-content ">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;
-                        </button>
-                        <h4 class="modal-title">BL MEDIA GALLERY</h4>
-                    </div>
-                    <div class="modal-body">
-                        <iframe src="{{ url('file-manager/fm-button') }}"
-                                style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-flat pull-left btn-default" data-dismiss="modal">
-                            <i class="fa fa-arrow-left">
-                                Close
-                            </i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
 </div>
-
-<style>
-    #blFilemanager {
-        z-index: 10011;
-    }
-</style>
-
+{{--@include('backend::file-manager.iframe')--}}
 @push('scripts')
     <script>
         $("#tags").select2({
@@ -217,7 +188,8 @@
         });
     </script>
     <script>
-        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
+        var routePrefix = '{{$edition}}'
+        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'});
     </script>
 
 @endpush

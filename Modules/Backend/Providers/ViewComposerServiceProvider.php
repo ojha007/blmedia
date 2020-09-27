@@ -33,6 +33,7 @@ class ViewComposerServiceProvider extends ServiceProvider
                 'routePrefix' => $edition . '.' . $prefix,
                 'urlPrefix' => $edition . '/' . $prefix,
                 'module' => $module,
+                'edition' => $edition,
                 'contactTypes' => $contactTypes
             ]);
         });

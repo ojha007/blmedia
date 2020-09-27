@@ -33,6 +33,7 @@ class SwitchDatabaseConnectionServiceProvider extends ServiceProvider
         }
         DB::purge('mysql');
         DB::disconnect();
+        Config::set('file-manager.routePrefix', $edition . '/bl-secure/file-manager');
         Config::set('database.default', $edition);
         DB::reconnect();
     }
@@ -59,6 +60,5 @@ class SwitchDatabaseConnectionServiceProvider extends ServiceProvider
             $edition = 'nepali';
         }
         App::setLocale($language[$edition]);
-//        dd(\config('app.locale'));
     }
 }

@@ -25,7 +25,7 @@ return [
      * LFM Route prefix
      * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
      */
-    'routePrefix' => '/bl-secure/file-manager',
+    'routePrefix' => '{edition}/bl-secure/file-manager',
 
     /**
      * List of disk names that you want to use
@@ -126,7 +126,7 @@ return [
      *
      * whitelist - Deny anything(access - 0 - deny), that not allowed by the ACL rules list
      */
-    'aclStrategy' => 'blacklist',
+    'aclStrategy' => 'whitelist',
 
     /**
      * ACL Rules cache

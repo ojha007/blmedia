@@ -121,6 +121,8 @@ desired effect
 @include('backend::partials.scripts')
 @stack('scripts')
 <script>
+    var edition = '{{$edition}}';
+
     function fmSetLink($url) {
         document.getElementById('image_label').value = $url;
         document.getElementById('holder').src = $url;
@@ -130,7 +132,7 @@ desired effect
         if (document.getElementById('banner_image')) {
             document.getElementById('banner_image').addEventListener('click', (event) => {
                 event.preventDefault();
-                window.open('/bl-secure/file-manager/fm-button', 'fm', 'width=1400,height=800');
+                window.open('/' + edition + '/bl-secure/file-manager/fm-button', 'fm', 'width=1400,height=800');
             });
         }
 
@@ -147,12 +149,12 @@ desired effect
             "autoclose": true
         });
 
-    $('.dataTable').DataTable();
-    $('input').iCheck({
-        checkboxClass: 'icheckbox_square-blue',
-        radioClass: 'iradio_square-blue',
-        increaseArea: '20%' /* optional */
-    });
+        $('.dataTable').DataTable();
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
 
     });
 </script>
