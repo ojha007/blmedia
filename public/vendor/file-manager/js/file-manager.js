@@ -15725,7 +15725,7 @@
                     var en = '/en/bl-secure/file-manager/';
                     var nepali = '/nepali/bl-secure/file-manager/';
                     var hindi = '/hindi/bl-secure/file-manager/';
-                    var edition = window.location.pathname
+                    var edition = window.location.pathname;
                     var a = edition.split('/')[1]
                     if (a === 'en') {
                         window.location.port.length ? x += ":".concat(window.location.port, en)
