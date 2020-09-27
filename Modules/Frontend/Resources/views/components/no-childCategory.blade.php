@@ -11,13 +11,16 @@
                         <i class="fa fa-clock-o"></i>
                         {{\Carbon\Carbon::parse($news->publish_date)->format('Y-m-d')}}
                     </li>
-                    <li>
-                        <a href="{{route($routePrefix.'news.by.author',[$news->author_type,$news->author_slug])}}">
-                            <i class="fa fa-user"></i>
-                            {{$news->author_name}}
-                        </a>
-                    </li>
+                    @if($news->author_type && $news->author_slug)
+                        <li>
 
+                            <a href="{{route($routePrefix.'news.by.author',[$news->author_type,$news->author_slug])}}">
+                                <i class="fa fa-user"></i>
+                                {{$news->author_name}}
+                            </a>
+
+                        </li>
+                    @endif
                 </ul>
                 <p>{!! $news->short_description !!}</p>
                 <p>
