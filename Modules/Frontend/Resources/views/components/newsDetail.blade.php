@@ -22,7 +22,7 @@
                                                      class="responsive-img">
                                             </span>
                                         <p>
-                                            @if($news->reporer || $news->guest)
+                                            @if($news->reporter || $news->guest)
                                                 @php($author_type = $news->reporter ? 'reporters' : 'guests')
                                                 @php($author_slug = $news->reporter ? $news->reporter->slug : $news->guest->slug)
                                                 <a href="{{route($routePrefix.'news.by.author',[$author_type,$author_slug])}}"
