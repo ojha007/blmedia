@@ -25,7 +25,7 @@ return [
      * LFM Route prefix
      * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
      */
-    'routePrefix' => 'nepali/bl-secure/file-manager',
+    'routePrefix' => 'bl-secure/file-manager',
 
     /**
      * List of disk names that you want to use

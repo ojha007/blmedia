@@ -43,11 +43,11 @@ Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 //        echo "The code took " . ($end - $start) . " seconds to complete.";
 //
 //    } catch (Exception $exception) {
-        \Illuminate\Support\Facades\Log::error($exception->getMessage());
-        dd($exception);
-    }
-
-});
+//        \Illuminate\Support\Facades\Log::error($exception->getMessage());
+//        dd($exception);
+//    }
+//
+//});
 
 Route::get('c-w-l-a', function () {
 
