@@ -15,21 +15,24 @@
                                 <div class="col-sm-6 col-md-4 col-lg-6">
                                     <div class="post-info">
                                             <span>
-                                                 <img src="{{$news->reporter->image ?? asset('/frontend/images/logo.png')}}"
-                                                      alt="{{$news->image_alt}}"
-                                                      title="{{$news->sub_description}}"
-                                                      class="responsive-img">
+                                                 <img
+                                                     src="{{$news->reporter->image ?? asset('/frontend/images/logo.png')}}"
+                                                     alt="{{$news->image_alt}}"
+                                                     title="{{$news->sub_description}}"
+                                                     class="responsive-img">
                                             </span>
                                         <p>
-                                            @php($author_type = $news->reporter ? 'reporters' : 'guests')
-                                            @php($author_slug = $news->reporter ? $news->reporter->slug : $news->guest->slug)
-                                            <a href="{{route($routePrefix.'news.by.author',[$author_type,$author_slug])}}"
-                                               class="highlight">
+                                            @if($news->reporer || $news->guest)
+                                                @php($author_type = $news->reporter ? 'reporters' : 'guests')
+                                                @php($author_slug = $news->reporter ? $news->reporter->slug : $news->guest->slug)
+                                                <a href="{{route($routePrefix.'news.by.author',[$author_type,$author_slug])}}"
+                                                   class="highlight">
                                                 <span class="usr">
                                                     {{ $news->reporter ? $news->reporter->name
                                                      :( $news->guest ? $news->guest->name:'')  }}
                                                     </span>
-                                            </a>
+                                                </a>
+                                            @endif
 
                                         </p>
                                         <ul class="post-info-details">
