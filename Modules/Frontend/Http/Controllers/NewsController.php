@@ -5,6 +5,7 @@ namespace Modules\Frontend\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Modules\Backend\Entities\Advertisement;
+use Modules\Backend\Entities\CategoryPositions;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;
 use Modules\Frontend\Entities\Category;
@@ -33,11 +34,11 @@ class NewsController extends Controller
     public function showNews($slug)
     {
         $news = $this->getNews($slug);
-//        dd($news);
         $category_slug = $news->category_name;
         $advertisements = $this->adsRepository->getAllAdvertisements('detail_page');
         $headerCategories = $this->categoryRepository->getHeaderCategories();
-        $firstPositionNews = $this->newsRepository->getDetailNewsByPosition(1, 7);
+        $firstPositionNews = $this->newsRepository->getNewsByPositionAndPlacement(1, CategoryPositions::FRONT_BODY_POSITION, 7);
+        dd($firstPositionNews);
         $secondPositionNews = $this->newsRepository->getDetailNewsByPosition(2, 7);
         $thirdPositionNews = $this->newsRepository->getDetailNewsByPosition(3, 7);
         if (count($category_slug) == 0) {

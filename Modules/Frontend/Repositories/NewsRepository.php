@@ -87,5 +87,31 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->get()->pluck('slug');
     }
 
+    public function getNewsByPositionAndPlacement(int $position, $placement, int $limit)
+    {
+        $category = DB::table('categories')
+            ->select('categories.id')
+            ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
+            ->where('category_positions.' . $placement, '=', $position)
+            ->first();
+
+        return DB::table('news')
+            ->selectRaw('SELECT DISTINCT news.id')
+            ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
+                'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
+                'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt')
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
+            ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
+            ->join('categories', 'categories.id', '=', 'news_categories.category_id')
+            ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
+            ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+            ->where('news.is_active', true)
+            ->where('categories.id', '=', $category->id)
+            ->orderByDesc('news.id')
+            ->limit($limit)
+            ->get();
+    }
 
 }

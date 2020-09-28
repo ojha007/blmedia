@@ -33,9 +33,9 @@
 </div>
 @endif
 
-{{--@include('frontend::components.news.news-template',
+@include('frontend::components.news.news-template',
                                  [
                                      'allNews'=>$thirdPositionNews,
                                      'class'=>' blspecial-body bisheshNew'
 
-                                     ])--}}
+                                     ])
