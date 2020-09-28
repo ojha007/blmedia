@@ -25,13 +25,13 @@
 
                     <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 float-right">
                         @include('frontend::components.news.news-template',
-                                  [
-                                      'allNews'=>$firstPositionNews,
-                                      'class'=>' blspecial-body bisheshNew'
+                            [
+                                'allNews'=>$detailPageFirstPositionNews,
+                                'class'=>' blspecial-body bisheshNew'
 
-                                      ])
-                        @include('frontend::components.news.news-template',['allNews'=>$secondPositionNews])
-                        @include('frontend::components.news.news-template',['allNews'=>$thirdPositionNews,'image'=>'reporter_image'])
+                                ])
+                        @include('frontend::components.news.news-template',['allNews'=>$detailPageSecondPositionNews])
+                        @include('frontend::components.news.news-template',['allNews'=>$detailPageThirdPositionNews,'image'=>'reporter_image'])
                     </div>
                 </section>
                 @if(count($newsByCategory))

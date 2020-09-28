@@ -4,14 +4,26 @@
 namespace Modules\Frontend\Repositories;
 
 
+use App\Repositories\Repository;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Modules\Backend\Entities\CategoryPositions;
+use Modules\Frontend\Entities\Category;
 
-class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
+class NewsRepository extends Repository
 {
     protected $module = 'fronted';
     protected $model;
+    /**
+     * @var CategoryRepository
+     */
+    private $categoryRepo;
 
+    public function __construct()
+    {
+        $this->categoryRepo = new CategoryRepository(new Category());
+    }
 
     public function getNewsByCategory($category_id, $limit)
     {
@@ -41,6 +53,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
 
         return DB::table('news')
+            ->selectRaw('SELECT DISTINCT news.slug ')
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
@@ -58,7 +71,6 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->orderByDesc('news.id')
             ->where('news.is_active', true)
             ->whereNull('news.deleted_at')
-//            ->distinct()
             ->limit($limit)
             ->get();
     }
@@ -84,7 +96,7 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->orderByDesc('news.id')
             ->where('news.is_active', true)
             ->whereNull('news.deleted_at')
-//            ->distinct()
+            ->distinct(true)
             ->limit($limit)
             ->get();
     }
@@ -108,7 +120,6 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
     {
         $category = $extra_column == 'is_anchor' ? 'anchor' : 'blspecial-37-25-38';
         return DB::table('news')
-//            ->selectRaw('SELECT distinct(news.id)')
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.slug as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
@@ -131,6 +142,28 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->get();
     }
 
+    public function getDetailPageCommonData()
+    {
+        $headerCategories = $this->categoryRepo->getDetailPageHeaderCategoriesByPosition();
+        $detailPageFirstPositionNews = $this->getCacheNews(1, CategoryPositions::DETAIL_BODY_POSITION, 7, 'detailPageFirstPositionNews');
+        $detailPageSecondPositionNews = $this->getCacheNews(2, CategoryPositions::DETAIL_BODY_POSITION, 7, 'detailPageSecondPositionNews');
+        $detailPageThirdPositionNews = $this->getCacheNews(3, CategoryPositions::DETAIL_BODY_POSITION, 7, 'detailPageThirdPositionNews');
+        return [
+            'headerCategories' => $headerCategories,
+            'detailPageFirstPositionNews' => $detailPageFirstPositionNews,
+            'detailPageSecondPositionNews' => $detailPageSecondPositionNews,
+            'detailPageThirdPositionNews' => $detailPageThirdPositionNews
+        ];
+    }
+
+    public function getCacheNews(int $position, $placement, $limit, $cacheName)
+    {
+        return Cache::remember('_' . $cacheName, 4800, function () use ($position, $placement, $limit) {
+            return $this->getNewsByPositionAndPlacement($position, $placement, $limit);
+        });
+
+    }
+
     public function getNewsByPositionAndPlacement(int $position, $placement, int $limit)
     {
         $category = DB::table('categories')
@@ -138,24 +171,28 @@ class NewsRepository extends \Modules\Backend\Repositories\NewsRepository
             ->join('category_positions', 'categories.id', '=', 'category_positions.category_id')
             ->where('category_positions.' . $placement, '=', $position)
             ->first();
-
-        return DB::table('news')
-            ->selectRaw('SELECT DISTINCT news.id')
-            ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
-                'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
-                'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt')
-            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
-            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
-            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
-            ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
-            ->join('categories', 'categories.id', '=', 'news_categories.category_id')
-            ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
-            ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
-            ->where('news.is_active', true)
-            ->where('categories.id', '=', $category->id)
-            ->orderByDesc('news.id')
-            ->limit($limit)
-            ->get();
+        if ($category)
+            return DB::table('news')
+                ->selectRaw('SELECT DISTINCT news.id')
+                ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
+                    'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
+                    'reporters.image as reporter_image', 'guests.image as guest_image',
+                    'news.publish_date',
+                    'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt')
+                ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+                ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+                ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
+                ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
+                ->join('categories', 'categories.id', '=', 'news_categories.category_id')
+                ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
+                ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+                ->where('news.is_active', true)
+                ->whereNull('news.deleted_at')
+                ->where('categories.id', '=', $category->id)
+                ->orderByDesc('news.id')
+                ->distinct(true)
+                ->limit($limit)
+                ->get();
+        return [];
     }
-
 }

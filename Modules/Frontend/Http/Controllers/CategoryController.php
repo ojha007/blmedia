@@ -49,20 +49,15 @@ class CategoryController extends Controller
     {
 
         $newsByCategory = $this->getNewsByCategorySlug($slug);
-        $headerCategories = $this->repository->getDetailPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('category_page');
-        $firstPositionNews = $this->newsRepository->getDetailNewsByPosition(1, 6);
-        $secondPositionNews = $this->newsRepository->getDetailNewsByPosition(2, 6);
-        $thirdPositionNews = $this->newsRepository->getDetailNewsByPosition(3, 6);
         $breadcrumbs = $this->repository->getChildCategory($slug, 7);
         $childCategoriesNews = $this->getChildCategoryNews($slug, 5);
         return view($this->viewPath . '.newsByCategory',
             compact('newsByCategory', 'breadcrumbs',
                 'childCategoriesNews',
-                'headerCategories',
-                'ads_aside_logo',
-                'firstPositionNews', 'secondPositionNews', 'thirdPositionNews'
+                'ads_aside_logo'
             ))
+            ->with($this->newsRepository->getDetailPageCommonData())
             ->with($advertisements);
     }
 

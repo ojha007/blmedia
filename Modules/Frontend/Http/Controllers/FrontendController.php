@@ -47,25 +47,27 @@ class FrontendController extends Controller
     public function index()
     {
 
+        $newsRepo = $this->newsRepository;
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
-        $firstPositionNews = $this->newsRepository->getNewsByPosition(1, 9);
-        $secondPositionNews = $this->newsRepository->getNewsByPosition(2, 7);
-        $thirdPositionNews = $this->newsRepository->getNewsByPosition(3, 8);
-        $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 6);
-        $fifthPositionNews = $this->newsRepository->getNewsByPosition(5, 5);
-        $sixthPositionNews = $this->newsRepository->getNewsByPosition(6, 10);
-        $seventhPositionNews = $this->newsRepository->getNewsByPosition(7, 6);
-        $eighthPositionNews = $this->newsRepository->getNewsByPosition(8, 9);
-        $ninthPositionNews = $this->newsRepository->getNewsByPosition(9, 6);
-        $tenthPositionNews = $this->newsRepository->getNewsByPosition(10, 6);
-        $eleventhPositionNews = $this->newsRepository->getNewsByPosition(11, 5);
-        $twelvePositionNews = $this->newsRepository->getNewsByPosition(12, 5);
-        $thirteenPositionNews = $this->newsRepository->getNewsByPosition(13, 4);
-        $fourteenPositionNews = $this->newsRepository->getNewsByPosition(14, 6);
+        $firstPositionNews = $newsRepo->getCacheNews(1, CategoryPositions::FRONT_BODY_POSITION, 9, 'firstPositionNews');
+        $secondPositionNews = $newsRepo->getCacheNews(2, CategoryPositions::FRONT_BODY_POSITION, 9, 'secondPositionNews');
+        $thirdPositionNews = $newsRepo->getCacheNews(3, CategoryPositions::FRONT_BODY_POSITION, 8, 'thirdPositionNews');
+        $fourthPositionNews = $newsRepo->getCacheNews(4, CategoryPositions::FRONT_BODY_POSITION, 6, 'fourthPositionNews');
+        $fifthPositionNews = $newsRepo->getCacheNews(5, CategoryPositions::FRONT_BODY_POSITION, 5, 'fifthPositionNews');
+        $sixthPositionNews = $newsRepo->getCacheNews(6, CategoryPositions::FRONT_BODY_POSITION, 10, 'sixthPositionNews');
+        $seventhPositionNews = $newsRepo->getCacheNews(7, CategoryPositions::FRONT_BODY_POSITION, 6, 'seventhPositionNews');
+        $eighthPositionNews = $newsRepo->getCacheNews(8, CategoryPositions::FRONT_BODY_POSITION, 9, 'eighthPositionNews');
+        $ninthPositionNews = $newsRepo->getCacheNews(9, CategoryPositions::FRONT_BODY_POSITION, 6, 'ninthPositionNews');
+        $tenthPositionNews = $newsRepo->getCacheNews(10, CategoryPositions::FRONT_BODY_POSITION, 6, 'tenthPositionNews');
+        $eleventhPositionNews = $newsRepo->getCacheNews(11, CategoryPositions::FRONT_BODY_POSITION, 5, 'eleventhPositionNews');
+        $twelvePositionNews = $newsRepo->getCacheNews(12, CategoryPositions::FRONT_BODY_POSITION, 5, 'twelvePositionNews');
+        $thirteenPositionNews = $newsRepo->getCacheNews(13, CategoryPositions::FRONT_BODY_POSITION, 4, 'thirteenPositionNews');
+        $fourteenPositionNews = $newsRepo->getCacheNews(14, CategoryPositions::FRONT_BODY_POSITION, 6, 'fourteenPositionNews');
         return view('frontend::index', compact(
             'headerCategories',
             'firstPositionNews',
+            'fourthPositionNews',
             'secondPositionNews',
             'thirdPositionNews',
             'fifthPositionNews',
@@ -112,9 +114,6 @@ class FrontendController extends Controller
         $fourthPositionNews = $this->newsRepository->getNewsByPosition(4, 9);
         return view('frontend::components.videos.videos', compact('headerCategories', 'fourthPositionNews'))->with($advertisements);
     }
-
-
-
 
 
 }

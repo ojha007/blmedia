@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Modules\Backend\Entities\Advertisement;
-use Modules\Backend\Entities\CategoryPositions;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;
 use Modules\Frontend\Entities\Category;
@@ -34,25 +33,19 @@ class NewsController extends Controller
 
     public function showNews($slug)
     {
-
         try {
             $news = $this->getNews($slug);
             $category_slug = $news->category_name;
             $advertisements = $this->adsRepository->getAllAdvertisements('detail_page');
-            $headerCategories = $this->categoryRepository->getHeaderCategories();
-            $firstPositionNews = $this->newsRepository->getDetailNewsByPosition(1, 7);
-            $secondPositionNews = $this->newsRepository->getDetailNewsByPosition(2, 7);
-            $thirdPositionNews = $this->newsRepository->getDetailNewsByPosition(3, 7);
             if (count($category_slug) == 0) {
                 $category_slug = $this->newsRepository->getCategoryDoesntExitsInDetailPage();
             }
             $sameCategoryNews = $this->categoryRepository->getSimilarNewsByCategorySlug($category_slug, $news->slug, 9);
             return view($this->viewPath . '.newsDetail',
-                compact('news', 'headerCategories',
-                    'sameCategoryNews',
-                    'firstPositionNews', 'secondPositionNews', 'thirdPositionNews'
-                ))
+                compact('news', 'sameCategoryNews'))
+                ->with($this->newsRepository->getDetailPageCommonData())
                 ->with($advertisements);
+
         } catch (\Exception $exception) {
             Log::error($exception->getTraceAsString() . '-' . $exception->getMessage());
             return redirect()->back();
@@ -67,6 +60,7 @@ class NewsController extends Controller
             ->orWhere('slug', $id)
             ->first();
     }
+
 
     public function newsByAuthor($author_type, $author_slug)
     {
@@ -89,17 +83,9 @@ class NewsController extends Controller
                 ->orderBy('news_id')
                 ->paginate(15);
             $advertisements = $this->adsRepository->getAllAdvertisements('category_page');
-            $headerCategories = $this->categoryRepository->getDetailPageHeaderCategoriesByPosition();
-            $secondPositionNews = $this->newsRepository->getDetailNewsByPosition(2, 6);
-            $firstPositionNews = $this->newsRepository->getDetailNewsByPosition(1, 6);
-            $thirdPositionNews = $this->newsRepository->getDetailNewsByPosition(3, 6);
             return view($this->viewPath . '.newsByAuthor',
-                compact('newsByAuthor',
-                    'headerCategories',
-                    'firstPositionNews',
-                    'secondPositionNews',
-                    'thirdPositionNews'
-                ))
+                compact('newsByAuthor'))
+                ->with($this->getDetailPageCommonData())
                 ->with($advertisements);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
