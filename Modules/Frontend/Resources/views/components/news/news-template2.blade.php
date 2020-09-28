@@ -1,5 +1,11 @@
 <div class="newsBlock type-8 front_body_position_5" id="bl-break-section-01 ">
     @if(count($allNews))
+        <div class="container-fluid text-center">
+            @include('frontend::components.ads.ads-2',[
+                                'ads'=>$allAds,'placement'=>'above',
+                                'sub_for'=>$allNews->first()->category_slug
+                                    ])
+        </div>
         @include('frontend::components.news.category-heading')
         <div class="block-body">
             @foreach($allNews as $key=>$news)
@@ -27,6 +33,12 @@
 
             @endforeach
             @include('frontend::components.buttons.view-all-category-button', ['position' => $allNews])
+        </div>
+        <div class="container-fluid text-center">
+            @include('frontend::components.ads.ads-2',[
+                                'ads'=>$allAds,'placement'=>'below',
+                                'sub_for'=>$allNews->first()->category_slug
+                                    ])
         </div>
     @endif
 

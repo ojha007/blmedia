@@ -32,6 +32,12 @@
                     <div class="form-group col-md-12">
                         @include('backend::partials.toggle-button',['value'=>'is_active','checked'=>$category->is_active])
                     </div>
+                    <div class="form-group col-md-12">
+                        @include('backend::partials.toggle-button',['value'=>'is_video','checked'=>$category->is_video])
+                    </div>
+                    <div class="form-group col-md-12">
+                        @include('backend::partials.toggle-button',['value'=>'new_design','checked'=>$category->new_design])
+                    </div>
                     <div class="form-group col-md-12 {{$errors->has('description') ? 'has-error':''}}">
                         {{ Form::label('description', 'Description:', ['class'=>' control-label '])}}
                         {!! Form::textarea('description', null, array('placeholder' => 'Enter description','class' => 'form-control','rows'=>'3')) !!}

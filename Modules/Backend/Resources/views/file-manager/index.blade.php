@@ -15,9 +15,7 @@
 
                 </div>
                 <div class="box-body">
-                    <iframe src="{{ url('/bl-secure/file-manager/fm-button') }}"
-                            style="width: 100%; height: 700px; overflow: hidden; border: none;"></iframe>
-
+                    @include('backend::file-manager.iframe')
                 </div>
                 <div class="box-footer">
                     <a href="{{route($routePrefix.'file-manager.index')}}" type="button"

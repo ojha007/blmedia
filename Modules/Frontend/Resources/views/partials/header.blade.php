@@ -1,17 +1,8 @@
 <header class="page-header ">
-    <!--header top start-->
-@include('frontend::components.headers.header-top')
-<!--ended header top-->
-
-    <!--header mid start-->
-
-    <!--ended header mid section-->
-@include('frontend::components.headers.header-mid')
-<!--ended header mid section-->
-    <!--main Navigation bar-->
-
-@include('frontend::components.headers.header-end')
-<!--ended main navigation bar-->
+    @include('frontend::components.headers.mobile-header-top')
+    @include('frontend::components.headers.header-top')
+    @include('frontend::components.headers.header-mid')
+    @include('frontend::components.headers.header-end')
 </header>
 @push('scripts')
     <script>

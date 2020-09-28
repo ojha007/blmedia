@@ -153,57 +153,19 @@
 
 
             <div class="form-group col-md-3 {{$errors->has('is_anchor') ?'has-error':''}} align-center">
-                {!! Form::label('is_anchor','Is Anchor ?') !!}
-                <div class="form-control">
+                @include('backend::partials.toggle-button',['value'=>'is_anchor','checked'=>$news->is_anchor ?? 0])
 
-                    <label>
-                        <input id="is_anchor" name="is_anchor" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_anchor" name="is_anchor" type="radio"
-                               value="0">
-                        No
-                    </label>
-
-                </div>
             </div>
 
             <div class="form-group col-md-3 {{$errors->has('is_special') ?'has-error':''}} align-center">
-                {!! Form::label('is_special','Is Special ? ') !!}
-                <div class="form-control">
-
-                    <label>
-                        <input id="is_special" name="is_special" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_special" name="is_special" type="radio"
-                               value="0">
-                        No
-                    </label>
-
-                </div>
+                @include('backend::partials.toggle-button',['value'=>'is_special','checked'=> $news->is_special ?? 0])
             </div>
             <div class="form-group col-md-3 {{$errors->has('is_mob_notification') ?'has-error':''}} align-center">
-                {!! Form::label('is_mob_notification','Mobile Notification') !!}
-                <div class="form-control">
-                    <label>
-                        <input id="is_mob_notification" name="is_mob_notification" type="radio" value="1">
-                        Yes
-                    </label>
-                    <label>
-                        <input checked="checked" id="is_mob_notification" name="is_mob_notification" type="radio"
-                               value="0">
-                        No
-                    </label>
+                @include('backend::partials.toggle-button',['value'=>'is_mob_notification','checked'=>$news->is_mob_notification ?? 0] )
 
-                </div>
             </div>
             <div class="form-group col-md-3 {{$errors->has('publish_status') ? 'has-error':''}}">
-                {!! Form::label('publish_status','Publish Status') !!}
-                {!! Form::select('publish_status',$selectPublishStatuses, 'Yes',
-                    ['class'=>'form-control select2','placeholder'=>'Select Publish ']) !!}
+                @include('backend::partials.toggle-button',['value'=>'is_active','checked'=>$news->is_active ?? 1])
             </div>
         </div>
         <div class="box-footer">
@@ -216,38 +178,9 @@
                 <i class="fa fa-save"></i> Submit
             </button>
         </div>
-        <div id="blFilemanager" class="modal fade bs-example-modal-xl" role="dialog">
-            <div class="modal-dialog  modal-lg">
-                <div class="modal-content ">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;
-                        </button>
-                        <h4 class="modal-title">BL MEDIA GALLERY</h4>
-                    </div>
-                    <div class="modal-body">
-                        <iframe src="{{ url('file-manager/fm-button') }}"
-                                style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-flat pull-left btn-default" data-dismiss="modal">
-                            <i class="fa fa-arrow-left">
-                                Close
-                            </i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
 </div>
-
-<style>
-    #blFilemanager {
-        z-index: 10011;
-    }
-</style>
-
+{{--@include('backend::file-manager.iframe')--}}
 @push('scripts')
     <script>
         $("#tags").select2({
@@ -255,7 +188,8 @@
         });
     </script>
     <script>
-        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/bl-secure/file-manager/ckeditor'});
+        var routePrefix = '{{$edition}}'
+        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'});
     </script>
 
 @endpush

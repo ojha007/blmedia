@@ -61,3 +61,108 @@ html {
 }
 */
 
+.video-details .details-header .post-info span {
+    float: left;
+}
+.video-details .details-header .post-info span img {
+    background: #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 2px;
+    margin-right: 8px;
+}
+.video-details .details-header .post-info p {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+.video-details .details-header .post-info a {
+    color: #FF5E14;
+    margin-bottom: 0;
+    font-size: 12px;
+}
+.video-details .details-header .post-info .post-info-details {
+    padding: 0;
+    margin-top: -4px;
+}
+.video-details .details-header .post-info .post-info-details li {
+    padding: 0em 0em;
+    display: inline;
+    font-size: 12px;
+}
+.video-details .details-header .post-info .post-info-details li a {
+    color: gray;
+}
+.video-details .details-header .post-info .post-info-share  li  {
+    padding: 0em 0.25em;
+    display: inline;
+    color: gray;
+}
+.video-details .details-header .post-info .post-info-share  span {
+    margin-right: 10px;
+    margin-top: 16px;
+    color: gray;
+}
+.video-details .details-header .post-info .post-info-share  span strong {
+    margin-right: 10px;
+    margin-top: 16px;
+    color: gray;
+}
+.video-details .details-header .post-info .post-info-share  .social-media a i{
+    background: #f7976b;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 2;
+    text-align: center;
+}
+.video-details .details-header .post-info .post-info-share  .social-media:hover a i  {
+    border-radius: 50%;
+}
+.video-details .details-header .news-title {
+    font-size: 2.4rem ;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail i {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 9999;
+}
+
+.thumbnail i:hover {
+    color: #FF5E14;
+}
+.news-second-card figure img{
+    /*background-color: red !important;*/
+    padding: 10px 0;
+    height: 200px!important;
+    width: 100%;
+}
+
+/* [1] The container */
+.img-hover-zoom {
+    height: 200px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+/* Point-zoom Container */
+.img-hover-zoom--point-zoom img {
+    transform-origin: 65% 75%;
+    transition: transform 1s, filter .5s ease-out;
+}
+/* The Transformation */
+.img-hover-zoom--point-zoom:hover img {
+    transform: scale(5);
+}
+.img-hover-zoom--point-zoom:hover i{
+    color: #FF5E14;
+}
+

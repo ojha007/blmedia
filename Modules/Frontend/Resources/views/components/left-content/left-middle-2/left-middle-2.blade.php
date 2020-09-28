@@ -20,8 +20,10 @@
                             </div>
                         </div>
                     @elseif($key <=3)
-                        <div class="news-item">
-                            @include('frontend::components.news.news-image')
+                        <div class="news-item ">
+                            <div class="news-second-card">
+                                @include('frontend::components.news.news-image')
+                            </div>
                             <div class="news-content">
                                 @include('frontend::components.news.news-content')
                             </div>

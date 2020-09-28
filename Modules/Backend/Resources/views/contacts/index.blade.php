@@ -29,12 +29,14 @@
                             <th>S.No</th>
                             <th>Name</th>
                             <th>Image</th>
+                            <th>Phone Number</th>
                             <th>Status</th>
                             <th class="no-sort">Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($contacts as $contact)
+{{--                            @dd($contact)--}}
                             <tr>
                                 <td>{{$contact->id}}</td>
                                 <td>{{$contact->name}}</td>
@@ -42,6 +44,7 @@
                                     <img width="150px;" height="100px;" src="{{$contact->image}}"
                                          alt="{{$contact->slug}}">
                                 </td>
+                                <td>{{$contact->phone_number}}</td>
                                 <td>{!! spanByStatus($contact->is_active) !!}</td>
                                 <td>
                                     <a href="{{route($routePrefix.strtolower($type).'.edit',$contact->id)}}"

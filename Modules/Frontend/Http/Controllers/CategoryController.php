@@ -69,6 +69,7 @@ class CategoryController extends Controller
     public function getNewsByCategorySlug($slug, $perPage = 15)
     {
         return DB::table('categories')
+            ->selectRaw(DB::raw('SELECT distinct(news.id)'))
             ->join('news_categories', 'categories.id', '=', 'news_categories.category_id')
             ->join('news', 'news_categories.news_id', '=', 'news.id')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
@@ -82,6 +83,7 @@ class CategoryController extends Controller
             ->where('categories.slug', $slug)
             ->where('news.is_active', '=', 1)
             ->orderByDesc('news.id')
+//            ->distinct()
             ->paginate($perPage);
 
     }
@@ -95,24 +97,29 @@ class CategoryController extends Controller
             ->where('c2.is_active', true);
 
         return DB::table('news')
+            ->selectRaw(DB::raw('SELECT distinct(news.id)'))
             ->join('news_categories', 'news.id', '=', 'news_categories.news_id')
             ->joinSub($category, 'cat', function ($query) {
                 $query->on('news_categories.category_id', '=', 'cat.c2_id')
                     ->groupBy('cat.cat2_id');
             })
-            ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
-            ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
             ->select('news.sub_title', 'news.slug as news_slug', 'news.title',
                 'news.short_description',
                 'news.description', 'news.publish_date',
                 'news.image', 'news.image_alt', 'news.image_description',
-                'cat.slug as category_slug', 'cat.name as category', 'cat.c2_id'
-            )->selectRaw('IFNULL(reporters.name,guests.name) as author, IF(news.reporter_id,1,2) as author_type')
+                'cat.slug as category_slug', 'cat.name as categories', 'cat.c2_id'
+            )
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
+            ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
+            ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
             ->get()
             ->groupBy('c2_id')
             ->map(function ($news) use ($limit) {
                 return $news->take($limit);
             });
+
 
     }
 

@@ -3,7 +3,6 @@
 namespace Modules\Backend\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Modules\Backend\Entities\News;
 
 class NewsRequest extends FormRequest
 {
@@ -30,7 +29,9 @@ class NewsRequest extends FormRequest
             'is_special' => 'required|boolean',
             'image' => 'nullable',
             'video_url' => 'nullable',
-            'publish_status' => 'required|in:' . implode(',', News::publishStatus()),
+            'is_active' => 'required|boolean',
+//            'is_anchor' => 'nullable',
+//            'publish_status' => 'required|in:' . implode(',', News::publishStatus()),
         ];
     }
 

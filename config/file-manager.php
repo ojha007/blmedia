@@ -25,13 +25,13 @@ return [
      * LFM Route prefix
      * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
      */
-    'routePrefix' => '/bl-secure/file-manager',
+    'routePrefix' => 'bl-secure/file-manager',
 
     /**
      * List of disk names that you want to use
      * (from config/filesystems)
      */
-    'diskList' => ['s3'],
+    'diskList' => ['nepali'],
 
     /**
      * Default disk for left manager
@@ -67,7 +67,7 @@ return [
      * set null, 0 - if you don't need cache (default)
      * if you want use cache - set the number of minutes for which the value should be cached
      */
-    'cache' => null,
+    'cache' => 60,
 
     /**
      * File manager modules configuration
@@ -110,7 +110,7 @@ return [
      *
      * default - false(OFF)
      */
-    'acl' => false,
+    'acl' => true,
 
     /**
      * Hide files and folders from file-manager if user doesn't have access

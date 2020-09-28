@@ -72,11 +72,12 @@ class CategoryRepository extends Repository
             ->get();
     }
 
-    public function getSimilarNewsByCategorySlug($slug, $limit)
+    public function getSimilarNewsByCategorySlug($slug, $except = null, $limit = 9)
     {
 
         $slug = is_array($slug) ? $slug : [$slug];
         return DB::table('news')
+            ->selectRaw(DB::raw('distinct(news.id)'))
             ->select('news.title', 'news.description',
                 'news.slug as news_slug', 'news.publish_date', 'news.image', 'news.image_description', 'news.image_alt')
             ->join('news_categories', 'news_categories.news_id', 'news.id')
@@ -89,6 +90,8 @@ class CategoryRepository extends Repository
             ->whereIn('categories.slug', $slug)
             ->orderBy('news.created_at', 'DESC')
             ->where('news.is_active', '=', 1)
+            ->whereNull('news.deleted_at')
+            ->where('news.slug', '!=', $except)
             ->limit($limit)
             ->get();
     }
