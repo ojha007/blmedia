@@ -1,22 +1,4 @@
-<section class="select-language-section bg-site-color" style="display: none;">
-    <select class="form-control form-control-sm bg-transparent border-0 text-white " onchange="location = this.value;"
-            style=" transition: max-height 1s;">
-        @foreach(config('editions') as $k=> $e)
-            @if(in_array(request()->segment(1), config('editions')))
-                @if(request()->segment(1) != $e)
-                    <option class="bg-site-color border-0"
-                            value="{{route($e)}}">
-                        {{ucwords($k)}}
-                    </option>
-                @endif
-            @else
-                <option class="bg-site-color border-0" value="{{route($e)}}">
-                    {{ucwords($k)}}
-                </option>
-            @endif
-        @endforeach
-    </select>
-</section>
+
 <section class="amnavnd header-end ">
     <div class="container-fluid">
         <div class="row" style="border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;">
@@ -123,7 +105,6 @@
 </section>
 <div class="container-fluid text-center">
     @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'below','sub_for'=>'logo_and_menu'])
-    {{--    @include('frontend::components.ads.ads-2',['ads'=>$ads_below_logo_and_menu])--}}
 </div>
 
 

@@ -10,37 +10,39 @@ foreach (config('editions') as $edition) {
 }
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-Route::get('en/c-w-l', function () {
 
-    try {
-        $start = microtime(TRUE);
 
-        $news = \Modules\Backend\Entities\Reporter::
-        select("*")
-            ->orderBy("id", 'DESC')
-            ->get();
-        foreach ($news as $n) {
-            $url = $n->image;
-            if ($url) {
-                $handle = @fopen($url, 'r');
-                if ($handle) {
-                    $contents = file_get_contents($url);
-                    $name = substr($url, strrpos($url, '/') + 1);
-                    $fileName = 'english/uploads/reporters/' . $name;
-                    Storage::disk('s3')->put($fileName, $contents, 'public');
-                    $a = Storage::disk('s3')->url($fileName);
-                    $n->update([
-                        'image' => $a
-                    ]);
-                }
-
-            }
-        }
-
-        $end = microtime(TRUE);
-        echo "The code took " . ($end - $start) . " seconds to complete.";
-
-    } catch (Exception $exception) {
+//Route::get('en/c-w-l', function () {
+//
+//    try {
+//        $start = microtime(TRUE);
+//
+//        $news = \Modules\Backend\Entities\Reporter::
+//        select("*")
+//            ->orderBy("id", 'DESC')
+//            ->get();
+//        foreach ($news as $n) {
+//            $url = $n->image;
+//            if ($url) {
+//                $handle = @fopen($url, 'r');
+//                if ($handle) {
+//                    $contents = file_get_contents($url);
+//                    $name = substr($url, strrpos($url, '/') + 1);
+//                    $fileName = 'english/uploads/reporters/' . $name;
+//                    Storage::disk('s3')->put($fileName, $contents, 'public');
+//                    $a = Storage::disk('s3')->url($fileName);
+//                    $n->update([
+//                        'image' => $a
+//                    ]);
+//                }
+//
+//            }
+//        }
+//
+//        $end = microtime(TRUE);
+//        echo "The code took " . ($end - $start) . " seconds to complete.";
+//
+//    } catch (Exception $exception) {
         \Illuminate\Support\Facades\Log::error($exception->getMessage());
         dd($exception);
     }
