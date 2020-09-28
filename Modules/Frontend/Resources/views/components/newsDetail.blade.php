@@ -49,11 +49,7 @@
                                          data-url="{{route($routePrefix.'news.show',$news->slug)}}"
                                          data-title="{{$news->title}}!"
                                     ></div>
-                                    {{--                                    <div class="sharethis-inline-share-buttons"--}}
-                                    {{--                                         data-url="{{route($routePrefix.'news.show',$news->slug)}}"></div>--}}
-                                    {{--                                    <div class="adsssss">--}}
-                                    {{--                                        <div class="addthis_inline_share_toolbox_lt3c"></div>--}}
-                                    {{--                                    </div>--}}
+
                                 </div>
                             </div>
                             <div class="row">
@@ -64,10 +60,7 @@
                         {{--                       --}}
                         <div class="news-banner">
                             @include('frontend::components.news.news-image',['figureClass'=>'bannerImg'])
-                            {{--                            <figure class="bannerImg">--}}
-                            {{--                                <img src="{{asset('frontend/img/orange.jpg')}}" alt="" width="100%"--}}
-                            {{--                                     class="responsive-img">--}}
-                            {{--                            </figure>--}}
+
                         </div>
 
                         <div class="news-story">

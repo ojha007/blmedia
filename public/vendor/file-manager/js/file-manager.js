@@ -15735,7 +15735,7 @@
                         window.location.port.length ? z += ":".concat(window.location.port, hindi)
                             : z += hindi, e.baseUrl = z
                     }
-                    if (a == 'hindi') {
+                    if (a === 'nepali') {
                         window.location.port.length ? y += ":".concat(window.location.port, nepali)
                             : y += nepali, e.baseUrl = y
                     }
