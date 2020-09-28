@@ -25,13 +25,13 @@ return [
      * LFM Route prefix
      * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
      */
-    'routePrefix' => '{edition}/bl-secure/file-manager',
+    'routePrefix' => 'nepali/bl-secure/file-manager',
 
     /**
      * List of disk names that you want to use
      * (from config/filesystems)
      */
-    'diskList' => ['s3'],
+    'diskList' => ['nepali'],
 
     /**
      * Default disk for left manager
@@ -126,7 +126,7 @@ return [
      *
      * whitelist - Deny anything(access - 0 - deny), that not allowed by the ACL rules list
      */
-    'aclStrategy' => 'whitelist',
+    'aclStrategy' => 'blacklist',
 
     /**
      * ACL Rules cache

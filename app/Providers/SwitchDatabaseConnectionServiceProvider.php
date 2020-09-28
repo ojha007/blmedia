@@ -59,6 +59,7 @@ class SwitchDatabaseConnectionServiceProvider extends ServiceProvider
         if (is_null($edition)) {
             $edition = 'nepali';
         }
+        Config::set('file-manager.diskList', [$edition]);
         App::setLocale($language[$edition]);
     }
 }
