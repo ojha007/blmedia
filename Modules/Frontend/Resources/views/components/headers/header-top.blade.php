@@ -1,4 +1,4 @@
-<div class="container-fluid text-center ">
+<div class="container-fluid text-center px-0">
     @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above','sub_for'=>'top_menu'])
 </div>
 <section class="header-top mb-3">

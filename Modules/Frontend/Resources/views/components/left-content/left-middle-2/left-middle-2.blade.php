@@ -1,4 +1,4 @@
-<div class="newsBlock front_body_position_6 type-5">
+<div class="newsBlock front_body_position_6 type-5" style="padding: 0 15px;">
     @if(count($sixthPositionNews))
         @include('frontend::components.news.category-heading',['allNews'=>$sixthPositionNews])
         <div class="block-body">
@@ -21,7 +21,7 @@
                         </div>
                     @elseif($key <=3)
                         <div class="news-item ">
-                            <div class="news-second-card">
+                            <div class="fixed-height-img">
                                 @include('frontend::components.news.news-image')
                             </div>
                             <div class="news-content">

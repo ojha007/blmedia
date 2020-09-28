@@ -468,11 +468,6 @@ p {
 p a {
     display: inline-block; }
 
-
-.container-fluid {
-    max-width: 1366px;
-}
-
 .stamp {
     font-size: 0.875rem;
     color: gray;

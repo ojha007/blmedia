@@ -22,7 +22,9 @@
                     </div>
                 @else
                     <div class="news-item breakNew">
-                        @include('frontend::components.news.news-image')
+                        <div class="fixed-height-img-2">
+                            @include('frontend::components.news.news-image')
+                        </div>
                         <div class="news-content">
                             @include('frontend::components.news.news-content')
                             @include('frontend::components.news.news-author')
