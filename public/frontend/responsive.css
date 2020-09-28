@@ -97,6 +97,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .fixed-height-img-2 figure.news-image img{
+        height: auto!important;
+    }
 .video-collection .row{
     padding: 0 15px;
 }

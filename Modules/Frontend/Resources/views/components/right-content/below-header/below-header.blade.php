@@ -1,3 +1,4 @@
+{{--@dd($thirdPositionNews)         --}}
 @include('frontend::components.news.news-template',
                                  [
                                      'allNews'=>$thirdPositionNews,

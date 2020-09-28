@@ -21,7 +21,7 @@
                         @foreach($twelvePositionNews as $key=>$news)
                             @if($key >0)
                                 <div class="news-item">
-                                    <div class="news-second-card">
+                                    <div class="fixed-height-img">
                                         @include('frontend::components.news.news-image')
                                     </div>
                                     <div class="news-content">

@@ -1,4 +1,4 @@
-<div class="newsBlock type-3 position-10 front_body_position_10">
+<div class="newsBlock type-3 position-10 front_body_position_10" style="padding: 0 15px;">
     @if(count($tenthPositionNews))
         @include('frontend::components.news.category-heading',['allNews'=>$tenthPositionNews])
         <div class="block-body">
@@ -22,7 +22,7 @@
                     @endif
                 @endforeach
             </div>
-            @include('frontend::components.buttons.view-all-category-button', ['position' => $tenthPositionNews])
         </div>
+        @include('frontend::components.buttons.view-all-category-button', ['position' => $tenthPositionNews])
     @endif
 </div>

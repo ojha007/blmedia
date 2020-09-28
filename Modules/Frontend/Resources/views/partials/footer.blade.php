@@ -1,6 +1,7 @@
 <section class="ads-section pb-3">
     <div class="container-fluid text-center">
-{{--        @include('frontend::components.ads.ads-2',['ads'=>$ads_above_footer])--}}
+        @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above',
+                            'sub_for'=>'footer'])
     </div>
 </section>
 <!--start page footer-->

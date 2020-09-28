@@ -10,7 +10,7 @@
                     </a>
                 </figure>
             </div>
-            <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 float-right d-sm-none d-md-block ">
+            <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 float-right d-sm-none d-md-block px-0">
                 @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'aside','sub_for'=>'logo'])
             </div>
         </div>
