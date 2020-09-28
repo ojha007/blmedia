@@ -9,12 +9,7 @@
                     @foreach($childNews->take(5) as $key=>$news)
                         @if($key== 0)
                             <div class="bigOverLay">
-                                <figure class="news-image">
-                                    <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                        <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
-                                             class="responsive-img">
-                                    </a>
-                                </figure>
+                                @include('frontend::components.news.news-image')
                                 <div class="ovLay">
                                     <h2 class="news-title">
                                         <a href="{{route($routePrefix.'news.show',$news->news_slug)}}">
@@ -27,24 +22,23 @@
                             <div class="smallHorizBx">
                                 <div class="row">
                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                        <a href="https://www.breaknlinks.com/hindi/news/44">
+                                        <div class="fixed-height-img">
+                                            @include('frontend::components.news.news-image')
+                                        </div>
+                                       {{-- <a href="https://www.breaknlinks.com/hindi/news/44">
                                             <img src="{{asset('frontend/img/orange.jpg')}}" alt=""
                                                  class="arch-img img-fluid">
-                                        </a>
+                                        </a>--}}
                                     </div>
                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                        <h2 class="news-title"><a
-                                                href="{{route($routePrefix.'news.show',$news->news_slug)}}">
-                                                {{$news->title}}
-                                            </a>
-                                        </h2>
+                                        @include('frontend::components.news.news-content')
                                     </div>
                                 </div>
                             </div>
                         @endif
 
                     @endforeach
-                    <div class="" style="margin-bottom: 20px;">
+                    <div  style="margin-bottom: 20px;">
                         @include('frontend::components.buttons.view-all-category-button', ['position' => $childNews])
                     </div>
                 </div>
