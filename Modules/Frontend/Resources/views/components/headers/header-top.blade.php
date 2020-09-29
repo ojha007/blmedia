@@ -34,7 +34,6 @@
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 float-right">
             <ul class="nav nav-pills">
-
                 <li class="nav-item">
                     <form class="form-inline base-form"
                           action="https://www.breaknlinks.com/hindi/search/execute_search" method="post">

@@ -1,24 +1,27 @@
-<!doctype html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Preeti to Nepali Unicode Converter</title>
-    <meta name="keywords" content="BL media Unicode Nepali Devanagari Roman Typing Keyboard">
-    <meta name="keywords" content="BreakNLinks">
-    <meta name="description" content="BL media language convertor">
-    <meta name="author" content="Bl Media">
-    <meta name="ROBOTS" content="ALL">
-    <meta name="Googlebot" content="index, follow">
-    <meta name="distribution" content="Global">
-    <meta name="document-type" content="web page">
-    <meta name="resource-type" content="document">
-    <link href="{{asset('/frontend/uikit.min.css')}}" rel="stylesheet"/>
-    <script src="js/uikit-icons.min.js"></script>
-    <script language="JavaScript" src="js/preeti.js"></script>
-</head>
+<section class="bg-site-color ">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark " style=" min-height: 60px;">
+            <a class="navbar-brand" href="{{route('index')}}">
+                <img src="{{asset('/frontend/img/logo.png')}}" height="50" alt="BL Media" loading="lazy" title="BL Media">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<div class="uk-container-center">
-
-
-</div>
-</html>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route($routePrefix.'preeti-to-unicode')}}">Preeti to Nepali
+                            Unicode <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route($routePrefix.'unicode-to-preeti')}}">Nepali Unicode to Preeti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route($routePrefix.'roman-to-unicode')}}"> Roman to Nepali Unicode</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>

@@ -1,67 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Preeti to Nepali Unicode Converter</title>
+    <meta name="keywords" content="BL media Unicode Nepali Devanagari Roman Typing Keyboard">
+    <meta name="keywords" content="BreakNLinks">
+    <meta name="description" content="BL media language convertor">
+    <meta name="author" content="Bl Media">
+    <meta name="ROBOTS" content="ALL">
+    <meta name="Googlebot" content="index, follow">
+    <meta name="distribution" content="Global">
+    <meta name="document-type" content="web page">
+    <meta name="resource-type" content="document">
+    <link href="{{asset('/frontend/uikit.min.css')}}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/masterLayout.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+    <style>
+        body, html {
+            height: 100vh;
+        }
+
+        .converter {
+            height: 80%;
+        }
+        .navbar-nav li {
+            /*padding: 5px 0;*/
+        }
+
+        .navbar-nav li a {
+            padding: 0 20px;
+            color: white;
+            opacity: 0.7;
+            font-size: 18px;
+        }
+
+        .navbar-nav li a.active {
+            color: white;
+            opacity: 1;
+        }
+
+        .navbar-nav li:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .navbar-nav li:hover a {
+            color: white;
+            opacity: 1;
+        }
+        .converter .card .card-footer a:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+<body >
 @include('frontend::unicode.partials.header')
-<div>
-    <div class="card-header pull-left">
-        <a href="{{route('index')}}">
-            <img
-                alt="BL media" src="{{asset('/frontend/img/logo.png')}}"
-                title="BL Media">
-        </a>
 
-    </div>
-    <div class="uk-padding-remove-top" style="min-height: 600px;">
-        <nav class="uk-navbar-container uk-light" style="background: #FF5E14;">
-            <div class="uk-navbar-center">
-                <div>
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active">
-                            <a href="{{route($routePrefix.'preeti-to-unicode')}}">
-                                Preeti to Nepali
-                                Unicode
-                            </a></li>
-                        <li><a href="{{route($routePrefix.'unicode-to-preeti')}}">
-                                Nepali Unicode to Preeti</a></li>
-                        <li><a href="{{route($routePrefix.'roman-to-unicode')}}">
-                                Roman to Nepali Unicode</a></li>
-                    </ul>
-                </div>
+<div class="container-fluid converter justify-content-center">
+    <div class="col-sm-12 py-3  ">
+        <div class="card text-center ">
+            <div class="card-header">
+                Unicode Converter
             </div>
-        </nav>
-        <div class="uk-section uk-section-default uk-section-small">
-            <div class="uk-container uk-container-center">
-                <form>
-                    <div class="uk-grid uk-grid-small">
-                        <div class="uk-width-1-2@m">
-                            <label for="legacy_text"></label>
-                            <textarea class="textarea_unicode uk-textarea uk-width-1-1"
-                                      id="legacy_text" name="TextToConvert" rows="12"
-                                      style="font-family:Preeti,serif; font-size:20px;"></textarea>
-                        </div>
+            <div class="card-body">
+               <div class="row">
+                   <div class="col-sm-12 col-md-12 col-lg-6 my-3 p-0">
+                       <div class="card" >
 
-                        <div class="uk-width-1-2@m">
-                            <label for="unicode_text">
-                            </label><textarea
-                                class="textarea_unicode uk-textarea uk-width-1-1"
-                                id="unicode_text" name="ConvertedText" rows="12"
-                                style="font-size:20px;"></textarea></div>
-                    </div>
+                           <div class="card-body">
+                               <form action="#">
+                                   <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"
+                                                  placeholder="nepali" style="border: none;"></textarea>
+                                   </div>
+                               </form>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-sm-12 col-md-12 col-lg-6  my-3 p-0">
+                       <div class="card" >
 
-
-                    <div class="uk-text-center unicode_roman">
-
-                        <div class="unicode_cap_1 uk-margin-top">
-                            <input accesskey="c"
-                                   class="uk-button uk-button-primary uk-width-1-1"
-                                   id="converter" name="converter"
-                                   onclick="convert_to_unicode();"
-                                   title="Click here to convert preeti to nepali unicode"
-                                   type="button"
-                                   value="Click here to convert preeti to unicode"/>
-                        </div>
-                    </div>
-
-                </form>
+                           <div class="card-body">
+                               <form action="#">
+                                   <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"
+                                                  placeholder="nepali" style="border: none;"></textarea>
+                                   </div>
+                               </form>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+            </div>
+            <div class="card-footer text-muted p-0">
+                <a href="" class="btn bg-site-color text-white btn-block">Click To Convert</a>
             </div>
         </div>
     </div>
 </div>
 @include('frontend::partials.footer')
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="js/uikit-icons.min.js"></script>
+<script language="JavaScript" src="js/preeti.js"></script>
+<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+</body>
+</html>
