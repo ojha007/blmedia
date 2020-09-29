@@ -116,4 +116,19 @@ class FrontendController extends Controller
     }
 
 
+    public function preetiToUniCode()
+    {
+        return view('frontend::unicode.index');
+    }
+
+//    public function preetiToUniCode()
+//    {
+//        return view('frontend::unicode.index');
+//    }
+//
+//    public function preetiToUniCode()
+//    {
+//        return view('frontend::unicode.index');
+//    }
+
 }

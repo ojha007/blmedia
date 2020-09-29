@@ -1,9 +1,11 @@
-<section class="ads-section pb-3">
-    <div class="container-fluid text-center">
-        @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above',
-                            'sub_for'=>'footer'])
-    </div>
-</section>
+@isset($allAds)
+    <section class="ads-section pb-3">
+        <div class="container-fluid text-center">
+            @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above',
+                                'sub_for'=>'footer'])
+        </div>
+    </section>
+@endisset
 <!--start page footer-->
 <footer class="page-footer">
     <div class="container-fluid">
@@ -13,15 +15,17 @@
                     <img src="{{asset('frontend/img/logo.png')}}" alt="Bl Media"/>
                 </figure>
                 <div class="brand-info">
-                    <h2 class="brand-name">In Association with BL Media Inc.</h2>
+                    <h2 class="brand-name">
+                        In Association with BL Media Inc.</h2>
                     <p> Copyright &copy; <?php echo date('Y'); ?>, www.breaknlinks.com </p>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 float-left">
-            बिएल मिडिया प्रा.लि., भायन्दर, मुम्बई - महाराष्ट्र,
+            {{setting('organization_name')}}
             <br>
-            इमेलः info@breaknlinks.com
+
+            {{trans('messages.email')}} : {{setting('organization_email')}}
         </div>
 
     </div>

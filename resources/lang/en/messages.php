@@ -9,5 +9,6 @@ return [
     'next' => 'Next',
     'write_your_comment' => 'Write Your Comment',
     'other_news' => 'Related News',
-    'publish_date' => 'Publish'
+    'publish_date' => 'Publish',
+    'email' => 'Email',
 ];

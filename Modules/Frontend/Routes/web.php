@@ -17,5 +17,8 @@ Route::group(
     $router->get('/', 'FrontendController@index')->name($edition);
     $router->get('/', 'FrontendController@index')->name('index');
     $router->get('/videos', 'FrontendController@videos')->name('videos');
+    $router->get('/preeti-to-unicode', 'FrontendController@preetiToUniCode')->name('preeti-to-unicode');
+    $router->get('/roman-to-unicode', 'FrontendController@romanToUnicode')->name('roman-to-unicode');
+    $router->get('/unicode-to-preeti', 'FrontendController@unicodeToPreeti')->name('unicode-to-preeti');
 });
 
