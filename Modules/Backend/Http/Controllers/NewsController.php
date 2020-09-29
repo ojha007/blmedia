@@ -32,6 +32,11 @@ class NewsController extends Controller
     {
 
         $this->model = $news;
+        $this->middleware('auth');
+        $this->middleware(['permission:news-view|news-create|news-edit|news-delete'], ['only' => ['index', 'show']]);
+        $this->middleware(['permission:news-create'], ['only' => ['create', 'store', 'show']]);
+        $this->middleware(['permission:news-edit'], ['only' => ['edit', 'update', 'show']]);
+        $this->middleware(['permission:news-delete'], ['only' => ['destroy']]);
         $this->repository = new NewsRepository($news);
     }
 

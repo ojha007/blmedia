@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 use Modules\Auth\Entities\User;
 use Modules\Auth\Http\Requests\CreateUserRequest;
 use Modules\Auth\Notifications\UserInvited;
-use Modules\Auth\Repositories\UserRepository;
+use Modules\Auth\Repositories\RoleRepository;
 use Modules\Backend\Http\Responses\Response;
 
 class UserController extends Controller
@@ -19,13 +19,13 @@ class UserController extends Controller
     protected $baseRoute = 'users';
     protected $viewPath = 'backend::users.';
     /**
-     * @var UserRepository
+     * @var RoleRepository
      */
     private $repository;
 
     public function __construct()
     {
-        $this->repository = new UserRepository(new User());
+        $this->repository = new RoleRepository(new User());
     }
 
     public function index()

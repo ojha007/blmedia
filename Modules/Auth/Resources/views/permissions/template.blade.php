@@ -7,6 +7,7 @@
             </label>
         </div>
     </td>
+{{--    @dd($permissions)--}}
     @foreach($access as $key)
         <td class="text-center">
             <div class="checkbox icheck">

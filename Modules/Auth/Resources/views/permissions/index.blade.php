@@ -23,6 +23,8 @@
         @include('auth::permissions.template',
             ['permission_name'=>'advertisement','access'=>$access])
         @include('auth::permissions.template',
+            ['permission_name'=>'role','access'=>$access])
+        @include('auth::permissions.template',
             ['permission_name'=>'setting','access'=>$access])
         @include('auth::permissions.template',
                     ['permission_name'=>'gallery',
