@@ -28,6 +28,11 @@ class CategoryController extends Controller
     {
 
         $this->model = $category;
+        $this->middleware('auth');
+        $this->middleware(['permission:news-category-view|news-category-create|news-category-edit|news-category-delete'], ['only' => ['index', 'show']]);
+        $this->middleware(['permission:news-category-create'], ['only' => ['create', 'store', 'show']]);
+        $this->middleware(['permission:news-category-edit'], ['only' => ['edit', 'update', 'show']]);
+        $this->middleware(['permission:news-category-delete'], ['only' => ['destroy']]);
         $this->repository = new NewsCategoryRepository($category);
     }
 

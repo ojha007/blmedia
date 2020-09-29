@@ -6,18 +6,22 @@
         {{$category->name}}</td>
     <td>{!! spanByStatus($category->is_active) !!}</td>
     <td>
-        <a href="{{route($routePrefix.'category.edit',$category->id)}}"
-           class="btn btn-primary btn-sm btn-flat">
-            <i class="fa fa-edit"></i>
-        </a>
-        {!! Form::open(['method' => 'DELETE', 'route' =>
-        [$routePrefix.'category.destroy',$category->id],
-        'onsubmit' => "return confirm('Are you sure you want to delete?')", 'style'=>"display:inline"
-        ])!!}
-        <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
-            <i class="fa fa-trash"></i>
-        </button>
-        {!! Form::close() !!}
+        @can('news-category-edit')
+            <a href="{{route($routePrefix.'category.edit',$category->id)}}"
+               class="btn btn-primary btn-sm btn-flat">
+                <i class="fa fa-edit"></i>
+            </a>
+        @endcan
+        @can('news-category-delete')
+            {!! Form::open(['method' => 'DELETE', 'route' =>
+            [$routePrefix.'category.destroy',$category->id],
+            'onsubmit' => "return confirm('Are you sure you want to delete?')", 'style'=>"display:inline"
+            ])!!}
+            <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
+                <i class="fa fa-trash"></i>
+            </button>
+            {!! Form::close() !!}
+        @endcan
     </td>
 </tr>
 <?php

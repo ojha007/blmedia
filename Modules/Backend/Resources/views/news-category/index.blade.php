@@ -12,13 +12,15 @@
     @include('backend::partials.errors')
     <div class="row">
         <div class="col-xs-12">
-            <div class="box-header">
-                <a class="btn btn-primary pull-right btn-flat"
-                   href="{{route($routePrefix.'category.create')}}">
-                    <i class="fa fa-plus"></i>
-                    Add News Category
-                </a>
-            </div>
+            @can('news-category-create')
+                <div class="box-header">
+                    <a class="btn btn-primary pull-right btn-flat"
+                       href="{{route($routePrefix.'category.create')}}">
+                        <i class="fa fa-plus"></i>
+                        Add News Category
+                    </a>
+                </div>
+            @endcan
             <div class="box">
                 <div class="box-body table-responsive">
                     <table id="dataTable" class="table table-bordered table-condensed tree-table">
