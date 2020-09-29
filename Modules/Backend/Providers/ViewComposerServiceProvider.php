@@ -27,11 +27,11 @@ class ViewComposerServiceProvider extends ServiceProvider
             $edition = Request::route()->getAction('edition');
             $module = Request::route()->getAction('module');
             $contactTypes = [
-                'users', 'reporters', 'guests'
+                'reporters', 'guests'
             ];
             $view->with([
                 'routePrefix' => $edition . '.' . $prefix,
-                'urlPrefix' => $edition . '/' . $prefix,
+                'urlPrefix' => $edition . '/bl-secure',
                 'module' => $module,
                 'edition' => $edition,
                 'contactTypes' => $contactTypes

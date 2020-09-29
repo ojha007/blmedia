@@ -115,6 +115,7 @@
             </a>
         </li>
         <li class="header">SETTINGS</li>
+        @include('auth::partials.sidebar')
         <li class="treeview {{request()->is($urlPrefix.'/news-category',
                     $urlPrefix.'/news-category/create') ? 'active':''}}">
             <a href="#">

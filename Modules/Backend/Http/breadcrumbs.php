@@ -15,7 +15,7 @@ Breadcrumbs::for('dashboard', function ($trail) use ($edition) {
 });
 Breadcrumbs::for('settings.index', function ($trail, $setting, $routePrefix) use ($edition) {
     $trail->parent('dashboard', route($edition . '.bl-secure.'));
-    $trail->push('Setting', route($routePrefix."settings.index", $setting));
+    $trail->push('Setting', route($routePrefix . "settings.index", $setting));
 });
 Breadcrumbs::resource('news', 'News');
 Breadcrumbs::resource('reporters', 'Reporters');
@@ -23,5 +23,6 @@ Breadcrumbs::resource('guests', 'Guests');
 Breadcrumbs::resource('users', 'Users');
 Breadcrumbs::resource('advertisements', 'Advertisements');
 Breadcrumbs::resource('team', 'Team');
+Breadcrumbs::resource('roles', 'Roles');
 
 

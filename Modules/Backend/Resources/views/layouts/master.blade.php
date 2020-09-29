@@ -122,7 +122,7 @@ desired effect
         });
 
         $('.dataTable').DataTable();
-        $('input.icheck').iCheck({
+        $('input.iCheck').iCheck({
             checkboxClass: 'icheckbox_square-blue',
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' /* optional */

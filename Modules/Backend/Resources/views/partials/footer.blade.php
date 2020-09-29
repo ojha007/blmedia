@@ -2,7 +2,7 @@
     <!-- To the right-content -->
     <div class="pull-right hidden-xs">
         Powered by <a href="" target="_blank">
-            Whetstone Associates</a>. Version 2.0.
+            BL Media</a>. Version 1.0.
     </div>
     <!-- Default to the left-content -->
     <strong>Copyright &copy; 2020

@@ -53,7 +53,7 @@ class NewsRepository extends Repository
     {
 
         return DB::table('news')
-            ->selectRaw('SELECT DISTINCT news.slug ')
+            ->selectRaw('SELECT DISTINCT (news.slug) ')
             ->select('news.title', 'news.sub_title', 'news.short_description',
                 'categories.name as categories', 'news.id as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
@@ -125,7 +125,6 @@ class NewsRepository extends Repository
                 'categories.name as categories', 'news.slug as news_slug', 'news.publish_date',
                 'categories.slug as category_slug', 'news.image',
                 'news.image_description', 'news.image_alt', 'categories.is_video')
-            ->selectRaw('DISTINCT (news.id) ')
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
@@ -180,7 +179,6 @@ class NewsRepository extends Repository
                     'reporters.image as reporter_image', 'guests.image as guest_image',
                     'news.publish_date',
                     'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt')
-                ->selectRaw('SELECT DISTINCT news.id')
                 ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
                 ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
                 ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
@@ -192,7 +190,7 @@ class NewsRepository extends Repository
                 ->whereNull('news.deleted_at')
                 ->where('categories.id', '=', $category->id)
                 ->orderByDesc('news.id')
-//                ->distinct(true)
+                ->distinct(true)
                 ->limit($limit)
                 ->get();
         return [];
