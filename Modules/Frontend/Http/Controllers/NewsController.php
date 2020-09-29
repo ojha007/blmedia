@@ -83,9 +83,10 @@ class NewsController extends Controller
                 ->orderBy('news_id')
                 ->paginate(15);
             $advertisements = $this->adsRepository->getAllAdvertisements('category_page');
+//            dd($this->newsRepository->getDetailPageCommonData());
             return view($this->viewPath . '.newsByAuthor',
                 compact('newsByAuthor'))
-                ->with($this->getDetailPageCommonData())
+                ->with($this->newsRepository->getDetailPageCommonData())
                 ->with($advertisements);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());

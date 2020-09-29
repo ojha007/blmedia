@@ -85,22 +85,6 @@ class FrontendController extends Controller
 
     }
 
-    public function getAllActiveAdvertisements()
-    {
-        $selectAdsFor = $this->adsRepository->ads_page();
-        $selectAdsSubFor = $this->adsRepository->ads_Positions();
-        $placements = $this->adsRepository->adsPlacements();
-        $toArray = [];
-        $limit = 2;
-        foreach ($selectAdsFor as $f => $for) {
-            foreach ($selectAdsSubFor as $s => $sub_for) {
-                foreach ($placements as $p => $placement) {
-                    $toArray['ads_' . $f . '_' . $s . '_' . $p] = $this->adsRepository->getAdsByForAndSubForAndPlacement($f, $s, $p, $limit);
-                }
-            }
-        }
-        return array_filter($toArray);
-    }
 
     public function getAllEditions()
     {
@@ -115,5 +99,20 @@ class FrontendController extends Controller
         return view('frontend::components.videos.videos', compact('headerCategories', 'fourthPositionNews'))->with($advertisements);
     }
 
+
+    public function preetiToUniCode()
+    {
+        return view('frontend::unicode.index');
+    }
+
+//    public function preetiToUniCode()
+//    {
+//        return view('frontend::unicode.index');
+//    }
+//
+//    public function preetiToUniCode()
+//    {
+//        return view('frontend::unicode.index');
+//    }
 
 }

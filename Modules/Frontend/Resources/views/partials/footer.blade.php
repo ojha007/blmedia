@@ -1,9 +1,11 @@
-<section class="ads-section pb-3">
-    <div class="container-fluid text-center">
-        @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above',
-                            'sub_for'=>'footer'])
-    </div>
-</section>
+@isset($allAds)
+    <section class="ads-section pb-3">
+        <div class="container-fluid text-center">
+            @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above',
+                                'sub_for'=>'footer'])
+        </div>
+    </section>
+@endisset
 <!--start page footer-->
 <footer class="page-footer">
     <div class="container-fluid">
@@ -20,11 +22,12 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3 footerButtom">
-              <span>  बिएल मिडिया प्रा.लि., भायन्दर, मुम्बई - महाराष्ट्र,</span>
+              <span> {{setting('organization_name')}}</span>
                 <br>
-               <span> इमेलः info@breaknlinks.com</span>
+               <span> {{trans('messages.email')}} : {{setting('organization_email')}} </span>
             </div>
         </div>
+
     </div>
 </footer>
 <!--ended page footer-->

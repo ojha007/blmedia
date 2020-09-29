@@ -17,12 +17,12 @@
                     <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 float-right">
                         @include('frontend::components.news.news-template',
                                   [
-                                      'allNews'=>$firstPositionNews,
+                                      'allNews'=>$detailPageFirstPositionNews,
                                       'class'=>' blspecial-body bisheshNew'
 
                                       ])
-                        @include('frontend::components.news.news-template',['allNews'=>$secondPositionNews,'image'=>'reporter_image'])
-                        @include('frontend::components.news.news-template',['allNews'=>$thirdPositionNews])
+                        @include('frontend::components.news.news-template',['allNews'=>$detailPageSecondPositionNews,'image'=>'reporter_image'])
+                        @include('frontend::components.news.news-template',['allNews'=>$detailPageThirdPositionNews])
                     </div>
                 </section>
 
