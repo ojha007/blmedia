@@ -14,3 +14,4 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/all.css"
       integrity="sha512-blbRKbSIVjplNrngvZa2X9fOUSBeqpa8pO5HFM4X0E5XyGCN0pcDhvfB4pTof/6F4mk7XxTlM2amhUcTvNIiUw=="
       crossorigin="anonymous"/>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">

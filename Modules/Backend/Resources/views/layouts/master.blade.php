@@ -13,20 +13,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-{{--    <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}">--}}
-{{--    <link rel="stylesheet" href="{{ asset('backend/css/all.css') }}">--}}
-{{--    <link rel="stylesheet" href="{{ asset('backend/css/select2.min.css') }}">--}}
-
-{{--    --}}{{--    <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css"/>--}}
-{{--    <link rel="stylesheet" type="text/css"--}}
-{{--          href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>--}}
-
-{{--    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>--}}
-{{--    --}}{{--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>--}}
-{{--    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"/>--}}
-{{--    --}}{{--    <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">--}}
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -101,23 +87,9 @@ desired effect
     @include('backend::partials.footer')
 </div>
 </body>
-{{--@dd('ff')--}}
 
-{{--<script src="https://adminlte.io/themes/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>--}}
-{{--<script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>--}}
-{{--<script src="https://adminlte.io/themes/AdminLTE/bower_components/fastclick/lib/fastclick.js"></script>--}}
-{{--<script src="https://adminlte.io/themes/AdminLTE/dist/js/adminlte.min.js"></script>--}}
-{{--<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>--}}
-{{--<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>--}}
-{{--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>--}}
+{{----}}
 
-{{--<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>--}}
-{{--<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"--}}
-{{--        integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="--}}
-{{--        crossorigin="anonymous"></script>--}}
-{{--<script src="{{asset('/backend/js/minimal.tree.js')}}" rel="script"></script>--}}
-<script src="{{asset('/backend/js/select2.min.js')}}" rel="script"></script>
 @include('backend::partials.scripts')
 @stack('scripts')
 <script>
@@ -150,7 +122,7 @@ desired effect
         });
 
         $('.dataTable').DataTable();
-        $('input').iCheck({
+        $('input.icheck').iCheck({
             checkboxClass: 'icheckbox_square-blue',
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' /* optional */
