@@ -127,14 +127,21 @@ html {
     /*background-color: red !important;*/
     padding: 10px 0;
     height: 200px!important;
+    object-fit: cover;
     width: 100%;
 }
 .fixed-height-img-2 figure img{
     /*background-color: red !important;*/
     height: 75px!important;
+    object-fit: cover;
     width: 100%;
 }
-
+.featured-img-fixed-height figure img{
+    /*background-color: red !important;*/
+    height: 300px!important;
+    object-fit: fill;
+    width: 100%;
+}
 /* [1] The container */
 .img-hover-zoom {
     height: 200px; /* [1.1] Set it as per your need */

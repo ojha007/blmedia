@@ -1,4 +1,3 @@
-
 <section class="amnavnd header-end ">
     <div class="container-fluid">
         <div class="row" style="border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;">
@@ -18,8 +17,8 @@
                                            placeholder="Search...">
                                     <div class="input-group-append">
                                         <button type="submit" name="search" class="btn btn-trans"><i
-                                                class="fa fa-search"
-                                                style="font-size: 10px; margin-top: 13px; padding-left: 20px;"></i>
+                                                    class="fa fa-search"
+                                                    style="font-size: 10px; margin-top: 13px; padding-left: 20px;"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -44,7 +43,7 @@
                                                              )
                                                      ? 'active':''}}">
                                 <a href="{{route($routePrefix.'index')}}" class="nav-link"><i
-                                        class="fa fa-home"></i> <span class="sr-only">Home</span>
+                                            class="fa fa-home"></i> <span class="sr-only">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item  home-site-logo">
@@ -95,7 +94,7 @@
                     </li>
                     <li class="unicode-am">
                         |
-                        <a href="https://www.breaknlinks.com/nepali/am/" target="_blank">
+                        <a href="{{route($routePrefix.'preeti-to-unicode')}}" target="_blank">
                             <i class="fa fa-keyboard"></i> युनिकोड</a>
                     </li>
                 </ul>

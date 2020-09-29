@@ -1,7 +1,7 @@
 <div class="news-list-view">
     @foreach($newsByCategory as $news)
         <div class="news-item">
-            <div class="news-second-card">
+            <div class="fixed-height-img">
                 @include('frontend::components.news.news-image')
             </div>
             <div class="news-content">

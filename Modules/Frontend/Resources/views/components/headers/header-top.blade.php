@@ -1,4 +1,4 @@
-<div class="container-fluid text-center px-0">
+<div class="container-fluid text-center px-0 header-top-ads">
     @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above','sub_for'=>'top_menu'])
 </div>
 <section class="header-top mb-3">
@@ -34,7 +34,6 @@
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 float-right">
             <ul class="nav nav-pills">
-
                 <li class="nav-item">
                     <form class="form-inline base-form"
                           action="https://www.breaknlinks.com/hindi/search/execute_search" method="post">

@@ -6,7 +6,9 @@
                 @foreach($sixthPositionNews as $key=>$news)
                     @if($key == 0)
                         <div class="news-item highlight-news">
-                            @include('frontend::components.news.news-image')
+                           <div class="featured-img-fixed-height">
+                               @include('frontend::components.news.news-image')
+                           </div>
                             <div class="news-content" style="height: auto;">
                                 <h5 class="news-title-am">
                                     <a

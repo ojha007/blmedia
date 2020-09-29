@@ -1,4 +1,4 @@
-<div class="newsBlock type-8 front_body_position_5" id="bl-break-section-01 ">
+<div class="newsBlock type-8 {{$class ?? ''}}" id="bl-break-section-01 ">
     @if(count($allNews))
         <div class="container-fluid text-center">
             @include('frontend::components.ads.ads-2',[

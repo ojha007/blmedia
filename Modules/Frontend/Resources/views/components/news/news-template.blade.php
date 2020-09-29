@@ -1,5 +1,5 @@
 @if(count($allNews))
-    <div class="newsBlock type-8 front_body_position_3 ">
+    <div class="newsBlock type-8 {{$class ?? ''}} ">
         <div class="block-header gn-heading">
             <h2>
                 <a href="{{route($routePrefix.'news-category.show',$allNews->first()->category_slug)}}">
