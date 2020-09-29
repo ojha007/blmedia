@@ -6,7 +6,9 @@
                 @foreach($tenthPositionNews as $key=>$news)
                     @if($key == 0)
                         <div class="news-item highlight-news am-kala position-10-highlight">
-                            @include('frontend::components.news.news-image')
+                            <div class="featured-img-fixed-height">
+                                @include('frontend::components.news.news-image')
+                            </div>
                             <div class="news-content">
                                 @include('frontend::components.news.news-content')
                                 <p class="short-news">{!! $news->short_description !!}</p>

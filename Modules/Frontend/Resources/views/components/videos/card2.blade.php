@@ -1,5 +1,5 @@
 @foreach($fourthPositionNews as $key=>$news)
-<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 my-3">
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 my-3 videoCard">
     <div class="card ">
         <div class="img-hover-zoom img-hover-zoom--point-zoom">
             <a href="{{route($routePrefix.'news.show',$news->news_slug)}}" class="thumbnail">
