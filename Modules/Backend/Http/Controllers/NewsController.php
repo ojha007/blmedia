@@ -4,6 +4,7 @@ namespace Modules\Backend\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Modules\Backend\Entities\Category;
@@ -95,9 +96,10 @@ class NewsController extends Controller
             DB::beginTransaction();
             $news = $this->repository->update($id, $attributes);
             $categories = array_merge($request->get('category_id'), $this->setAnchorOrSpecial($request));
-            $news->categories()->sync($categories);
+            $news->categories()->sync(array_filter($categories));
             if ($request->get('tags'))
                 $news->retag($request->get('tags'));
+            $this->flushOldNewsCache($news);
             DB::commit();
             return redirect()->route($baseRoute . '.index')
                 ->with('success', 'News Updated SuccessFully');
@@ -108,32 +110,6 @@ class NewsController extends Controller
                 ->with('failed', 'Failed to Update News');
         }
 
-    }
-
-    public function store(NewsRequest $request)
-    {
-        $attributes = $request->validated();
-        $baseRoute = getBaseRouteByUrl($request);
-        try {
-            DB::beginTransaction();
-            if (is_null($attributes['slug'])) {
-                $attributes['slug'] = \Illuminate\Support\Str::slug($request->get('title'));
-            }
-            $news = $this->repository->create($attributes);
-            $categories = array_merge($request->get('category_id'), $this->setAnchorOrSpecial($request));
-            $news->categories()->sync($categories);
-
-            if ($request->get('tags'))
-                $news->tag($request->get('tags'));
-            DB::commit();
-            return redirect()->route($baseRoute . '.index')
-                ->with('success', 'News Created SuccessFully');
-        } catch (\Exception $exception) {
-            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
-            DB::rollBack();
-            return redirect()->back()->withInput()
-                ->with('failed', 'Failed to create News');
-        }
     }
 
     protected function setAnchorOrSpecial($request)
@@ -150,6 +126,63 @@ class NewsController extends Controller
                 array_push($toArray, $special->id);
         }
         return $toArray;
+    }
+
+    protected function flushOldNewsCache($news)
+    {
+        $categories = $news->categories;
+        foreach ($categories as $category) {
+            if ($category->position) {
+                $position = $category->position;
+                if ($position->front_body_position) {
+                    $a = getNumberInWords();
+                    $isExists = array_key_exists($position->front_body_position, $a);
+                    if ($isExists) {
+                        $words = $a[$position->front_body_position];
+                        if (Cache::has('_' . $words . 'PositionNews')) {
+                            Cache::forget('_' . $words . 'PositionNews');
+                        }
+                    }
+                }
+                if ($position->detail_body_position) {
+                    $a = getNumberInWords();
+                    $isExists = array_key_exists($position->detail_body_position, $a);
+                    if ($isExists) {
+                        $words = $a[$position->detail_body_position];
+                        if (Cache::has('_detailPage' . ucwords($words) . 'PositionNews')) {
+                            Cache::forget('_detailPage' . ucwords($words) . 'PositionNews');
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public function store(NewsRequest $request)
+    {
+        $attributes = $request->validated();
+        $baseRoute = getBaseRouteByUrl($request);
+        try {
+            DB::beginTransaction();
+            if (is_null($attributes['slug'])) {
+                $attributes['slug'] = \Illuminate\Support\Str::slug($request->get('title'));
+            }
+            $news = $this->repository->create($attributes);
+            $categories = array_merge($request->get('category_id'), $this->setAnchorOrSpecial($request));
+            $news->categories()->sync(array_filter($categories));
+
+            if ($request->get('tags'))
+                $news->tag($request->get('tags'));
+            $this->flushOldNewsCache($news);
+            DB::commit();
+            return redirect()->route($baseRoute . '.index')
+                ->with('success', 'News Created SuccessFully');
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            DB::rollBack();
+            return redirect()->back()->withInput()
+                ->with('failed', 'Failed to create News');
+        }
     }
 
     public function show(News $news)
