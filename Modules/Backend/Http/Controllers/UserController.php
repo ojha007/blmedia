@@ -6,6 +6,7 @@ namespace Modules\Backend\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -89,4 +90,36 @@ class UserController extends Controller
                 ->with('failed', 'User cannot be deleted.');
         }
     }
+
+    public function profile()
+    {
+        $user = $this->repository->getById(Auth::id());
+        return view('auth::profile.index', compact('user'));
+    }
+
+//    public function updateProfile(UpdateProfileRequest $request, $id)
+//    {
+//        $input = $request->all();
+//        $user = $this->repository->getById($id);
+//        $user->update($input);
+//        return redirect()->route($this->routePrefix . '.profile')
+//            ->with('success', 'Profile updated successfully');
+//    }
+//
+//    public function updateAvatar(Request $request)
+//    {
+//        if ($request->hasFile('avatar')) {
+//            $avatar = $request->file('avatar');
+//            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+//            $img = Image::make($avatar->getRealPath());
+//            $img->stream();
+//            Storage::disk('local')->put('/public/avatars/' . $filename, $img, 'public');
+//            $user = Auth::user();
+//            Storage::delete('/public/avatars/' . $user->avatar);
+//            $user->avatar = $filename;
+//            $user->save();
+//            return redirect()->route($this->routePrefix . '.profile')
+//                ->with('success', 'Profile image updated successfully');
+//        }
+//    }
 }

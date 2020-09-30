@@ -28,12 +28,14 @@ Route::group(
     include __DIR__ . '/subRoutes/newsCategory.php';
     include __DIR__ . '/subRoutes/news.php';
     include __DIR__ . '/subRoutes/team.php';
-
     include __DIR__ . '/subRoutes/contact.php';
     include __DIR__ . '/subRoutes/advertisement.php';
     include __DIR__ . '/subRoutes/settings.php';
     include __DIR__ . '/subRoutes/users.php';
     $router->resource('/roles', 'RoleController');
+    $router->get('profile', 'UserController@profile')->name('profile');
+    $router->post('profile', 'UserController@updateAvatar')->name('profile.avatar');
+    $router->match(['put', 'patch'], 'profile/{user}', 'UserController@updateProfile')->name('profile.update');
 
 });
 //Route::group([

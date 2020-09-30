@@ -44,12 +44,12 @@
                             ])}}
             </div>
 
-            <div class="form-group col-md-6 {{$errors->has('reporter_id') ? 'has-error':''}}">
+            <div class="form-group col-md-12 {{$errors->has('reporter_id') ? 'has-error':''}}">
                 {{Form::label('reporter_id','ByLine:')}}
                 {{Form::select('reporter_id',$selectReporters,null,['class'=>'form-control select2','placeholder'=>'Select By Line','style=width:100%'])}}
             </div>
 
-            <div class="form-group col-md-6 {{$errors->has('guest_id') ? 'has-error':''}}">
+            <div class="form-group col-md-12 {{$errors->has('guest_id') ? 'has-error':''}}">
                 {{Form::label('guest_id','Guest By Line:')}}
                 {{Form::select('guest_id',$selectGuests,
                 null,['class'=>'form-control select2','placeholder'=>'Select By Line','style=width:100%'])}}
