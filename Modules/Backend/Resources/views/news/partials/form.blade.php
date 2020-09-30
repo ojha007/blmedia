@@ -123,8 +123,8 @@
 
 
             <div class="form-group col-md-12 {{$errors->has('image_caption'?'has-error':'')}}" style="padding-right: 0">
-                {{Form::label('image_caption','Image Caption')}}
-                {{Form::textarea('image_caption',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
+                {{Form::label('image_description','Image Caption')}}
+                {{Form::textarea('image_description',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
 
             </div>
             <div class="form-group col-md-12  {{$errors->has('sub_description') ?'has-error':''}}">

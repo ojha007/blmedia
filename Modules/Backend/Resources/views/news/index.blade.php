@@ -85,6 +85,8 @@
                             <th>S.No</th>
                             <th>News</th>
                             <th>Categories</th>
+                            <th>Tags</th>
+                            <th>Author</th>
                             <th>Publish Date</th>
                             <th>Status</th>
                             <th class="no-sort">Action</th>
@@ -113,11 +115,12 @@
                                         @isset($news->reporter)
                                             <li>
                                                 Reporter :
-                                                <span class="label label-info">
-                                              {{$news->reporter->name}}
-                                         </span>
+                                                <span class="label label-success">
+                                                    {{$news->reporter->name}}
+                                                </span>
                                             </li>
                                         @endisset
+
                                     </ul>
                                 </td>
                                 <td>
@@ -128,6 +131,28 @@
                                             </li>
                                         @endforeach
                                     </ul>
+                                </td>
+                                <td>
+                                    @foreach($news->tags as $tag)
+                                        #{{$tag->name}}
+                                        @if(!$loop->last),@endif
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @isset($news->createdBy)
+                                        Created By:
+                                        <span class="label label-warning">
+                                                    {{$news->createdBy->user_name}}
+                                                </span>
+                                    @endisset
+                                    @isset($news->updatedBy)
+                                        <br>
+                                        Updated By:
+                                        <span class="label label-warning">
+                                                    {{$news->updatedBy->user_name}}
+                                                </span>
+                                    @endisset
+
                                 </td>
                                 <td>
                                     {{$news->publish_date}}

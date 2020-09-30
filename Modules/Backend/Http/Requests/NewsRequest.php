@@ -20,7 +20,7 @@ class NewsRequest extends FormRequest
             'reporter_id' => 'nullable|exists:reporters,id',
             'guest_id' => 'nullable|exists:guests,id',
             'description' => 'required',
-            'image_caption' => 'required|string|max:255',
+            'image_alt' => 'nullable|string|max:255',
             'category_id' => 'required|exists:categories,id',
             'short_description' => 'nullable',
             'external_url' => 'nullable',
@@ -28,6 +28,7 @@ class NewsRequest extends FormRequest
             'is_anchor' => 'required|boolean',
             'is_special' => 'required|boolean',
             'image' => 'required',
+            'image_description' => 'required|string|max:255',
             'video_url' => 'nullable',
             'is_active' => 'required|boolean',
             'tags' => 'required'

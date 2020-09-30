@@ -50,7 +50,7 @@ class NewsController extends Controller
         $selectCategories = (new CategoryRepository(new Category()))->getAll()
             ->where('is_active', true)
             ->pluck('name', 'id');
-        $news = News::with(['categories', 'reporter', 'guest'])
+        $news = News::with(['categories', 'reporter', 'guest', 'createdBy', 'updatedBy', 'tags'])
             ->orderBy('news.id', 'DESC')
             ->when($is_special, function ($a) use ($is_special) {
                 $a->where('is_special', $is_special);

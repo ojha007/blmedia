@@ -3,6 +3,8 @@
 namespace Modules\Auth\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Modules\Auth\Entities\User;
 use Modules\Auth\Repositories\RoleRepository;
@@ -45,20 +47,31 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
-
         $baseRoute = getBaseRouteByUrl($request);
         Validator::make($request->all(), [
             'name' => 'required|unique:roles,name'
         ])->validate();
-        $input = $request->all();
-        $role = $this->repository->create([
-            'name' => $request->get('name')
-        ]);
-        if (isset($input['permission']))
-            $role->syncPermissions($input['permission']);
-        return redirect()
-            ->route($baseRoute . '.index')
-            ->with('success', 'Role Created Successfully');
+        DB::beginTransaction();
+        try {
+            $input = $request->all();
+            $role = $this->repository->create([
+                'name' => $request->get('name')
+            ]);
+            if (isset($input['permission']))
+                $role->syncPermissions($input['permission']);
+            DB::commit();
+            return redirect()
+                ->route($baseRoute . '.index')
+                ->with('success', 'Role Created Successfully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()
+                ->withInput()
+                ->with('failed', 'Failed to create Role');
+        }
+
+
     }
 
     public function show()
@@ -75,14 +88,28 @@ class RoleController extends Controller
 
     public function update(Request $request, $id)
     {
-        $baseRoute = getBaseRouteByUrl($request);
-        $input = $request->all();
-        $role = $this->repository->update($id, ['name' => $input['name']]);
-        if (isset($input['permission']))
-            $role->syncPermissions($input['permission']);
-        return redirect()
-            ->route($baseRoute . '.index')
-            ->with('success', 'Role Updated Successfully');
+        Validator::make($request->all(), [
+            'name' => 'required|unique:roles,name,' . $id
+        ])->validate();
+
+        DB::beginTransaction();
+        try {
+            $baseRoute = getBaseRouteByUrl($request);
+            $input = $request->all();
+            $role = $this->repository->update($id, ['name' => $input['name']]);
+            if (isset($input['permission']))
+                $role->syncPermissions($input['permission']);
+            DB::commit();
+            return redirect()
+                ->route($baseRoute . '.index')
+                ->with('success', 'Role Updated Successfully');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
+            return redirect()->back()
+                ->withInput()
+                ->with('failed', 'Failed to update Role');
+        }
     }
 
 
