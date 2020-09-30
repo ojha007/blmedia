@@ -101,7 +101,7 @@ class NewsController extends Controller
             DB::beginTransaction();
             $news = $this->repository->update($id, $attributes);
             $categories = array_merge($request->get('category_id'), $this->setAnchorOrSpecial($request));
-            $news->categories()->sync(array_filter($categories));
+            $news->categories()->sync(array_unique($categories));
             if ($request->get('tags'))
                 $news->retag($request->get('tags'));
             $this->flushOldNewsCache($news);
@@ -174,8 +174,7 @@ class NewsController extends Controller
             }
             $news = $this->repository->create($attributes);
             $categories = array_merge($request->get('category_id'), $this->setAnchorOrSpecial($request));
-            $news->categories()->sync(array_filter($categories));
-
+            $news->categories()->sync(array_unique($categories));
             if ($request->get('tags'))
                 $news->tag($request->get('tags'));
             $this->flushOldNewsCache($news);

@@ -18,14 +18,34 @@
             ])
         @include('auth::permissions.template',
             ['permission_name'=>'news','access'=>$access])
+
         @include('auth::permissions.template',
             ['permission_name'=>'news-category','access'=>$access])
+
         @include('auth::permissions.template',
             ['permission_name'=>'advertisement','access'=>$access])
+
         @include('auth::permissions.template',
             ['permission_name'=>'role','access'=>$access])
+
         @include('auth::permissions.template',
             ['permission_name'=>'setting','access'=>$access])
+
+        @include('auth::permissions.template',
+           ['permission_name'=>'user','access'=>$access])
+
+        @include('auth::permissions.template',
+           ['permission_name'=>'setting','access'=>$access])
+
+        @include('auth::permissions.template',
+           ['permission_name'=>'guest','access'=>$access])
+
+        @include('auth::permissions.template',
+          ['permission_name'=>'reporter','access'=>$access])
+
+        @include('auth::permissions.template',
+        ['permission_name'=>'team','access'=>$access])
+
         @include('auth::permissions.template',
                     ['permission_name'=>'gallery',
                     'access'=>['view','create']])

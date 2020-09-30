@@ -5,7 +5,6 @@ namespace Modules\Frontend\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Modules\Backend\Entities\Advertisement;
-use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;
 use Modules\Frontend\Entities\Category;
 use Modules\Frontend\Repositories\CategoryRepository;
@@ -42,7 +41,7 @@ class CategoryController extends Controller
         $this->model = $category;
         $this->repository = new CategoryRepository($category);
         $this->adsRepository = new AdvertisementRepository(new Advertisement());
-        $this->newsRepository = new NewsRepository(new News());
+        $this->newsRepository = new NewsRepository();
     }
 
     public function showNewsByCategory($slug)
@@ -64,21 +63,21 @@ class CategoryController extends Controller
     public function getNewsByCategorySlug($slug, $perPage = 15)
     {
         return DB::table('categories')
-            ->selectRaw(DB::raw('SELECT distinct(news.id)'))
+            ->select('news.sub_title', 'news.slug as news_slug', 'news.title', 'news.short_description',
+                'news.description', 'news.publish_date', 'news.image', 'news.image_alt', 'news.image_description',
+                'categories.slug as category_slug', 'categories.name as categories'
+            )->selectRaw('(SELECT distinct (news.slug))')
+            ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
             ->join('news_categories', 'categories.id', '=', 'news_categories.category_id')
             ->join('news', 'news_categories.news_id', '=', 'news.id')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
-            ->select('news.sub_title', 'news.slug as news_slug', 'news.title', 'news.short_description',
-                'news.description', 'news.publish_date', 'news.image', 'news.image_alt', 'news.image_description',
-                'categories.slug as category_slug', 'categories.name as categories'
-            )->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
-            ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
-            ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
-            ->where('categories.slug', $slug)
+            ->where('categories.slug', '=', $slug)
             ->where('news.is_active', '=', 1)
+            ->whereNull('news.deleted_at')
             ->orderByDesc('news.id')
-//            ->distinct()
             ->paginate($perPage);
 
     }

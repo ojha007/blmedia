@@ -43,6 +43,10 @@ class PermissionsSeeder extends Seeder
             'advertisement',
             'setting',
             'role',
+            'user',
+            'reporter',
+            'guest',
+            'team'
         ];
     }
 
