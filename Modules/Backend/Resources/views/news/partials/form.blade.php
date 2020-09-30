@@ -118,8 +118,8 @@
                                 @isset($news_tags)
                                 @if(in_array($tag,$news_tags))
                                 selected
-                                @endif
-                                @endisset>
+                            @endif
+                            @endisset>
                             {{$tag}}
                         </option>
                     @endforeach
@@ -137,11 +137,15 @@
                     </label>
                     {{Form::text('image',null,['id'=>'image_label','class'=>'form-control'])}}
                 </div>
-                <img id="holder" style="margin-top:15px;height:60px;width: 100px" alt=""
+                <img id="holder" style="margin-top:15px;height:100px;width: 250px;" alt=""
                      src="{{isset($news) ? $news->image : ''}}">
             </div>
 
+            <div class="form-group col-md-12 {{$errors->has('image_alt'?'has-error':'')}}">
+                {{Form::label('image_alt','Image Title')}}
+                {{Form::text('image_alt',null,['class'=>'form-control','placeholder'=>'Enter image Title'])}}
 
+            </div>
             <div class="form-group col-md-12 {{$errors->has('image_caption'?'has-error':'')}}" style="padding-right: 0">
                 {{Form::label('image_description','Image Caption')}}
                 {{Form::textarea('image_description',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
@@ -182,13 +186,13 @@
 
         var routePrefix = '{{$edition}}'
         CKEDITOR.replace('description', {
-            height : 312,
+            height: 312,
             filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'
         });
     </script>
-{{--    <script>--}}
-{{--        var routePrefix = '{{$edition}}'--}}
-{{--        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'});--}}
-{{--    </script>--}}
+    {{--    <script>--}}
+    {{--        var routePrefix = '{{$edition}}'--}}
+    {{--        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'});--}}
+    {{--    </script>--}}
 
 @endpush

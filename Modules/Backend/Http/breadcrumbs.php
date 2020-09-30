@@ -19,7 +19,7 @@ Breadcrumbs::for('settings.index', function ($trail, $setting, $routePrefix) use
 });
 Breadcrumbs::for('profile', function ($trail, $routePrefix) {
     $trail->parent('dashboard',$routePrefix);
-    $trail->push('User Profile', route($routePrefix.'.profile'));
+    $trail->push('User Profile', route($routePrefix.'profile'));
 });
 
 Breadcrumbs::resource('news', 'News');

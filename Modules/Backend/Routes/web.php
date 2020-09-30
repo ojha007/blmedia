@@ -36,6 +36,7 @@ Route::group(
     $router->get('profile', 'UserController@profile')->name('profile');
     $router->post('profile', 'UserController@updateAvatar')->name('profile.avatar');
     $router->match(['put', 'patch'], 'profile/{user}', 'UserController@updateProfile')->name('profile.update');
+    Route::post('password/change', 'ChangePasswordController@changePassword')->name('changePassword');
 
 });
 //Route::group([
