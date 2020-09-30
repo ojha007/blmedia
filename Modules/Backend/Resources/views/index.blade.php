@@ -13,6 +13,7 @@
         <section class="content">
             <div class="row">
                 @foreach($attributes as $key=>$value)
+{{--                    @dd($value)--}}
                     @include('backend::dashboard.components.info-box')
                 @endforeach
 

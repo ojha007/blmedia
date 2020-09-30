@@ -6,7 +6,6 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\CategoryPositions;
-use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;
 use Modules\Backend\Repositories\NewsCategoryRepository;
 use Modules\Frontend\Entities\Category;
@@ -36,7 +35,7 @@ class FrontendController extends Controller
     public function __construct()
     {
         $this->categoryRepository = new CategoryRepository(new Category());
-        $this->newsRepository = new NewsRepository(new News());
+        $this->newsRepository = new NewsRepository();
         $this->adsRepository = new AdvertisementRepository(new Advertisement());
     }
 

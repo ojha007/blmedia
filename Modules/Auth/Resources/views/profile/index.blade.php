@@ -22,6 +22,7 @@
             <div class="box box-primary">
                 <div class="box-body box-profile">
                     <img class="profile-user-img img-responsive img-circle"
+                         id="holder"
                          src="{{asset('/images/default.jpg')}}"
                          alt="user image"
                     >
@@ -32,8 +33,8 @@
 
                     {!! Form::model($user, ['method' => 'POST', 'enctype'=>'multipart/form-data',
                             'class'=>'form-horizontal','route' => [$routePrefix.'profile.avatar']]) !!}
-                    <div class="form-group" style="margin-left: 0px; margin-right: 0px;">
-                        {!! Form::file('avatar') !!}
+                    <div class="col-md-12">
+                        @include('backend::partials.choose-image',['name'=>'avatar','label'=>'Image'])
                     </div>
                     <button type="submit" class="btn btn-primary btn-flat btn-block">Change Profile Picture</button>
                     {!! Form::close() !!}
