@@ -6,8 +6,6 @@
 
 <script src="https://adminlte.io/themes/AdminLTE/dist/js/adminlte.min.js"></script>
 
-<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
-
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 {{--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>--}}
@@ -31,3 +29,4 @@
         integrity="sha512-7Wyl8g+OoE03TpphxJr1PTkEbIoBDhYtD57tBnqBi3B4xc0P4+ciV6M3P2hzrpsPOXHcM5dqwe5iLRB61Z3gaQ=="
         crossorigin="anonymous"></script>
 <script src="{{asset('/backend/js/select2.min.js')}}" rel="script"></script>
+<script src="{{asset('/ckeditor/ckeditor.js')}}" rel="script"></script>
