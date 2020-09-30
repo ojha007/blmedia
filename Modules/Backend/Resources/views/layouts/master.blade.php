@@ -5,7 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('backend/images/logo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bl Media</title>
@@ -31,6 +31,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             background-color: #FF5E12;
             color: #fff;
             border-bottom: 0 solid transparent;
+        }
+        .form-control {
+            border-radius: 0;
+            box-shadow: none;
+            border-color: #d2d6de;
         }
     </style>
 

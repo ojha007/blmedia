@@ -12,6 +12,7 @@
     <meta name="distribution" content="Global">
     <meta name="document-type" content="web page">
     <meta name="resource-type" content="document">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     <link href="{{asset('/frontend/uikit.min.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/masterLayout.css') }}">
@@ -25,6 +26,7 @@
         .converter {
             height: 80%;
         }
+
         .navbar-nav li {
             /*padding: 5px 0;*/
         }
@@ -49,12 +51,13 @@
             color: white;
             opacity: 1;
         }
-        .converter .card .card-footer a:hover{
+
+        .converter .card .card-footer a:hover {
             background-color: black;
         }
     </style>
 </head>
-<body >
+<body>
 @include('frontend::unicode.partials.header')
 
 <div class="container-fluid converter justify-content-center">
@@ -64,34 +67,34 @@
                 Unicode Converter
             </div>
             <div class="card-body">
-               <div class="row">
-                   <div class="col-sm-12 col-md-12 col-lg-6 my-3 p-0">
-                       <div class="card" >
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 my-3 p-0">
+                        <div class="card">
 
-                           <div class="card-body">
-                               <form action="#">
-                                   <div class="form-group">
+                            <div class="card-body">
+                                <form action="#">
+                                    <div class="form-group">
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"
-                                                  placeholder="nepali" style="border: none;"></textarea>
-                                   </div>
-                               </form>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-sm-12 col-md-12 col-lg-6  my-3 p-0">
-                       <div class="card" >
+                                                  style="border: none;"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6  my-3 p-0">
+                        <div class="card">
 
-                           <div class="card-body">
-                               <form action="#">
-                                   <div class="form-group">
+                            <div class="card-body">
+                                <form action="#">
+                                    <div class="form-group">
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"
-                                                  placeholder="nepali" style="border: none;"></textarea>
-                                   </div>
-                               </form>
-                           </div>
-                       </div>
-                   </div>
-               </div>
+                                                  style="border: none;"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="card-footer text-muted p-0">
                 <a href="" class="btn bg-site-color text-white btn-block">Click To Convert</a>

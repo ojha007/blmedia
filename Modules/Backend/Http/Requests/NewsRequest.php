@@ -16,22 +16,21 @@ class NewsRequest extends FormRequest
         return [
             'title' => 'required',
             'sub_title' => 'nullable|string|max:255',
-            'tags' => 'nullable',
-            'slug' => 'nullable',
+            'slug' => 'required',
             'reporter_id' => 'nullable|exists:reporters,id',
             'guest_id' => 'nullable|exists:guests,id',
             'description' => 'required',
-            'image_caption' => 'nullable|string|max:255',
+            'image_caption' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
             'short_description' => 'nullable',
             'external_url' => 'nullable',
             'publish_date' => 'required|date|date_format:Y-m-d',
             'is_anchor' => 'required|boolean',
             'is_special' => 'required|boolean',
-            'image' => 'nullable',
+            'image' => 'required',
             'video_url' => 'nullable',
             'is_active' => 'required|boolean',
-//            'is_anchor' => 'nullable',
-//            'publish_status' => 'required|in:' . implode(',', News::publishStatus()),
+            'tags' => 'required'
         ];
     }
 

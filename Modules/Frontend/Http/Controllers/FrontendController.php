@@ -51,8 +51,8 @@ class FrontendController extends Controller
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
         $firstPositionNews = $newsRepo->getCacheNews(1, CategoryPositions::FRONT_BODY_POSITION, 9, 'firstPositionNews');
-        $secondPositionNews = $newsRepo->getCacheNews(2, CategoryPositions::FRONT_BODY_POSITION, 9, 'secondPositionNews');
-        $thirdPositionNews = $newsRepo->getCacheNews(3, CategoryPositions::FRONT_BODY_POSITION, 8, 'thirdPositionNews');
+        $secondPositionNews = $newsRepo->getCacheNews(2, CategoryPositions::FRONT_BODY_POSITION, 5, 'secondPositionNews');
+        $thirdPositionNews = $newsRepo->getCacheNews(3, CategoryPositions::FRONT_BODY_POSITION, 6, 'thirdPositionNews');
         $fourthPositionNews = $newsRepo->getCacheNews(4, CategoryPositions::FRONT_BODY_POSITION, 6, 'fourthPositionNews');
         $fifthPositionNews = $newsRepo->getCacheNews(5, CategoryPositions::FRONT_BODY_POSITION, 5, 'fifthPositionNews');
         $sixthPositionNews = $newsRepo->getCacheNews(6, CategoryPositions::FRONT_BODY_POSITION, 10, 'sixthPositionNews');
@@ -105,14 +105,14 @@ class FrontendController extends Controller
         return view('frontend::unicode.index');
     }
 
-//    public function preetiToUniCode()
-//    {
-//        return view('frontend::unicode.index');
-//    }
-//
-//    public function preetiToUniCode()
-//    {
-//        return view('frontend::unicode.index');
-//    }
+    public function unicodeToPreeti()
+    {
+        return view('frontend::unicode.index');
+    }
+
+    public function romanToUnicode()
+    {
+        return view('frontend::unicode.index');
+    }
 
 }

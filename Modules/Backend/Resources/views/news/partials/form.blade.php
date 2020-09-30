@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-9">
     <div class="box box-default">
         <div class="box-header with-border">
             <h3 class="box-title">
@@ -34,6 +34,7 @@
                             'placeholder'=>'Enter Secondary Title',
                             ])}}
             </div>
+
             <div class="col-md-6 form-group {{$errors->has('slug') ?'has-error':''}}">
                 {{Form::label('slug','Enter Slug in English:')}}
                 {{Form::text('slug',null,
@@ -53,28 +54,15 @@
                     ['class'=>'form-control select2','multiple'=>'true',
                         'style'=>'width:100%'])}}
             </div>
-
             <div class="form-group col-md-6 {{$errors->has('reporter_id') ? 'has-error':''}}">
                 {{Form::label('reporter_id','ByLine:')}}
-                {{Form::select('reporter_id',$selectReporters,null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
+                {{Form::select('reporter_id',$selectReporters,null,['class'=>'form-control select2','placeholder'=>'Select By Line','style=width:100%'])}}
             </div>
 
             <div class="form-group col-md-6 {{$errors->has('guest_id') ? 'has-error':''}}">
-                <div class="col-md-11" style="padding-left: 0">
-                    {{Form::label('guest_id','Guest By Line:')}}
-                    {{Form::select('guest_id',$selectGuests,
-                    null,['class'=>'form-control select2','placeholder'=>'Select By Line'])}}
-                </div>
-                <div class="col-md-1">
-                    <label></label>
-                    <a class="btn btn-primary btn-flat text-center bootstrap-modal-form-open align-center"
-                       data-target="#add_guest"
-                       data-toggle="modal"
-                       title="Add New Guest">
-                        <i class="fa fa-user-plus"></i>
-
-                    </a>
-                </div>
+                {{Form::label('guest_id','Guest By Line:')}}
+                {{Form::select('guest_id',$selectGuests,
+                null,['class'=>'form-control select2','placeholder'=>'Select By Line','style=width:100%'])}}
             </div>
 
             <div class="form-group col-md-6 {{$errors->has('publish_date') ? 'has-error':''}}"
@@ -179,6 +167,9 @@
             </button>
         </div>
     </div>
+</div>
+<div class="col-md-3">
+
 </div>
 {{--@include('backend::file-manager.iframe')--}}
 @push('scripts')
