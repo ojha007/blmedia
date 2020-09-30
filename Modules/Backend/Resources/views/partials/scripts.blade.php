@@ -2,6 +2,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 {{--<script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>--}}
 
+
 <script src="https://adminlte.io/themes/AdminLTE/bower_components/fastclick/lib/fastclick.js"></script>
 
 <script src="https://adminlte.io/themes/AdminLTE/dist/js/adminlte.min.js"></script>
