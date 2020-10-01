@@ -23,8 +23,8 @@
                         <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>News</th>
-                            <th>Description</th>
+                            <th> News Title</th>
+                            <th class="w-24">Description</th>
                             <th>Publish Date</th>
                             <th class="no-sort">Action</th>
                         </tr>
@@ -51,7 +51,7 @@
                                 </a>
 
                                 {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'news.destroy', $news->id],
-                      'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
+                                        'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
                                       ]) !!}
                                 <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
                                     <i class="fa fa-trash"></i>

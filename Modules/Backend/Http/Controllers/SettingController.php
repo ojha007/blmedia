@@ -18,6 +18,14 @@ class SettingController extends Controller
      * @var string
      */
     protected $viewPath = 'backend::setting.';
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(['permission:setting-view|setting-create|setting-edit|setting-delete'], ['only' => ['index', 'show']]);
+        $this->middleware(['permission:setting-create'], ['only' => ['create', 'store', 'show']]);
+        $this->middleware(['permission:setting-edit'], ['only' => ['edit', 'update', 'show']]);
+        $this->middleware(['permission:setting-delete'], ['only' => ['destroy']]);
+    }
 
 
     public function index()
@@ -74,6 +82,9 @@ class SettingController extends Controller
         \Setting::save();
         return redirect()->back()
             ->with('success', 'Setting Created successfully');
+
+    }
+    public function destroy(){
 
     }
 

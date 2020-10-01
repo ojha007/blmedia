@@ -146,9 +146,9 @@ class NewsRepository extends Repository
     public function getDetailPageCommonData()
     {
         $headerCategories = $this->categoryRepo->getDetailPageHeaderCategoriesByPosition();
-        $detailPageFirstPositionNews = $this->getCacheNews(1, CategoryPositions::DETAIL_BODY_POSITION, 7, 'detailPageFirstPositionNews');
-        $detailPageSecondPositionNews = $this->getCacheNews(2, CategoryPositions::DETAIL_BODY_POSITION, 7, 'detailPageSecondPositionNews');
-        $detailPageThirdPositionNews = $this->getCacheNews(3, CategoryPositions::DETAIL_BODY_POSITION, 7, 'detailPageThirdPositionNews');
+        $detailPageFirstPositionNews = $this->getCacheNews(1, CategoryPositions::DETAIL_BODY_POSITION, 5, 'detailPageFirstPositionNews');
+        $detailPageSecondPositionNews = $this->getCacheNews(2, CategoryPositions::DETAIL_BODY_POSITION, 5, 'detailPageSecondPositionNews');
+        $detailPageThirdPositionNews = $this->getCacheNews(3, CategoryPositions::DETAIL_BODY_POSITION, 5, 'detailPageThirdPositionNews');
         return [
             'headerCategories' => $headerCategories,
             'detailPageFirstPositionNews' => $detailPageFirstPositionNews,

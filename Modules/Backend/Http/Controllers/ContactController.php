@@ -32,6 +32,11 @@ class ContactController extends Controller
     {
         $this->model = $contact;
         $this->repository = new ContactRepository($contact);
+        $this->middleware('auth');
+        $this->middleware(['permission:contact-view|contact-create|contact-edit|contact-delete'], ['only' => ['index', 'show']]);
+        $this->middleware(['permission:contact-create'], ['only' => ['create', 'store', 'show']]);
+        $this->middleware(['permission:contact-edit'], ['only' => ['edit', 'update', 'show']]);
+        $this->middleware(['permission:contact-delete'], ['only' => ['destroy']]);
 
     }
 

@@ -111,7 +111,7 @@
                         'style'=>'width:100%'])}}
             </div>
             <div class="col-md-12 form-group {{$errors->has('tags') ?'has-error':''}}">
-                <label for="tags">Tags</label>
+                <label for="tags" class="required">Tags</label>
                 <select class="form-control" multiple="multiple" id="tags" name="tags[]">
                     @foreach($allTags as $key=>$tag)
                         <option value="{{$tag}}"
@@ -147,13 +147,13 @@
 
             </div>
             <div class="form-group col-md-12 {{$errors->has('image_caption'?'has-error':'')}}" style="padding-right: 0">
-                {{Form::label('image_description','Image Caption')}}
+                {{Form::label('image_description','Image Caption',['class'=>'required'])}}
                 {{Form::textarea('image_description',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
 
             </div>
-            <div class="form-group col-md-12  {{$errors->has('sub_description') ?'has-error':''}}">
-                <label for="sub_description"> <b>Short description </b></label>
-                {{Form::textarea('sub_description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10','placeholder'=>'Enter sub description'])}}
+            <div class="form-group col-md-12  {{$errors->has('short_description') ?'has-error':''}}">
+                <label for="short_description" class="required"> <b>Short description </b></label>
+                {{Form::textarea('short_description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10','placeholder'=>'Enter sub description'])}}
             </div>
             <div class="form-group col-md-12 {{$errors->has('is_anchor') ?'has-error':''}}">
                 @include('backend::partials.toggle-button',['value'=>'is_anchor','checked'=>$news->is_anchor ?? 0])

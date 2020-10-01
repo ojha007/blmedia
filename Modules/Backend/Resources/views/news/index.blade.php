@@ -83,7 +83,7 @@
                         <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>News</th>
+                            <th class="w-25">News</th>
                             <th>Categories</th>
                             <th>Tags</th>
                             <th>Author</th>
@@ -161,21 +161,23 @@
                                     {!! spanByStatus($news->is_active,'') !!}
                                 </td>
                                 <td>
-                                    @can('news-edit')
-                                        <a href="{{route($routePrefix.'news.edit',$news->id)}}"
-                                           class="btn btn-primary btn-sm btn-flat">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                    @endcan
-                                    @can('news-delete')
-                                        {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'news.destroy', $news->id],
-                                                'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
-                                          ])!!}
-                                        <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                        {!! Form::close() !!}
-                                    @endcan
+                                    <nobr>
+                                        @can('news-edit')
+                                            <a href="{{route($routePrefix.'news.edit',$news->id)}}"
+                                               class="btn btn-primary btn-sm btn-flat">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        @endcan
+                                        @can('news-delete')
+                                            {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'news.destroy', $news->id],
+                                                    'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
+                                              ])!!}
+                                            <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                            {!! Form::close() !!}
+                                        @endcan
+                                    </nobr>
                                 </td>
                             </tr>
                         @endforeach
