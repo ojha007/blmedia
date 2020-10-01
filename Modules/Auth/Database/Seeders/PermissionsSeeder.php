@@ -44,8 +44,7 @@ class PermissionsSeeder extends Seeder
             'setting',
             'role',
             'user',
-            'reporter',
-            'guest',
+            'contact',
             'team'
         ];
     }
