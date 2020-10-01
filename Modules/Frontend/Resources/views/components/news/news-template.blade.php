@@ -9,6 +9,7 @@
         </div>
         <div class="block-body {{$class ?? ''}}">
             @foreach($allNews as $news)
+                @php($class ='')
                 <div class="news-item">
                     <div class="fixed-height-img-2">
                         @include('frontend::components.news.news-image')
