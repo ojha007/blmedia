@@ -16,14 +16,25 @@
     <div class="uk-navbar-center">
         <div>
             <ul class="uk-navbar-nav">
-                <li class="uk-active">
+                <li class=" {{request()->is(
+                    'preeti-to-unicode',
+                    'nepali/preeti-to-unicode'
+                    ) ? 'uk-active':''}}">
                     <a href="{{route($routePrefix.'preeti-to-unicode')}}">
                         Preeti to Nepali Unicode
                     </a></li>
-                <li><a href="{{route($routePrefix.'unicode-to-preeti')}}">
+                <li class=" {{request()->is(
+                            'unicode-to-preeti',
+                            'nepali/unicode-to-preeti'
+                            ) ? 'uk-active':''}}"><a
+                        href="{{route($routePrefix.'unicode-to-preeti')}}">
                         Nepali Unicode to
                         Preeti</a></li>
-                <li><a href="{{route($routePrefix.'roman-to-unicode')}}">
+                <li class="{{request()->is(
+                    'roman-to-unicode',
+                    'nepali/roman-to-unicode'
+                     ) ? 'uk-active':''}}"><a
+                        href="{{route($routePrefix.'roman-to-unicode')}}">
                         Roman to Nepali Unicode</a>
                 </li>
             </ul>
