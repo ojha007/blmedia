@@ -101,17 +101,17 @@ class FrontendController extends Controller
 
     public function preetiToUniCode()
     {
-        return view('frontend::unicode.index');
+        return view('frontend::unicode.preeti-to-unicode');
     }
 
     public function unicodeToPreeti()
     {
-        return view('frontend::unicode.index');
+        return view('frontend::unicode.unicode-to-preeti');
     }
 
     public function romanToUnicode()
     {
-        return view('frontend::unicode.index');
+        return view('frontend::unicode.roman-to-nepali');
     }
 
 }

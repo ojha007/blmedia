@@ -13,7 +13,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route($routePrefix.'preeti-to-unicode')}}">Preeti to Unicode <span
+                        <a class="nav-link"
+                           href="{{route($routePrefix.'preeti-to-unicode')}}">
+                            Preeti to Unicode <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">

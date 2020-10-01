@@ -21,13 +21,13 @@
     <script src="{{'/frontend/unicode/js/jquery.min.js'}}"></script>
     <script src="{{'/frontend/unicode/js/uikit-icons.min.js'}}"></script>
     <script src="{{asset('/frontend/unicode/js/uikit.min.js')}}"></script>
-    <script src="{{asset('/frontend/unicode/js/preeti.js')}}"></script>
+
     @stack('scripts')
 </head>
 <body>
 @include('frontend::unicode.partials.header')
 <div class="uk-container-center">
-    @yield('convertor')
+    @yield('content')
 </div>
 
 @include('frontend::partials.footer')
