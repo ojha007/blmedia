@@ -5,15 +5,24 @@
             <form name="Form1">
                 <div class="uk-grid uk-grid-small">
                     <div class="uk-width-1-2@m">
-            <textarea name="asciiArchive" class="uk-textarea uk-width-1-1" onclick="asciiArchiveClick();"
-                      onkeyup="editArchive();" placeholder="Type Roman Here..." rows="12"> </textarea>
+                        <label for="asciiArchive"> </label>
+                        <textarea name="asciiArchive" id="asciiArchive" class="uk-textarea uk-width-1-1"
+                                  onclick="asciiArchiveClick();"
+                                  onkeyup="editArchive();" placeholder="Type Roman Here..." rows="12"> </textarea>
+
+                        <label for="ascii"></label>
                         <textarea name="ascii" onblur="asciiBlur();" onclick="asciiClick();"
                                   onkeyup="beginConvert(event);" rows="1"
-                                  style="display:none;">यहाँ टाईप गर्नुहोस् ।</textarea></div>
+                                  id="ascii"
+                                  style="display:none;">यहाँ टाईप गर्नुहोस् ।</textarea>
+                    </div>
                     <div class="uk-width-1-2@m">
-                        <textarea class="uk-textarea uk-width-1-1" name="unicodeArchive" readonly=""
+                        <label for="unicodeArchive"></label>
+                        <textarea class="uk-textarea uk-width-1-1" name="unicodeArchive" id="unicodeArchive" readonly=""
                                   rows="12"></textarea>
-                        <textarea id="unicode" name="unicode" readonly="" rows="1" size="70"
+                        <label for="unicode"></label>
+                        <textarea id="unicode" name="unicode" readonly="" rows="1"
+                                  size="70"
                                   style="display:none;"></textarea>
                     </div>
                 </div>

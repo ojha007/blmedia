@@ -6,12 +6,17 @@
             <form>
                 <div class="uk-grid uk-grid-small">
                     <div class="uk-width-1-2@m">
-                        <textarea id="unicode_text" name="unicode" rows="12" class="uk-textarea uk-width-1-1"
-                                  placeholder="Paste Nepali Unicode text here" style="font-size:20px;"></textarea>
+                        <label for="unicode_text"></label>
+                        <textarea id="unicode_text" name="unicode" rows="12"
+                                  class="uk-textarea uk-width-1-1"
+                                  placeholder="Paste Nepali Unicode text here"
+                                  style="font-size:20px;"></textarea>
                     </div>
 
                     <div class="uk-width-1-2@m">
-                        <textarea id="legacy_text" name="text" rows="12" style="font-family:Preeti;font-size:20px;"
+                        <label for="legacy_text"></label>
+                        <textarea id="legacy_text" name="text" rows="12"
+                                  style="font-family:Preeti;font-size:20px;"
                                   class="uk-textarea uk-width-1-1"></textarea>
                     </div>
                 </div>

@@ -14,12 +14,13 @@
                         </div>
 
                         <div class="uk-width-1-2@m">
-                            <label for="unicode_text"></label><textarea
+                            <label for="unicode_text"></label>
+                            <textarea
                                 class="textarea_unicode uk-textarea uk-width-1-1"
                                 id="unicode_text" name="ConvertedText" rows="12"
-                                style="font-size:20px;"></textarea></div>
+                                style="font-size:20px;"></textarea>
+                        </div>
                     </div>
-
 
                     <div class="uk-text-center unicode_roman">
 
