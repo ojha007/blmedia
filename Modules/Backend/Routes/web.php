@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
+
 $edition = null;
 if (in_array(request()->segment(1), config('editions'))) {
     $edition = request()->segment(1);
@@ -37,6 +39,11 @@ Route::group(
     $router->post('profile', 'UserController@updateAvatar')->name('profile.avatar');
     $router->match(['put', 'patch'], 'profile/{user}', 'UserController@updateProfile')->name('profile.update');
     Route::post('password/change', 'ChangePasswordController@changePassword')->name('changePassword');
+    $router->get('/cache',function (){
+        Artisan::call('cache:clear');
+         return redirect()->back()
+             ->with('success','All Cache are removed please refresh the main page ');
+    })->name('cache.remove');
 
 });
 //Route::group([
