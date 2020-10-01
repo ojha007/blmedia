@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        User::updateOrCreate(
+        User::firstOrCreate(
             ['email' => 'blmedia@gmail.com'],
             [
                 'user_name' => 'blmedia',
@@ -26,13 +26,13 @@ class UsersTableSeeder extends Seeder
                 'status' => true,
                 'full_name' => 'Bl Media'
             ]);
-        User::updateOrCreate(
+        User::firstOrCreate(
             [
-                'email' => 'blmedia_super@gmail.com',
+                'email' => 'blmedia_super1@gmail.com',
             ],
             [
                 'user_name' => 'blmedia_super',
-                'email' => 'blmedia_super@gmail.com',
+                'email' => 'blmedia_super1@gmail.com',
                 'password' => Hash::make('blmedia@123'),
                 'status' => true,
                 'full_name' => 'Bl Media ',

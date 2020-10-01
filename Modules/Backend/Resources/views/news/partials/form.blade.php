@@ -44,12 +44,12 @@
                             ])}}
             </div>
 
-            <div class="form-group col-md-6 {{$errors->has('reporter_id') ? 'has-error':''}}">
+            <div class="form-group col-md-12 {{$errors->has('reporter_id') ? 'has-error':''}}">
                 {{Form::label('reporter_id','ByLine:')}}
                 {{Form::select('reporter_id',$selectReporters,null,['class'=>'form-control select2','placeholder'=>'Select By Line','style=width:100%'])}}
             </div>
 
-            <div class="form-group col-md-6 {{$errors->has('guest_id') ? 'has-error':''}}">
+            <div class="form-group col-md-12 {{$errors->has('guest_id') ? 'has-error':''}}">
                 {{Form::label('guest_id','Guest By Line:')}}
                 {{Form::select('guest_id',$selectGuests,
                 null,['class'=>'form-control select2','placeholder'=>'Select By Line','style=width:100%'])}}
@@ -111,15 +111,15 @@
                         'style'=>'width:100%'])}}
             </div>
             <div class="col-md-12 form-group {{$errors->has('tags') ?'has-error':''}}">
-                <label for="tags">Tags</label>
+                <label for="tags" class="required">Tags</label>
                 <select class="form-control" multiple="multiple" id="tags" name="tags[]">
                     @foreach($allTags as $key=>$tag)
                         <option value="{{$tag}}"
                                 @isset($news_tags)
                                 @if(in_array($tag,$news_tags))
                                 selected
-                                @endif
-                                @endisset>
+                            @endif
+                            @endisset>
                             {{$tag}}
                         </option>
                     @endforeach
@@ -137,17 +137,23 @@
                     </label>
                     {{Form::text('image',null,['id'=>'image_label','class'=>'form-control'])}}
                 </div>
-                <img id="holder" style="margin-top:15px;height:60px;width: 100px" alt=""
+                <img id="holder" style="margin-top:15px;height:100px;width: 250px;" alt=""
                      src="{{isset($news) ? $news->image : ''}}">
             </div>
-            <div class="form-group col-md-12 {{$errors->has('image_caption'?'has-error':'')}}">
-                {{Form::label('image_caption','Image Caption')}}
-                {{Form::textarea('image_caption',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
+
+            <div class="form-group col-md-12 {{$errors->has('image_alt'?'has-error':'')}}">
+                {{Form::label('image_alt','Image Title')}}
+                {{Form::text('image_alt',null,['class'=>'form-control','placeholder'=>'Enter image Title'])}}
 
             </div>
-            <div class="form-group col-md-12  {{$errors->has('sub_description') ?'has-error':''}}">
-                <label for="sub_description"> <b>Short description </b></label>
-                {{Form::textarea('sub_description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10','placeholder'=>'Enter sub description'])}}
+            <div class="form-group col-md-12 {{$errors->has('image_caption'?'has-error':'')}}" style="padding-right: 0">
+                {{Form::label('image_description','Image Caption',['class'=>'required'])}}
+                {{Form::textarea('image_description',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
+
+            </div>
+            <div class="form-group col-md-12  {{$errors->has('short_description') ?'has-error':''}}">
+                <label for="short_description" class="required"> <b>Short description </b></label>
+                {{Form::textarea('short_description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10','placeholder'=>'Enter sub description'])}}
             </div>
             <div class="form-group col-md-12 {{$errors->has('is_anchor') ?'has-error':''}}">
                 @include('backend::partials.toggle-button',['value'=>'is_anchor','checked'=>$news->is_anchor ?? 0])
@@ -177,11 +183,16 @@
         });
     </script>
     <script>
+
         var routePrefix = '{{$edition}}'
         CKEDITOR.replace('description', {
-            height : 312,
+            height: 312,
             filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'
         });
     </script>
+    {{--    <script>--}}
+    {{--        var routePrefix = '{{$edition}}'--}}
+    {{--        CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'});--}}
+    {{--    </script>--}}
 
 @endpush

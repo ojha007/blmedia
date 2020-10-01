@@ -43,7 +43,7 @@ class UserInvited extends Notification implements ShouldQueue
             ->subject('User Invitation Notification')
             ->line('You are receiving this email because you have been invited to ' . config('app.name') . '.')
             ->line('Your login credentials are as')
-            ->line('Username : ' . $this->user->getAttribute('email'))
+            ->line('Username : ' . $this->user->getAttribute('user_name'))
             ->line('Password : ' . $this->password)
             ->action('Go to ' . config('app.name'), config('app.url'))
             ->line('Thank you for using our application!');

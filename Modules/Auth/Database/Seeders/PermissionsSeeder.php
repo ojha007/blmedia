@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
 
 class PermissionsSeeder extends Seeder
 {
@@ -16,19 +17,20 @@ class PermissionsSeeder extends Seeder
      */
     public function run()
     {
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
         Model::unguard();
+        $role = Role::firstOrCreate(['name' => 'Administrator']);
         foreach ($this->getAllPermissions() as $permission) {
             foreach ($this->getAllPermissionTypes() as $type) {
-                Permission::firstOrCreate(
+                $a = Permission::firstOrCreate(
                     [
-                        'name' => $permission . '-' . $type,
-                        'guard_name' => 'web'
+                        'name' => $permission . '-' . $type
                     ]);
+                $role->givePermissionTo($a);
             }
+
         }
-        $role = Role::firstOrCreate(['name' => 'Administrator', 'guard_name' => 'web']);
-        $permissions = Permission::where('guard_name', 'web')->get();
-        $role->syncPermissions($permissions);
+
 
     }
 
@@ -41,6 +43,9 @@ class PermissionsSeeder extends Seeder
             'advertisement',
             'setting',
             'role',
+            'user',
+            'contact',
+            'team'
         ];
     }
 

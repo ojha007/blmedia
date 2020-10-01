@@ -13,10 +13,11 @@ class CreateUserRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->user;
         return [
-            'user_name' => 'required|max:255',
-            'full_name' => 'nullable|max:255',
-            'email' => 'required|email|max:255|unique:users,email',
+            'user_name' => 'required|max:255|unique:users,user_name,'.$id,
+            'email' => 'required|email|max:255|unique:users,email,'.$id,
+            'role' => 'required|exists:roles,name'
         ];
     }
 

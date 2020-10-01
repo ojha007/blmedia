@@ -6,7 +6,6 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
 use Modules\Backend\Entities\Advertisement;
 use Modules\Backend\Entities\CategoryPositions;
-use Modules\Backend\Entities\News;
 use Modules\Backend\Repositories\AdvertisementRepository;
 use Modules\Backend\Repositories\NewsCategoryRepository;
 use Modules\Frontend\Entities\Category;
@@ -36,7 +35,7 @@ class FrontendController extends Controller
     public function __construct()
     {
         $this->categoryRepository = new CategoryRepository(new Category());
-        $this->newsRepository = new NewsRepository(new News());
+        $this->newsRepository = new NewsRepository();
         $this->adsRepository = new AdvertisementRepository(new Advertisement());
     }
 
@@ -52,7 +51,7 @@ class FrontendController extends Controller
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
         $firstPositionNews = $newsRepo->getCacheNews(1, CategoryPositions::FRONT_BODY_POSITION, 9, 'firstPositionNews');
         $secondPositionNews = $newsRepo->getCacheNews(2, CategoryPositions::FRONT_BODY_POSITION, 5, 'secondPositionNews');
-        $thirdPositionNews = $newsRepo->getCacheNews(3, CategoryPositions::FRONT_BODY_POSITION, 6, 'thirdPositionNews');
+        $thirdPositionNews = $newsRepo->getCacheNews(3, CategoryPositions::FRONT_BODY_POSITION, 5, 'thirdPositionNews');
         $fourthPositionNews = $newsRepo->getCacheNews(4, CategoryPositions::FRONT_BODY_POSITION, 6, 'fourthPositionNews');
         $fifthPositionNews = $newsRepo->getCacheNews(5, CategoryPositions::FRONT_BODY_POSITION, 5, 'fifthPositionNews');
         $sixthPositionNews = $newsRepo->getCacheNews(6, CategoryPositions::FRONT_BODY_POSITION, 10, 'sixthPositionNews');
@@ -102,17 +101,17 @@ class FrontendController extends Controller
 
     public function preetiToUniCode()
     {
-        return view('frontend::unicode.index');
+        return view('frontend::unicode.preeti-to-unicode');
     }
 
     public function unicodeToPreeti()
     {
-        return view('frontend::unicode.index');
+        return view('frontend::unicode.unicode-to-preeti');
     }
 
     public function romanToUnicode()
     {
-        return view('frontend::unicode.index');
+        return view('frontend::unicode.roman-to-nepali');
     }
 
 }

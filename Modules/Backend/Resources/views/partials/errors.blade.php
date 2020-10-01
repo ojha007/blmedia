@@ -29,6 +29,16 @@
     </div>
 @endif
 
+@if ($message = Session::get('unauthorized'))
+    <div class="box-body" style="padding-left: 0; padding-right: 0;">
+        <div class="alert alert-danger alert-dismissible no-margin">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-ban"></i> Unauthorized Access!</h4>
+            {!! $message !!}
+        </div>
+    </div>
+@endif
+
 @if ($errors->any())
     <div class="box-body" style="padding-left: 0; padding-right: 0;">
         <div class="alert alert-danger alert-dismissible no-margin">

@@ -24,8 +24,7 @@ class News extends Model
         'view_count',
         'external_url',
         'publish_date', 'expiry_date',
-//        'publish_status',
-        'image_alt','is_active',
+        'image_alt', 'is_active',
         'image', 'image_description',
     ];
     protected $with = ['categories'];
@@ -64,5 +63,15 @@ class News extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'news_categories');
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo('Modules\Auth\Entities\User', 'created_by');
+    }
+
+    public function updatedBy()
+    {
+        return $this->belongsTo('Modules\Auth\Entities\User', 'updated_by');
     }
 }

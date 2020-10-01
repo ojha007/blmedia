@@ -83,8 +83,10 @@
                         <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>News</th>
+                            <th class="w-25">News</th>
                             <th>Categories</th>
+                            <th>Tags</th>
+                            <th>Author</th>
                             <th>Publish Date</th>
                             <th>Status</th>
                             <th class="no-sort">Action</th>
@@ -113,11 +115,12 @@
                                         @isset($news->reporter)
                                             <li>
                                                 Reporter :
-                                                <span class="label label-info">
-                                              {{$news->reporter->name}}
-                                         </span>
+                                                <span class="label label-success">
+                                                    {{$news->reporter->name}}
+                                                </span>
                                             </li>
                                         @endisset
+
                                     </ul>
                                 </td>
                                 <td>
@@ -130,27 +133,51 @@
                                     </ul>
                                 </td>
                                 <td>
+                                    @foreach($news->tags as $tag)
+                                        #{{$tag->name}}
+                                        @if(!$loop->last),@endif
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @isset($news->createdBy)
+                                        Created By:
+                                        <span class="label label-warning">
+                                                    {{$news->createdBy->user_name}}
+                                                </span>
+                                    @endisset
+                                    @isset($news->updatedBy)
+                                        <br>
+                                        Updated By:
+                                        <span class="label label-warning">
+                                                    {{$news->updatedBy->user_name}}
+                                                </span>
+                                    @endisset
+
+                                </td>
+                                <td>
                                     {{$news->publish_date}}
                                 </td>
                                 <td>
                                     {!! spanByStatus($news->is_active,'') !!}
                                 </td>
                                 <td>
-                                    @can('news-edit')
-                                        <a href="{{route($routePrefix.'news.edit',$news->id)}}"
-                                           class="btn btn-primary btn-sm btn-flat">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                    @endcan
-                                    @can('news-delete')
-                                        {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'news.destroy', $news->id],
-                                                'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
-                                          ])!!}
-                                        <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                        {!! Form::close() !!}
-                                    @endcan
+                                    <nobr>
+                                        @can('news-edit')
+                                            <a href="{{route($routePrefix.'news.edit',$news->id)}}"
+                                               class="btn btn-primary btn-sm btn-flat">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        @endcan
+                                        @can('news-delete')
+                                            {!! Form::open(['method' => 'DELETE', 'route' => [$routePrefix.'news.destroy', $news->id],
+                                                    'onsubmit' => "return confirm('Are you sure you want to delete?')",   'style'=>"display:inline"
+                                              ])!!}
+                                            <button class="btn btn-danger btn-flat btn-sm" role="button" type="submit">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                            {!! Form::close() !!}
+                                        @endcan
+                                    </nobr>
                                 </td>
                             </tr>
                         @endforeach

@@ -1,5 +1,5 @@
 @if(count($allNews))
-    <div class="newsBlock type-8 {{$class ?? ''}} ">
+    <div class="newsBlock type-8 ">
         <div class="block-header gn-heading">
             <h2>
                 <a href="{{route($routePrefix.'news-category.show',$allNews->first()->category_slug)}}">
@@ -9,6 +9,7 @@
         </div>
         <div class="block-body {{$bodyClass ?? ''}}">
             @foreach($allNews as $news)
+                @php($class ='')
                 <div class="news-item">
                     <div class="fixed-height-img-2">
                         @include('frontend::components.news.news-image')

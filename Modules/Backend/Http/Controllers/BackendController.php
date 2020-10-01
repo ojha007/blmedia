@@ -4,8 +4,11 @@ namespace Modules\Backend\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
+use Modules\Backend\Entities\Advertisement;
+use Modules\Backend\Entities\Category;
 use Modules\Backend\Entities\Guest;
 use Modules\Backend\Entities\News;
+use Modules\Backend\Entities\Reporter;
 
 class BackendController extends Controller
 {
@@ -16,8 +19,36 @@ class BackendController extends Controller
     public function index()
     {
         $attributes = [
-            'total_publish_news' => $this->newsCount(),
-            'active_guests' => $this->guestsCount()
+            [
+                'title' => 'Total Publish News',
+                'fa' => 'newspaper-o',
+                'bg' => 'green',
+                'count' => $this->newsCount()
+            ],
+            [
+                'title' => 'Active Guests',
+                'fa' => 'users',
+                'bg' => 'yellow',
+                'count' => $this->guestsCount()
+            ],
+            [
+                'title' => 'Active Reporters',
+                'fa' => 'users',
+                'bg' => 'yellow',
+                'count' => $this->reportersCounts()
+            ],
+            [
+                'title' => 'Total Category',
+                'fa' => 'list-alt',
+                'bg' => 'aqua',
+                'count' => $this->categoryCount()
+            ],
+            [
+                'title' => 'Active Ads',
+                'fa' => 'ad',
+                'bg' => 'aqua',
+                'count' => $this->adsCounts()
+            ],
         ];
 
         return view('backend::index', compact('attributes'));
@@ -31,6 +62,21 @@ class BackendController extends Controller
     protected function guestsCount()
     {
         return Guest::where('is_active', 1)->count();
+    }
+
+    protected function reportersCounts()
+    {
+        return Reporter::where('is_active', 1)->count();
+    }
+
+    protected function categoryCount()
+    {
+        return Category::where('is_active', 1)->count();
+    }
+
+    protected function adsCounts()
+    {
+        return Advertisement::where('is_active', 1)->count();
     }
 
 }

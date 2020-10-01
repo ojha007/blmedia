@@ -67,7 +67,7 @@ return [
      * set null, 0 - if you don't need cache (default)
      * if you want use cache - set the number of minutes for which the value should be cached
      */
-    'cache' => 60,
+    'cache' => 600,
 
     /**
      * File manager modules configuration

@@ -21,7 +21,6 @@ class UserRepository extends Repository
 
     public function create(array $attributes)
     {
-        $attributes['password'] = $this->encryptPassword($attributes['password_generated']);
         return $this->model->create($attributes);
     }
 

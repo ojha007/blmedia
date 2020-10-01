@@ -28,7 +28,7 @@ class NewsController extends Controller
     {
         $this->categoryRepository = new  CategoryRepository(new Category());
         $this->adsRepository = new AdvertisementRepository(new Advertisement());
-        $this->newsRepository = new NewsRepository(new News());
+        $this->newsRepository = new NewsRepository();
     }
 
     public function showNews($slug)
@@ -82,8 +82,7 @@ class NewsController extends Controller
                 ->whereNull('news.deleted_at')
                 ->orderBy('news_id')
                 ->paginate(15);
-            $advertisements = $this->adsRepository->getAllAdvertisements('category_page');
-//            dd($this->newsRepository->getDetailPageCommonData());
+            $advertisements = $this->adsRepository->getAllAdvertisements('category_page');;
             return view($this->viewPath . '.newsByAuthor',
                 compact('newsByAuthor'))
                 ->with($this->newsRepository->getDetailPageCommonData())

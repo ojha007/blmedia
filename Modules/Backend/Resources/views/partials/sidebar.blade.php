@@ -144,6 +144,13 @@
                 <i class="fa fa-picture-o" aria-hidden="true"></i> <span>Gallery</span>
             </a>
         </li>
+        <li class="header">Extra</li>
+        <li class="{{request()->is($urlPrefix.'/cache',
+                    $urlPrefix.'/cache/*') ? 'active' :''}}">
+            <a href="{{route($routePrefix.'cache.remove')}}">
+                <i class="fa fa-trash" aria-hidden="true"></i> <span>Cache</span>
+            </a>
+        </li>
     </ul>
 </section>
 
