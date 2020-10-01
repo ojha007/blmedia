@@ -99,9 +99,10 @@
                                 <h2>{{trans('messages.write_your_comment')}}</h2>
                             </div>
                             <div class="block-body">
+                                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width=""></div>
                                 <!--if user is not logged then this block shold be display-->
                                 <div class="commentLogin">
-                                    <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
+                                    {{--<div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
                                          data-href="https://www.breaknlinks.com/hindi/news/1939" data-width="100%"
                                          data-numposts="5" fb-xfbml-state="rendered"
                                          fb-iframe-plugin-query="app_id=264188744527053&amp;container_width=912&amp;height=100&amp;href=https%3A%2F%2Fwww.breaknlinks.com%2Fhindi%2Fnews%2F1939&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;version=v4.0&amp;width="
@@ -114,7 +115,8 @@
                                                 allow="encrypted-media"
                                                 src="https://www.facebook.com/v4.0/plugins/comments.php?app_id=264188744527053&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df202fa61db2be6c%26domain%3Dwww.breaknlinks.com%26origin%3Dhttps%253A%252F%252Fwww.breaknlinks.com%252Ff29dde41e6a9a1%26relation%3Dparent.parent&amp;container_width=912&amp;height=100&amp;href=https%3A%2F%2Fwww.breaknlinks.com%2Fhindi%2Fnews%2F1939&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;version=v4.0&amp;width="
                                                 style="border: none; visibility: visible; width: 0px; height: 0px;"
-                                                __idm_frm__="164"></iframe></span></div>
+                                                __idm_frm__="164"></iframe></span></div>--}}
+
                                 </div>
                                 <!--ended login block-->
                             </div>

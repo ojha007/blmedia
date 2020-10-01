@@ -7,7 +7,7 @@
                 </a>
             </h2>
         </div>
-        <div class="block-body {{$class ?? ''}}">
+        <div class="block-body {{$bodyClass ?? ''}}">
             @foreach($allNews as $news)
                 <div class="news-item">
                     <div class="fixed-height-img-2">

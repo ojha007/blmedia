@@ -12,6 +12,13 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=3228453080521488&autoLogAppEvents=1"
+        nonce="zR3d9Tsr"></script>
+<button onclick="topFunction()" id="scrollTop" class="btn btn-sm " title="Scroll top"><i class="fas fa-arrow-up"></i>
+</button>
+
 <!-- Main Header -->
 @include('frontend::partials.header')
 {{--    Header Close--}}
@@ -21,10 +28,8 @@
 {{--Main Footer--}}
 @include('frontend::partials.footer')
 {{--    Close Footer--}}
-<button onclick="topFunction()" id="scrollTop" class="btn btn-sm " title="Scroll top"><i class="fas fa-arrow-up"></i>
-</button>
-</body>
 
+</body>
 @include('frontend::partials.script')
 @stack('scripts')
 </html>
