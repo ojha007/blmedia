@@ -1,31 +1,33 @@
-<section class="bg-site-color ">
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark " style=" min-height: 60px;">
-            <a class="navbar-brand" href="{{route('index')}}">
-                <img src="{{asset('/frontend/img/logo.png')}}" height="50" alt="BL Media" loading="lazy"
-                     title="BL Media">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<div class="uk-card-header">
+    <h1 id="site-title" class="logo text-logo text-center">
+        <a href="{{url('/nepali')}}" target="_blank">
+            <img src="{{asset('/frontend/img/logo.png')}}" height="50" alt="BL Media" loading="lazy"
+                 title="BL Media">
+        </a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link"
-                           href="{{route($routePrefix.'preeti-to-unicode')}}">
-                            Preeti to Unicode <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route($routePrefix.'unicode-to-preeti')}}"> Unicode to Preeti</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route($routePrefix.'roman-to-unicode')}}"> Roman to Unicode</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <iframe scrolling="no" border="0" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true"
+                src="https://www.ashesh.com.np/linknepali-time.php?time_only=no&amp;font_color=333333&amp;aj_time=yes&amp;font_size=14&amp;line_brake=0&amp;api=510247j582"
+                width="334" height="22"></iframe>
+
+    </h1>
+
+</div>
+<nav class="uk-navbar-container uk-light uk-navbar" style="background: #FF5E14;">
+    <div class="uk-navbar-center">
+        <div>
+            <ul class="uk-navbar-nav">
+                <li class="uk-active">
+                    <a href="{{route($routePrefix.'preeti-to-unicode')}}">
+                        Preeti to Nepali Unicode
+                    </a></li>
+                <li><a href="{{route($routePrefix.'unicode-to-preeti')}}">
+                        Nepali Unicode to
+                        Preeti</a></li>
+                <li><a href="{{route($routePrefix.'roman-to-unicode')}}">
+                        Roman to Nepali Unicode</a>
+                </li>
+            </ul>
+        </div>
     </div>
-</section>
+</nav>
+
