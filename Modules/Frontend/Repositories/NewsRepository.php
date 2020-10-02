@@ -165,6 +165,29 @@ class NewsRepository extends Repository
 
     }
 
+    public function getCacheNewsByExtraColumn($column, $limit)
+    {
+        $category = $column == 'is_special' ? trans('messages.bl_special') : trans('messages.anchor');
+        $category_slug = $column == 'is_special' ? 'bl_special' : 'anchor';
+        return Cache::remember($column . '_news', 45500, function () use ($column, $limit, $category, $category_slug) {
+            return DB::table('news')
+                ->select('news.title', 'news.slug as news_slug', 'news.image as image', 'news.' . $column,
+                    'news.publish_date', 'news.short_description', 'news.sub_title', 'news.image_alt', 'news.image_description')
+                ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
+                ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
+                ->selectRaw("'$category' as categories")
+                ->selectRaw("'$category_slug' as category_slug")
+                ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
+                ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')
+                ->leftJoin('reporters', 'news.reporter_id', '=', 'reporters.id')
+                ->where('news.is_active', true)
+                ->where('news.' . $column, '=', 1)
+                ->orderByDesc('news.publish_date')
+                ->limit($limit)
+                ->get();
+        });
+    }
+
     public function getNewsByPositionAndPlacement(int $position, $placement, int $limit)
     {
         $category = DB::table('categories')

@@ -49,9 +49,9 @@ class FrontendController extends Controller
         $newsRepo = $this->newsRepository;
         $headerCategories = $this->categoryRepository->getFrontPageHeaderCategoriesByPosition();
         $advertisements = $this->adsRepository->getAllAdvertisements('main_page');
+        $anchorNews = $newsRepo->getCacheNewsByExtraColumn('is_anchor', 5);
+        $blSpecialNews = $newsRepo->getCacheNewsByExtraColumn('is_special', 5);
         $firstPositionNews = $newsRepo->getCacheNews(1, CategoryPositions::FRONT_BODY_POSITION, 9, 'firstPositionNews');
-        $secondPositionNews = $newsRepo->getCacheNews(2, CategoryPositions::FRONT_BODY_POSITION, 5, 'secondPositionNews');
-        $thirdPositionNews = $newsRepo->getCacheNews(3, CategoryPositions::FRONT_BODY_POSITION, 5, 'thirdPositionNews');
         $fourthPositionNews = $newsRepo->getCacheNews(4, CategoryPositions::FRONT_BODY_POSITION, 6, 'fourthPositionNews');
         $fifthPositionNews = $newsRepo->getCacheNews(5, CategoryPositions::FRONT_BODY_POSITION, 5, 'fifthPositionNews');
         $sixthPositionNews = $newsRepo->getCacheNews(6, CategoryPositions::FRONT_BODY_POSITION, 10, 'sixthPositionNews');
@@ -67,8 +67,8 @@ class FrontendController extends Controller
             'headerCategories',
             'firstPositionNews',
             'fourthPositionNews',
-            'secondPositionNews',
-            'thirdPositionNews',
+            'anchorNews',
+            'blSpecialNews',
             'fifthPositionNews',
             'sixthPositionNews',
             'seventhPositionNews',

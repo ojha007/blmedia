@@ -6,6 +6,7 @@
                     {{$allNews->first()->categories}}
                 </a>
             </h2>
+
         </div>
         <div class="block-body {{$bodyClass ?? ''}}">
             @foreach($allNews as $news)
@@ -21,6 +22,7 @@
                 </div>
             @endforeach
             @include('frontend::components.buttons.view-all-category-button', ['position' => $allNews])
+
         </div>
     </div>
 @endif

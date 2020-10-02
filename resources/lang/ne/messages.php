@@ -8,5 +8,7 @@ return [
     'perv' => 'अगाडी',
     'next' => 'पछाडी',
     'write_your_comment' => 'प्रतिक्रिया दिनुहोस',
-    'other_news' => 'अन्य समाचार'
+    'other_news' => 'अन्य समाचार',
+    'anchor' => 'एंकर',
+    'bl_special' => 'बिएल विशेष',
 ];

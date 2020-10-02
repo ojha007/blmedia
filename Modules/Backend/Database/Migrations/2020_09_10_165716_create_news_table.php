@@ -32,7 +32,7 @@ class CreateNewsTable extends Migration
             $table->boolean('is_special')->default(0);
             $table->boolean('is_anchor')->default(0);
             $table->string('external_url')->nullable();
-            $table->date('publish_date');
+            $table->timestamp('publish_date');
             $table->boolean('is_active')->default(1);
             $table->string('image')->nullable();
             $table->string('image_description')->nullable();

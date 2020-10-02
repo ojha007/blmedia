@@ -1,6 +1,8 @@
 @include('frontend::components.news.news-template',
                                  [
-                                     'allNews'=>$thirdPositionNews,
+                                     'allNews'=>$blSpecialNews,
                                      'class'=>' bisheshNew front_body_position_3',
-                                        'bodyClass' => 'blspecial-body'
+                                       'bodyClass' => 'blspecial-body',
+                                        'category'=>  trans('messages.bl_special'),
+                                        'category_url'=> 'bl_special',
                                      ])

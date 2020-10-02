@@ -62,19 +62,30 @@ class CategoryController extends Controller
 
     public function getNewsByCategorySlug($slug, $perPage = 15)
     {
-        return DB::table('categories')
+        $isExtraCategory = $slug == 'anchor' || $slug == 'bl_special';
+        return DB::table('news')
             ->select('news.sub_title', 'news.slug as news_slug', 'news.title', 'news.short_description',
-                'news.description', 'news.publish_date', 'news.image', 'news.image_alt', 'news.image_description',
-                'categories.slug as category_slug', 'categories.name as categories'
-            )->selectRaw('(SELECT distinct (news.slug))')
+                'news.description', 'news.publish_date', 'news.image', 'news.image_alt', 'news.image_description'
+            )
             ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
             ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
             ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
-            ->join('news_categories', 'categories.id', '=', 'news_categories.category_id')
-            ->join('news', 'news_categories.news_id', '=', 'news.id')
             ->leftJoin('reporters', 'reporters.id', '=', 'news.reporter_id')
             ->leftJoin('guests', 'guests.id', '=', 'news.guest_id')
-            ->where('categories.slug', '=', $slug)
+            ->when($isExtraCategory, function ($a) use ($slug) {
+                $category_slug = $slug == 'anchor' ? 'anchor' : 'bl_special';
+                $category = $slug == 'anchor' ? trans('messages.' . $category_slug) : trans('messages.' . $category_slug);
+                $column = $slug == 'anchor' ? 'is_anchor' : 'is_special';
+                $a->selectRaw("'$category' as categories")
+                    ->selectRaw("'$category_slug' as category_slug")
+                    ->where('news.' . $column, '=', true);
+            })->when($isExtraCategory == false, function ($a) use ($slug) {
+                $a->addSelect('categories.slug as category_slug', 'categories.name as categories')
+                    ->join('news_categories', 'news.id', '=', 'news_categories.news_id')
+                    ->join('categories', 'news_categories.category_id', '=', 'categories.id')
+                    ->where('categories.slug', '=', $slug);
+
+            })
             ->where('news.is_active', '=', 1)
             ->whereNull('news.deleted_at')
             ->orderByDesc('news.id')

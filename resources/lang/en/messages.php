@@ -11,4 +11,7 @@ return [
     'other_news' => 'Related News',
     'publish_date' => 'Publish',
     'email' => 'Email',
+    'anchor' => 'Anchor',
+    'bl_special' => 'Bl Special',
+    'trending' => 'Trending',
 ];
