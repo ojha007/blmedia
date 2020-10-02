@@ -44,7 +44,7 @@ class BackendController extends Controller
                 'count' => $this->categoryCount()
             ],
             [
-                'title' => 'Active Ads',
+                'title' => 'Total Ads',
                 'fa' => 'ad',
                 'bg' => 'aqua',
                 'count' => $this->adsCounts()

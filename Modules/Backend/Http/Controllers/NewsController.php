@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Modules\Backend\Entities\Category;
 use Modules\Backend\Entities\News;
 use Modules\Backend\Http\Requests\NewsRequest;
@@ -100,8 +101,7 @@ class NewsController extends Controller
         try {
             DB::beginTransaction();
             $news = $this->repository->update($id, $attributes);
-            $categories = array_merge($request->get('category_id'), $this->setAnchorOrSpecial($request));
-            $news->categories()->sync(array_unique($categories));
+            $news->categories()->sync($request->get('category_id'));
             if ($request->get('tags'))
                 $news->retag($request->get('tags'));
             $this->flushOldNewsCache($news);
@@ -117,21 +117,6 @@ class NewsController extends Controller
 
     }
 
-    protected function setAnchorOrSpecial($request)
-    {
-        $anchor = Category::where('slug', 'anchor')->first();
-        $special = Category::where('slug', 'like', 'blspecial-37-25-38')->first();
-        $toArray = [];
-        if ($request->get('is_anchor') == 1) {
-            if ($anchor)
-                array_push($toArray, $anchor->id);
-        }
-        if ($request->get('is_special') == 1) {
-            if ($special)
-                array_push($toArray, $special->id);
-        }
-        return $toArray;
-    }
 
     protected function flushOldNewsCache($news)
     {
@@ -170,11 +155,10 @@ class NewsController extends Controller
         try {
             DB::beginTransaction();
             if (is_null($attributes['slug'])) {
-                $attributes['slug'] = \Illuminate\Support\Str::slug($request->get('title'));
+                $attributes['slug'] = Str::slug($request->get('title'));
             }
             $news = $this->repository->create($attributes);
-            $categories = array_merge($request->get('category_id'), $this->setAnchorOrSpecial($request));
-            $news->categories()->sync(array_unique($categories));
+            $news->categories()->sync($request->get('category_id'));
             if ($request->get('tags'))
                 $news->tag($request->get('tags'));
             $this->flushOldNewsCache($news);
