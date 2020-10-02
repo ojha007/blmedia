@@ -78,9 +78,9 @@
                 </i>
                 Close
             </a>
-            <button type="submit" class="btn btn-primary  pull-right btn-flat">
-                <i class="fa fa-save"></i> Submit
-            </button>
+{{--            <button type="submit" class="btn btn-primary  pull-right btn-flat">--}}
+{{--                <i class="fa fa-save"></i> Submit--}}
+{{--            </button>--}}
         </div>
     </div>
 </div>
@@ -93,8 +93,9 @@
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    {!! Form::text('publish_date',  isset($news) ? $news->publish_date : now()->format('Y-m-d'),
-                   array('placeholder' => 'Publish on','class' => 'form-control datepicker', 'autocomplete'=>'off')) !!}
+                    <input type="datetime-local" value="" class="form-control" name="publish_date">
+                    {{--                    {!! Form::text('publish_date',  isset($news) ? $news->publish_date : now()->format('Y-m-d'),--}}
+                    {{--                   array('placeholder' => 'Publish on','class' => 'form-control datepicker', 'autocomplete'=>'off')) !!}--}}
                 </div>
             </div>
             <div class="form-group col-md-12 {{$errors->has('date_line') ?'has-error':''}}">
@@ -118,8 +119,8 @@
                                 @isset($news_tags)
                                 @if(in_array($tag,$news_tags))
                                 selected
-                            @endif
-                            @endisset>
+                                @endif
+                                @endisset>
                             {{$tag}}
                         </option>
                     @endforeach
@@ -170,7 +171,7 @@
             </div>
         </div>
         <div class="box-footer">
-            <button type="submit" class="btn btn-primary  pull-right btn-flat">
+            <button type="submit" class="btn btn-primary  btn-block pull-right btn-flat">
                 <i class="fa fa-save"></i> Submit
             </button>
         </div>
@@ -184,7 +185,7 @@
     </script>
     <script>
 
-        var routePrefix = '{{$edition}}'
+        var routePrefix = '{{$edition}}';
         CKEDITOR.replace('description', {
             height: 312,
             filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'

@@ -32,6 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             color: #fff;
             border-bottom: 0 solid transparent;
         }
+
         .form-control {
             border-radius: 0;
             box-shadow: none;
@@ -121,6 +122,8 @@ desired effect
 
         $('.datepicker').datepicker({
             format: 'yyyy-mm-dd',
+            inline: true,
+            sideBySide: true,
             todayHighlight: true,
             orientation: "bottom auto",
             "autoclose": true
