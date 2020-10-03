@@ -90,7 +90,7 @@
                             #{{$tags->name}}
                         @endforeach
                     </div>
-
+{{--                    @include('frontend::components.tags-news')--}}
                     <div class="cmn-fw">
                         <div class="hr-c">
                             <div class="ggl_adBlk _930x180">

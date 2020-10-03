@@ -8,6 +8,7 @@
                     @include('frontend::components.news.news-author',['news'=>$newsByCategory->first()])
                 </div>
                 <p>
+{{--                    @dd($newsByCategory->first())--}}
                     {!! $newsByCategory->first()->short_description !!}
                 </p>
             @endif

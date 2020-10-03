@@ -1,9 +1,9 @@
 <div class="newsBlock type-3 front_body_position_8" style="padding: 0 15px;">
-    @if(count($eighthPositionNews))
-        @include('frontend::components.news.category-heading',['allNews'=>$eighthPositionNews])
+    @if(count($baseAllNews))
+        @include('frontend::components.news.category-heading',['allNews'=>$baseAllNews])
         <div class="block-body">
             <div class="row d-block">
-                @foreach($eighthPositionNews as $key=>$news)
+                @foreach($baseAllNews as $key=>$news)
                     @if($key == 0)
                         <div class="news-item highlight-news news-am-hl">
                             <div class="featured-img-fixed-height">
@@ -27,7 +27,7 @@
                         </div>
                     @endif
                 @endforeach
-                @include('frontend::components.buttons.view-all-category-button', ['position' => $eighthPositionNews])
+                @include('frontend::components.buttons.view-all-category-button', ['position' => $baseAllNews])
             </div>
         </div>
     @endif

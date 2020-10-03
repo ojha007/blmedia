@@ -28,6 +28,10 @@
                                     </div>
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         @include('frontend::components.news.news-content')
+                                        @include('frontend::components.news.news-author')
+                                        <p>
+                                            {{$news->short_description}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>

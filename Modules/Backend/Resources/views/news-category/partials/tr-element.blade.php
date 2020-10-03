@@ -4,6 +4,27 @@
     <td data-column="name"
         data-level="{{ $padding }}">
         {{$category->name}}</td>
+    <td>
+
+        @if($category->position)
+            Navbar
+            : {{$category->position->front_header_position
+                ? 'Main page('.$category->position->front_header_position.')':''}}
+            -
+            {{$category->position->detail_header_position
+                    ? 'Category page('.$category->position->detail_header_position.')':''}}
+
+
+            <hr style="margin: 5px">
+            Body  : {{$category->position->front_body_position
+                ? 'Main page('.$category->position->front_body_position.')':''}}
+            -
+            {{$category->position->detail_body_position
+                    ? 'Category page('.$category->position->detail_body_position.')':''}}
+
+        @endif
+
+    </td>
     <td>{!! spanByStatus($category->is_active) !!}</td>
     <td>
         @can('news-category-edit')

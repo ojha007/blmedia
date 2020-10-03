@@ -27,6 +27,7 @@
                         <thead>
                         <tr>
                             <th>Category</th>
+                            <th>DisplayOrder</th>
                             <th>status</th>
                             <th class="no-sort">Action</th>
                         </tr>

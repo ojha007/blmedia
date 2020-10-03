@@ -63,6 +63,7 @@ class FrontendController extends Controller
         $twelvePositionNews = $newsRepo->getCacheNews(12, CategoryPositions::FRONT_BODY_POSITION, 5, 'twelvePositionNews');
         $thirteenPositionNews = $newsRepo->getCacheNews(13, CategoryPositions::FRONT_BODY_POSITION, 4, 'thirteenPositionNews');
         $fourteenPositionNews = $newsRepo->getCacheNews(14, CategoryPositions::FRONT_BODY_POSITION, 6, 'fourteenPositionNews');
+        $fifteenPositionNews = $newsRepo->getCacheNews(15, CategoryPositions::FRONT_BODY_POSITION, 9, 'fifteenPositionNews');
         return view('frontend::index', compact(
             'headerCategories',
             'firstPositionNews',
@@ -79,6 +80,7 @@ class FrontendController extends Controller
             'twelvePositionNews',
             'fourthPositionNews',
             'thirteenPositionNews',
+            'fifteenPositionNews',
             'fourteenPositionNews'))
             ->with($advertisements);
 
