@@ -58,7 +58,9 @@
                             </div>
                         </div>
                         @if($news->video_url)
-                            {!! $news->video_url !!}
+                            <div class="video-section">
+                                {!! $news->video_url !!}
+                            </div>
                         @else
                             <div class="news-banner">
                                 @include('frontend::components.news.news-image',['figureClass'=>'bannerImg'])
@@ -98,6 +100,29 @@
                         </div>
                     </div>
                     <!--ended horizontal wide banner ad-->
+                    <div class="section-row">
+                        <div class="newsBlock type-4 recommendation">
+                            <div class="block-header gn-heading">
+                                <h2><a href="#">{{trans('messages.other_news')}}</a></h2>
+                            </div>
+                            <div class="block-body">
+                                <div class="row">
+                                    @foreach($sameCategoryNews->take(3) as $key=>$news)
+                                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 float-left">
+                                            <div class="news-item no-bdr">
+                                                @include('frontend::components.news.news-image')
+                                                <div class="news-content">
+                                                    @include('frontend::components.news.news-content')
+                                                    @include('frontend::components.news.news-author')
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                     <div class="section-row">
                         <div class="commentReview">
                             <div class="block-header">

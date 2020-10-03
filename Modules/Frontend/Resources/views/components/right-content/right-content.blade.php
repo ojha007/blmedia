@@ -23,3 +23,8 @@
 <section class="right-above-footer-section">
     @include('frontend::components.right-content.above-footer.above-footer')
 </section>
+<section class="left-content-position-15" style="display: none;">
+    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 float-left">
+        @include('frontend::components.left-content.below-header.left')
+    </div>
+</section>
