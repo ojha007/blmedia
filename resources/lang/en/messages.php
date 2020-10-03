@@ -9,7 +9,7 @@ return [
     'next' => 'Next',
     'write_your_comment' => 'Write Your Comment',
     'other_news' => 'Related News',
-    'publish_date' => 'Publish',
+    'publish_on' => 'Publish',
     'email' => 'Email',
     'anchor' => 'Anchor',
     'bl_special' => 'Bl Special',

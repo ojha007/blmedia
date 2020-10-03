@@ -78,31 +78,33 @@
                 </i>
                 Close
             </a>
-{{--            <button type="submit" class="btn btn-primary  pull-right btn-flat">--}}
-{{--                <i class="fa fa-save"></i> Submit--}}
-{{--            </button>--}}
+            {{--            <button type="submit" class="btn btn-primary  pull-right btn-flat">--}}
+            {{--                <i class="fa fa-save"></i> Submit--}}
+            {{--            </button>--}}
         </div>
     </div>
 </div>
 <div class="col-md-3">
     <div class="box box-default">
         <div class="box-body">
-            <div class="form-group col-md-12 {{$errors->has('publish_date') ? 'has-error':''}}">
+            <div class="form-group  {{$errors->has('publish_date') ? 'has-error':''}}">
                 {{ Form::label('publish_date', 'Publish on:', ['class'=>'control-label required'])}}
                 <div class="input-group date">
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="datetime-local" value="" class="form-control" name="publish_date">
-                    {{--                    {!! Form::text('publish_date',  isset($news) ? $news->publish_date : now()->format('Y-m-d'),--}}
-                    {{--                   array('placeholder' => 'Publish on','class' => 'form-control datepicker', 'autocomplete'=>'off')) !!}--}}
+                    {{--                    @dd($news->publish_date)--}}
+                    <input type="datetime-local" value="{{isset($news) ?
+                                \Illuminate\Support\Carbon::parse($news->publish_date)->format('Y-m-d\TH:i')
+                                        : now()->format('Y-m-d\TH:i')}}"
+                           class="form-control" name="publish_date">
                 </div>
             </div>
-            <div class="form-group col-md-12 {{$errors->has('date_line') ?'has-error':''}}">
+            <div class="form-group  {{$errors->has('date_line') ?'has-error':''}}">
                 <label for="date_line"><i class="fa fa-map-marker"></i> Date Line </label>
                 {{Form::text('date_line',null,['class'=>'form-control','placeholder'=>'Enter dateline'])}}
             </div>
-            <div class="form-group col-md-12 {{$errors->has('category_id' ?'has-error':'')}}">
+            <div class="form-group  {{$errors->has('category_id' ?'has-error':'')}}">
                 <label>
                     <b>Categories</b>
                 </label>
@@ -111,7 +113,7 @@
                     ['class'=>'form-control select2','multiple'=>'true',
                         'style'=>'width:100%'])}}
             </div>
-            <div class="col-md-12 form-group {{$errors->has('tags') ?'has-error':''}}">
+            <div class=" form-group {{$errors->has('tags') ?'has-error':''}}">
                 <label for="tags" class="required">Tags</label>
                 <select class="form-control" multiple="multiple" id="tags" name="tags[]">
                     @foreach($allTags as $key=>$tag)
@@ -119,14 +121,14 @@
                                 @isset($news_tags)
                                 @if(in_array($tag,$news_tags))
                                 selected
-                                @endif
-                                @endisset>
+                            @endif
+                            @endisset>
                             {{$tag}}
                         </option>
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group">
                 <label for="fieldID4">Banner Picture</label>
                 <div class="input-group">
                    <span class="input-group-btn btn-flat">
@@ -142,31 +144,31 @@
                      src="{{isset($news) ? $news->image : ''}}">
             </div>
 
-            <div class="form-group col-md-12 {{$errors->has('image_alt'?'has-error':'')}}">
+            <div class="form-group  {{$errors->has('image_alt'?'has-error':'')}}">
                 {{Form::label('image_alt','Image Title')}}
                 {{Form::text('image_alt',null,['class'=>'form-control','placeholder'=>'Enter image Title'])}}
 
             </div>
-            <div class="form-group col-md-12 {{$errors->has('image_caption'?'has-error':'')}}" style="padding-right: 0">
+            <div class="form-group  {{$errors->has('image_caption'?'has-error':'')}}" style="padding-right: 0">
                 {{Form::label('image_description','Image Caption',['class'=>'required'])}}
                 {{Form::textarea('image_description',null,['class'=>'form-control','placeholder'=>'Enter image caption','rows'=>'5'])}}
 
             </div>
-            <div class="form-group col-md-12  {{$errors->has('short_description') ?'has-error':''}}">
+            <div class="form-group   {{$errors->has('short_description') ?'has-error':''}}">
                 <label for="short_description" class="required"> <b>Short description </b></label>
                 {{Form::textarea('short_description' ,null,['class'=>'form-control','rows'=>'5','cols'=>'10','placeholder'=>'Enter sub description'])}}
             </div>
-            <div class="form-group col-md-12 {{$errors->has('is_anchor') ?'has-error':''}}">
+            <div class="form-group  {{$errors->has('is_anchor') ?'has-error':''}}">
                 @include('backend::partials.toggle-button',['value'=>'is_anchor','checked'=>$news->is_anchor ?? 0])
 
             </div>
-            <div class="form-group col-md-12 {{$errors->has('is_special') ?'has-error':''}} ">
+            <div class="form-group  {{$errors->has('is_special') ?'has-error':''}} ">
                 @include('backend::partials.toggle-button',['value'=>'is_special','checked'=> $news->is_special ?? 0])
             </div>
-            <div class="form-group col-md-12 {{$errors->has('is_mob_notification') ?'has-error':''}} ">
+            <div class="form-group  {{$errors->has('is_mob_notification') ?'has-error':''}} ">
                 @include('backend::partials.toggle-button',['value'=>'is_mob_notification','checked'=>$news->is_mob_notification ?? 0] )
             </div>
-            <div class="form-group col-md-12 {{$errors->has('publish_status') ? 'has-error':''}} ">
+            <div class="form-group  {{$errors->has('publish_status') ? 'has-error':''}} ">
                 @include('backend::partials.toggle-button',['value'=>'is_active','checked'=>$news->is_active ?? 1])
             </div>
         </div>

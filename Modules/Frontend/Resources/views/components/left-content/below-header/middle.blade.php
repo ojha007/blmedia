@@ -1,5 +1,5 @@
 @if(count($anchorNews))
-    <div class="newsBlock front_body_position_2 type-2 " id="BL_link ">
+    <div class="newsBlock front_body_position_2 type-2 " id="BL_link">
         @include('frontend::components.news.category-heading',['allNews'=>$anchorNews])
         <div class="block-body">
             @foreach($anchorNews as $key=>$news)

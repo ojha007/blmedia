@@ -57,18 +57,20 @@
                                 </div>
                             </div>
                         </div>
-                        {{--                       --}}
-                        <div class="news-banner">
-                            @include('frontend::components.news.news-image',['figureClass'=>'bannerImg'])
+                        @if($news->video_url)
+                            {!! $news->video_url !!}
+                        @else
+                            <div class="news-banner">
+                                @include('frontend::components.news.news-image',['figureClass'=>'bannerImg'])
 
-                        </div>
-
+                            </div>
+                        @endif
                         <div class="news-story">
                             <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10 offset-lg-1">
                                 {!! $news->description !!}
                                 <div class="col-sm-6 col-xs-12">
-                                    {{\Carbon\Carbon::parse($news->publish_date)->format('Y-m-d')}} <b>
-                                        - {{trans('messages.publish_date')}}</b>
+                                    {{trans('messages.publish_on')}}
+                                    : {{\Carbon\Carbon::parse($news->publish_date)->toDateTimeString()}}
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="adsssss amadam">
@@ -84,6 +86,9 @@
 
 
                         </div>
+                        @foreach($news->tags as $tags)
+                            #{{$tags->name}}
+                        @endforeach
                     </div>
 
                     <div class="cmn-fw">
@@ -99,8 +104,10 @@
                                 <h2>{{trans('messages.write_your_comment')}}</h2>
                             </div>
                             <div class="block-body">
-                                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width=""></div>
-                                <!--if user is not logged then this block shold be display-->
+                            {{--                                <div class="fb-comments"--}}
+                            {{--                                     data-href="https://developers.facebook.com/docs/plugins/comments#configurator"--}}
+                            {{--                                     data-numposts="5" data-width=""></div>--}}
+                            <!--if user is not logged then this block shold be display-->
                                 <div class="commentLogin">
                                     {{--<div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
                                          data-href="https://www.breaknlinks.com/hindi/news/1939" data-width="100%"
@@ -129,7 +136,7 @@
                 <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 float-right">
                     @include('frontend::components.news.news-template',
                               [
-                                  'allNews'=>$detailPageFirstPositionNews,
+                                  'allNews'=>$blSpecialNews,
                                   'class'=>' blspecial-body bisheshNew'
 
                                   ])

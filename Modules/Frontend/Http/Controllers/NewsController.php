@@ -47,7 +47,7 @@ class NewsController extends Controller
                 ->with($advertisements);
 
         } catch (\Exception $exception) {
-            Log::error($exception->getTraceAsString() . '-' . $exception->getMessage());
+            Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             return redirect()->back();
         }
 
@@ -55,9 +55,9 @@ class NewsController extends Controller
 
     protected function getNews($id)
     {
-        return News::with('categories', 'reporter', 'guest')
-            ->where('id', $id)
-            ->orWhere('slug', $id)
+        return News::with('categories', 'reporter', 'guest', 'tags')
+            ->where('slug', $id)
+            ->orWhere('id', $id)
             ->first();
     }
 

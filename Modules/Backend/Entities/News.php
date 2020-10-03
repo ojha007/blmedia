@@ -23,6 +23,7 @@ class News extends Model
         'tag_line', 'description', 'short_description',
         'view_count',
         'external_url',
+        'video_url',
         'publish_date', 'expiry_date',
         'image_alt', 'is_active',
         'image', 'image_description',
@@ -57,7 +58,10 @@ class News extends Model
 
     public function getCategoryNameAttribute()
     {
-        return $this->categories()->pluck('slug')->toArray();
+
+        return $this->categories()
+            ->pluck('slug')
+            ->toArray();
     }
 
     public function categories()
@@ -74,4 +78,6 @@ class News extends Model
     {
         return $this->belongsTo('Modules\Auth\Entities\User', 'updated_by');
     }
+
+
 }

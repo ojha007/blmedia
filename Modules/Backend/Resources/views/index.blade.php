@@ -9,11 +9,12 @@
     {{--    {{ Breadcrumbs::render('account-types',$routePrefix) }}--}}
 @stop
 @section('content')
+    @include('backend::partials.errors')
     <div>
         <section class="content">
             <div class="row">
                 @foreach($attributes as $key=>$value)
-{{--                    @dd($value)--}}
+                    {{--                    @dd($value)--}}
                     @include('backend::dashboard.components.info-box')
                 @endforeach
 

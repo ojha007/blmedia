@@ -146,23 +146,15 @@ class NewsRepository extends Repository
     public function getDetailPageCommonData()
     {
         $headerCategories = $this->categoryRepo->getDetailPageHeaderCategoriesByPosition();
-        $detailPageFirstPositionNews = $this->getCacheNews(1, CategoryPositions::DETAIL_BODY_POSITION, 5, 'detailPageFirstPositionNews');
+        $blSpecialNews = $this->getCacheNewsByExtraColumn('is_special', 5);
         $detailPageSecondPositionNews = $this->getCacheNews(2, CategoryPositions::DETAIL_BODY_POSITION, 5, 'detailPageSecondPositionNews');
         $detailPageThirdPositionNews = $this->getCacheNews(3, CategoryPositions::DETAIL_BODY_POSITION, 5, 'detailPageThirdPositionNews');
         return [
             'headerCategories' => $headerCategories,
-            'detailPageFirstPositionNews' => $detailPageFirstPositionNews,
+            'blSpecialNews' => $blSpecialNews,
             'detailPageSecondPositionNews' => $detailPageSecondPositionNews,
             'detailPageThirdPositionNews' => $detailPageThirdPositionNews
         ];
-    }
-
-    public function getCacheNews(int $position, $placement, $limit, $cacheName)
-    {
-        return Cache::remember('_' . $cacheName, 4800, function () use ($position, $placement, $limit) {
-            return $this->getNewsByPositionAndPlacement($position, $placement, $limit);
-        });
-
     }
 
     public function getCacheNewsByExtraColumn($column, $limit)
@@ -188,6 +180,14 @@ class NewsRepository extends Repository
         });
     }
 
+    public function getCacheNews(int $position, $placement, $limit, $cacheName)
+    {
+        return Cache::remember('_' . $cacheName, 4800, function () use ($position, $placement, $limit) {
+            return $this->getNewsByPositionAndPlacement($position, $placement, $limit);
+        });
+
+    }
+
     public function getNewsByPositionAndPlacement(int $position, $placement, int $limit)
     {
         $category = DB::table('categories')
@@ -200,11 +200,11 @@ class NewsRepository extends Repository
                 ->select('news.title', 'news.sub_title', 'news.short_description', 'reporters.name as reporter_name',
                     'guests.name as guest_name', 'categories.name as categories', 'news.id as news_slug',
                     'reporters.image as reporter_image', 'guests.image as guest_image',
-                    'news.publish_date',
+                    'news.publish_date', 'categories.is_video',
                     'categories.slug as category_slug', 'news.image', 'news.image_description', 'news.image_alt')
-                ->selectRaw('IFNULL(reporters.name,guests.name) as author_name')
-                ->selectRaw('IF(reporters.name IS NOT  NULL,"reporters","guests") as author_type')
-                ->selectRaw('IFNULL(reporters.slug,guests.slug) as author_slug')
+                ->selectRaw('IFNULL(guests.name,reporters.name) as author_name')
+                ->selectRaw('IF(news.guest_id IS NOT NULL,"guests","reporters") as author_type')
+                ->selectRaw('IFNULL(guests.slug,reporters.slug) as author_slug')
                 ->join('news_categories', 'news_categories.news_id', '=', 'news.id')
                 ->join('categories', 'categories.id', '=', 'news_categories.category_id')
                 ->leftJoin('guests', 'news.guest_id', '=', 'guests.id')

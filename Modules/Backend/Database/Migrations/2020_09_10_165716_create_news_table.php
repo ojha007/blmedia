@@ -31,7 +31,8 @@ class CreateNewsTable extends Migration
             $table->bigInteger('view_count')->default(0);
             $table->boolean('is_special')->default(0);
             $table->boolean('is_anchor')->default(0);
-            $table->string('external_url')->nullable();
+            $table->text('external_url')->nullable();
+            $table->text('video_url')->nullable();
             $table->timestamp('publish_date');
             $table->boolean('is_active')->default(1);
             $table->string('image')->nullable();

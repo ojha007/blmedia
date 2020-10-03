@@ -24,7 +24,7 @@ class NewsRequest extends FormRequest
             'category_id' => 'required|exists:categories,id',
             'short_description' => 'required',
             'external_url' => 'nullable',
-            'publish_date' => 'required|date|date_format:Y-m-d',
+            'publish_date' => 'required|date|date_format:Y-m-d\TH:i',
             'is_anchor' => 'required|boolean',
             'is_special' => 'required|boolean',
             'image' => 'required',
