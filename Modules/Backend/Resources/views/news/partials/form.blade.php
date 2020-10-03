@@ -34,7 +34,7 @@
                             ])}}
             </div>
             <div class="col-md-12 form-group {{$errors->has('slug') ?'has-error':''}}">
-                {{Form::label('slug','Enter Slug in English:')}}
+                {{Form::label('slug','Enter Slug in English Example(ram-is-eating-something):')}}
                 {{Form::text('slug',null,
                             [
                             'class'=>'col-md-6 form-control',
