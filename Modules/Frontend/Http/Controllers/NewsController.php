@@ -33,6 +33,7 @@ class NewsController extends Controller
 
     public function showNews($slug)
     {
+
         try {
             $news = $this->getNews($slug);
             $category_slug = $news->category_name;
@@ -91,6 +92,11 @@ class NewsController extends Controller
             Log::error($exception->getMessage() . '-' . $exception->getTraceAsString());
             return redirect()->back();
         }
+
+    }
+
+    public function bestThreeNews()
+    {
 
     }
 
