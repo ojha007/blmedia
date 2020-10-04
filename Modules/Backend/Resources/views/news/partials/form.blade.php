@@ -189,6 +189,7 @@
 
         var routePrefix = '{{$edition}}';
         CKEDITOR.replace('description', {
+            // config.extraPlugins = 'embed'
             height: 312,
             filebrowserImageBrowseUrl: '/' + routePrefix + '/bl-secure/file-manager/ckeditor'
         });
