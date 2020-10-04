@@ -71,8 +71,8 @@
                             <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10 offset-lg-1">
                                 {!! $news->description !!}
                                 <div class="col-sm-6 col-xs-12">
-                                    {{trans('messages.publish_on')}}
-                                    : {{\Carbon\Carbon::parse($news->publish_date)->toDateTimeString()}}
+                                   <strong> {{trans('messages.publish_on')}}
+                                       : {{\Carbon\Carbon::parse($news->publish_date)->toDateTimeString()}}</strong>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="adsssss amadam">
@@ -88,11 +88,18 @@
 
 
                         </div>
+
+                    </div>
+                    <div class="section-row">
+                    <div class="col-sm-12  py-3 offset-lg-1" >
+
                         @foreach($news->tags as $tags)
-                            #{{$tags->name}}
+                            <span class=" custom-tag" >{{$tags->name}}</span>
                         @endforeach
                     </div>
-{{--                    @include('frontend::components.tags-news')--}}
+                    </div>
+
+                    {{--                    @include('frontend::components.tags-news')--}}
                     <div class="cmn-fw">
                         <div class="hr-c">
                             <div class="ggl_adBlk _930x180">
@@ -109,8 +116,8 @@
                                 <div class="row">
                                     @foreach($sameCategoryNews->take(3) as $key=>$news)
                                         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 float-left">
-                                            <div class="news-item no-bdr">
-                                                @include('frontend::components.news.news-image')
+                                            <div class="news-item recommendation-card">
+                                                @include('frontend::components.news.news-image' ,['imgClass'=>'card-img-top','figureClass'=>''])
                                                 <div class="news-content">
                                                     @include('frontend::components.news.news-content')
                                                     @include('frontend::components.news.news-author')
