@@ -14,7 +14,7 @@
             <div class="row">
                 @foreach($sameCategoryNews as $key=>$news)
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 float-left">
-                        <div class="news-item recommendation-card">
+                        <div class="news-item recommendation-card ">
                             @include('frontend::components.news.news-image' ,['imgClass'=>'card-img-top','figureClass'=>''])
                             <div class="news-content">
                                 @include('frontend::components.news.news-content')

@@ -229,3 +229,20 @@ html {
     cursor: pointer;
     background-color: black;
 }
+
+.search-button i{
+    font-size: 18px!important;
+    overflow-x: hidden;
+}
+.searchBody{
+    padding: 6px 13px;
+    margin: 0 13px;
+    background-color: #DDDDDD;
+}
+.searchBody input, .searchBody button{
+    border-radius: 50px;
+    height: 45px;
+}
+.searchBody button:hover{
+    background-color: #FF5E14!important;
+}
