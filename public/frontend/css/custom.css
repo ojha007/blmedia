@@ -243,3 +243,6 @@ html {
     border-radius: 50px;
     height: 45px;
 }
+.searchBody button:hover{
+    background-color: #FF5E14!important;
+}
