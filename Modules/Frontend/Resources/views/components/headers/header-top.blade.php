@@ -45,20 +45,20 @@
 </section>
 
 <div class="collapse container-fluid" id="searchDropdown">
-    <div class="card card-body bg-site-color border-0 rounded-0 " style="padding: 6px 15px;">
+    <div class="card card-body border-0 rounded-0 searchBody " >
         <form>
             <div class="form-row">
-                <div class="col-5">
+                <div class="col-3">
+                    <input type="text" class="form-control " placeholder="From"  id='datetimepicker4' />
+                </div>
+                <div class="col-3">
                     <input type="text" class="form-control" placeholder="From"  id='datetimepicker4' />
                 </div>
-                <div class="col-1">
-                  <button class="btn btn-block text-white">To</button>
-                </div>
-                <div class="col-5">
+                <div class="col-4">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <div class="col-1">
-                    <button class="btn btn-outline-light btn-block"><i class="fa fa-search"></i></button>
+                <div class="col-2">
+                    <button class="btn bg-secondary btn-block btn-sm text-white"><i class="fa fa-search "></i></button>
                 </div>
             </div>
         </form>
