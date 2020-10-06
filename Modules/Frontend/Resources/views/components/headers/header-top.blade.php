@@ -1,7 +1,7 @@
 <div class="container-fluid text-center px-0 header-top-ads">
     @include('frontend::components.ads.ads-2',['ads'=>$allAds,'placement'=>'above','sub_for'=>'top_menu'])
 </div>
-<section class="header-top mb-3">
+<section class="header-top">
     <div class="container-fluid ">
         <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 float-left scroll-news">
             <div class="scroll-header">
@@ -32,25 +32,48 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 float-right">
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <form class="form-inline base-form"
-                          action="https://www.breaknlinks.com/hindi/search/execute_search" method="post">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="search" name="newsSearch" class="form-control" placeholder="Search..."
-                                       required="">
-                                <div class="input-group-append">
-                                    <button type="submit" name="search" class="btn btn-trans"><i
-                                            class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </li>
-            </ul>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 float-right ">
+            <span class="overflow-hidden  float-right">
+                <button class="btn btn-outline-light border-0 rounded-0 search-button" type="button" data-toggle="collapse"
+                        data-target="#searchDropdown" aria-expanded="false" aria-controls="searchDropdown">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
         </div>
         <div class="clearfix"></div>
     </div>
 </section>
+
+<div class="collapse container-fluid" id="searchDropdown">
+    <div class="card card-body bg-site-color border-0 rounded-0 " style="padding: 6px 15px;">
+        <form>
+            <div class="form-row">
+                <div class="col-5">
+                    <input type="text" class="form-control" placeholder="From"  id='datetimepicker4' />
+                </div>
+                <div class="col-1">
+                  <button class="btn btn-block text-white">To</button>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-outline-light btn-block"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@push('scripts')
+    <script>
+
+        $( document ).ready(function() {
+            $( '.search-button' ).on( "click", function() {
+                $('i',this).toggleClass("fa fa-search fas fa-times");
+            });
+
+
+        });
+    </script>
+@endpush
+
